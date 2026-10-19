@@ -17,13 +17,16 @@ class AudioTranscriber:
 
     def _init_whisper(self):
         if not self._initialized:
-            try:
-                from transformers import pipeline
-                self._model = pipeline("automatic-speech-recognition", model="openai/whisper-tiny")
-                self._initialized = True
-            except Exception:
+            enable_heavy = os.getenv("ENABLE_HEAVY_TRANSFORMERS", "false").lower() in ("true", "1", "yes")
+            if enable_heavy:
+                try:
+                    from transformers import pipeline
+                    self._model = pipeline("automatic-speech-recognition", model="openai/whisper-tiny")
+                except Exception:
+                    self._model = None
+            else:
                 self._model = None
-                self._initialized = True
+            self._initialized = True
 
     def transcribe(self, audio_source: Any) -> Dict[str, Any]:
         """

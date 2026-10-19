@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches & testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node dependencies
+node_modules/
+frontend/node_modules/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Large model weights (use huggingface / ultralytics cache)
+*.pt
+*.bin
+
+# Temporary uploads
+storage/uploads/*
+!storage/uploads/.gitkeep

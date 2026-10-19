@@ -1,0 +1,20 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Pytest & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+package-lock.json
+
+# Environment
+.env
+.venv
+env/
+venv/

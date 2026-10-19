@@ -127,6 +127,8 @@ class CalculatorTool:
             if not set(expression).issubset(allowed_chars):
                 return {"error": "Invalid characters in mathematical expression"}
             result = eval(expression, {"__builtins__": None}, {})
+            if isinstance(result, float):
+                result = round(result, 4)
             return {"expression": expression, "result": result}
         except Exception as e:
             return {"expression": expression, "error": str(e)}
