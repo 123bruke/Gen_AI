@@ -1,4 +1,4 @@
-// Minimalist Intro Animation: 2 Dots Moving Like Eyes
+// Axu Intro Animation Controller: Eye blinking, covered by 'O' circle, and 'Axu' title below
 
 export class IntroSplash {
   constructor() {
@@ -11,10 +11,13 @@ export class IntroSplash {
   init() {
     if (!this.splashEl) return;
 
-    // Two dots look around, blink, and smoothly open the web app after 2.2s
+    // Allow clicking anywhere on splash to skip immediately
+    this.splashEl.addEventListener('click', () => this.dismiss());
+
+    // Auto dismiss after animation cycle (2.9s)
     this.timer = setTimeout(() => {
       this.dismiss();
-    }, 2200);
+    }, 2900);
   }
 
   dismiss() {
@@ -46,6 +49,6 @@ export class IntroSplash {
 
     this.timer = setTimeout(() => {
       this.dismiss();
-    }, 2200);
+    }, 2900);
   }
 }

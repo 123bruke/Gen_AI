@@ -9,6 +9,7 @@ const defaultState = {
   activeAttachments: [],
   isStreaming: false,
   sidebarCollapsed: false,
+  user: null, // { loggedIn: true, name: 'Alex Rivera', email: 'alex@example.com' }
   settings: {
     model: 'visionrag-omni-v2.5',
     theme: 'white',
@@ -58,6 +59,7 @@ class StateStore {
         chats: this.state.chats,
         activeChatId: this.state.activeChatId,
         sidebarCollapsed: this.state.sidebarCollapsed,
+        user: this.state.user,
         settings: this.state.settings
       };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
@@ -224,6 +226,16 @@ class StateStore {
   toggleSidebar() {
     this.state.sidebarCollapsed = !this.state.sidebarCollapsed;
     this.notify('SIDEBAR_TOGGLED', this.state.sidebarCollapsed);
+  }
+
+  setUser(user) {
+    this.state.user = user;
+    this.notify('AUTH_CHANGED', user);
+  }
+
+  logoutUser() {
+    this.state.user = null;
+    this.notify('AUTH_CHANGED', null);
   }
 
   updateSettings(newSettings) {

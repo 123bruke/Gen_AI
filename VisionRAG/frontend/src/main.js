@@ -7,6 +7,8 @@ import { VoiceModal } from './components/VoiceModal.js';
 import { VideoModal } from './components/VideoModal.js';
 import { SettingsModal } from './components/SettingsModal.js';
 import { SourceModal } from './components/SourceModal.js';
+import { AuthModal } from './components/AuthModal.js';
+import { eyeTracker } from './utils/eyeTracker.js';
 import { store } from './store/state.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebarContainer = document.getElementById('sidebar');
   const mainContentContainer = document.getElementById('main-content');
 
-  // Initialize Splash Screen (O with Eye blinking in and out)
+  // Initialize real-time eye cursor tracking
+  eyeTracker.init();
+
+  // Initialize Splash Screen (Circle with 2 Eyes and '.' dot pupils)
   const splash = new IntroSplash();
   splash.init();
 
@@ -22,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const voiceModal = new VoiceModal(modalContainer);
   const videoModal = new VideoModal(modalContainer);
   const sourceModal = new SourceModal(modalContainer);
+  const authModal = new AuthModal(modalContainer);
   const settingsModal = new SettingsModal(modalContainer, {
     onReplayIntro: () => splash.replay()
   });
@@ -29,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Instantiate Sidebar
   const sidebar = new Sidebar(sidebarContainer, {
     onOpenSettings: () => settingsModal.open(),
-    onReplayIntro: () => splash.replay()
+    onReplayIntro: () => splash.replay(),
+    onOpenAuth: (mode) => authModal.open(mode)
   });
   sidebar.render();
 
@@ -55,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       videoModal.close();
       settingsModal.close();
       sourceModal.close();
+      authModal.close();
     }
   });
 

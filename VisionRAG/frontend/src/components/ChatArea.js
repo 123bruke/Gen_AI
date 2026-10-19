@@ -1,7 +1,8 @@
-// ChatArea Component: Clean White ChatGPT Aesthetic, Multimodal Uploads & Typewriter Streaming
+// ChatArea Component: Google-Like Divided View, Multimodal Plus Menu & Streaming
 
 import { store } from '../store/state.js';
 import { api } from '../services/api.js';
+import { eyeTracker } from '../utils/eyeTracker.js';
 
 export class ChatArea {
   constructor(containerEl, { onOpenVoice, onOpenVideo, onOpenSource, onOpenSettings }) {
@@ -12,73 +13,14 @@ export class ChatArea {
     this.onOpenSettings = onOpenSettings;
 
     this.abortController = null;
-    this.speechRecognition = null;
-    this.isRecordingVoice = false;
+    this.showPlusMenu = false;
+    this.activeTabs = {}; // Map of msgId -> activeTab ('all', 'images', 'videos', 'news', 'maps', 'papers')
 
-    this.initSpeechRecognition();
     store.subscribe((state, event) => {
-      // Avoid full re-render on active streaming chunks to maintain smooth DOM performance
       if (event !== 'STREAMING_CHUNK') {
         this.render();
       }
     });
-  }
-
-  initSpeechRecognition() {
-    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (SpeechRec) {
-      this.speechRecognition = new SpeechRec();
-      this.speechRecognition.continuous = false;
-      this.speechRecognition.interimResults = true;
-      this.speechRecognition.lang = 'en-US';
-
-      this.speechRecognition.onresult = (e) => {
-        const transcript = Array.from(e.results)
-          .map((r) => r[0].transcript)
-          .join('');
-        const textarea = this.container.querySelector('#chat-textarea');
-        if (textarea) {
-          textarea.value = transcript;
-          this.updateTextareaHeight(textarea);
-          this.updateSendButtonState();
-        }
-      };
-
-      this.speechRecognition.onend = () => {
-        this.isRecordingVoice = false;
-        const micBtn = this.container.querySelector('#btn-mic-input');
-        if (micBtn) micBtn.classList.remove('recording');
-      };
-
-      this.speechRecognition.onerror = (e) => {
-        console.warn('Speech recognition notice:', e.error);
-        this.isRecordingVoice = false;
-        const micBtn = this.container.querySelector('#btn-mic-input');
-        if (micBtn) micBtn.classList.remove('recording');
-      };
-    }
-  }
-
-  toggleSpeechInput() {
-    if (!this.speechRecognition) {
-      alert('Speech recognition is not supported in this browser. Please type your message.');
-      return;
-    }
-
-    const micBtn = this.container.querySelector('#btn-mic-input');
-    if (this.isRecordingVoice) {
-      this.speechRecognition.stop();
-      this.isRecordingVoice = false;
-      if (micBtn) micBtn.classList.remove('recording');
-    } else {
-      try {
-        this.speechRecognition.start();
-        this.isRecordingVoice = true;
-        if (micBtn) micBtn.classList.add('recording');
-      } catch (err) {
-        console.error('Error starting mic:', err);
-      }
-    }
   }
 
   render() {
@@ -91,45 +33,38 @@ export class ChatArea {
       <!-- Top App Header -->
       <header class="chat-header">
         <div class="header-left">
-          <button class="header-sidebar-trigger" id="btn-toggle-sidebar" title="Toggle sidebar">
+          <button class="action-icon-btn" id="btn-toggle-sidebar" title="Toggle sidebar">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
               <line x1="9" y1="3" x2="9" y2="21"/>
             </svg>
           </button>
           
-          <div class="model-selector-wrap">
-            <button class="model-pill-btn" id="btn-select-model">
-              <span>VisionRAG Omni v2.5</span>
-              <span class="model-badge">Vision Pro</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-          </div>
+          <button class="model-pill-btn" id="btn-select-model" style="display: flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 13px; font-weight: 500;">
+            <span>VisionRAG v2.5</span>
+            <span style="font-size: 10px; background: #e6f7f2; color: #10a37f; padding: 1px 5px; border-radius: 4px; font-weight: 600;">Omni</span>
+          </button>
         </div>
 
         <div class="header-right">
-          <button class="header-action-btn" id="btn-open-camera" title="Live Camera & Visual Stream">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <button class="header-action-btn" id="btn-header-voice" title="Voice Mode" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 12.5px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            </svg>
+            <span>Voice</span>
+          </button>
+
+          <button class="header-action-btn" id="btn-header-video" title="Video Mode" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 12.5px;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <polygon points="23 7 16 12 23 17 23 7"></polygon>
               <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
             </svg>
-            <span>Live Camera</span>
+            <span>Video</span>
           </button>
 
-          <button class="header-action-btn" id="btn-open-voice-mode" title="Hands-free Voice Mode">
+          <button class="action-icon-btn" id="btn-new-chat-top" title="New Chat">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="23"></line>
-              <line x1="8" y1="23" x2="16" y2="23"></line>
-            </svg>
-            <span>Voice Mode</span>
-          </button>
-
-          <button class="header-action-btn" id="btn-new-chat-top" title="New Chat">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="12" y1="5" x2="12" y2="19"></line>
               <line x1="5" y1="12" x2="19" y2="12"></line>
             </svg>
@@ -151,26 +86,18 @@ export class ChatArea {
       <!-- Bottom Chat Input Area -->
       <div class="chat-input-wrapper">
         <div class="chat-input-inner">
-          <!-- Upload Preview Tray -->
+          <!-- Active Attachments Preview -->
           ${
             state.activeAttachments.length > 0
               ? `
-            <div class="attachments-preview-tray">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; padding: 6px 10px; background: #fff; border: 1px solid var(--border-medium); border-radius: var(--radius-md);">
               ${state.activeAttachments
                 .map(
                   (att) => `
-                <div class="upload-card-chip">
-                  <div class="upload-file-icon">
-                    ${this.getFileIconSvg(att.type)}
-                  </div>
-                  <div class="upload-file-meta">
-                    <span class="upload-file-name" title="${this.escapeHtml(att.name)}">${this.escapeHtml(att.name)}</span>
-                    <span class="upload-file-size">${att.size}</span>
-                  </div>
-                  <button class="btn-remove-attachment" data-att-id="${att.id}" title="Remove file">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                  </button>
-                  <div class="upload-progress-line" style="width: ${att.progress || 100}%;"></div>
+                <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 4px 8px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border-medium);">
+                  <span>${this.escapeHtml(att.name)}</span>
+                  <span style="font-size: 10px; color: var(--text-muted);">(${att.size})</span>
+                  <button class="btn-remove-attachment" data-att-id="${att.id}" style="color: var(--text-muted); cursor: pointer;">×</button>
                 </div>
               `
                 )
@@ -180,39 +107,80 @@ export class ChatArea {
               : ''
           }
 
-          <!-- Pill Input Container -->
-          <div class="input-pill-container">
-            <div class="input-actions-left">
-              <input type="file" id="file-upload-input" multiple style="display: none;" accept=".pdf,.png,.jpg,.jpeg,.mp4,.webm,.wav,.mp3,.txt,.csv,.md" />
-              <button class="input-action-btn" id="btn-attach-file" title="Upload PDF, Image, Video, Audio">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="5" x2="12" y2="19"></line>
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                </svg>
+          <!-- The "+" Menu Popover -->
+          ${
+            this.showPlusMenu
+              ? `
+            <div class="plus-actions-popover" id="plus-popover">
+              <button class="plus-menu-item" id="plus-opt-doc">
+                <div class="plus-item-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                </div>
+                <span>Upload Document (PDF, TXT)</span>
+              </button>
+
+              <button class="plus-menu-item" id="plus-opt-image">
+                <div class="plus-item-icon" style="color: var(--brand-green);">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                </div>
+                <span>Upload Image (PNG, JPG)</span>
+              </button>
+
+              <button class="plus-menu-item" id="plus-opt-video-file">
+                <div class="plus-item-icon" style="color: #2563eb;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                </div>
+                <span>Upload Video File (MP4)</span>
+              </button>
+
+              <button class="plus-menu-item" id="plus-opt-video-gen">
+                <div class="plus-item-icon" style="color: #9333ea;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                </div>
+                <span>Video Generation & Camera</span>
+              </button>
+
+              <button class="plus-menu-item" id="plus-opt-voice">
+                <div class="plus-item-icon" style="color: #ea580c;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg>
+                </div>
+                <span>Voice Mode (Audio Conversation)</span>
               </button>
             </div>
+          `
+              : ''
+          }
+
+          <!-- Pill Input Container -->
+          <div class="input-pill-container">
+            <input type="file" id="file-upload-input" multiple style="display: none;" />
+            
+            <button class="action-icon-btn" id="btn-toggle-plus" title="Add files, video, or voice" style="width: 34px; height: 34px; border-radius: 50%; margin-right: 6px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
 
             <textarea
               id="chat-textarea"
               class="chat-textarea"
               rows="1"
-              placeholder="Ask anything or upload PDF, image, video..."
+              placeholder="Ask anything across documents, images, video, and news..."
             ></textarea>
 
-            <div class="input-actions-right">
-              <button class="btn-voice-input ${this.isRecordingVoice ? 'recording' : ''}" id="btn-mic-input" title="Voice dictation">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div style="display: flex; align-items: center; gap: 6px; margin-left: 6px;">
+              <button class="action-icon-btn" id="btn-quick-voice" title="Voice Mode">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                   <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                  <line x1="12" y1="19" x2="12" y2="23"></line>
-                  <line x1="8" y1="23" x2="16" y2="23"></line>
                 </svg>
               </button>
 
               ${
                 isStreaming
                   ? `
-                <button class="btn-stop-generating" id="btn-stop-stream" title="Stop generating">
+                <button class="btn-stop-generating" id="btn-stop-stream" title="Stop generating" style="width: 36px; height: 36px; border-radius: 50%; background: #0d0d0d; color: #fff;">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <rect x="5" y="5" width="14" height="14" rx="2"></rect>
                   </svg>
@@ -220,7 +188,7 @@ export class ChatArea {
               `
                   : `
                 <button class="btn-send-message" id="btn-send-message" title="Send message" disabled>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <line x1="12" y1="19" x2="12" y2="5"></line>
                     <polyline points="5 12 12 5 19 12"></polyline>
                   </svg>
@@ -230,8 +198,8 @@ export class ChatArea {
             </div>
           </div>
 
-          <div class="input-disclaimer-text">
-            VisionRAG Multimodal Neural Engine • Verify cited document pages, image regions & video timestamps.
+          <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+            VisionRAG Multimodal Intelligence • Clean divided views for AI Answer, Images, Videos, News, Maps & Papers
           </div>
         </div>
       </div>
@@ -239,62 +207,23 @@ export class ChatArea {
 
     this.bindEvents();
     this.scrollToBottom();
+    eyeTracker.scheduleUpdate();
   }
 
   renderEmptyHero() {
     return `
-      <div class="empty-state-hero">
-        <div class="hero-logo">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <circle cx="12" cy="12" r="4"></circle>
-            <line x1="12" y1="2" x2="12" y2="6"></line>
-            <line x1="12" y1="18" x2="12" y2="22"></line>
-          </svg>
-        </div>
-        <div class="hero-title">What can VisionRAG analyze for you?</div>
-        <div class="hero-subtitle">
-          Ask questions across complex visual documents, PDFs with tables and diagrams, high-resolution imagery, or temporal video streams.
-        </div>
-
-        <div class="suggestions-grid">
-          <div class="suggestion-card" data-prompt="Analyze the financial balance sheet in the uploaded PDF and extract the Q3 EBITDA margins.">
-            <div class="suggestion-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+      <div style="margin: auto; max-width: 680px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; gap: 20px;">
+        <div class="minimal-circle-frame" style="width: 72px; height: 72px; border-width: 3.5px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+          <div class="two-eyes-wrap" style="gap: 9px;">
+            <div class="eye-socket" style="width: 20px; height: 14px; border-width: 1.8px;">
+              <div class="eyelid-lid eyelid-upper"></div>
+              <div class="eye-dot-pupil" style="width: 5px; height: 5px;"></div>
+              <div class="eyelid-lid eyelid-lower"></div>
             </div>
-            <div class="suggestion-info">
-              <span class="suggestion-headline">Extract PDF Financial Tables</span>
-              <span class="suggestion-prompt">Identify operating revenue, EBITDA, and tabular margins.</span>
-            </div>
-          </div>
-
-          <div class="suggestion-card" data-prompt="Scan the inspection video clip and pinpoint timestamps where safety equipment was missing.">
-            <div class="suggestion-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
-            </div>
-            <div class="suggestion-info">
-              <span class="suggestion-headline">Temporal Video Analysis</span>
-              <span class="suggestion-prompt">Detect events, objects, and keyframe timestamps.</span>
-            </div>
-          </div>
-
-          <div class="suggestion-card" data-prompt="Inspect this circuit schematic diagram and extract all resistor values and step-down ICs.">
-            <div class="suggestion-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            </div>
-            <div class="suggestion-info">
-              <span class="suggestion-headline">Circuit & Blueprint OCR</span>
-              <span class="suggestion-prompt">Detect electrical components and trace signal paths.</span>
-            </div>
-          </div>
-
-          <div class="suggestion-card" data-prompt="Write a Python script using ColPali multi-vector retrieval for indexing high-res PDF pages.">
-            <div class="suggestion-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <div class="suggestion-info">
-              <span class="suggestion-headline">Multimodal Code Assistant</span>
-              <span class="suggestion-prompt">Generate ColPali, SigLIP, and Qdrant ingestion scripts.</span>
+            <div class="eye-socket" style="width: 20px; height: 14px; border-width: 1.8px;">
+              <div class="eyelid-lid eyelid-upper"></div>
+              <div class="eye-dot-pupil" style="width: 5px; height: 5px;"></div>
+              <div class="eyelid-lid eyelid-lower"></div>
             </div>
           </div>
         </div>
@@ -304,158 +233,347 @@ export class ChatArea {
 
   renderMessage(msg) {
     const isUser = msg.sender === 'user';
-    return `
-      <div class="message-row ${isUser ? 'user' : 'assistant'}">
-        ${
-          !isUser
-            ? `
-          <div class="message-avatar assistant-avatar" title="VisionRAG Assistant">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <circle cx="12" cy="12" r="4"></circle>
-            </svg>
-          </div>
-        `
-            : ''
-        }
-
-        <div class="${isUser ? 'user-bubble' : 'assistant-bubble'}">
-          <div class="assistant-text">
-            ${this.formatMarkdown(msg.text)}
-            ${msg.isStreaming ? `<span class="streaming-cursor"></span>` : ''}
-          </div>
-
-          <!-- Attachments chips for user message -->
-          ${
-            isUser && msg.attachments && msg.attachments.length > 0
-              ? `
-            <div class="user-attachments-grid">
-              ${msg.attachments
-                .map(
-                  (a) => `
-                <div class="user-file-chip">
-                  ${this.getFileIconSvg(a.type)}
-                  <span>${this.escapeHtml(a.name)}</span>
-                </div>
-              `
-                )
-                .join('')}
-            </div>
-          `
-              : ''
-          }
-
-          <!-- RAG Grounding Sources Pill Row -->
-          ${
-            !isUser && msg.sources && msg.sources.length > 0
-              ? `
-            <div class="rag-grounding-box">
-              <div class="grounding-box-header">
-                <span>Retrieved Grounding Sources (${msg.sources.length})</span>
-                <span style="font-weight: normal; color: var(--text-muted); font-size: 11px;">Click to view bounding box & page</span>
-              </div>
-              <div class="sources-pill-row">
-                ${msg.sources
+    if (isUser) {
+      return `
+        <div class="message-row user">
+          <div class="user-bubble">
+            <div>${this.escapeHtml(msg.text)}</div>
+            ${
+              msg.attachments && msg.attachments.length > 0
+                ? `
+              <div style="margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px;">
+                ${msg.attachments
                   .map(
-                    (src) => `
-                  <button class="citation-pill" data-source-id="${src.id}" title="Inspect source chunk and visual bounding box">
-                    ${this.getFileIconSvg(src.type)}
-                    <span>${this.escapeHtml(src.title)} (p. ${src.page})</span>
-                    <span class="match-badge">${src.matchScore}%</span>
-                  </button>
+                    (a) => `
+                  <span style="font-size: 11.5px; background: #fff; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border-medium);">
+                    📎 ${this.escapeHtml(a.name)}
+                  </span>
                 `
                   )
                   .join('')}
               </div>
-            </div>
-          `
-              : ''
-          }
+            `
+                : ''
+            }
+          </div>
+        </div>
+      `;
+    }
 
-          <!-- Assistant Action Toolbar -->
-          ${
-            !isUser && !msg.isStreaming
-              ? `
-            <div class="message-actions-toolbar">
-              <button class="action-icon-btn btn-copy-msg" data-text="${this.escapeAttr(msg.text)}" title="Copy message">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              </button>
-              <button class="action-icon-btn btn-tts-msg" data-text="${this.escapeAttr(msg.text)}" title="Read message aloud">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-              </button>
-              <button class="action-icon-btn" title="Good response">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-              </button>
-              <button class="action-icon-btn" title="Poor response">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
-              </button>
+    // Assistant Message with Google Divided View
+    const msgId = msg.id;
+    const currentTab = this.activeTabs[msgId] || 'all';
+    const mm = msg.multimodal || {};
+
+    return `
+      <div class="message-row assistant" data-msg-id="${msgId}">
+        <div class="assistant-bubble">
+          <!-- Google-Style Divided View Navigation Tabs -->
+          <div class="google-tabs-bar" data-msg-id="${msgId}">
+            <button class="google-tab-btn ${currentTab === 'all' ? 'active' : ''}" data-tab="all">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 16 12 12 8"></polygon></svg>
+              <span>All (AI Answer)</span>
+            </button>
+
+            <button class="google-tab-btn ${currentTab === 'images' ? 'active' : ''}" data-tab="images">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              <span>Images (${(mm.images && mm.images.length) || 0})</span>
+            </button>
+
+            <button class="google-tab-btn ${currentTab === 'videos' ? 'active' : ''}" data-tab="videos">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              <span>Videos (${(mm.videos && mm.videos.length) || 0})</span>
+            </button>
+
+            <button class="google-tab-btn ${currentTab === 'news' ? 'active' : ''}" data-tab="news">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path></svg>
+              <span>News (${(mm.news && mm.news.length) || 0})</span>
+            </button>
+
+            <button class="google-tab-btn ${currentTab === 'maps' ? 'active' : ''}" data-tab="maps">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon></svg>
+              <span>Maps</span>
+            </button>
+
+            <button class="google-tab-btn ${currentTab === 'papers' ? 'active' : ''}" data-tab="papers">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              <span>Papers & Journals (${(mm.papers && mm.papers.length) || 0})</span>
+            </button>
+          </div>
+
+          <!-- Tab Content Views -->
+          <div class="tab-content-panel">
+            ${this.renderActiveTabContent(currentTab, msg)}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  renderActiveTabContent(tab, msg) {
+    const mm = msg.multimodal || {};
+
+    // 1. ALL Tab (AI Answer + Multi-modal previews)
+    if (tab === 'all') {
+      if (msg.isThinking || (!msg.text && msg.isStreaming)) {
+        return `
+          <div class="thinking-reflective-box">
+            <div class="reflective-light-beam"></div>
+            <div class="thinking-header-row">
+              <div class="thinking-pulse-sparkle"></div>
+              <span>Searching multimodal knowledge & reasoning...</span>
             </div>
-          `
-              : ''
-          }
+            <div class="thinking-skeleton-wrap">
+              <div class="thinking-skeleton-line" style="width: 85%;"></div>
+              <div class="thinking-skeleton-line" style="width: 95%;"></div>
+              <div class="thinking-skeleton-line" style="width: 70%;"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="assistant-text">
+          ${this.formatMarkdown(msg.text)}
+          ${msg.isStreaming ? `<span style="display:inline-block; width:6px; height:15px; background:#0d0d0d; margin-left:3px; animation:micPulse 0.8s infinite;"></span>` : ''}
         </div>
 
         ${
-          isUser
+          mm.images && mm.images.length > 0
             ? `
-          <div class="message-avatar user-avatar" title="You">
-            VR
+          <div style="margin-top: 14px;">
+            <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">VISUAL RETRIEVAL PREVIEWS</div>
+            <div class="google-images-grid">
+              ${mm.images.slice(0, 3).map((img) => this.renderImageCard(img)).join('')}
+            </div>
           </div>
         `
             : ''
         }
+      `;
+    }
+
+    // 2. IMAGES Tab
+    if (tab === 'images') {
+      if (!mm.images || mm.images.length === 0) {
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No image assets associated with this query.</div>`;
+      }
+      return `
+        <div class="google-images-grid">
+          ${mm.images.map((img) => this.renderImageCard(img)).join('')}
+        </div>
+      `;
+    }
+
+    // 3. VIDEOS Tab
+    if (tab === 'videos') {
+      if (!mm.videos || mm.videos.length === 0) {
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No video clips indexed for this query.</div>`;
+      }
+      return `
+        <div class="google-videos-grid">
+          ${mm.videos
+            .map(
+              (vid) => `
+            <div class="google-video-card">
+              <div class="video-thumb-wrap">
+                <img src="${vid.thumbnail}" class="video-thumb-img" alt="${this.escapeHtml(vid.title)}" />
+                <span class="video-duration-badge">${vid.duration}</span>
+                <span class="video-timestamp-badge">Keyframe ${vid.timestamp}</span>
+              </div>
+              <div class="video-card-info">
+                <span class="video-card-title">${this.escapeHtml(vid.title)}</span>
+                <span style="font-size: 11px; color: var(--brand-indigo);">${this.escapeHtml(vid.channel)}</span>
+                <span class="video-keyframe-desc">${this.escapeHtml(vid.keyframeDesc)}</span>
+              </div>
+            </div>
+          `
+            )
+            .join('')}
+        </div>
+      `;
+    }
+
+    // 4. NEWS Tab
+    if (tab === 'news') {
+      if (!mm.news || mm.news.length === 0) {
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No recent news articles found.</div>`;
+      }
+      return `
+        <div class="google-news-list">
+          ${mm.news
+            .map(
+              (item) => `
+            <div class="google-news-card">
+              <div class="news-card-publisher-row">
+                <span style="font-weight: 600; color: var(--text-primary);">${this.escapeHtml(item.publisher)}</span>
+                <span>•</span>
+                <span>${item.time}</span>
+              </div>
+              <a href="#" class="news-card-title">${this.escapeHtml(item.title)}</a>
+              <p class="news-card-snippet">${this.escapeHtml(item.snippet)}</p>
+            </div>
+          `
+            )
+            .join('')}
+        </div>
+      `;
+    }
+
+    // 5. MAPS Tab
+    if (tab === 'maps') {
+      const mapItem = (mm.maps && mm.maps[0]) || {
+        locationName: 'Neural Research Center',
+        coordinates: '37.7749° N, 122.4194° W',
+        region: 'San Francisco Innovation Hub',
+        type: 'Facility Blueprint'
+      };
+      return `
+        <div class="google-map-card">
+          <div class="map-visual-placeholder">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Interactive Spatial Grounding: ${this.escapeHtml(mapItem.coordinates)}</span>
+          </div>
+          <div class="map-info-body">
+            <span style="font-size: 15px; font-weight: 600; color: var(--text-primary);">${this.escapeHtml(mapItem.locationName)}</span>
+            <span style="font-size: 13px; color: var(--text-secondary);">${this.escapeHtml(mapItem.region)}</span>
+            <span style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Context: ${this.escapeHtml(mapItem.floorplan || mapItem.type)}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // 6. PAPERS & JOURNALS Tab
+    if (tab === 'papers') {
+      if (!mm.papers || mm.papers.length === 0) {
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No research papers indexed for this query.</div>`;
+      }
+      return `
+        <div class="google-papers-list">
+          ${mm.papers
+            .map(
+              (p) => `
+            <div class="paper-card">
+              <span class="paper-journal-tag">${this.escapeHtml(p.journal)} (${p.year})</span>
+              <a href="#" class="paper-title">${this.escapeHtml(p.title)}</a>
+              <span class="paper-authors">${this.escapeHtml(p.authors)}</span>
+              <p class="paper-abstract">${this.escapeHtml(p.abstract)}</p>
+              <div style="font-size: 11.5px; color: var(--text-muted); display: flex; gap: 12px; margin-top: 4px;">
+                <span>Citations: <strong>${p.citations}</strong></span>
+                <span>DOI: <code style="font-size: 11px;">${p.doi}</code></span>
+              </div>
+            </div>
+          `
+            )
+            .join('')}
+        </div>
+      `;
+    }
+
+    return '';
+  }
+
+  renderImageCard(img) {
+    return `
+      <div class="google-image-card">
+        <img src="${img.url}" class="image-card-thumb" alt="${this.escapeHtml(img.title)}" />
+        <div class="image-card-info">
+          <span class="image-card-title">${this.escapeHtml(img.title)}</span>
+          <span class="image-card-source">${this.escapeHtml(img.source)} • <strong style="color: var(--brand-green);">${img.tag}</strong></span>
+        </div>
       </div>
     `;
   }
 
   bindEvents() {
-    // Sidebar toggle
+    // Toggle Sidebar
     const toggleSidebarBtn = this.container.querySelector('#btn-toggle-sidebar');
     if (toggleSidebarBtn) {
       toggleSidebarBtn.addEventListener('click', () => store.toggleSidebar());
     }
 
-    // Top new chat
+    // Top Header Actions
     const topNewChatBtn = this.container.querySelector('#btn-new-chat-top');
-    if (topNewChatBtn) {
-      topNewChatBtn.addEventListener('click', () => store.createChat());
-    }
+    if (topNewChatBtn) topNewChatBtn.addEventListener('click', () => store.createChat());
 
-    // Live Camera modal
-    const cameraBtn = this.container.querySelector('#btn-open-camera');
-    if (cameraBtn && this.onOpenVideo) {
-      cameraBtn.addEventListener('click', () => this.onOpenVideo());
-    }
+    const headerVoiceBtn = this.container.querySelector('#btn-header-voice');
+    if (headerVoiceBtn && this.onOpenVoice) headerVoiceBtn.addEventListener('click', () => this.onOpenVoice());
 
-    // Voice mode overlay
-    const voiceModeBtn = this.container.querySelector('#btn-open-voice-mode');
-    if (voiceModeBtn && this.onOpenVoice) {
-      voiceModeBtn.addEventListener('click', () => this.onOpenVoice());
-    }
+    const headerVideoBtn = this.container.querySelector('#btn-header-video');
+    if (headerVideoBtn && this.onOpenVideo) headerVideoBtn.addEventListener('click', () => this.onOpenVideo());
 
-    // Model Selector
+    const quickVoiceBtn = this.container.querySelector('#btn-quick-voice');
+    if (quickVoiceBtn && this.onOpenVoice) quickVoiceBtn.addEventListener('click', () => this.onOpenVoice());
+
+    // Settings trigger
     const modelBtn = this.container.querySelector('#btn-select-model');
-    if (modelBtn && this.onOpenSettings) {
-      modelBtn.addEventListener('click', () => this.onOpenSettings());
+    if (modelBtn && this.onOpenSettings) modelBtn.addEventListener('click', () => this.onOpenSettings());
+
+    // Plus (+) Attachment Menu Toggle
+    const togglePlusBtn = this.container.querySelector('#btn-toggle-plus');
+    const fileInput = this.container.querySelector('#file-upload-input');
+    if (togglePlusBtn) {
+      togglePlusBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.showPlusMenu = !this.showPlusMenu;
+        this.render();
+      });
     }
 
-    // Suggestion Cards Click
-    this.container.querySelectorAll('.suggestion-card').forEach((card) => {
-      card.addEventListener('click', () => {
-        const prompt = card.dataset.prompt;
-        const textarea = this.container.querySelector('#chat-textarea');
-        if (textarea) {
-          textarea.value = prompt;
-          this.handleSendMessage();
-        }
-      });
+    // Close Plus Menu on outside click
+    document.addEventListener('click', (e) => {
+      if (this.showPlusMenu && !e.target.closest('#plus-popover') && !e.target.closest('#btn-toggle-plus')) {
+        this.showPlusMenu = false;
+        this.render();
+      }
     });
 
-    // File Upload Attachment (+) Button
-    const attachBtn = this.container.querySelector('#btn-attach-file');
-    const fileInput = this.container.querySelector('#file-upload-input');
-    if (attachBtn && fileInput) {
-      attachBtn.addEventListener('click', () => fileInput.click());
+    // Plus Popover Options
+    const optDoc = this.container.querySelector('#plus-opt-doc');
+    if (optDoc && fileInput) {
+      optDoc.addEventListener('click', () => {
+        fileInput.accept = '.pdf,.txt,.docx,.csv';
+        fileInput.click();
+        this.showPlusMenu = false;
+      });
+    }
+
+    const optImg = this.container.querySelector('#plus-opt-image');
+    if (optImg && fileInput) {
+      optImg.addEventListener('click', () => {
+        fileInput.accept = '.png,.jpg,.jpeg,.tiff';
+        fileInput.click();
+        this.showPlusMenu = false;
+      });
+    }
+
+    const optVid = this.container.querySelector('#plus-opt-video-file');
+    if (optVid && fileInput) {
+      optVid.addEventListener('click', () => {
+        fileInput.accept = '.mp4,.webm,.mkv';
+        fileInput.click();
+        this.showPlusMenu = false;
+      });
+    }
+
+    const optVidGen = this.container.querySelector('#plus-opt-video-gen');
+    if (optVidGen && this.onOpenVideo) {
+      optVidGen.addEventListener('click', () => {
+        this.showPlusMenu = false;
+        this.onOpenVideo();
+      });
+    }
+
+    const optVoice = this.container.querySelector('#plus-opt-voice');
+    if (optVoice && this.onOpenVoice) {
+      optVoice.addEventListener('click', () => {
+        this.showPlusMenu = false;
+        this.onOpenVoice();
+      });
+    }
+
+    // File Input Change
+    if (fileInput) {
       fileInput.addEventListener('change', (e) => this.handleFileUpload(e.target.files));
     }
 
@@ -467,14 +585,24 @@ export class ChatArea {
       });
     });
 
-    // Textarea input & height auto-resize
+    // Google Divided View Tab Buttons
+    this.container.querySelectorAll('.google-tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const bar = btn.closest('.google-tabs-bar');
+        const msgId = bar.dataset.msgId;
+        const tab = btn.dataset.tab;
+        this.activeTabs[msgId] = tab;
+        this.render();
+      });
+    });
+
+    // Textarea & Send Button
     const textarea = this.container.querySelector('#chat-textarea');
     if (textarea) {
       textarea.addEventListener('input', () => {
         this.updateTextareaHeight(textarea);
         this.updateSendButtonState();
       });
-
       textarea.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
           e.preventDefault();
@@ -483,19 +611,12 @@ export class ChatArea {
       });
     }
 
-    // Mic Button
-    const micBtn = this.container.querySelector('#btn-mic-input');
-    if (micBtn) {
-      micBtn.addEventListener('click', () => this.toggleSpeechInput());
-    }
-
-    // Send Button
     const sendBtn = this.container.querySelector('#btn-send-message');
     if (sendBtn) {
       sendBtn.addEventListener('click', () => this.handleSendMessage());
     }
 
-    // Stop Stream Button
+    // Stop Stream
     const stopBtn = this.container.querySelector('#btn-stop-stream');
     if (stopBtn) {
       stopBtn.addEventListener('click', () => {
@@ -506,63 +627,11 @@ export class ChatArea {
         store.setStreaming(false);
       });
     }
-
-    // Citation Pill Click -> Opens Deep Source Inspector
-    this.container.querySelectorAll('.citation-pill').forEach((pill) => {
-      pill.addEventListener('click', () => {
-        const sourceId = pill.dataset.sourceId;
-        const activeChat = store.getActiveChat();
-        let foundSource = null;
-        if (activeChat) {
-          for (const msg of activeChat.messages) {
-            if (msg.sources) {
-              foundSource = msg.sources.find((s) => s.id === sourceId);
-              if (foundSource) break;
-            }
-          }
-        }
-        if (foundSource && this.onOpenSource) {
-          this.onOpenSource(foundSource);
-        }
-      });
-    });
-
-    // Copy Message Text
-    this.container.querySelectorAll('.btn-copy-msg').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const text = btn.dataset.text;
-        navigator.clipboard.writeText(text);
-        btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-        setTimeout(() => {
-          btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
-        }, 1800);
-      });
-    });
-
-    // Text to Speech
-    this.container.querySelectorAll('.btn-tts-msg').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const text = btn.dataset.text;
-        this.speakText(text);
-      });
-    });
-
-    // Copy Code Buttons inside code blocks
-    this.container.querySelectorAll('.btn-copy-code').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const pre = btn.closest('.code-block-wrap').querySelector('pre');
-        if (pre) {
-          navigator.clipboard.writeText(pre.innerText);
-          btn.innerText = 'Copied!';
-          setTimeout(() => (btn.innerText = 'Copy code'), 2000);
-        }
-      });
-    });
   }
 
   updateTextareaHeight(textarea) {
     textarea.style.height = 'auto';
-    textarea.style.height = `${Math.min(textarea.scrollHeight, 200)}px`;
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 180)}px`;
   }
 
   updateSendButtonState() {
@@ -584,26 +653,17 @@ export class ChatArea {
 
   async handleFileUpload(fileList) {
     if (!fileList || fileList.length === 0) return;
-
     for (const file of Array.from(fileList)) {
       const attId = 'att-' + Date.now() + '-' + Math.random().toString(36).substr(2, 4);
-      const attachmentItem = {
+      store.addAttachment({
         id: attId,
         name: file.name,
         type: file.type,
         size: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
-        progress: 15,
-        fileObj: file
-      };
-
-      store.addAttachment(attachmentItem);
-
-      // Upload via api with progress
-      await api.uploadFile(file, (progress) => {
-        store.updateAttachmentProgress(attId, progress);
+        progress: 100
       });
+      await api.uploadFile(file);
     }
-
     this.updateSendButtonState();
   }
 
@@ -613,7 +673,6 @@ export class ChatArea {
 
     const text = textarea.value.trim();
     const attachments = [...store.getState().activeAttachments];
-
     if (!text && attachments.length === 0) return;
 
     let activeChat = store.getActiveChat();
@@ -622,39 +681,42 @@ export class ChatArea {
     }
 
     // Add User Message
-    const userMsg = {
+    store.addMessage(activeChat.id, {
       id: 'msg-' + Date.now(),
       sender: 'user',
       text: text,
       timestamp: Date.now(),
       attachments: attachments.map((a) => ({ name: a.name, type: a.type, size: a.size }))
-    };
-    store.addMessage(activeChat.id, userMsg);
+    });
 
-    // Reset input
     textarea.value = '';
     textarea.style.height = 'auto';
     store.clearAttachments();
     this.updateSendButtonState();
 
-    // Prepare Assistant Message Placeholder with typewriter
+    // Prepare Assistant Message Placeholder
     const assistantMsgId = 'msg-' + (Date.now() + 1);
-    const assistantMsg = {
+    this.activeTabs[assistantMsgId] = 'all';
+
+    store.addMessage(activeChat.id, {
       id: assistantMsgId,
       sender: 'assistant',
       text: '',
       timestamp: Date.now(),
       isStreaming: true,
-      sources: []
-    };
-    store.addMessage(activeChat.id, assistantMsg);
+      isThinking: true,
+      multimodal: {}
+    });
     store.setStreaming(true);
 
     this.abortController = new AbortController();
 
+    // Show transparent reflective light animation for ~500ms before chunk streaming starts
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
     try {
       const result = await api.queryVisionRAG({
-        prompt: text || 'Please inspect the uploaded media and provide multimodal grounding.',
+        prompt: text || 'Analyze uploaded visual assets.',
         attachments: attachments,
         settings: store.getState().settings,
         abortSignal: this.abortController.signal,
@@ -663,31 +725,27 @@ export class ChatArea {
           if (currentChat) {
             const currentMsg = currentChat.messages.find((m) => m.id === assistantMsgId);
             if (currentMsg) {
+              currentMsg.isThinking = false;
               currentMsg.text = accumulatedText;
               currentMsg.isStreaming = !isDone;
-              this.updateStreamingMessageDOM(assistantMsgId, accumulatedText, !isDone);
+              this.updateStreamingDOM(assistantMsgId, accumulatedText, !isDone);
             }
           }
         }
       });
 
-      // Finalize Assistant Message
       const finalizedChat = store.getActiveChat();
       if (finalizedChat) {
         const currentMsg = finalizedChat.messages.find((m) => m.id === assistantMsgId);
         if (currentMsg) {
+          currentMsg.isThinking = false;
           currentMsg.text = result.text;
-          currentMsg.sources = result.sources;
+          currentMsg.multimodal = result.multimodal;
           currentMsg.isStreaming = false;
         }
       }
-
-      // Auto read if enabled in settings
-      if (store.getState().settings.autoSpeak) {
-        this.speakText(result.text);
-      }
     } catch (err) {
-      console.error('Error during generation:', err);
+      console.error('Generation error:', err);
     } finally {
       store.setStreaming(false);
       this.abortController = null;
@@ -695,15 +753,19 @@ export class ChatArea {
     }
   }
 
-  updateStreamingMessageDOM(msgId, text, isStreaming) {
-    const inner = this.container.querySelector('#messages-inner');
-    if (!inner) return;
-
-    const row = inner.querySelector(`[data-msg-id="${msgId}"]`) || inner.lastElementChild;
+  updateStreamingDOM(msgId, text, isStreaming) {
+    const row = this.container.querySelector(`[data-msg-id="${msgId}"]`);
     if (row) {
-      const textEl = row.querySelector('.assistant-text');
-      if (textEl) {
-        textEl.innerHTML = `${this.formatMarkdown(text)}${isStreaming ? `<span class="streaming-cursor"></span>` : ''}`;
+      const panel = row.querySelector('.tab-content-panel');
+      if (panel) {
+        let textEl = panel.querySelector('.assistant-text');
+        if (!textEl) {
+          panel.innerHTML = `
+            <div class="assistant-text"></div>
+          `;
+          textEl = panel.querySelector('.assistant-text');
+        }
+        textEl.innerHTML = `${this.formatMarkdown(text)}${isStreaming ? `<span style="display:inline-block; width:6px; height:15px; background:#0d0d0d; margin-left:3px; animation:micPulse 0.8s infinite;"></span>` : ''}`;
       }
     }
     this.scrollToBottom();
@@ -716,99 +778,19 @@ export class ChatArea {
     }
   }
 
-  speakText(text) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-
-    // Clean markdown before speaking
-    const cleanText = text
-      .replace(/#+\s/g, '')
-      .replace(/\*+/g, '')
-      .replace(/`+/g, '')
-      .replace(/\[.*?\]\(.*?\)/g, '');
-
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    const settings = store.getState().settings;
-    utterance.rate = settings.speechRate || 1.0;
-    utterance.pitch = settings.speechPitch || 1.0;
-    window.speechSynthesis.speak(utterance);
-  }
-
   formatMarkdown(text) {
     if (!text) return '';
-
-    // Code blocks ```code```
-    text = text.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, (match, lang, code) => {
-      return `
-        <div class="code-block-wrap">
-          <div class="code-header-bar">
-            <span>${lang || 'code'}</span>
-            <button class="btn-copy-code">Copy code</button>
-          </div>
-          <pre><code>${this.escapeHtml(code.trim())}</code></pre>
-        </div>
-      `;
-    });
-
-    // Headers
-    text = text.replace(/^### (.*$)/gim, '<h3>$1</h3>');
-    text = text.replace(/^## (.*$)/gim, '<h3>$1</h3>');
-    text = text.replace(/^# (.*$)/gim, '<h3>$1</h3>');
-
-    // Bold & Italic
+    text = text.replace(/^### (.*$)/gim, '<h3 style="font-size:16px; font-weight:600; margin:10px 0 6px 0;">$1</h3>');
     text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-    // Inline Code
-    text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-
-    // Lists
-    text = text.replace(/^\s*-\s+(.*$)/gim, '<li>$1</li>');
-    text = text.replace(/^\s*\d+\.\s+(.*$)/gim, '<li>$1</li>');
-
-    // Wrap list items
-    text = text.replace(/(<li>.*<\/li>)/gms, '<ul>$1</ul>');
-
-    // Paragraphs
+    text = text.replace(/^\s*-\s+(.*$)/gim, '<li style="margin-bottom:4px;">$1</li>');
+    text = text.replace(/(<li.*<\/li>)/gms, '<ul style="padding-left:18px; margin-bottom:10px;">$1</ul>');
     const paras = text.split(/\n\n+/);
-    return paras
-      .map((p) => {
-        p = p.trim();
-        if (p.startsWith('<h3>') || p.startsWith('<ul>') || p.startsWith('<div class="code-block-wrap">')) {
-          return p;
-        }
-        return `<p>${p.replace(/\n/g, '<br/>')}</p>`;
-      })
-      .join('');
-  }
-
-  getFileIconSvg(type) {
-    if (!type) {
-      return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path></svg>`;
-    }
-    if (type.includes('pdf')) {
-      return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="15" x2="15" y2="15"></line></svg>`;
-    }
-    if (type.includes('image')) {
-      return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>`;
-    }
-    if (type.includes('video')) {
-      return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>`;
-    }
-    return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path></svg>`;
+    return paras.map((p) => (p.startsWith('<h') || p.startsWith('<ul') ? p : `<p style="margin-bottom:10px;">${p.replace(/\n/g, '<br/>')}</p>`)).join('');
   }
 
   escapeHtml(str) {
     if (!str) return '';
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  }
-
-  escapeAttr(str) {
-    if (!str) return '';
-    return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 }
