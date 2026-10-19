@@ -55,7 +55,21 @@ export class ApiService {
           body: JSON.stringify({ query: prompt, attachments: attachments.map((a) => a.name), settings }),
           signal: abortSignal
         });
-        if (response.ok && response.body) {
+        if (response.ok) {
+          const contentType = response.headers.get('content-type') || '';
+          if (contentType.includes('application/json')) {
+            const data = await response.json();
+            const words = (data.text || '').split(' ');
+            let accumulated = '';
+            for (let i = 0; i < words.length; i++) {
+              if (abortSignal && abortSignal.aborted) break;
+              accumulated += (i === 0 ? '' : ' ') + words[i];
+              if (onChunk) onChunk(accumulated, false);
+              await new Promise((r) => setTimeout(r, 14));
+            }
+            if (onChunk) onChunk(accumulated, true);
+            return { text: data.text, multimodal: data.multimodal || {} };
+          }
           const reader = response.body.getReader();
           const decoder = new TextDecoder();
           let fullText = '';
