@@ -1,4 +1,8 @@
-<img width="617" height="326" alt="Screenshot 2026-10-19 205004" src="https://github.com/user-attachments/assets/cbfb235f-fea8-4734-ab4c-dcc29f2bc859" />
+
+
+https://github.com/user-attachments/assets/8535e908-c836-4800-bf03-08896b49b57e
+
+
 <img width="1917" height="912" alt="Screenshot 2026-10-19 204857" src="https://github.com/user-attachments/assets/f1a2b69f-8f89-4cf6-a987-aa178c82b97e" />
 # VisionRAG - Multimodal Retrieval-Augmented Generation
 
