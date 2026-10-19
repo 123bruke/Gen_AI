@@ -1,3 +1,5 @@
+<img width="617" height="326" alt="Screenshot 2026-10-19 205004" src="https://github.com/user-attachments/assets/cbfb235f-fea8-4734-ab4c-dcc29f2bc859" />
+<img width="1917" height="912" alt="Screenshot 2026-10-19 204857" src="https://github.com/user-attachments/assets/f1a2b69f-8f89-4cf6-a987-aa178c82b97e" />
 # VisionRAG - Multimodal Retrieval-Augmented Generation
 
 [![CI Lint](https://github.com/visionrag/visionrag/actions/workflows/lint.yml/badge.svg)](.github/workflows/lint.yml)
