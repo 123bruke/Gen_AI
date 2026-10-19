@@ -1,0 +1,56 @@
+# VisionRAG Core Backend Requirements
+# Web Framework & API
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.0
+pydantic-settings>=2.2.0
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# RAG Framework & Orchestration
+langchain>=0.1.16
+langchain-community>=0.0.34
+langchain-core>=0.1.45
+langgraph>=0.0.38
+
+# Multimodal & Vision Processing
+torch>=2.2.0
+torchvision>=0.17.0
+transformers>=4.40.0
+open-clip-torch>=2.24.0
+sentence-transformers>=2.7.0
+timm>=0.9.16
+Pillow>=10.3.0
+
+# Document & PDF Parsing
+PyMuPDF>=1.24.1
+pdf2image>=1.17.0
+pytesseract>=0.3.10
+pdfplumber>=0.11.0
+
+# Video & Computer Vision
+opencv-python-headless>=4.9.0.80
+decord>=0.6.0
+moviepy>=1.0.3
+
+# Audio & Speech-to-Text
+openai-whisper>=20231117
+soundfile>=0.12.1
+
+# Vector Databases & Retrieval
+qdrant-client>=1.9.0
+chromadb>=0.5.0
+faiss-cpu>=1.8.0
+
+# Data & Numerical Utilities
+numpy>=1.26.0
+pandas>=2.2.0
+scikit-learn>=1.4.0
+
+# HTTP & Async Networking
+httpx>=0.27.0
+requests>=2.31.0
+websockets>=12.0
+python-dotenv>=1.0.1

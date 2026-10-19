@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VisionRAG - Multimodal Retrieval Augmented Generation" />
+    <title>VisionRAG - Multimodal AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <!-- Clean Minimalist Opening Animation: 2 Dots Moving Like Eyes -->
+    <div id="intro-splash" class="intro-splash" aria-label="VisionRAG Loading">
+      <div class="dots-eye-container">
+        <div class="eye-dot dot-left"></div>
+        <div class="eye-dot dot-right"></div>
+      </div>
+    </div>
+
+    <!-- Main Clean ChatGPT-Style Application Shell -->
+    <div id="app" class="app-container app-hidden">
+      <!-- Left Sidebar -->
+      <aside id="sidebar" class="sidebar"></aside>
+
+      <!-- Main Chat Area -->
+      <main id="main-content" class="main-content"></main>
+
+      <!-- Overlays and Modals -->
+      <div id="modal-container"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

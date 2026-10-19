@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VisionRAG - Multimodal Retrieval Augmented Generation for Documents, Images, and Videos" />
+    <title>VisionRAG - Multimodal AI Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-BKLpiKLZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D3x8WRQe.css">
+  </head>
+  <body>
+    <!-- Splash Screen with "O" and blinking eye -->
+    <div id="intro-splash" class="intro-splash" aria-label="VisionRAG Loading Animation">
+      <div class="splash-card">
+        <div class="splash-logo-container">
+          <!-- Outer 'O' Letter Structure -->
+          <div class="letter-o-ring">
+            <div class="ring-pulse"></div>
+            <!-- Eye Structure Inside 'O' -->
+            <div class="eye-enclosure">
+              <div class="eyelid eyelid-upper"></div>
+              <div class="eyeball">
+                <div class="iris">
+                  <div class="pupil"></div>
+                  <div class="iris-glint"></div>
+                  <div class="iris-scanner"></div>
+                </div>
+              </div>
+              <div class="eyelid eyelid-lower"></div>
+            </div>
+          </div>
+        </div>
+        <div class="splash-text">
+          <span class="brand-name">Vision<span class="accent-text">RAG</span></span>
+          <span class="brand-tagline">Multimodal Neural Intelligence</span>
+        </div>
+        <button id="skip-splash-btn" class="skip-splash-btn" title="Skip animation">Skip intro</button>
+      </div>
+    </div>
+
+    <!-- Main ChatGPT-style Application Shell -->
+    <div id="app" class="app-container app-hidden">
+      <!-- Left Sidebar -->
+      <aside id="sidebar" class="sidebar">
+        <!-- Sidebar content rendered by Sidebar.js -->
+      </aside>
+
+      <!-- Main Chat Area -->
+      <main id="main-content" class="main-content">
+        <!-- Main chat content rendered by ChatArea.js -->
+      </main>
+
+      <!-- Overlays and Modals -->
+      <div id="modal-container"></div>
+    </div>
+
+  </body>
+</html>
