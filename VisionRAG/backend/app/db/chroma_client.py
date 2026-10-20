@@ -97,8 +97,12 @@ class LocalVectorCollection:
 class ChromaVectorStore:
     """Manages persistent multimodal vector collections in ChromaDB with local fallback."""
 
-    def __init__(self, persist_dir: str = "storage/chromadb"):
-        self.persist_dir = persist_dir
+    def __init__(self, persist_dir: Optional[str] = None):
+        if persist_dir is None:
+            project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+            self.persist_dir = os.path.join(project_root, "storage", "chromadb")
+        else:
+            self.persist_dir = persist_dir
         os.makedirs(self.persist_dir, exist_ok=True)
         self.client = None
         self.collection = None

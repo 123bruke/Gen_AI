@@ -11,8 +11,12 @@ import datetime
 class MetadataReferenceStore:
     """Relational reference store for website links, downloaded media, and change-detection checksums."""
 
-    def __init__(self, db_path: str = "storage/metadata.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: Optional[str] = None):
+        if db_path is None:
+            project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+            self.db_path = os.path.join(project_root, "storage", "metadata.db")
+        else:
+            self.db_path = db_path
         os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
         self._init_db()
 

@@ -18,3 +18,13 @@ package-lock.json
 .venv
 env/
 venv/
+
+# Database files & local PostgreSQL cluster data
+storage/
+**/storage/
+**/pg_data/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.dat

@@ -1,4 +1,4 @@
-// VisionRAG - Main Application Entrypoint
+// VisionRAG - Main Application Entrypoint with PostgreSQL Integration
 
 import { IntroSplash } from './components/IntroSplash.js';
 import { Sidebar } from './components/Sidebar.js';
@@ -8,13 +8,18 @@ import { VideoModal } from './components/VideoModal.js';
 import { SettingsModal } from './components/SettingsModal.js';
 import { SourceModal } from './components/SourceModal.js';
 import { AuthModal } from './components/AuthModal.js';
+import { DatabaseModal } from './components/DatabaseModal.js';
 import { eyeTracker } from './utils/eyeTracker.js';
 import { store } from './store/state.js';
+import { api } from './services/api.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const modalContainer = document.getElementById('modal-container');
   const sidebarContainer = document.getElementById('sidebar');
   const mainContentContainer = document.getElementById('main-content');
+
+  // Check active session & verify JWT with PostgreSQL on startup
+  store.checkAuthSession(api);
 
   // Initialize real-time eye cursor tracking
   eyeTracker.init();
@@ -28,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoModal = new VideoModal(modalContainer);
   const sourceModal = new SourceModal(modalContainer);
   const authModal = new AuthModal(modalContainer);
+  const databaseModal = new DatabaseModal(modalContainer);
   const settingsModal = new SettingsModal(modalContainer, {
     onReplayIntro: () => splash.replay()
   });
@@ -36,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebar = new Sidebar(sidebarContainer, {
     onOpenSettings: () => settingsModal.open(),
     onReplayIntro: () => splash.replay(),
-    onOpenAuth: (mode) => authModal.open(mode)
+    onOpenAuth: (mode) => authModal.open(mode),
+    onOpenDbStorage: (tab) => databaseModal.open(tab)
   });
   sidebar.render();
 
@@ -45,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     onOpenVoice: () => voiceModal.open(),
     onOpenVideo: () => videoModal.open(),
     onOpenSource: (source) => sourceModal.open(source),
-    onOpenSettings: () => settingsModal.open()
+    onOpenSettings: () => settingsModal.open(),
+    onOpenDbStorage: (tab) => databaseModal.open(tab)
   });
   chatArea.render();
 
@@ -63,8 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
       settingsModal.close();
       sourceModal.close();
       authModal.close();
+      databaseModal.close();
     }
   });
 
-  console.log('VisionRAG Multimodal Interface Initialized Successfully.');
+  console.log('VisionRAG Multimodal Interface Initialized with PostgreSQL 16 & JWT Auth.');
 });

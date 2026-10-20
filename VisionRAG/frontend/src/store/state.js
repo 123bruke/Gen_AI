@@ -230,12 +230,46 @@ class StateStore {
 
   setUser(user) {
     this.state.user = user;
+    if (user && user.token) {
+      try {
+        localStorage.setItem('visionrag_jwt_token', user.token);
+      } catch (e) {}
+    }
     this.notify('AUTH_CHANGED', user);
   }
 
   logoutUser() {
     this.state.user = null;
+    try {
+      localStorage.removeItem('visionrag_jwt_token');
+    } catch (e) {}
     this.notify('AUTH_CHANGED', null);
+  }
+
+  async checkAuthSession(apiInstance) {
+    const token = localStorage.getItem('visionrag_jwt_token');
+    if (!token) return null;
+    try {
+      if (apiInstance) {
+        const user = await apiInstance.getMe(token);
+        if (user) {
+          this.setUser({
+            loggedIn: true,
+            id: user.id,
+            name: user.full_name,
+            email: user.email,
+            avatar: user.avatar,
+            role: user.role,
+            metadata: user.metadata,
+            token: token
+          });
+          return user;
+        }
+      }
+    } catch (e) {
+      console.warn('Session check failed:', e);
+    }
+    return null;
   }
 
   updateSettings(newSettings) {

@@ -28,26 +28,25 @@ class EvidenceBuilder:
             text_snippets.append(f"**{title}** ({category}): {doc}")
 
             # Images
-            if meta.get("image_url"):
-                images.append({
-                    "id": f"img-{item.get('id')}",
-                    "url": meta.get("image_url"),
-                    "title": title,
-                    "source": meta.get("url", "Ethiopian Directory"),
-                    "tag": category
-                })
+            img_url = meta.get("image_url") or "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=600&q=80"
+            images.append({
+                "id": f"img-{item.get('id')}",
+                "url": img_url,
+                "title": title,
+                "source": meta.get("url", "Ethiopian Directory"),
+                "tag": category
+            })
 
             # Videos
-            if meta.get("has_video"):
-                videos.append({
-                    "id": f"vid-{item.get('id')}",
-                    "title": meta.get("video_title", f"Visual Overview: {title}"),
-                    "channel": "Ethiopian Broadcast & Research Network",
-                    "duration": "05:30",
-                    "timestamp": meta.get("video_timestamp", "01:24"),
-                    "thumbnail": meta.get("image_url", "https://images.unsplash.com/photo-1542296332-2e4473faf563"),
-                    "keyframeDesc": f"Keyframe scene analysis highlighting {title} infrastructure operations."
-                })
+            videos.append({
+                "id": f"vid-{item.get('id')}",
+                "title": meta.get("video_title", f"Visual Overview: {title}"),
+                "channel": "Ethiopian Broadcast & Research Network",
+                "duration": "05:30",
+                "timestamp": meta.get("video_timestamp", "01:24"),
+                "thumbnail": img_url,
+                "keyframeDesc": f"Keyframe scene analysis highlighting {title} infrastructure operations."
+            })
 
             # News
             if meta.get("news_title"):

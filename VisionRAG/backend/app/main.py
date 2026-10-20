@@ -1,12 +1,12 @@
 """
 VisionRAG Production FastAPI Application
-Multimodal Agentic AI Engine with ChromaDB, Redis, YOLOv8, and Cross-Encoder Reranking
+Multimodal Agentic AI Engine with PostgreSQL, Dedicated Simple DB Logging, ChromaDB, Redis, and YOLOv8
 """
 
 import os
 import time
 from typing import Dict, Any, List, Optional
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, BackgroundTasks, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -14,13 +14,21 @@ from app.agents.orchestrator import agent_orchestrator
 from app.db.chroma_client import chroma_client
 from app.db.redis_cache import redis_cache
 from app.db.metadata_store import metadata_store
+from app.db.postgres_db import postgres_manager
+from app.db.log_db import log_database, app_logger
 from app.storage.ethiopian_crawler import ethiopian_crawler
 from app.vision.yolo_detector import yolo_detector
 from app.vision.audio_transcriber import audio_service
 
+# Routers
+from app.api.routes.auth import router as auth_router
+from app.api.routes.uploads import router as uploads_router
+from app.api.routes.chat import router as chat_router
+from app.api.routes.progress import router as progress_router
+
 app = FastAPI(
     title="VisionRAG Multimodal Agentic AI API",
-    description="Infrastructural Multimodal RAG with Autonomous Agentic Tool Use, Ethiopian Corpus, and Dual DB Layer",
+    description="Multimodal RAG with PostgreSQL Account & File Tracking, Dedicated Simple DB Logging, and Ethiopian Corpus",
     version="1.0.0"
 )
 
@@ -33,16 +41,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Mount Routers
+app.include_router(auth_router)
+app.include_router(uploads_router)
+app.include_router(chat_router)
+app.include_router(progress_router)
+
 UPLOAD_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "storage", "uploads"))
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-class ChatRequest(BaseModel):
-    query: str
-    attachments: Optional[List[Any]] = []
-    settings: Optional[Dict[str, Any]] = {}
-
 class AudioSynthesizeRequest(BaseModel):
     text: str
+
+@app.on_event("startup")
+def on_startup():
+    db_status = postgres_manager.get_status()
+    app_logger.info(
+        f"VisionRAG API Started. Primary Database: {db_status.get('db_type', 'unknown')}",
+        extra={
+            "event_type": "SERVER_STARTUP",
+            "details": db_status
+        }
+    )
 
 @app.get("/")
 def read_root():
@@ -50,7 +70,8 @@ def read_root():
         "system": "VisionRAG Multimodal Agentic AI",
         "status": "online",
         "version": "1.0.0",
-        "docs_url": "/docs"
+        "docs_url": "/docs",
+        "database": postgres_manager.get_status()
     }
 
 @app.get("/health")
@@ -59,11 +80,29 @@ def health_check():
     redis_health = redis_cache.is_healthy()
     yolo_health = yolo_detector.is_healthy()
     doc_count = metadata_store.count()
+    db_status = postgres_manager.get_status()
+    log_count = log_database.count()
 
     return {
         "status": "healthy",
         "timestamp": time.time(),
         "services": {
+            "primary_database": {
+                "type": db_status.get("db_type"),
+                "is_postgres": db_status.get("is_postgres", False),
+                "healthy": db_status.get("healthy", False),
+                "users_count": db_status.get("user_count", 0),
+                "sessions_count": db_status.get("session_count", 0),
+                "uploaded_files_count": db_status.get("uploaded_files_count", 0),
+                "conversations_count": db_status.get("conversations_count", 0),
+                "messages_count": db_status.get("messages_count", 0),
+                "task_progress_count": db_status.get("task_progress_count", 0)
+            },
+            "progress_logging_database": {
+                "section": "separate_simple_db",
+                "healthy": True,
+                "total_logged_progress_events": log_count
+            },
             "chromadb": {
                 "status": "connected" if chroma_health else "local_fallback",
                 "healthy": True
@@ -83,54 +122,47 @@ def health_check():
         }
     }
 
-@app.post("/api/chat")
-async def chat_endpoint(req: ChatRequest):
+@app.get("/api/db/status")
+def get_db_status():
     """
-    Primary Agentic Chat Endpoint.
-    Coordinates tools, YOLO vision analysis, hybrid dense+sparse retrieval,
-    neural cross-encoder reranking, and Google-style divided multimodal response.
+    Returns current status of primary database (PostgreSQL vs SQLite)
+    and count of accounts, sessions, files, conversations, messages, and progress stored.
     """
-    if not req.query.strip() and not req.attachments:
-        raise HTTPException(status_code=400, detail="Query or attachments required")
+    return postgres_manager.get_status()
 
-    result = agent_orchestrator.plan_and_execute(
-        prompt=req.query,
-        attachments=req.attachments
+@app.get("/api/logs/progress")
+def get_progress_logs(
+    limit: int = Query(50, ge=1, le=200),
+    level: Optional[str] = None,
+    event_type: Optional[str] = None,
+    user_id: Optional[str] = None
+):
+    """
+    Retrieves progress and audit logs captured via Python's 'logging' library
+    stored in the separate simple DB section.
+    """
+    logs = log_database.get_logs(
+        limit=limit,
+        level=level,
+        event_type=event_type,
+        user_id=user_id
     )
-    return result
-
-@app.post("/api/uploads")
-async def upload_endpoint(file: UploadFile = File(...)):
-    """
-    Handles multimodal uploads (images, videos, PDF documents)
-    """
-    try:
-        content = await file.read()
-        file_path = os.path.join(UPLOAD_DIR, file.filename)
-        with open(file_path, "wb") as f:
-            f.write(content)
-
-        file_size_mb = len(content) / (1024 * 1024)
-
-        return {
-            "success": True,
-            "fileId": f"f-{int(time.time() * 1000)}",
-            "filename": file.filename,
-            "fileType": file.content_type or "application/octet-stream",
-            "size": f"{file_size_mb:.2f} MB",
-            "path": file_path
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
+    return {
+        "count": len(logs),
+        "total_records": log_database.count(),
+        "logs": logs
+    }
 
 @app.post("/api/ingest/ethiopia")
 def trigger_ethiopian_crawl(background_tasks: BackgroundTasks):
     """
     Triggers web crawling, HTTP ETag/MD5 change detection, and multimodal ingestion
-    for Ethiopian enterprise corpus (Ethiopian Airlines, Ethio Telecom/Telebirr, CBE, Axum/Lalibela).
+    for Ethiopian enterprise corpus.
     """
     def run_crawl():
+        app_logger.info("Ethiopian crawl background task triggered.", extra={"event_type": "CRAWL_STARTED"})
         ethiopian_crawler.seed_ethiopian_corpus()
+        app_logger.info("Ethiopian crawl background task finished.", extra={"event_type": "CRAWL_FINISHED"})
 
     background_tasks.add_task(run_crawl)
     return {

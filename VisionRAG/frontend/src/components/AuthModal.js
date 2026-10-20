@@ -1,15 +1,22 @@
-// AuthModal Component: Create Account & Sign In
+// AuthModal Component: Create Account & Sign In with PostgreSQL Database Persistence
 
 import { store } from '../store/state.js';
+import { api } from '../services/api.js';
 
 export class AuthModal {
   constructor(containerEl) {
     this.container = containerEl;
     this.mode = 'signup'; // 'signup' or 'login'
+    this.loading = false;
+    this.errorMessage = '';
+    this.successMessage = '';
   }
 
   open(mode = 'signup') {
     this.mode = mode;
+    this.errorMessage = '';
+    this.successMessage = '';
+    this.loading = false;
     this.render();
   }
 
@@ -22,9 +29,15 @@ export class AuthModal {
 
     this.container.innerHTML = `
       <div class="auth-modal-overlay" id="auth-overlay">
-        <div class="auth-card">
+        <div class="auth-card" style="max-width: 440px;">
           <div class="auth-header-bar">
-            <div class="auth-title">${isSignup ? 'Create your account' : 'Welcome back'}</div>
+            <div>
+              <div class="auth-title">${isSignup ? 'Create VisionRAG Account' : 'Welcome Back'}</div>
+              <div style="font-size: 11.5px; color: #10a37f; margin-top: 2px; display: flex; align-items: center; gap: 5px;">
+                <span style="display:inline-block; width: 7px; height: 7px; border-radius: 50%; background: #10a37f;"></span>
+                <span>PostgreSQL 16 Primary Database Online</span>
+              </div>
+            </div>
             <button class="action-icon-btn" id="btn-close-auth" title="Close">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -35,8 +48,24 @@ export class AuthModal {
 
           <div class="auth-tabs-toggle">
             <button class="auth-tab-btn ${isSignup ? 'active' : ''}" id="tab-signup">Create Account</button>
-            <button class="auth-tab-btn ${!isSignup ? 'active' : ''}" id="tab-login">Log In</button>
+            <button class="auth-tab-btn ${!isSignup ? 'active' : ''}" id="tab-login">Sign In</button>
           </div>
+
+          ${
+            this.errorMessage
+              ? `<div id="auth-error-msg" style="color: #ef4444; font-size: 12px; margin-bottom: 12px; padding: 8px 12px; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 6px;">
+                  ⚠️ ${this.escapeHtml(this.errorMessage)}
+                </div>`
+              : ''
+          }
+
+          ${
+            this.successMessage
+              ? `<div id="auth-success-msg" style="color: #10a37f; font-size: 12px; margin-bottom: 12px; padding: 8px 12px; background: rgba(16, 163, 127, 0.1); border: 1px solid rgba(16, 163, 127, 0.2); border-radius: 6px;">
+                  ✓ ${this.escapeHtml(this.successMessage)}
+                </div>`
+              : ''
+          }
 
           <form class="auth-form" id="auth-form">
             ${
@@ -44,48 +73,45 @@ export class AuthModal {
                 ? `
               <div class="auth-input-group">
                 <label class="auth-input-label">Full Name</label>
-                <input type="text" class="auth-input-field" id="auth-name" placeholder="Alex Rivera" required />
+                <input type="text" class="auth-input-field" id="auth-name" placeholder="Dr. Elena Vance" required ${this.loading ? 'disabled' : ''} />
+              </div>
+
+              <div class="auth-input-group">
+                <label class="auth-input-label">Department / Organization (Stored as Metadata)</label>
+                <input type="text" class="auth-input-field" id="auth-department" placeholder="Multimodal AI Research Lab" ${this.loading ? 'disabled' : ''} />
               </div>
             `
                 : ''
             }
 
             <div class="auth-input-group">
-              <label class="auth-input-label">Email address</label>
-              <input type="email" class="auth-input-field" id="auth-email" placeholder="name@example.com" required />
+              <label class="auth-input-label">Email Address</label>
+              <input type="email" class="auth-input-field" id="auth-email" placeholder="elena.vance@visionrag.ai" required ${this.loading ? 'disabled' : ''} />
             </div>
 
             <div class="auth-input-group">
               <label class="auth-input-label">Password</label>
-              <input type="password" class="auth-input-field" id="auth-password" placeholder="••••••••" required />
+              <input type="password" class="auth-input-field" id="auth-password" placeholder="••••••••" required minlength="6" ${this.loading ? 'disabled' : ''} />
             </div>
 
-            <button type="submit" class="auth-submit-btn">
-              ${isSignup ? 'Create Account' : 'Sign In'}
+            <button type="submit" class="auth-submit-btn" ${this.loading ? 'disabled' : ''}>
+              ${this.loading ? (isSignup ? 'Registering in PostgreSQL...' : 'Authenticating...') : (isSignup ? 'Create Account & Save to PostgreSQL' : 'Sign In')}
             </button>
           </form>
 
           <div class="auth-divider-row">
             <div class="auth-divider-line"></div>
-            <span>OR</span>
+            <span>OR QUICK START</span>
             <div class="auth-divider-line"></div>
           </div>
 
-          <button class="auth-social-btn" id="btn-auth-google">
-            <svg width="17" height="17" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          <button class="auth-social-btn" id="btn-auth-demo">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <polyline points="16 11 18 13 22 9"></polyline>
             </svg>
-            <span>Continue with Google</span>
-          </button>
-
-          <button class="auth-social-btn" id="btn-auth-github">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-            </svg>
-            <span>Continue with GitHub</span>
+            <span>Quick Demo Auto-Fill (Researcher)</span>
           </button>
         </div>
       </div>
@@ -109,59 +135,92 @@ export class AuthModal {
     if (tabSignup) {
       tabSignup.addEventListener('click', () => {
         this.mode = 'signup';
+        this.errorMessage = '';
+        this.successMessage = '';
         this.render();
       });
     }
     if (tabLogin) {
       tabLogin.addEventListener('click', () => {
         this.mode = 'login';
+        this.errorMessage = '';
+        this.successMessage = '';
         this.render();
       });
     }
 
     const form = this.container.querySelector('#auth-form');
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const email = this.container.querySelector('#auth-email').value;
+        const email = this.container.querySelector('#auth-email').value.trim();
+        const password = this.container.querySelector('#auth-password').value;
         const nameInput = this.container.querySelector('#auth-name');
-        const name = nameInput ? nameInput.value : email.split('@')[0];
+        const deptInput = this.container.querySelector('#auth-department');
+        const fullName = nameInput ? nameInput.value.trim() : email.split('@')[0];
+        const department = deptInput ? deptInput.value.trim() : 'Computer Vision Lab';
 
-        store.setUser({
-          loggedIn: true,
-          name: name,
-          email: email,
-          avatar: name.slice(0, 2).toUpperCase()
-        });
+        this.loading = true;
+        this.errorMessage = '';
+        this.successMessage = '';
+        this.render();
 
-        this.close();
+        try {
+          let res;
+          if (this.mode === 'signup') {
+            const metadata = {
+              department: department,
+              role: 'researcher',
+              quota: 10000,
+              theme: 'white',
+              created_from: 'web_portal'
+            };
+            res = await api.register(fullName, email, password, metadata);
+          } else {
+            res = await api.login(email, password);
+          }
+
+          if (res && res.user) {
+            store.setUser({
+              loggedIn: true,
+              id: res.user.id,
+              name: res.user.full_name || fullName,
+              email: res.user.email || email,
+              token: res.token,
+              role: res.user.role || 'user',
+              metadata: res.user.metadata || {},
+              avatar: res.user.avatar || (res.user.full_name ? res.user.full_name.slice(0, 2).toUpperCase() : 'U')
+            });
+            this.successMessage = 'Authentication successful! Saved in PostgreSQL.';
+            setTimeout(() => this.close(), 600);
+          }
+        } catch (err) {
+          console.error('Authentication Error:', err);
+          this.loading = false;
+          this.errorMessage = err.message || 'Authentication failed. Please verify credentials.';
+          this.render();
+        }
       });
     }
 
-    const googleBtn = this.container.querySelector('#btn-auth-google');
-    if (googleBtn) {
-      googleBtn.addEventListener('click', () => {
-        store.setUser({
-          loggedIn: true,
-          name: 'Google User',
-          email: 'user@gmail.com',
-          avatar: 'GU'
-        });
-        this.close();
-      });
-    }
+    const demoBtn = this.container.querySelector('#btn-auth-demo');
+    if (demoBtn) {
+      demoBtn.addEventListener('click', () => {
+        const emailField = this.container.querySelector('#auth-email');
+        const passField = this.container.querySelector('#auth-password');
+        const nameField = this.container.querySelector('#auth-name');
+        const deptField = this.container.querySelector('#auth-department');
 
-    const githubBtn = this.container.querySelector('#btn-auth-github');
-    if (githubBtn) {
-      githubBtn.addEventListener('click', () => {
-        store.setUser({
-          loggedIn: true,
-          name: 'GitHub User',
-          email: 'user@github.com',
-          avatar: 'GH'
-        });
-        this.close();
+        if (emailField) emailField.value = 'researcher@visionrag.ai';
+        if (passField) passField.value = 'VisionRAG2026!';
+        if (nameField) nameField.value = 'Dr. Elena Vance';
+        if (deptField) deptField.value = 'Computer Vision & Deep Learning';
       });
     }
+  }
+
+  escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 }

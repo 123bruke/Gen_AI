@@ -5,12 +5,13 @@ import { api } from '../services/api.js';
 import { eyeTracker } from '../utils/eyeTracker.js';
 
 export class ChatArea {
-  constructor(containerEl, { onOpenVoice, onOpenVideo, onOpenSource, onOpenSettings }) {
+  constructor(containerEl, { onOpenVoice, onOpenVideo, onOpenSource, onOpenSettings, onOpenDbStorage }) {
     this.container = containerEl;
     this.onOpenVoice = onOpenVoice;
     this.onOpenVideo = onOpenVideo;
     this.onOpenSource = onOpenSource;
     this.onOpenSettings = onOpenSettings;
+    this.onOpenDbStorage = onOpenDbStorage;
 
     this.abortController = null;
     this.showPlusMenu = false;
@@ -43,6 +44,11 @@ export class ChatArea {
           <button class="model-pill-btn" id="btn-select-model" style="display: flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 13px; font-weight: 500;">
             <span>VisionRAG v2.5</span>
             <span style="font-size: 10px; background: #e6f7f2; color: #10a37f; padding: 1px 5px; border-radius: 4px; font-weight: 600;">Omni</span>
+          </button>
+
+          <button class="model-pill-btn" id="btn-header-postgres" title="PostgreSQL Database & Stored Files" style="display: flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid rgba(16, 163, 127, 0.3); background: rgba(16, 163, 127, 0.08); border-radius: var(--radius-pill); font-size: 12.5px; font-weight: 500; color: #10a37f; cursor: pointer;">
+            <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #10a37f;"></span>
+            <span>PostgreSQL 16 DB</span>
           </button>
         </div>
 
@@ -97,6 +103,10 @@ export class ChatArea {
                 <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 4px 8px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border-medium);">
                   <span>${this.escapeHtml(att.name)}</span>
                   <span style="font-size: 10px; color: var(--text-muted);">(${att.size})</span>
+                  ${att.progress !== undefined && att.progress < 100
+                    ? `<span style="font-size: 10px; color: #10a37f; font-weight:600;">${att.progress}%</span>`
+                    : `<span style="font-size: 10px; color: #10a37f; font-weight:600;">✓ In PostgreSQL</span>`
+                  }
                   <button class="btn-remove-attachment" data-att-id="${att.id}" style="color: var(--text-muted); cursor: pointer;">×</button>
                 </div>
               `
@@ -509,6 +519,9 @@ export class ChatArea {
     const modelBtn = this.container.querySelector('#btn-select-model');
     if (modelBtn && this.onOpenSettings) modelBtn.addEventListener('click', () => this.onOpenSettings());
 
+    const postgresBtn = this.container.querySelector('#btn-header-postgres');
+    if (postgresBtn && this.onOpenDbStorage) postgresBtn.addEventListener('click', () => this.onOpenDbStorage());
+
     // Plus (+) Attachment Menu Toggle
     const togglePlusBtn = this.container.querySelector('#btn-toggle-plus');
     const fileInput = this.container.querySelector('#file-upload-input');
@@ -653,6 +666,8 @@ export class ChatArea {
 
   async handleFileUpload(fileList) {
     if (!fileList || fileList.length === 0) return;
+    const currentUser = store.getState().user;
+    const userId = currentUser && currentUser.loggedIn ? currentUser.id : null;
     for (const file of Array.from(fileList)) {
       const attId = 'att-' + Date.now() + '-' + Math.random().toString(36).substr(2, 4);
       store.addAttachment({
@@ -660,9 +675,17 @@ export class ChatArea {
         name: file.name,
         type: file.type,
         size: (file.size / (1024 * 1024)).toFixed(2) + ' MB',
-        progress: 100
+        progress: 10
       });
-      await api.uploadFile(file);
+      const res = await api.uploadFile(
+        file,
+        (progress) => store.updateAttachmentProgress(attId, progress),
+        userId,
+        true
+      );
+      if (res && res.fileId) {
+        store.updateAttachmentProgress(attId, 100);
+      }
     }
     this.updateSendButtonState();
   }
@@ -717,6 +740,7 @@ export class ChatArea {
     try {
       const result = await api.queryVisionRAG({
         prompt: text || 'Analyze uploaded visual assets.',
+        chatId: activeChat.id,
         attachments: attachments,
         settings: store.getState().settings,
         abortSignal: this.abortController.signal,

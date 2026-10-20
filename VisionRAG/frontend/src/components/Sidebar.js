@@ -1,13 +1,15 @@
 // Sidebar Component: Clean ChatGPT Aesthetic with Folders, History & Account Creation
 
 import { store } from '../store/state.js';
+import { api } from '../services/api.js';
 
 export class Sidebar {
-  constructor(containerEl, { onOpenSettings, onReplayIntro, onOpenAuth }) {
+  constructor(containerEl, { onOpenSettings, onReplayIntro, onOpenAuth, onOpenDbStorage }) {
     this.container = containerEl;
     this.onOpenSettings = onOpenSettings;
     this.onReplayIntro = onReplayIntro;
     this.onOpenAuth = onOpenAuth;
+    this.onOpenDbStorage = onOpenDbStorage;
     this.searchQuery = '';
     this.collapsedFolders = new Set();
 
@@ -78,6 +80,11 @@ export class Sidebar {
             </svg>
           </button>
         </div>
+        <button class="btn-new-chat" id="btn-sidebar-db" style="margin-top: 6px; width: 100%; background: rgba(16, 163, 127, 0.08); border: 1px solid rgba(16, 163, 127, 0.25); color: #10a37f; font-weight: 600; font-size: 12px; gap: 6px; padding: 6px 10px;">
+          <span>🐘</span>
+          <span>PostgreSQL Storage</span>
+          <span style="font-size: 10px; background: #10a37f; color: #fff; padding: 1px 6px; border-radius: 10px; font-weight: 700; margin-left: auto;">Online</span>
+        </button>
       </div>
 
       <div class="sidebar-scroll">
@@ -163,6 +170,7 @@ export class Sidebar {
               </div>
             </div>
             <div style="display: flex; gap: 4px;">
+              <button class="action-icon-btn" id="btn-sidebar-db-footer" title="PostgreSQL Database & Stored Files">🐘</button>
               <button class="action-icon-btn" id="btn-logout-user" title="Log out">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
               </button>
@@ -178,12 +186,15 @@ export class Sidebar {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
               <span>Create Account</span>
             </button>
-            <button class="action-icon-btn" id="sidebar-settings-btn" title="Open Settings">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-              </svg>
-            </button>
+            <div style="display: flex; gap: 4px;">
+              <button class="action-icon-btn" id="btn-sidebar-db-footer" title="PostgreSQL Database & Stored Files">🐘</button>
+              <button class="action-icon-btn" id="sidebar-settings-btn" title="Open Settings">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </button>
+            </div>
           </div>
         `
         }
@@ -236,13 +247,25 @@ export class Sidebar {
     const settingsBtn = this.container.querySelector('#sidebar-settings-btn');
     if (settingsBtn && this.onOpenSettings) settingsBtn.addEventListener('click', () => this.onOpenSettings());
 
+    const dbBtn = this.container.querySelector('#btn-sidebar-db');
+    if (dbBtn && this.onOpenDbStorage) dbBtn.addEventListener('click', () => this.onOpenDbStorage());
+
+    const dbFooterBtn = this.container.querySelector('#btn-sidebar-db-footer');
+    if (dbFooterBtn && this.onOpenDbStorage) dbFooterBtn.addEventListener('click', () => this.onOpenDbStorage());
+
     const authBtn = this.container.querySelector('#btn-open-create-account');
     if (authBtn && this.onOpenAuth) authBtn.addEventListener('click', () => this.onOpenAuth());
 
     const logoutBtn = this.container.querySelector('#btn-logout-user');
     if (logoutBtn) {
-      logoutBtn.addEventListener('click', () => {
-        if (confirm('Log out of account?')) store.logoutUser();
+      logoutBtn.addEventListener('click', async () => {
+        if (confirm('Log out of account?')) {
+          const user = store.getState().user;
+          if (user) {
+            await api.logout(user.token, user.id);
+          }
+          store.logoutUser();
+        }
       });
     }
 

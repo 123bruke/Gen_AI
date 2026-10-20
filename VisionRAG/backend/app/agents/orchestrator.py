@@ -47,8 +47,14 @@ class AgenticOrchestrator:
         has_images = False
         if attachments:
             for att in attachments:
-                att_type = att.get("type", "")
-                if "image" in att_type or att.get("name", "").lower().endswith((".png", ".jpg", ".jpeg")):
+                if isinstance(att, dict):
+                    att_type = att.get("type", "")
+                    att_name = att.get("name", "").lower()
+                else:
+                    att_type = ""
+                    att_name = str(att).lower()
+
+                if "image" in att_type or att_name.endswith((".png", ".jpg", ".jpeg", ".webp")):
                     has_images = True
                     break
 
@@ -69,7 +75,7 @@ class AgenticOrchestrator:
         executed_tools.append("chromadb_hybrid_retriever")
 
         # 5. Google Maps Geolocation Tool
-        map_triggers = ["where", "location", "map", "place", "headquarters", "airport", "city", "addis", "lalibela", "axum", "gondar"]
+        map_triggers = ["where", "location", "map", "place", "headquarters", "airport", "city", "addis", "lalibela", "axum", "gondar", "hub"]
         if any(trig in effective_query.lower() for trig in map_triggers) or retrieved_items:
             maps_res = self.tools["google_maps"].execute(effective_query)
             executed_tools.append("google_maps")

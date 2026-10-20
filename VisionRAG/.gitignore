@@ -22,6 +22,12 @@ venv/
 *.pt
 *.bin
 
-# Temporary uploads
-storage/uploads/*
-!storage/uploads/.gitkeep
+# Database cluster & local storage
+storage/
+**/storage/
+**/pg_data/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.dat
