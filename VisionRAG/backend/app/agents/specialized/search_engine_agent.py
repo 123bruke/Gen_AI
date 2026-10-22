@@ -9,7 +9,10 @@ import os
 import requests
 import urllib.parse
 import xml.etree.ElementTree as ET
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
 import re
 
 from app.db.log_db import app_logger
@@ -317,20 +320,30 @@ class GoogleSearchEngineAgent:
         try:
             resp = requests.get(url, headers=HEADERS, timeout=5.0)
             if resp.status_code == 200:
-                soup = BeautifulSoup(resp.text, "html.parser")
-                for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form", "noscript"]):
-                    tag.decompose()
+                if BeautifulSoup:
+                    soup = BeautifulSoup(resp.text, "html.parser")
+                    for tag in soup(["script", "style", "nav", "footer", "header", "aside", "form", "noscript"]):
+                        tag.decompose()
 
-                title = soup.title.string.strip() if soup.title and soup.title.string else "Web Resource"
-                headings = [h.get_text(strip=True) for h in soup.find_all(["h1", "h2", "h3"]) if len(h.get_text(strip=True)) > 4][:5]
-                paragraphs = [p.get_text(strip=True) for p in soup.find_all("p") if len(p.get_text(strip=True)) > 20][:10]
+                    title = soup.title.string.strip() if soup.title and soup.title.string else "Web Resource"
+                    headings = [h.get_text(strip=True) for h in soup.find_all(["h1", "h2", "h3"]) if len(h.get_text(strip=True)) > 4][:5]
+                    paragraphs = [p.get_text(strip=True) for p in soup.find_all("p") if len(p.get_text(strip=True)) > 20][:10]
 
-                return {
-                    "url": url,
-                    "title": title,
-                    "headings": headings,
-                    "text": " ".join(paragraphs)[:3000]
-                }
+                    return {
+                        "url": url,
+                        "title": title,
+                        "headings": headings,
+                        "text": " ".join(paragraphs)[:3000]
+                    }
+                else:
+                    clean_text = re.sub(r'<[^>]+>', ' ', resp.text)
+                    clean_text = ' '.join(clean_text.split())
+                    return {
+                        "url": url,
+                        "title": "Web Resource",
+                        "headings": [],
+                        "text": clean_text[:3000]
+                    }
         except Exception as e:
             return {"url": url, "title": "External Page", "headings": [], "text": f"Content could not be retrieved: {e}"}
 
