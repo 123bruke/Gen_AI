@@ -17,6 +17,11 @@ export class ChatArea {
     this.activeTabs = {}; // Map of msgId -> activeTab ('all', 'books', 'images', 'videos', 'maps', 'news', 'sources')
     this.activeReaderBook = null; // Currently open Gutenberg plain-text reading book
     this.activeImagePreview = null; // Currently previewed high-res image
+    this.isRecordingAudio = false;
+    this.mediaRecorder = null;
+    this.audioChunks = [];
+    this.recordingStartTime = 0;
+    this.recordingTimerInterval = null;
 
     store.subscribe((state, event) => {
       if (event !== 'STREAMING_CHUNK') {
