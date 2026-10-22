@@ -7,6 +7,8 @@ export class VoiceModal {
   constructor(containerEl) {
     this.container = containerEl;
     this.recognition = null;
+    this.mediaRecorder = null;
+    this.audioChunks = [];
     this.isListening = false;
     this.isSpeaking = false;
     this.audioContext = null;
@@ -104,14 +106,19 @@ export class VoiceModal {
 
   startVoiceSession() {
     const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRec) {
+    if (SpeechRec) {
+      this.initSpeechRec(SpeechRec);
+    } else if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      this.initMediaRecorderAudioSession();
+    } else {
       const transcriptEl = this.container.querySelector('#voice-live-transcript');
       if (transcriptEl) {
-        transcriptEl.innerText = 'Speech recognition is not supported in this browser. Please use standard chat or a Chromium browser.';
+        transcriptEl.innerText = 'Microphone access is not available in this browser environment.';
       }
-      return;
     }
+  }
 
+  initSpeechRec(SpeechRec) {
     this.recognition = new SpeechRec();
     this.recognition.continuous = false;
     this.recognition.interimResults = true;
@@ -146,6 +153,79 @@ export class VoiceModal {
     this.startListening();
   }
 
+  async initMediaRecorderAudioSession() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      this.audioChunks = [];
+      const mimeType = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/mp4';
+      this.mediaRecorder = new MediaRecorder(stream, { mimeType });
+
+      this.mediaRecorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) {
+          this.audioChunks.push(e.data);
+        }
+      };
+
+      this.mediaRecorder.onstop = async () => {
+        stream.getTracks().forEach((track) => track.stop());
+        const blob = new Blob(this.audioChunks, { type: mimeType });
+        if (blob.size > 500) {
+          await this.processAudioBlobQuery(blob);
+        }
+      };
+
+      this.mediaRecorder.start();
+      this.isListening = true;
+      this.updateOrbState('Listening with Gemini/Whisper...');
+    } catch (err) {
+      console.warn('MediaRecorder init error:', err);
+      const transcriptEl = this.container.querySelector('#voice-live-transcript');
+      if (transcriptEl) {
+        transcriptEl.innerText = 'Could not access microphone: ' + err.message;
+      }
+    }
+  }
+
+  async processAudioBlobQuery(audioBlob) {
+    this.updateOrbState('Transcribing & Reasoning...');
+    const transcriptEl = this.container.querySelector('#voice-live-transcript');
+    if (transcriptEl) {
+      transcriptEl.innerText = 'Transcribing your speech with Gemini/Whisper...';
+    }
+
+    const activeChat = store.getActiveChat() || store.createChat();
+    try {
+      const settings = store.getState().settings;
+      const resp = await api.searchByAudio(audioBlob, settings.geminiApiKey);
+      const transcribedText = resp.transcribed_text || 'Audio query';
+
+      if (transcriptEl) {
+        transcriptEl.innerText = `“${transcribedText}”`;
+      }
+
+      store.addMessage(activeChat.id, {
+        id: 'msg-' + Date.now(),
+        sender: 'user',
+        text: `🎙️ "${transcribedText}"`,
+        timestamp: Date.now()
+      });
+
+      store.addMessage(activeChat.id, {
+        id: 'msg-' + (Date.now() + 1),
+        sender: 'assistant',
+        text: resp.result.text,
+        timestamp: Date.now(),
+        multimodal: resp.result.multimodal || {},
+        sources: resp.result.sources || []
+      });
+
+      this.speakResponse(resp.result.text);
+    } catch (err) {
+      console.error('Audio blob processing error:', err);
+      this.updateOrbState('Error processing audio');
+    }
+  }
+
   startListening() {
     if (this.recognition && !this.isListening && !this.isSpeaking) {
       try {
@@ -155,6 +235,8 @@ export class VoiceModal {
       } catch (err) {
         console.warn('Recognition start caught:', err);
       }
+    } else if (this.mediaRecorder && !this.isListening && !this.isSpeaking) {
+      this.initMediaRecorderAudioSession();
     }
   }
 
@@ -166,6 +248,15 @@ export class VoiceModal {
         this.updateOrbState('Mic paused');
       } catch (err) {
         console.warn('Recognition stop caught:', err);
+      }
+    }
+    if (this.mediaRecorder && this.isListening) {
+      try {
+        this.mediaRecorder.stop();
+        this.isListening = false;
+        this.updateOrbState('Mic paused');
+      } catch (err) {
+        console.warn('MediaRecorder stop caught:', err);
       }
     }
   }
@@ -196,7 +287,8 @@ export class VoiceModal {
       sender: 'assistant',
       text: result.text,
       timestamp: Date.now(),
-      sources: result.sources
+      multimodal: result.multimodal || {},
+      sources: result.sources || []
     });
 
     // Speak response out loud
@@ -269,6 +361,12 @@ export class VoiceModal {
         console.warn(e);
       }
       this.recognition = null;
+    }
+    if (this.mediaRecorder) {
+      try {
+        this.mediaRecorder.stop();
+      } catch (e) {}
+      this.mediaRecorder = null;
     }
     this.isListening = false;
     this.isSpeaking = false;
