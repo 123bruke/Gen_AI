@@ -239,6 +239,23 @@ export class ApiService {
     });
   }
 
+  async searchByAudio(audioBlob, geminiKey = null) {
+    const formData = new FormData();
+    formData.append('file', audioBlob, 'voice_query.wav');
+    if (geminiKey) {
+      formData.append('gemini_key', geminiKey);
+    }
+    const res = await fetch(`${this.baseUrl}/api/audio/search`, {
+      method: 'POST',
+      body: formData
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || 'Audio transcription or reasoning failed.');
+    }
+    return await res.json();
+  }
+
   async queryVisionRAG({ prompt, chatId = null, attachments = [], settings = {}, onChunk, abortSignal }) {
     // Attempt backend first unless explicitly disabled
     try {
