@@ -36,6 +36,9 @@ class Settings(BaseSettings):
     # Security
     SECRET_KEY: str = os.getenv("SECRET_KEY", "visionrag_secure_multimodal_key_2026")
     SESSION_EXPIRE_HOURS: int = 72
+    
+    # Gemini API Key (Temporary or Permanent)
+    GEMINI_API_KEY: Optional[str] = os.getenv("GEMINI_API_KEY", "")
 
     @property
     def postgres_connection_string(self) -> str:
