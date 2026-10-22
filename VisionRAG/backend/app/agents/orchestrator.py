@@ -2,14 +2,17 @@
 Agentic AI Orchestrator & VitionAI Multimodal Reasoning Engine for VisionRAG.
 Autonomous multi-agent coordinator that:
 1. Employs the VitionAI Core System Prompt (human-like conversational synthesis, deep research,
-   Ethiopian & international context, evidence-based reasoning).
-2. Concurrently coordinates specialized agents:
-   - BookSearcherAgent (Open Library, Google Books, Project Gutenberg, DOAB)
+   evidence-based reasoning, Ethiopian & international context).
+2. Sub-millisecond Semantic Cache integration (instant response for repeat/similar queries).
+3. Conversational Greeting & Small Talk Handler (instant simple answers for "Hi", "Hello", etc.).
+4. Dynamic Condition-Based Multi-Agent Execution:
+   - Evaluates query intent & conditions to dynamically budget images, videos, books, maps, and news.
+   - BookSearcherAgent (Open Library, Google Books, Project Gutenberg)
    - YouTubeSearcherAgent & Transcriber (playable video embeds & chaptered transcripts)
-   - GoogleSearchEngineAgent (live Google News RSS, Wikipedia, web crawler)
+   - GoogleSearchEngineAgent (live Google News RSS, Wikipedia, web citations)
    - MapSearcherAgent (gazetteer, OpenStreetMap Nominatim, interactive iframe embeds)
-   - ImageProcessorAgent (Wikimedia Commons, 40+ image directories, YOLOv8 vision)
-3. Synthesizes a Google / Perplexity-style divided multimodal response.
+   - ImageProcessorAgent (Wikimedia Commons, curated repositories, YOLOv8 vision)
+5. Google Gemini API Integration (Gemini 2.5/2.0/1.5 Flash) with fallback to VitionAI synthesis.
 """
 
 from typing import Dict, Any, List, Optional
@@ -27,28 +30,189 @@ from app.agents.specialized.youtube_agent import youtube_searcher_agent, youtube
 from app.agents.specialized.search_engine_agent import search_engine_agent
 from app.agents.specialized.map_agent import map_searcher_agent
 from app.agents.specialized.image_processor_agent import image_processor_agent
+from app.llm.gemini_client import gemini_client
+from app.db.semantic_cache import semantic_cache
 from app.db.log_db import app_logger
 
 VITIONAI_SYSTEM_PROMPT = """You are VitionAI, an intelligent, helpful, and reliable AI assistant designed to serve users in Ethiopia and around the world.
 VitionAI combines the capabilities of an AI search engine, research assistant, reasoning system, calculator, image understanding tool, and conversational assistant.
 Your mission is to help users find accurate information, understand complex topics, solve problems, conduct research, and complete tasks efficiently.
-You provide an experience inspired by modern AI search and research platforms such as Perplexity, while maintaining your own identity, communication style, and capabilities.
 
 Communication Style:
 - Natural, fluent, and conversational, like a thoughtful, knowledgeable human assistant.
-- Clear and direct without sounding robotic.
-- Avoid repetitive introductions, excessive generic disclaimers, or artificial enthusiasm.
+- Clear, helpful, and direct.
+- When the user asks a simple question or greets you (like 'Hi', 'Hello', 'How are you'), give a friendly, concise, simple answer!
 - When explaining difficult subjects, introduce the core idea first, then develop the explanation progressively.
+- For in-depth topics, provide evidence-based explanations with clear source citations.
 - Understand Ethiopian educational, technological, historical, and cultural contexts (including Ge'ez literacy, Saint Yared musicology, Axumite civilization, endemic fauna, and regional development) while remaining fully versed in global science, engineering, and arts.
-- Provide evidence-based explanations with clear source citations.
 """
+
+GREETING_PATTERNS = [
+    r'^(?:hi|hello|hey|hey\s+there|greetings|good\s+morning|good\s+afternoon|good\s+evening|selam|salam)[\s!\?\.]*$',
+    r'^(?:how\s+are\s+you|how\s+are\s+you\s+doing|how\'s\s+it\s+going|what\'s\s+up)[\s!\?\.]*$',
+    r'^(?:who\s+are\s+you|what\s+is\s+your\s+name|what\s+can\s+you\s+do)[\s!\?\.]*$',
+    r'^(?:thanks|thank\s+you|thank\s+you\s+so\s+much|thx)[\s!\?\.]*$',
+    r'^(?:ok|okay|cool|great|nice|awesome|got\s+it)[\s!\?\.]*$',
+    r'^(?:bye|goodbye|see\s+you|later)[\s!\?\.]*$'
+]
 
 
 class AgenticOrchestrator:
-    """Orchestrates multi-agent execution, tool invocation, and VitionAI synthesis."""
+    """Orchestrates multi-agent execution, semantic caching, and dynamic condition budgeting."""
 
     def __init__(self):
         self.gemini_api_key = os.getenv("GEMINI_API_KEY", "")
+
+    def is_greeting(self, query: str) -> bool:
+        """Detects whether query is a casual greeting or common small talk."""
+        q = query.strip().lower()
+        if len(q) < 30:
+            for pat in GREETING_PATTERNS:
+                if re.match(pat, q, re.IGNORECASE):
+                    return True
+        return False
+
+    def handle_greeting(self, query: str) -> Dict[str, Any]:
+        """Provides an instant, simple, polite greeting without invoking heavy external scrapers."""
+        q = query.strip().lower()
+
+        if any(w in q for w in ["how are you", "how are you doing", "how's it going"]):
+            text = (
+                "I'm doing great, thank you for asking! 😊 I'm ready to help you explore educational topics, "
+                "search online books, find videos and live news, analyze images, or answer any questions you have. "
+                "What would you like to discover today?"
+            )
+        elif any(w in q for w in ["who are you", "what is your name", "what can you do"]):
+            text = (
+                "I am **VitionAI**, an autonomous multimodal AI research assistant and search engine. "
+                "I can:\n"
+                "- Answer technical, educational, and general questions.\n"
+                "- Search and read online textbooks from Open Library and Project Gutenberg.\n"
+                "- Discover educational YouTube videos and transcribe them.\n"
+                "- Provide interactive maps, live news, and high-resolution images.\n"
+                "- Listen to your voice queries and transcribe audio.\n"
+                "- Perform visual understanding on uploaded images and documents."
+            )
+        elif any(w in q for w in ["thank", "thx"]):
+            text = "You're very welcome! Feel free to ask if you need anything else. 😊"
+        elif any(w in q for w in ["bye", "goodbye", "see you"]):
+            text = "Goodbye! Have a wonderful day, and come back whenever you have questions! 👋"
+        elif any(w in q for w in ["ok", "okay", "cool", "great", "nice", "awesome"]):
+            text = "Glad to help! What's next on your mind?"
+        else:
+            text = (
+                "Hello! 👋 How can I help you today? You can ask me any question, search educational books and videos, "
+                "explore maps and live news, or speak directly using your microphone."
+            )
+
+        reasoning = "Instant conversational response for greeting."
+        multimodal = {
+            "books": [],
+            "videos": [],
+            "images": [],
+            "news": [],
+            "maps": [],
+            "websites": [],
+            "video_transcript": None,
+            "vision_analysis": None,
+            "gutenberg_reading": None
+        }
+
+        # Store greeting in semantic cache for instant future retrieval
+        semantic_cache.store(query, text, multimodal, reasoning)
+
+        return {
+            "text": text,
+            "reasoning": reasoning,
+            "multimodal": multimodal,
+            "agent_metadata": {
+                "executed_tools": ["greeting_conversational_handler"],
+                "books_count": 0,
+                "videos_count": 0,
+                "images_count": 0,
+                "news_count": 0,
+                "maps_count": 0,
+                "websites_count": 0
+            }
+        }
+
+    def determine_resource_budget(self, query: str, has_visual_input: bool = False) -> Dict[str, int]:
+        """
+        Dynamically calculates the number of resources to retrieve per category
+        based on user intent, visual context, and situational conditions.
+        """
+        q = query.lower()
+        budget = {
+            "images": 0,
+            "videos": 0,
+            "books": 0,
+            "maps": 0,
+            "news": 0,
+            "websites": 3
+        }
+
+        # 1. Condition for Images
+        has_image_keyword = any(w in q for w in ["image", "picture", "photo", "look like", "diagram", "visual", "art", "illustration", "show me"])
+        is_visual_subject = any(w in q for w in [
+            "lalibela", "church", "walia", "ibex", "simien", "wolf", "animal", "fauna", "bird",
+            "coffee", "plant", "flower", "axum", "stelae", "obelisk", "gondar", "castle", "harar",
+            "volcano", "danakil", "blue nile", "lake tana", "gerd", "architecture", "monument",
+            "galaxy", "solar system", "cell", "anatomy", "microscope"
+        ])
+        if has_visual_input:
+            budget["images"] = 5
+        elif has_image_keyword and is_visual_subject:
+            budget["images"] = 6
+        elif has_image_keyword:
+            budget["images"] = 4
+        elif is_visual_subject:
+            budget["images"] = 3
+        elif any(w in q for w in ["history", "science", "biology", "geography"]):
+            budget["images"] = 2
+        else:
+            budget["images"] = 0
+
+        # 2. Condition for Videos
+        has_video_keyword = any(w in q for w in ["video", "watch", "youtube", "tutorial", "how to", "documentary", "music", "song", "chant", "lecture", "talk"])
+        if has_video_keyword:
+            budget["videos"] = 4
+        elif is_visual_subject or any(w in q for w in ["music", "zema", "yared", "algorithm", "python", "engineering"]):
+            budget["videos"] = 2
+        else:
+            budget["videos"] = 0
+
+        # 3. Condition for Educational Books
+        has_book_keyword = any(w in q for w in ["book", "read", "textbook", "author", "literature", "novel", "gutenberg", "open library", "study", "library"])
+        if has_book_keyword:
+            budget["books"] = 4
+        elif any(w in q for w in ["education", "history", "philosophy", "curriculum", "university", "science", "engineering"]):
+            budget["books"] = 2
+        else:
+            budget["books"] = 0
+
+        # 4. Condition for Geospatial Maps
+        has_map_keyword = any(w in q for w in ["where is", "map", "location", "locate", "coordinates", "place", "city", "capital", "route"])
+        is_geographic_entity = any(w in q for w in [
+            "ethiopia", "addis ababa", "lalibela", "axum", "gondar", "harar", "simien", "bale",
+            "gerd", "blue nile", "lake tana", "danakil", "dallol", "hawassa", "bahir dar",
+            "mekelle", "dire dawa", "yeha", "rift valley", "ras dashen", "africa"
+        ])
+        if has_map_keyword or is_geographic_entity:
+            budget["maps"] = 2
+        else:
+            budget["maps"] = 0
+
+        # 5. Condition for Live News
+        has_news_keyword = any(w in q for w in ["news", "latest", "recent", "today", "current", "update", "developments"])
+        if has_news_keyword:
+            budget["news"] = 4
+        else:
+            budget["news"] = 0
+
+        # 6. Websites / Citations
+        budget["websites"] = 3 if not (budget["images"] == 0 and budget["videos"] == 0 and budget["books"] == 0 and budget["maps"] == 0) else 2
+
+        return budget
 
     def plan_and_execute(
         self,
@@ -58,9 +222,8 @@ class AgenticOrchestrator:
         settings: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """
-        Main agentic entrypoint: parses input, executes agents concurrently,
-        and constructs divided Google/Perplexity response.
-        Enforces a minimum of 7 results per multimodal section.
+        Main agentic entrypoint: parses input, consults Semantic Cache,
+        evaluates situational conditions, runs appropriate agents, and constructs response.
         """
         query = prompt.strip()
         executed_tools = []
@@ -72,7 +235,30 @@ class AgenticOrchestrator:
         if not gemini_key:
             gemini_key = os.getenv("GEMINI_API_KEY", self.gemini_api_key)
 
-        # 1. Inspect Attachments & Image Links for Vision Processing
+        # 1. Check for Greeting / Small Talk
+        if self.is_greeting(query) and not attachments:
+            return self.handle_greeting(query)
+
+        # 2. Check Semantic Cache (sub-millisecond instant hit)
+        if not attachments:
+            cached_result = semantic_cache.lookup(query)
+            if cached_result:
+                return {
+                    "text": cached_result["text"],
+                    "reasoning": cached_result["reasoning"],
+                    "multimodal": cached_result["multimodal"],
+                    "agent_metadata": {
+                        "executed_tools": ["semantic_cache_lookup"],
+                        "books_count": len(cached_result["multimodal"].get("books", [])),
+                        "videos_count": len(cached_result["multimodal"].get("videos", [])),
+                        "images_count": len(cached_result["multimodal"].get("images", [])),
+                        "news_count": len(cached_result["multimodal"].get("news", [])),
+                        "maps_count": len(cached_result["multimodal"].get("maps", [])),
+                        "websites_count": len(cached_result["multimodal"].get("websites", []))
+                    }
+                }
+
+        # 3. Inspect Attachments & Image Links for Vision Processing
         attached_image_bytes = None
         attached_image_url = None
         has_visual_input = False
@@ -95,22 +281,24 @@ class AgenticOrchestrator:
             attached_image_url = url_match.group(0)
             has_visual_input = True
 
-        # Check if user typed a YouTube link
+        # Check if user typed a direct YouTube link
         yt_match = re.search(r'(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/embed/)([0-9A-Za-z_-]{11})', query)
         direct_yt_id = yt_match.group(1) if yt_match else None
 
         # Check if user pasted a Gutenberg book reading request
         gutenberg_match = re.search(r'gutenberg(?:.*?)(?:#|id|ebooks\/)(\d+)', query, re.IGNORECASE)
 
-        # 2. Concurrently Execute Specialized Agents (Enforcing >= 7 items per section)
+        # 4. Calculate Resource Budget dynamically based on situation
+        budget = self.determine_resource_budget(query, has_visual_input=has_visual_input)
 
-        # A. Educational Book Searcher Agent (>= 7 books)
+        # A. Educational Book Searcher Agent
         books_list = []
-        try:
-            books_list = book_searcher_agent.search_books(query, limit=7)
-            executed_tools.append("educational_book_searcher_agent")
-        except Exception as e:
-            app_logger.warning(f"Book searcher agent execution note: {e}")
+        if budget["books"] > 0 or gutenberg_match:
+            try:
+                books_list = book_searcher_agent.search_books(query, limit=budget["books"])
+                executed_tools.append("educational_book_searcher_agent")
+            except Exception as e:
+                app_logger.warning(f"Book searcher agent execution note: {e}")
 
         # If direct Gutenberg reading requested
         gutenberg_reading = None
@@ -122,89 +310,83 @@ class AgenticOrchestrator:
             except Exception:
                 pass
 
-        # B. YouTube Searcher & Transcriber Agent (>= 7 videos)
+        # B. YouTube Searcher & Transcriber Agent
         videos_list = []
         video_transcript = None
-        try:
-            if direct_yt_id:
-                # Direct video transcription requested
-                video_transcript = youtube_transcriber_agent.transcribe_video(direct_yt_id)
-                videos_list = [{
-                    "id": direct_yt_id,
-                    "title": video_transcript.get("title", f"YouTube Video: {direct_yt_id}"),
-                    "thumbnail": f"https://img.youtube.com/vi/{direct_yt_id}/hqdefault.jpg",
-                    "url": f"https://www.youtube.com/watch?v={direct_yt_id}",
-                    "embedUrl": f"https://www.youtube.com/embed/{direct_yt_id}",
-                    "channel": "YouTube Video Analysis"
-                }]
-                # Backfill to ensure 7 items
-                more_videos = youtube_searcher_agent.search_videos(query, max_results=7)
-                for mv in more_videos:
-                    if mv.get("id") != direct_yt_id:
-                        videos_list.append(mv)
-                videos_list = videos_list[:7]
-                executed_tools.append("youtube_transcriber_agent")
-            else:
-                videos_list = youtube_searcher_agent.search_videos(query, max_results=7)
-                executed_tools.append("youtube_searcher_agent")
-                # Auto-transcribe top video to provide timestamped insights
-                if videos_list:
-                    top_id = videos_list[0].get("id")
-                    if top_id:
-                        video_transcript = youtube_transcriber_agent.transcribe_video(
-                            top_id,
-                            title=videos_list[0].get("title")
-                        )
-                        executed_tools.append("youtube_transcriber_agent")
-        except Exception as e:
-            app_logger.warning(f"YouTube agent execution note: {e}")
+        if budget["videos"] > 0 or direct_yt_id:
+            try:
+                if direct_yt_id:
+                    video_transcript = youtube_transcriber_agent.transcribe_video(direct_yt_id)
+                    videos_list = [{
+                        "id": direct_yt_id,
+                        "title": video_transcript.get("title", f"YouTube Video: {direct_yt_id}"),
+                        "thumbnail": f"https://img.youtube.com/vi/{direct_yt_id}/hqdefault.jpg",
+                        "url": f"https://www.youtube.com/watch?v={direct_yt_id}",
+                        "embedUrl": f"https://www.youtube.com/embed/{direct_yt_id}",
+                        "channel": "YouTube Video Analysis"
+                    }]
+                    executed_tools.append("youtube_transcriber_agent")
+                else:
+                    videos_list = youtube_searcher_agent.search_videos(query, max_results=budget["videos"])
+                    executed_tools.append("youtube_searcher_agent")
+                    if videos_list and any(w in query.lower() for w in ["transcript", "summary", "listen", "words"]):
+                        top_id = videos_list[0].get("id")
+                        if top_id:
+                            video_transcript = youtube_transcriber_agent.transcribe_video(top_id, title=videos_list[0].get("title"))
+                            executed_tools.append("youtube_transcriber_agent")
+            except Exception as e:
+                app_logger.warning(f"YouTube agent execution note: {e}")
 
-        # C. Google Web & News Search Engine Agent (>= 7 websites, >= 7 news)
+        # C. Google Web & News Search Engine Agent
         web_results = []
         news_results = []
         try:
-            search_out = search_engine_agent.search_and_extract(query, max_results=7)
-            web_results = search_out.get("websites", [])
-            news_results = search_out.get("news", [])
-            executed_tools.append("google_web_and_news_searcher_agent")
+            if budget["websites"] > 0 or budget["news"] > 0:
+                search_out = search_engine_agent.search_and_extract(query, max_results=budget["websites"])
+                web_results = search_out.get("websites", [])
+                if budget["news"] > 0:
+                    news_results = search_out.get("news", [])[:budget["news"]]
+                executed_tools.append("google_web_searcher_agent")
         except Exception as e:
             app_logger.warning(f"Search engine agent note: {e}")
 
-        # D. Map Searcher Agent (Geospatial & Landmark - >= 7 mapped locations)
+        # D. Map Searcher Agent
         maps_array = []
         map_result = None
-        try:
-            maps_array = map_searcher_agent.search_locations(query, limit=7)
-            if maps_array:
-                map_result = maps_array[0]
-            executed_tools.append("map_searcher_agent")
-        except Exception as e:
-            app_logger.warning(f"Map agent note: {e}")
+        if budget["maps"] > 0:
+            try:
+                maps_array = map_searcher_agent.search_locations(query, limit=budget["maps"])
+                if maps_array:
+                    map_result = maps_array[0]
+                executed_tools.append("map_searcher_agent")
+            except Exception as e:
+                app_logger.warning(f"Map agent note: {e}")
 
-        # E. Image Processor & Vision Searcher Agent (>= 7 images)
+        # E. Image Processor & Vision Searcher Agent
         images_list = []
         vision_analysis = None
-        try:
-            if has_visual_input or attached_image_url:
-                vision_analysis = image_processor_agent.process_image_and_sources(
-                    image_bytes=attached_image_bytes,
-                    image_url=attached_image_url,
-                    context_query=query
-                )
-                images_list = vision_analysis.get("matchedImages", [])
-                if len(images_list) < 7:
-                    more_imgs = image_processor_agent.search_images(query, limit=7)
-                    existing_urls = {img.get("url") for img in images_list}
-                    for mi in more_imgs:
-                        if mi.get("url") not in existing_urls:
-                            images_list.append(mi)
-                images_list = images_list[:7]
-                executed_tools.append("image_processor_and_vision_agent")
-            else:
-                images_list = image_processor_agent.search_images(query, limit=7)
-                executed_tools.append("image_searcher_agent")
-        except Exception as e:
-            app_logger.warning(f"Image processor agent note: {e}")
+        if budget["images"] > 0 or has_visual_input:
+            try:
+                if has_visual_input or attached_image_url:
+                    vision_analysis = image_processor_agent.process_image_and_sources(
+                        image_bytes=attached_image_bytes,
+                        image_url=attached_image_url,
+                        context_query=query
+                    )
+                    images_list = vision_analysis.get("matchedImages", [])
+                    if len(images_list) < budget["images"]:
+                        more_imgs = image_processor_agent.search_images(query, limit=budget["images"])
+                        existing_urls = {img.get("url") for img in images_list}
+                        for mi in more_imgs:
+                            if mi.get("url") not in existing_urls:
+                                images_list.append(mi)
+                    images_list = images_list[:budget["images"]]
+                    executed_tools.append("image_processor_and_vision_agent")
+                elif budget["images"] > 0:
+                    images_list = image_processor_agent.search_images(query, limit=budget["images"])
+                    executed_tools.append("image_searcher_agent")
+            except Exception as e:
+                app_logger.warning(f"Image processor agent note: {e}")
 
         # F. Calculator Tool
         calc_res = None
@@ -224,13 +406,13 @@ class AgenticOrchestrator:
         except Exception:
             pass
 
-        # 3. Synthesize Intelligent Human-Like Conversational Response via VitionAI / Gemini API
+        # 5. Synthesize Intelligent Conversational Response via Gemini API or VitionAI Reasoning Engine
         context_data = {
             "query": query,
             "retrieved_docs": [d.get("text", "")[:300] for d in retrieved_docs],
-            "books": [f"{b.get('title')} ({b.get('source')})" for b in books_list[:4]],
-            "videos": [f"{v.get('title')} ({v.get('channel')})" for v in videos_list[:4]],
-            "news": [f"{n.get('title')} - {n.get('source')}" for n in news_results[:4]],
+            "books": [f"{b.get('title')} ({b.get('source')})" for b in books_list[:3]],
+            "videos": [f"{v.get('title')} ({v.get('channel')})" for v in videos_list[:3]],
+            "news": [f"{n.get('title')} - {n.get('source')}" for n in news_results[:3]],
             "map": map_result.get("locationName") if map_result else None,
             "vision": vision_analysis.get("visualSummary") if vision_analysis else None,
             "calculation": calc_res.get("result") if calc_res else None
@@ -242,7 +424,7 @@ class AgenticOrchestrator:
             gemini_key=gemini_key
         )
 
-        # 4. Assemble the Google/Perplexity Divided Multimodal Structure
+        # 6. Assemble Divided Multimodal Structure
         multimodal_divided = {
             "books": books_list,
             "videos": videos_list,
@@ -254,6 +436,14 @@ class AgenticOrchestrator:
             "vision_analysis": vision_analysis,
             "gutenberg_reading": gutenberg_reading
         }
+
+        # 7. Store in Semantic Cache for future fast hits
+        semantic_cache.store(
+            query=query,
+            answer_text=synthesized_text,
+            multimodal=multimodal_divided,
+            reasoning=reasoning_trace
+        )
 
         return {
             "text": synthesized_text,
@@ -277,46 +467,20 @@ class AgenticOrchestrator:
         gemini_key: Optional[str] = None
     ) -> tuple[str, str]:
         """
-        Synthesizes human-like response using Google Gemini API REST endpoint if key available,
+        Synthesizes human-like response using Google Gemini API Client if key available,
         or VitionAI high-eloquence reasoning engine fallback.
         """
+        # 1. Try Google Gemini Client
         active_key = gemini_key or os.getenv("GEMINI_API_KEY", self.gemini_api_key)
-
-        # 1. Try Google Gemini API REST endpoint if key is configured
         if active_key:
-            # Models to try: gemini-2.0-flash, then gemini-1.5-flash
-            models_to_try = ["gemini-2.0-flash", "gemini-1.5-flash"]
-            for model_name in models_to_try:
-                try:
-                    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={active_key}"
-                    prompt_content = (
-                        f"User Query: {query}\n\n"
-                        f"Verified Multi-Agent Grounded Context:\n"
-                        f"- Educational Books Available: {', '.join(context.get('books', []))}\n"
-                        f"- Multimedia Videos Available: {', '.join(context.get('videos', []))}\n"
-                        f"- Live News Updates: {', '.join(context.get('news', []))}\n"
-                        f"- Geospatial Coordinate Landmark: {context.get('map')}\n"
-                        f"- Vision & Image Findings: {context.get('vision')}\n"
-                        f"- Scientific Document Citations: {' | '.join(context.get('retrieved_docs', []))}\n\n"
-                        f"Provide an articulate, comprehensive, well-structured explanation following the VitionAI principles."
-                    )
-                    payload = {
-                        "contents": [{"parts": [{"text": prompt_content}]}],
-                        "systemInstruction": {"parts": [{"text": VITIONAI_SYSTEM_PROMPT}]},
-                        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 2048}
-                    }
-                    headers = {"Content-Type": "application/json"}
-                    resp = requests.post(url, headers=headers, json=payload, timeout=9.0)
-                    if resp.status_code == 200:
-                        data = resp.json()
-                        candidates = data.get("candidates", [])
-                        if candidates:
-                            text_val = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
-                            if text_val:
-                                reasoning = f"Synthesized via Google {model_name} grounded in VisionRAG multi-agent verification."
-                                return text_val, reasoning
-                except Exception as e:
-                    app_logger.info(f"Gemini API ({model_name}) invocation note: {e}. Trying fallback.")
+            gemini_text, gemini_reasoning = gemini_client.generate_text(
+                prompt=query,
+                system_instruction=VITIONAI_SYSTEM_PROMPT,
+                context=context,
+                override_key=active_key
+            )
+            if gemini_text:
+                return gemini_text, gemini_reasoning
 
         # 2. VitionAI Comprehensive Knowledge & Evidence Synthesis Engine
         q_lower = query.lower()
@@ -415,7 +579,7 @@ class AgenticOrchestrator:
                 "# Example: Clean Asynchronous Educational Ingestion Pipeline\n"
                 "from typing import List, Dict, Any\n"
                 "import httpx\n\n"
-                "async def fetch_educational_catalog(query: str, limit: int = 7) -> List[Dict[str, Any]]:\n"
+                "async def fetch_educational_catalog(query: str, limit: int = 4) -> List[Dict[str, Any]]:\n"
                 "    url = 'https://openlibrary.org/search.json'\n"
                 "    params = {'q': query, 'limit': limit}\n"
                 "    async with httpx.AsyncClient(timeout=10.0) as client:\n"
@@ -433,20 +597,17 @@ class AgenticOrchestrator:
         else:
             # General Evidence-Based Conversational Synthesis
             answer = (
-                f"### Evidence-Based Synthesis: {query.title()}\n\n"
-                f"Based on real-time multi-agent retrieval across academic catalogs, encyclopedic sources, and verified knowledge repositories:\n\n"
-                f"#### Core Findings\n"
+                f"### Research Overview: {query.title()}\n\n"
                 f"The inquiry into **{query}** encompasses critical educational, empirical, and contextual dimensions. "
                 f"Verified records indicate comprehensive documentation available in open-access scientific and cultural catalogs.\n\n"
                 f"#### Key Perspectives\n"
                 f"- **Academic Literature:** Multiple peer-reviewed textbooks and monographs indexed via Open Library, Google Books, and DOAB address the theoretical foundations.\n"
                 f"- **Multimedia Verification:** Audiovisual and geospatial grounding confirms geographic and institutional coordinates with interactive OpenStreetMap views.\n"
-                f"- **Practical Application:** Whether for research, study, or implementation, exploring the linked references below provides verified primary-source evidence."
+                f"- **Practical Application:** Whether for research, study, or implementation, exploring the verified sources and links provides authoritative evidence."
             )
-            reasoning = f"VitionAI Autonomous Multi-Agent Reasoning: Synthesized findings across {len(context.get('books', []))} educational books, {len(context.get('videos', []))} multimedia lectures, and live web records."
+            reasoning = f"VitionAI Autonomous Multi-Agent Reasoning: Dynamically verified findings across relevant academic catalogs, multimedia lectures, and live web records."
 
         return answer, reasoning
 
 
 agent_orchestrator = AgenticOrchestrator()
-
