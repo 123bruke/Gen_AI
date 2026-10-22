@@ -310,6 +310,31 @@ export class ApiService {
   async generateGoogleLikeRAGResponse(prompt, attachments, settings, onChunk, abortSignal) {
     const q = prompt.trim();
     const qLower = q.toLowerCase();
+
+    // 1. Instant clean greeting response for small talk
+    const isGreeting = /^(?:hi|hello|hey|hey there|greetings|how are you|good morning|good evening|thanks|thank you|ok|okay|cool|bye)[\s!\?\.]*$/i.test(qLower);
+    if (isGreeting) {
+      let greetAnswer = "Hello! 👋 How can I help you today? You can ask me any question, search educational books and videos, explore maps and live news, or speak directly using your microphone.";
+      if (/how are you/i.test(qLower)) {
+        greetAnswer = "I'm doing well, thank you for asking! 😊 How can I assist you with your research or questions today?";
+      } else if (/thank/i.test(qLower)) {
+        greetAnswer = "You're very welcome! Feel free to ask if you need anything else.";
+      }
+      const words = greetAnswer.split(' ');
+      let accumulated = '';
+      for (let i = 0; i < words.length; i++) {
+        if (abortSignal && abortSignal.aborted) break;
+        accumulated += (i === 0 ? '' : ' ') + words[i];
+        if (onChunk) onChunk(accumulated, false);
+        await new Promise((r) => setTimeout(r, 8));
+      }
+      if (onChunk) onChunk(accumulated, true);
+      return {
+        text: accumulated,
+        multimodal: { books: [], images: [], videos: [], maps: [], news: [], websites: [] }
+      };
+    }
+
     const isEthiopia = /ethiopia|ethiopian|habesha|abyssinia|addis|lalibela|axum|simien|bale|nile/i.test(qLower);
 
     let aiAnswer = '';
@@ -757,15 +782,28 @@ export class ApiService {
 
     if (onChunk) onChunk(accumulated, true);
 
+    const hasImageKeyword = /image|picture|photo|look|diagram|visual|art|show me/i.test(qLower);
+    const isVisualSubject = /lalibela|axum|gondar|walia|ibex|wolf|simien|bale|coffee|dam|gerd|nile|church/i.test(qLower);
+    const hasVideoKeyword = /video|watch|youtube|tutorial|music|chant/i.test(qLower);
+    const hasBookKeyword = /book|read|textbook|literature|gutenberg|author/i.test(qLower);
+    const hasMapKeyword = /where is|map|locate|coordinates|place|city|capital/i.test(qLower);
+    const hasNewsKeyword = /news|latest|recent|today|update/i.test(qLower);
+
+    const imgCount = hasImageKeyword ? 6 : (isVisualSubject ? 3 : 2);
+    const vidCount = hasVideoKeyword ? 4 : (isVisualSubject ? 2 : 1);
+    const bkCount = hasBookKeyword ? 4 : 2;
+    const mapCount = (hasMapKeyword || isEthiopia) ? 2 : 0;
+    const newsCount = hasNewsKeyword ? 4 : 2;
+
     return {
       text: accumulated,
       multimodal: {
-        books,
-        images,
-        videos,
-        maps,
-        news,
-        websites
+        books: books.slice(0, bkCount),
+        images: images.slice(0, imgCount),
+        videos: videos.slice(0, vidCount),
+        maps: maps.slice(0, mapCount),
+        news: news.slice(0, newsCount),
+        websites: websites.slice(0, 3)
       }
     };
   }
