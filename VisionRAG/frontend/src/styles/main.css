@@ -1532,3 +1532,63 @@ input, textarea, select {
   background: #fffdf9;
 }
 
+/* Mic pulse and top sources bar for clean Google/Perplexity top-down view */
+@keyframes micPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.18); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.top-sources-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fbfcfe;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+}
+
+.top-sources-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.top-source-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  transition: all 0.15s ease;
+}
+
+.top-source-chip:hover {
+  border-color: #10a37f;
+  background: #f0fdf4;
+  color: #047857;
+  transform: translateY(-1px);
+}
+
+.btn-recording-pulse {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  animation: micPulse 1s infinite !important;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.5) !important;
+}
+
+
