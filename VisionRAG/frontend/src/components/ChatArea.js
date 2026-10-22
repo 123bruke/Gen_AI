@@ -441,6 +441,33 @@ export class ChatArea {
       }
 
       return `
+        <!-- Top Verified Web Sources & Citations Bar (Google/Perplexity-Style) -->
+        ${
+          mm.websites && mm.websites.length > 0
+            ? `
+          <div class="top-sources-bar">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Verified Sources & Web Links</span>
+              </div>
+              <button class="btn-jump-tab" data-target-tab="sources" style="font-size: 11px; color: #10a37f; font-weight: 600; background: none; border: none; cursor: pointer;">
+                All Sources (${mm.websites.length}) →
+              </button>
+            </div>
+            <div class="top-sources-pills">
+              ${mm.websites.slice(0, 4).map((site, idx) => `
+                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="top-source-chip" title="${this.escapeHtml(site.title)} (${this.escapeHtml(site.url)})">
+                  <span style="font-size: 11px; color: #10a37f; font-weight: 700;">[${idx + 1}]</span>
+                  <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${this.escapeHtml(site.title || site.source || 'Web Link')}</span>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        `
+            : ''
+        }
+
         <div class="assistant-text">
           ${this.formatMarkdown(msg.text)}
           ${msg.isStreaming ? `<span style="display:inline-block; width:6px; height:15px; background:#0d0d0d; margin-left:3px; animation:micPulse 0.8s infinite;"></span>` : ''}
