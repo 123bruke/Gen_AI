@@ -1,3 +1,5 @@
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 from app.agents.orchestrator import orchestrator
 
 orch = orchestrator
@@ -22,5 +24,15 @@ b_math = orch.determine_resource_budget('solve 2x + 5 = 15')
 print('Math query budget:', b_math)
 b_img = orch.determine_resource_budget('show me high resolution photos and pictures of Ethiopian wolves')
 print('Image query budget:', b_img)
-b_book = orch.determine_resource_budget('read online book about machine learning textbook')
-print('Book query budget:', b_book)
+# Test 4: Full query execution and caching
+print('\n--- TEST 4: FULL QUERY AND SEMANTIC CACHING ---')
+q = "What was the significance of the Battle of Adwa in 1896?"
+res_q1 = orch.plan_and_execute(q)
+print('Query 1 executed. Sources count:', len(res_q1.get('multimodal', {}).get('websites', [])))
+print('Query 1 cached status:', res_q1.get('metadata', {}).get('cached'))
+
+# Now ask semantically identical question:
+res_q2 = orch.plan_and_execute("Tell me about the significance of the Battle of Adwa in 1896")
+print('Query 2 cached status:', res_q2.get('metadata', {}).get('cached'))
+print('Query 2 answer snippet:', res_q2.get('text', '')[:120])
+

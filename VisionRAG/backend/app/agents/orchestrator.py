@@ -611,3 +611,6 @@ class AgenticOrchestrator:
 
 
 agent_orchestrator = AgenticOrchestrator()
+orchestrator = agent_orchestrator
+MultiAgentOrchestrator = AgenticOrchestrator
+
