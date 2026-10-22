@@ -247,6 +247,11 @@ class AgenticOrchestrator:
                     "text": cached_result["text"],
                     "reasoning": cached_result["reasoning"],
                     "multimodal": cached_result["multimodal"],
+                    "metadata": {
+                        "cached": True,
+                        "similarity_score": cached_result.get("similarity_score", 1.0),
+                        "hit_count": cached_result.get("hit_count", 1)
+                    },
                     "agent_metadata": {
                         "executed_tools": ["semantic_cache_lookup"],
                         "books_count": len(cached_result["multimodal"].get("books", [])),
@@ -449,6 +454,7 @@ class AgenticOrchestrator:
             "text": synthesized_text,
             "reasoning": reasoning_trace,
             "multimodal": multimodal_divided,
+            "metadata": {"cached": False},
             "agent_metadata": {
                 "executed_tools": executed_tools,
                 "books_count": len(books_list),

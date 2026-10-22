@@ -20,7 +20,8 @@ from app.db.log_db import app_logger
 STOP_WORDS = {
     "what", "is", "the", "a", "an", "of", "and", "in", "to", "for", "on", "with",
     "can", "you", "tell", "me", "about", "please", "give", "show", "how", "why",
-    "where", "who", "when", "which", "are", "do", "does"
+    "where", "who", "when", "which", "are", "do", "does", "was", "were", "be",
+    "been", "being", "explain", "describe", "detail"
 }
 
 class SemanticCache:
@@ -122,7 +123,7 @@ class SemanticCache:
         except Exception as e:
             app_logger.info(f"SemanticCache warm up note: {e}")
 
-    def lookup(self, query: str, threshold: float = 0.86) -> Optional[Dict[str, Any]]:
+    def lookup(self, query: str, threshold: float = 0.78) -> Optional[Dict[str, Any]]:
         """
         Sub-millisecond semantic search.
         1. Exact match on normalized query.
