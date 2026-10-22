@@ -225,7 +225,6 @@ export class ChatArea {
     `;
 
     this.bindEvents();
-    this.scrollToBottom();
     eyeTracker.scheduleUpdate();
   }
 
