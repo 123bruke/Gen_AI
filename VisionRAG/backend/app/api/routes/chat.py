@@ -99,7 +99,8 @@ async def chat_endpoint(
     # 3. Plan & Execute Agentic RAG
     result = agent_orchestrator.plan_and_execute(
         prompt=req.query,
-        attachments=req.attachments
+        attachments=req.attachments,
+        settings=req.settings
     )
 
     # 4. Store assistant response and multimodal metadata in PostgreSQL

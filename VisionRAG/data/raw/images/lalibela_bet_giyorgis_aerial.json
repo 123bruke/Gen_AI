@@ -1,0 +1,44 @@
+{
+  "asset_id": "img_eth_lalibela_02",
+  "filename": "lalibela_bet_giyorgis_aerial.jpg",
+  "title": "Aerial Orthographic View of Bet Giyorgis (Church of St. George), Lalibela",
+  "dimensions": {
+    "width": 4096,
+    "height": 2730,
+    "aspect_ratio": "3:2",
+    "color_channels": 3,
+    "color_space": "sRGB"
+  },
+  "exif_telemetry": {
+    "camera_model": "DJI Mavic 3 Enterprise Multispectral",
+    "focal_length": "24mm equivalent",
+    "aperture": "f/2.8",
+    "shutter_speed": "1/1000s",
+    "iso": 100,
+    "gps_coordinates": {
+      "latitude": 12.0319,
+      "longitude": 39.0412,
+      "altitude_meters": 2480
+    }
+  },
+  "architectural_features": {
+    "form": "Greek cruciform plan carved directly downwards from red volcanic scoria",
+    "dimensions_meters": "12m length x 12m width x 12m depth",
+    "carving_date": "Late 12th / Early 13th Century CE",
+    "unesco_status": "World Heritage Site (Inscribed 1978)"
+  },
+  "yolo_detection_targets": [
+    {
+      "class": "cruciform_roof_structure",
+      "confidence": 0.988,
+      "bounding_box_normalized": [0.35, 0.32, 0.30, 0.36]
+    },
+    {
+      "class": "trench_and_drainage_tunnels",
+      "confidence": 0.952,
+      "bounding_box_normalized": [0.22, 0.18, 0.56, 0.64]
+    }
+  ],
+  "color_palette_hex": ["#8C4836", "#B4654A", "#534D41", "#C79F7E", "#2B241F"],
+  "source_license": "UNESCO / Authority for Research and Conservation of Cultural Heritage (ARCCH)"
+}

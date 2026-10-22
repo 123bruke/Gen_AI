@@ -1,0 +1,31 @@
+{
+  "asset_id": "img_eth_geez_05",
+  "filename": "geez_illuminated_manuscript_gospels.jpg",
+  "title": "Illuminated Ge'ez Vellum Manuscript of the Garima Gospels (6th Century CE)",
+  "dimensions": {
+    "width": 3000,
+    "height": 4000,
+    "aspect_ratio": "3:4",
+    "color_channels": 3,
+    "color_space": "sRGB"
+  },
+  "paleographical_telemetry": {
+    "material": "Goatskin parchment (vellum) bound with original wooden boards covered in gilded silver",
+    "script": "Unpointed classical Ge'ez calligraphy in soot-based carbon black and cinnabar red rubrication ink",
+    "radiocarbon_date": "390 – 540 CE (Abba Garima Monastery, Adwa)",
+    "global_significance": "One of the oldest surviving illustrated Christian gospel books in world history"
+  },
+  "yolo_detection_targets": [
+    {
+      "class": "illuminated_architectural_canon_table",
+      "confidence": 0.985,
+      "bounding_box_normalized": [0.15, 0.12, 0.70, 0.42]
+    },
+    {
+      "class": "geez_calligraphic_text_block",
+      "confidence": 0.991,
+      "bounding_box_normalized": [0.18, 0.52, 0.64, 0.40]
+    }
+  ],
+  "color_palette_hex": ["#A8382A", "#D4A548", "#2E483A", "#D8CEB6", "#1E1A16"]
+}

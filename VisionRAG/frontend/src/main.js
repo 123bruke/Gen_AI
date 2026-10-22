@@ -9,6 +9,7 @@ import { SettingsModal } from './components/SettingsModal.js';
 import { SourceModal } from './components/SourceModal.js';
 import { AuthModal } from './components/AuthModal.js';
 import { DatabaseModal } from './components/DatabaseModal.js';
+import { AgentHubModal } from './components/AgentHubModal.js';
 import { eyeTracker } from './utils/eyeTracker.js';
 import { store } from './store/state.js';
 import { api } from './services/api.js';
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sourceModal = new SourceModal(modalContainer);
   const authModal = new AuthModal(modalContainer);
   const databaseModal = new DatabaseModal(modalContainer);
+  const agentHubModal = new AgentHubModal(modalContainer);
   const settingsModal = new SettingsModal(modalContainer, {
     onReplayIntro: () => splash.replay()
   });
@@ -43,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     onOpenSettings: () => settingsModal.open(),
     onReplayIntro: () => splash.replay(),
     onOpenAuth: (mode) => authModal.open(mode),
-    onOpenDbStorage: (tab) => databaseModal.open(tab)
+    onOpenDbStorage: (tab) => databaseModal.open(tab),
+    onOpenAgentHub: (tab) => agentHubModal.open(tab)
   });
   sidebar.render();
 
@@ -53,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     onOpenVideo: () => videoModal.open(),
     onOpenSource: (source) => sourceModal.open(source),
     onOpenSettings: () => settingsModal.open(),
-    onOpenDbStorage: (tab) => databaseModal.open(tab)
+    onOpenDbStorage: (tab) => databaseModal.open(tab),
+    onOpenAgentHub: (tab) => agentHubModal.open(tab)
   });
   chatArea.render();
 
@@ -72,8 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
       sourceModal.close();
       authModal.close();
       databaseModal.close();
+      agentHubModal.close();
     }
   });
 
-  console.log('VisionRAG Multimodal Interface Initialized with PostgreSQL 16 & JWT Auth.');
+  console.log('VisionRAG Multimodal Interface Initialized with PostgreSQL 16 & Agent Hub.');
 });

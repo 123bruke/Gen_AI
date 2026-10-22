@@ -1,0 +1,50 @@
+{
+  "project_title": "Annual Population Dynamics of the Ethiopian Wolf (Canis simensis)",
+  "principal_investigator": "Ethiopian Wolf Conservation Programme (EWCP) / Wildlife Conservation Research Unit (WildCRU), University of Oxford",
+  "study_area": "Bale Mountains National Park & Sanetti Plateau, Ethiopia",
+  "census_metrics": {
+    "survey_altitude_meters": "3800 - 4377",
+    "total_packs_monitored": 28,
+    "total_adult_wolves": 246,
+    "subadults_and_pups": 78,
+    "breeding_females_count": 27,
+    "average_pack_size": 7.8
+  },
+  "focal_packs": [
+    {
+      "pack_id": "SANETTI_ALPHA_01",
+      "pack_name": "Web Valley Pack",
+      "alpha_male": "WM_087 (Tullu)",
+      "alpha_female": "WF_054 (Bora)",
+      "adults_count": 9,
+      "pups_weaned": 4,
+      "territory_area_km2": 11.2,
+      "vaccination_status": "Oral rabies bait distributed"
+    },
+    {
+      "pack_id": "SANETTI_ALPHA_02",
+      "pack_name": "Sanetti Summit Pack",
+      "alpha_male": "WM_102 (Dembel)",
+      "alpha_female": "WF_089 (Sena)",
+      "adults_count": 6,
+      "pups_weaned": 3,
+      "territory_area_km2": 9.8,
+      "vaccination_status": "Boosted (CDV & Rabies 2024)"
+    },
+    {
+      "pack_id": "SANETTI_ALPHA_03",
+      "pack_name": "Rira Escarpment Pack",
+      "alpha_male": "WM_114 (Amba)",
+      "alpha_female": "WF_098 (Lomi)",
+      "adults_count": 8,
+      "pups_weaned": 5,
+      "territory_area_km2": 13.5,
+      "vaccination_status": "Monitored"
+    }
+  ],
+  "prey_biomass_index": {
+    "giant_mole_rat_density_per_ha": 34.2,
+    "grass_rat_arvicanthis_density_per_ha": 86.5,
+    "hare_lepus_starcki_index": "Frequent across Sanetti lichen plains"
+  }
+}

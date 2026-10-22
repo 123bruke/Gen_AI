@@ -1,0 +1,39 @@
+{
+  "asset_id": "img_eth_axum_04",
+  "filename": "axum_obelisk_monumental_stela.jpg",
+  "title": "King Ezana Stela (24m Standing Granite Monolith), Axum",
+  "dimensions": {
+    "width": 2560,
+    "height": 3840,
+    "aspect_ratio": "2:3",
+    "color_channels": 3,
+    "color_space": "sRGB"
+  },
+  "exif_telemetry": {
+    "camera_model": "Nikon Z9",
+    "focal_length": "50mm f/1.2 S",
+    "aperture": "f/5.6",
+    "shutter_speed": "1/800s",
+    "iso": 100,
+    "gps_coordinates": {
+      "latitude": 14.1278,
+      "longitude": 38.7214,
+      "altitude_meters": 2135
+    }
+  },
+  "architectural_features": {
+    "quarry": "Single block of nepheline phonolite granite carved from Wuchate Golo quarry 4km away",
+    "height_meters": 24.6,
+    "weight_tonnes": 160,
+    "carvings": "False doors and nine multi-storey simulated floor windows with round timber beam-ends (monkey-heads)",
+    "period": "Axumite Royal Necropolis (c. 330 CE)"
+  },
+  "yolo_detection_targets": [
+    {
+      "class": "monumental_granite_obelisk",
+      "confidence": 0.994,
+      "bounding_box_normalized": [0.36, 0.08, 0.28, 0.88]
+    }
+  ],
+  "color_palette_hex": ["#5A5852", "#848278", "#32302A", "#B0AE9E", "#566C82"]
+}

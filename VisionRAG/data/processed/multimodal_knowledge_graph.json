@@ -1,0 +1,40 @@
+{
+  "graph_metadata": {
+    "title": "Ethiopian Educational, Historical & Ecological Knowledge Graph",
+    "version": "1.0",
+    "nodes_count": 16,
+    "edges_count": 22
+  },
+  "nodes": [
+    {"id": "n_ezana", "label": "King Ezana of Axum", "type": "MONARCH", "period": "4th Century CE"},
+    {"n_salama": "Abba Salama (Frumentius)", "type": "SCHOLAR", "role": "First Bishop of Axum"},
+    {"id": "n_yared", "label": "Saint Yared", "type": "COMPOSER", "period": "505-571 CE"},
+    {"id": "n_menelik", "label": "Emperor Menelik II", "type": "MONARCH", "period": "1844-1913"},
+    {"id": "n_haile", "label": "Emperor Haile Selassie I", "type": "MONARCH", "period": "1892-1975"},
+    {"id": "n_aklilu", "label": "Prof. Aklilu Lemma", "type": "SCIENTIST", "field": "Pathology & Molluscicides"},
+    {"id": "n_nebab", "label": "Nebab Bet", "type": "EDUCATIONAL_TIER", "level": "Primary Reading"},
+    {"id": "n_zema", "label": "Zema Bet", "type": "EDUCATIONAL_TIER", "level": "Liturgical Music"},
+    {"id": "n_qene", "label": "Qene Bet", "type": "EDUCATIONAL_TIER", "level": "Poetry & Rhetoric"},
+    {"id": "n_metsahaf", "label": "Metsahaf Bet", "type": "EDUCATIONAL_TIER", "level": "Law & Canonical Exegesis"},
+    {"id": "n_menelik_sch", "label": "Menelik II School", "type": "SCHOOL", "year": 1908},
+    {"id": "n_aau", "label": "Addis Ababa University", "type": "UNIVERSITY", "year": 1950},
+    {"id": "n_walia", "label": "Capra walie (Walia Ibex)", "type": "SPECIES", "iucn": "VU"},
+    {"id": "n_wolf", "label": "Canis simensis (Ethiopian Wolf)", "type": "SPECIES", "iucn": "EN"},
+    {"id": "n_coffee", "label": "Coffea arabica", "type": "SPECIES", "origin": "Ethiopian Rainforests"},
+    {"id": "n_simien", "label": "Simien Mountains", "type": "GEOGRAPHY", "elevation": "4550m"},
+    {"id": "n_bale", "label": "Bale Mountains", "type": "GEOGRAPHY", "elevation": "4377m"}
+  ],
+  "edges": [
+    {"source": "n_ezana", "target": "n_nebab", "relation": "INAUGURATED_INDIGENOUS_LITERACY"},
+    {"source": "n_yared", "target": "n_zema", "relation": "INVENTED_CHORDAL_MODES_AND_NOTATION"},
+    {"source": "n_nebab", "target": "n_zema", "relation": "PREREQUISITE_FOR"},
+    {"source": "n_zema", "target": "n_qene", "relation": "PROGRESSES_TO"},
+    {"source": "n_qene", "target": "n_metsahaf", "relation": "CULMINATES_IN"},
+    {"source": "n_menelik", "target": "n_menelik_sch", "relation": "FOUNDED"},
+    {"source": "n_haile", "target": "n_aau", "relation": "CHARTERED_AND_DONATED_PALACE"},
+    {"source": "n_aklilu", "target": "n_aau", "relation": "CONDUCTED_RESEARCH_AT"},
+    {"source": "n_walia", "target": "n_simien", "relation": "STRICTLY_ENDEMIC_TO"},
+    {"source": "n_wolf", "target": "n_bale", "relation": "PRIMARY_STRONGHOLD_IN"},
+    {"source": "n_coffee", "target": "n_aau", "relation": "STUDIED_GENOMICALLY_BY"}
+  ]
+}

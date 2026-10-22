@@ -1,0 +1,45 @@
+{
+  "video_id": "vid_eth_edu_01",
+  "youtube_id": "e_XU2gPqN3w",
+  "title": "From Parchment to Pixels: The 1,600-Year Chronicle of Ethiopian Education",
+  "duration_seconds": 1240,
+  "resolution": "4K UHD (3840x2160 @ 60fps)",
+  "audio_sample_rate": "48000 Hz Stereo",
+  "chapters": [
+    {
+      "start_time": "00:00",
+      "end_time": "03:15",
+      "chapter_title": "The Cradle of Ge'ez Literacy: Axum and Nebab Bet",
+      "summary": "Exploration of the ancient stone inscriptions of King Ezana and the birth of indigenous reading schools."
+    },
+    {
+      "start_time": "03:15",
+      "end_time": "07:45",
+      "chapter_title": "Saint Yared & The Musical Triad of Axum",
+      "summary": "Demonstration of the Ge'ez, Ezel, and Araray musical modes and traditional sistrum rhythmic accompaniment."
+    },
+    {
+      "start_time": "07:45",
+      "end_time": "12:30",
+      "chapter_title": "Sem-enna-Worq: The Intellectual Masters of Qene Bet",
+      "summary": "Interviews with senior Liqawunt in Washera analyzing the dual meaning of classical Ge'ez poetry."
+    },
+    {
+      "start_time": "12:30",
+      "end_time": "16:50",
+      "chapter_title": "Menelik II to Addis Ababa University: Modern State Schooling",
+      "summary": "Archival footage of the 1908 Menelik II School, Teferi Mekonnen School, and the 1950 founding of UCAA."
+    },
+    {
+      "start_time": "16:50",
+      "end_time": "20:40",
+      "chapter_title": "The Digital Frontier: 50+ Modern Universities & STEM Evolution",
+      "summary": "Contemporary laboratories, satellite engineering at ETRSS-1, and artificial intelligence research at AAU."
+    }
+  ],
+  "speaker_roster": [
+    {"name": "Prof. Richard Pankhurst", "role": "Founding Director of Institute of Ethiopian Studies"},
+    {"name": "Meri-Geta Belayneh", "role": "Senior Liturgical Instructor, Axum Saint Zion"},
+    {"name": "Dr. Senait Bekele", "role": "Professor of Educational Curriculum, AAU"}
+  ]
+}

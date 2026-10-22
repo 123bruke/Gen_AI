@@ -24,7 +24,8 @@ const defaultState = {
     speechPitch: 1.0,
     autoSpeak: false,
     backendUrl: 'http://localhost:8000',
-    mockMode: true
+    mockMode: false,
+    geminiApiKey: ''
   }
 };
 
@@ -42,6 +43,11 @@ class StateStore {
         return {
           ...defaultState,
           ...parsed,
+          settings: {
+            ...defaultState.settings,
+            ...(parsed.settings || {}),
+            mockMode: false
+          },
           activeAttachments: [],
           isStreaming: false
         };

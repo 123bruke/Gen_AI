@@ -204,7 +204,7 @@ class TaskProgress(Base):
     __tablename__ = "task_progress"
 
     id = Column(String(64), primary_key=True)
-    user_id = Column(String(64), ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+    user_id = Column(String(64), ForeignKey("users.id", ondelete="SET NULL"), nullable=True, index=True)
     task_id = Column(String(100), nullable=False, index=True)
     task_type = Column(String(100), nullable=False)
     stage = Column(String(100), nullable=False)

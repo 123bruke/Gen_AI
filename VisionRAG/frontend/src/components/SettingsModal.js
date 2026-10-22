@@ -216,6 +216,14 @@ export class SettingsModal {
 
         <div class="settings-row">
           <div class="settings-label-wrap">
+            <span class="settings-label">Google Gemini API Key</span>
+            <span class="settings-sublabel">Powers real-time Gemini multimodal reasoning & query processing</span>
+          </div>
+          <input type="password" class="settings-input" id="setting-gemini-key" value="${settings.geminiApiKey || ''}" placeholder="AIzaSy..." style="min-width: 220px;" />
+        </div>
+
+        <div class="settings-row">
+          <div class="settings-label-wrap">
             <span class="settings-label">Typewriter Speed</span>
             <span class="settings-sublabel">Stream velocity for assistant textual synthesis</span>
           </div>
@@ -340,6 +348,14 @@ export class SettingsModal {
             <span class="settings-sublabel">Root address of the VisionRAG backend server</span>
           </div>
           <input type="text" class="settings-input" id="setting-backend-url" value="${settings.backendUrl}" style="min-width: 220px;" />
+        </div>
+
+        <div class="settings-row">
+          <div class="settings-label-wrap">
+            <span class="settings-label">Google Gemini API Key</span>
+            <span class="settings-sublabel">Direct key for Gemini 2.0 Flash / 1.5 Flash text & multimodal inference</span>
+          </div>
+          <input type="password" class="settings-input" id="setting-gemini-key-backend" value="${settings.geminiApiKey || ''}" placeholder="AIzaSy..." style="min-width: 220px;" />
         </div>
 
         <div class="settings-row">
@@ -506,6 +522,16 @@ export class SettingsModal {
     if (backendUrlInput) {
       backendUrlInput.addEventListener('change', (e) => {
         store.updateSettings({ backendUrl: e.target.value.trim() });
+      });
+    }
+
+    const geminiKeyInput = this.container.querySelector('#setting-gemini-key') || this.container.querySelector('#setting-gemini-key-backend');
+    if (geminiKeyInput) {
+      geminiKeyInput.addEventListener('change', (e) => {
+        store.updateSettings({ geminiApiKey: e.target.value.trim() });
+      });
+      geminiKeyInput.addEventListener('input', (e) => {
+        store.updateSettings({ geminiApiKey: e.target.value.trim() });
       });
     }
 

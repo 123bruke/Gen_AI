@@ -1,21 +1,22 @@
-// ChatArea Component: Google-Like Divided View, Multimodal Plus Menu & Streaming
+// ChatArea Component: Google/Perplexity-Style Divided View, Autonomous Multi-Agent Orchestration & Online Reader
 
 import { store } from '../store/state.js';
 import { api } from '../services/api.js';
 import { eyeTracker } from '../utils/eyeTracker.js';
 
 export class ChatArea {
-  constructor(containerEl, { onOpenVoice, onOpenVideo, onOpenSource, onOpenSettings, onOpenDbStorage }) {
+  constructor(containerEl, { onOpenVoice, onOpenVideo, onOpenSource, onOpenSettings }) {
     this.container = containerEl;
     this.onOpenVoice = onOpenVoice;
     this.onOpenVideo = onOpenVideo;
     this.onOpenSource = onOpenSource;
     this.onOpenSettings = onOpenSettings;
-    this.onOpenDbStorage = onOpenDbStorage;
 
     this.abortController = null;
     this.showPlusMenu = false;
-    this.activeTabs = {}; // Map of msgId -> activeTab ('all', 'images', 'videos', 'news', 'maps', 'papers')
+    this.activeTabs = {}; // Map of msgId -> activeTab ('all', 'books', 'images', 'videos', 'maps', 'news', 'sources')
+    this.activeReaderBook = null; // Currently open Gutenberg plain-text reading book
+    this.activeImagePreview = null; // Currently previewed high-res image
 
     store.subscribe((state, event) => {
       if (event !== 'STREAMING_CHUNK') {
@@ -31,7 +32,7 @@ export class ChatArea {
     const isStreaming = state.isStreaming;
 
     this.container.innerHTML = `
-      <!-- Top App Header -->
+      <!-- Top App Header: Clean, modern, uncluttered (no standalone db/agent icons) -->
       <header class="chat-header">
         <div class="header-left">
           <button class="action-icon-btn" id="btn-toggle-sidebar" title="Toggle sidebar">
@@ -42,13 +43,9 @@ export class ChatArea {
           </button>
           
           <button class="model-pill-btn" id="btn-select-model" style="display: flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 13px; font-weight: 500;">
-            <span>VisionRAG v2.5</span>
-            <span style="font-size: 10px; background: #e6f7f2; color: #10a37f; padding: 1px 5px; border-radius: 4px; font-weight: 600;">Omni</span>
-          </button>
-
-          <button class="model-pill-btn" id="btn-header-postgres" title="PostgreSQL Database & Stored Files" style="display: flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid rgba(16, 163, 127, 0.3); background: rgba(16, 163, 127, 0.08); border-radius: var(--radius-pill); font-size: 12.5px; font-weight: 500; color: #10a37f; cursor: pointer;">
             <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #10a37f;"></span>
-            <span>PostgreSQL 16 DB</span>
+            <span>VitionAI Omni</span>
+            <span style="font-size: 10px; background: #e6f7f2; color: #10a37f; padding: 1px 5px; border-radius: 4px; font-weight: 600;">Multi-Agent</span>
           </button>
         </div>
 
@@ -89,7 +86,7 @@ export class ChatArea {
         </div>
       </div>
 
-      <!-- Bottom Chat Input Area -->
+      <!-- Bottom Chat Input Area: Clean & Intuitive like ChatGPT / Perplexity -->
       <div class="chat-input-wrapper">
         <div class="chat-input-inner">
           <!-- Active Attachments Preview -->
@@ -103,11 +100,12 @@ export class ChatArea {
                 <div style="display: flex; align-items: center; gap: 6px; background: var(--bg-secondary); padding: 4px 8px; border-radius: 6px; font-size: 12px; border: 1px solid var(--border-medium);">
                   <span>${this.escapeHtml(att.name)}</span>
                   <span style="font-size: 10px; color: var(--text-muted);">(${att.size})</span>
-                  ${att.progress !== undefined && att.progress < 100
-                    ? `<span style="font-size: 10px; color: #10a37f; font-weight:600;">${att.progress}%</span>`
-                    : `<span style="font-size: 10px; color: #10a37f; font-weight:600;">✓ In PostgreSQL</span>`
+                  ${
+                    att.progress !== undefined && att.progress < 100
+                      ? `<span style="font-size: 10px; color: #10a37f; font-weight:600;">${att.progress}%</span>`
+                      : `<span style="font-size: 10px; color: #10a37f; font-weight:600;">✓ Ready</span>`
                   }
-                  <button class="btn-remove-attachment" data-att-id="${att.id}" style="color: var(--text-muted); cursor: pointer;">×</button>
+                  <button class="btn-remove-attachment" data-att-id="${att.id}" style="color: var(--text-muted); cursor: pointer; border: none; background: none;">×</button>
                 </div>
               `
                 )
@@ -133,28 +131,21 @@ export class ChatArea {
                 <div class="plus-item-icon" style="color: var(--brand-green);">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                 </div>
-                <span>Upload Image (PNG, JPG)</span>
+                <span>Upload Image for Vision & Search</span>
               </button>
 
               <button class="plus-menu-item" id="plus-opt-video-file">
                 <div class="plus-item-icon" style="color: #2563eb;">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
                 </div>
-                <span>Upload Video File (MP4)</span>
-              </button>
-
-              <button class="plus-menu-item" id="plus-opt-video-gen">
-                <div class="plus-item-icon" style="color: #9333ea;">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                </div>
-                <span>Video Generation & Camera</span>
+                <span>Transcribe Video or Add Link</span>
               </button>
 
               <button class="plus-menu-item" id="plus-opt-voice">
                 <div class="plus-item-icon" style="color: #ea580c;">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
                 </div>
-                <span>Voice Mode (Audio Conversation)</span>
+                <span>Voice Conversation</span>
               </button>
             </div>
           `
@@ -165,7 +156,7 @@ export class ChatArea {
           <div class="input-pill-container">
             <input type="file" id="file-upload-input" multiple style="display: none;" />
             
-            <button class="action-icon-btn" id="btn-toggle-plus" title="Add files, video, or voice" style="width: 34px; height: 34px; border-radius: 50%; margin-right: 6px;">
+            <button class="action-icon-btn" id="btn-toggle-plus" title="Add file, image, or link" style="width: 34px; height: 34px; border-radius: 50%; margin-right: 6px;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -176,7 +167,7 @@ export class ChatArea {
               id="chat-textarea"
               class="chat-textarea"
               rows="1"
-              placeholder="Ask anything across documents, images, video, and news..."
+              placeholder="Ask anything... VitionAI will search books, videos, images, maps & news"
             ></textarea>
 
             <div style="display: flex; align-items: center; gap: 6px; margin-left: 6px;">
@@ -208,11 +199,17 @@ export class ChatArea {
             </div>
           </div>
 
-          <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 2px;">
-            VisionRAG Multimodal Intelligence • Clean divided views for AI Answer, Images, Videos, News, Maps & Papers
+          <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 4px;">
+            VitionAI • Autonomous Multi-Agent Synthesis (Books, Videos, Maps, Images & Live Web)
           </div>
         </div>
       </div>
+
+      <!-- Plain Text Reading Modal -->
+      ${this.renderReadingModal()}
+
+      <!-- High-Res Image Preview Modal -->
+      ${this.renderImagePreviewModal()}
     `;
 
     this.bindEvents();
@@ -222,7 +219,7 @@ export class ChatArea {
 
   renderEmptyHero() {
     return `
-      <div style="margin: auto; max-width: 680px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 20px; gap: 20px;">
+      <div style="margin: auto; max-width: 680px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px 20px 20px 20px; gap: 18px;">
         <div class="minimal-circle-frame" style="width: 72px; height: 72px; border-width: 3.5px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
           <div class="two-eyes-wrap" style="gap: 9px;">
             <div class="eye-socket" style="width: 20px; height: 14px; border-width: 1.8px;">
@@ -236,6 +233,48 @@ export class ChatArea {
               <div class="eyelid-lid eyelid-lower"></div>
             </div>
           </div>
+        </div>
+
+        <h1 style="font-size: 26px; font-weight: 600; color: var(--text-primary); margin: 0; letter-spacing: -0.02em;">
+          What would you like to explore today?
+        </h1>
+        <p style="font-size: 14px; color: var(--text-secondary); max-width: 520px; margin: 0; line-height: 1.5;">
+          Ask any question or upload an image. VitionAI autonomously searches educational books, videos, images, maps, and live sources, presenting answers like a modern research engine.
+        </p>
+
+        <!-- Suggested Inquiry Prompts -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; width: 100%; margin-top: 10px;">
+          <button class="hero-prompt-chip" data-prompt="Explain Saint Yared musicology and Lalibela rock-hewn monolithic churches with online books and videos">
+            <span style="font-size: 15px;">🎼</span>
+            <div style="text-align: left;">
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Saint Yared & Lalibela</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Zema notation & monolithic architecture</div>
+            </div>
+          </button>
+
+          <button class="hero-prompt-chip" data-prompt="Endemic wildlife of Simien & Bale Mountains: Walia Ibex, Ethiopian Wolf, and Gelada Baboon">
+            <span style="font-size: 15px;">🐐</span>
+            <div style="text-align: left;">
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Walia Ibex & Simien Fauna</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Afro-alpine adaptations & biodiversity</div>
+            </div>
+          </button>
+
+          <button class="hero-prompt-chip" data-prompt="Search online educational textbooks for Python programming and Artificial Intelligence">
+            <span style="font-size: 15px;">📚</span>
+            <div style="text-align: left;">
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Python & AI Books</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Open Library & Google Books catalogs</div>
+            </div>
+          </button>
+
+          <button class="hero-prompt-chip" data-prompt="Where is the Grand Ethiopian Renaissance Dam (GERD) on the Blue Nile? Show map and video">
+            <span style="font-size: 15px;">🗺️</span>
+            <div style="text-align: left;">
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">GERD & Blue Nile Basin</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Geospatial coordinates & engineering</div>
+            </div>
+          </button>
         </div>
       </div>
     `;
@@ -256,7 +295,7 @@ export class ChatArea {
                   .map(
                     (a) => `
                   <span style="font-size: 11.5px; background: #fff; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--border-medium);">
-                    📎 ${this.escapeHtml(a.name)}
+                    📎 ${this.escapeHtml(a.name || a)}
                   </span>
                 `
                   )
@@ -270,10 +309,17 @@ export class ChatArea {
       `;
     }
 
-    // Assistant Message with Google Divided View
+    // Assistant Message with Google/Perplexity-Style Divided View
     const msgId = msg.id;
     const currentTab = this.activeTabs[msgId] || 'all';
     const mm = msg.multimodal || {};
+
+    const booksCount = (mm.books && mm.books.length) || 0;
+    const imagesCount = (mm.images && mm.images.length) || 0;
+    const videosCount = (mm.videos && mm.videos.length) || 0;
+    const mapsCount = (mm.maps && mm.maps.length) || 0;
+    const newsCount = (mm.news && mm.news.length) || 0;
+    const sourcesCount = (mm.websites && mm.websites.length) || 0;
 
     return `
       <div class="message-row assistant" data-msg-id="${msgId}">
@@ -285,30 +331,71 @@ export class ChatArea {
               <span>All (AI Answer)</span>
             </button>
 
-            <button class="google-tab-btn ${currentTab === 'images' ? 'active' : ''}" data-tab="images">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-              <span>Images (${(mm.images && mm.images.length) || 0})</span>
-            </button>
+            ${
+              booksCount > 0
+                ? `
+              <button class="google-tab-btn ${currentTab === 'books' ? 'active' : ''}" data-tab="books">
+                <span>📚</span>
+                <span>Books (${booksCount})</span>
+              </button>
+            `
+                : ''
+            }
 
-            <button class="google-tab-btn ${currentTab === 'videos' ? 'active' : ''}" data-tab="videos">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
-              <span>Videos (${(mm.videos && mm.videos.length) || 0})</span>
-            </button>
+            ${
+              imagesCount > 0
+                ? `
+              <button class="google-tab-btn ${currentTab === 'images' ? 'active' : ''}" data-tab="images">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                <span>Images (${imagesCount})</span>
+              </button>
+            `
+                : ''
+            }
 
-            <button class="google-tab-btn ${currentTab === 'news' ? 'active' : ''}" data-tab="news">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path></svg>
-              <span>News (${(mm.news && mm.news.length) || 0})</span>
-            </button>
+            ${
+              videosCount > 0
+                ? `
+              <button class="google-tab-btn ${currentTab === 'videos' ? 'active' : ''}" data-tab="videos">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                <span>Videos (${videosCount})</span>
+              </button>
+            `
+                : ''
+            }
 
-            <button class="google-tab-btn ${currentTab === 'maps' ? 'active' : ''}" data-tab="maps">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon></svg>
-              <span>Maps</span>
-            </button>
+            ${
+              mapsCount > 0
+                ? `
+              <button class="google-tab-btn ${currentTab === 'maps' ? 'active' : ''}" data-tab="maps">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon></svg>
+                <span>Maps (${mapsCount})</span>
+              </button>
+            `
+                : ''
+            }
 
-            <button class="google-tab-btn ${currentTab === 'papers' ? 'active' : ''}" data-tab="papers">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-              <span>Papers & Journals (${(mm.papers && mm.papers.length) || 0})</span>
-            </button>
+            ${
+              newsCount > 0
+                ? `
+              <button class="google-tab-btn ${currentTab === 'news' ? 'active' : ''}" data-tab="news">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path></svg>
+                <span>News (${newsCount})</span>
+              </button>
+            `
+                : ''
+            }
+
+            ${
+              sourcesCount > 0
+                ? `
+              <button class="google-tab-btn ${currentTab === 'sources' ? 'active' : ''}" data-tab="sources">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>Sources (${sourcesCount})</span>
+              </button>
+            `
+                : ''
+            }
           </div>
 
           <!-- Tab Content Views -->
@@ -323,7 +410,7 @@ export class ChatArea {
   renderActiveTabContent(tab, msg) {
     const mm = msg.multimodal || {};
 
-    // 1. ALL Tab (AI Answer + Multi-modal previews)
+    // 1. ALL TAB (AI Answer + Multi-Modal Carousels)
     if (tab === 'all') {
       if (msg.isThinking || (!msg.text && msg.isStreaming)) {
         return `
@@ -331,7 +418,7 @@ export class ChatArea {
             <div class="reflective-light-beam"></div>
             <div class="thinking-header-row">
               <div class="thinking-pulse-sparkle"></div>
-              <span>Searching multimodal knowledge & reasoning...</span>
+              <span>VitionAI is searching books, videos, images, maps & synthesizing answer...</span>
             </div>
             <div class="thinking-skeleton-wrap">
               <div class="thinking-skeleton-line" style="width: 85%;"></div>
@@ -348,13 +435,143 @@ export class ChatArea {
           ${msg.isStreaming ? `<span style="display:inline-block; width:6px; height:15px; background:#0d0d0d; margin-left:3px; animation:micPulse 0.8s infinite;"></span>` : ''}
         </div>
 
+        <!-- Inline Books Preview Bar -->
+        ${
+          mm.books && mm.books.length > 0
+            ? `
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-light);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">
+                📚 Recommended Online Educational Books
+              </span>
+              <button class="btn-jump-tab" data-target-tab="books" style="font-size: 11.5px; color: #10a37f; font-weight: 600; background: none; border: none; cursor: pointer;">
+                View All (${mm.books.length}) →
+              </button>
+            </div>
+            <div class="google-books-grid">
+              ${mm.books.slice(0, 3).map((book) => this.renderBookCard(book)).join('')}
+            </div>
+          </div>
+        `
+            : ''
+        }
+
+        <!-- Inline Images Preview Bar -->
         ${
           mm.images && mm.images.length > 0
             ? `
-          <div style="margin-top: 14px;">
-            <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">VISUAL RETRIEVAL PREVIEWS</div>
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-light);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">
+                🖼️ Verified Visual Gallery & Archives
+              </span>
+              <button class="btn-jump-tab" data-target-tab="images" style="font-size: 11.5px; color: #10a37f; font-weight: 600; background: none; border: none; cursor: pointer;">
+                View Gallery (${mm.images.length}) →
+              </button>
+            </div>
             <div class="google-images-grid">
               ${mm.images.slice(0, 3).map((img) => this.renderImageCard(img)).join('')}
+            </div>
+          </div>
+        `
+            : ''
+        }
+
+        <!-- Inline Video Player Preview -->
+        ${
+          mm.videos && mm.videos.length > 0
+            ? `
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-light);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">
+                🎥 Multimedia Lecture & Video Transcripts
+              </span>
+              <button class="btn-jump-tab" data-target-tab="videos" style="font-size: 11.5px; color: #10a37f; font-weight: 600; background: none; border: none; cursor: pointer;">
+                All Videos (${mm.videos.length}) →
+              </button>
+            </div>
+            ${this.renderVideoCard(mm.videos[0], mm.video_transcript)}
+          </div>
+        `
+            : ''
+        }
+
+        <!-- Inline Map Preview -->
+        <!-- Inline Map Preview -->
+        ${
+          mm.maps && mm.maps.length > 0
+            ? `
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-light);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">
+                🗺️ Geospatial Coordinates & Landmark Mapping
+              </span>
+              <button class="btn-jump-tab" data-target-tab="maps" style="font-size: 11.5px; color: #10a37f; font-weight: 600; background: none; border: none; cursor: pointer;">
+                All Maps (${mm.maps.length}) →
+              </button>
+            </div>
+            ${this.renderMapCard(mm.maps[0])}
+          </div>
+        `
+            : ''
+        }
+
+        <!-- Inline News Preview Bar -->
+        ${
+          mm.news && mm.news.length > 0
+            ? `
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-light);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">
+                📰 Live Verified News Reports
+              </span>
+              <button class="btn-jump-tab" data-target-tab="news" style="font-size: 11.5px; color: #10a37f; font-weight: 600; background: none; border: none; cursor: pointer;">
+                All News (${mm.news.length}) →
+              </button>
+            </div>
+            <div class="google-news-list">
+              ${mm.news.slice(0, 3).map((item) => `
+                <div class="google-news-card">
+                  <div class="news-card-publisher-row">
+                    <span style="font-weight: 700; color: #10a37f;">${this.escapeHtml(item.source || item.publisher || 'Google News')}</span>
+                    <span>•</span>
+                    <span>${this.escapeHtml(item.publishedAt || item.time || 'Recent')}</span>
+                  </div>
+                  <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer" class="news-card-title">${this.escapeHtml(item.title)}</a>
+                  <p class="news-card-snippet">${this.escapeHtml(item.snippet)}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `
+            : ''
+        }
+
+        <!-- Inline Web Citations Preview Bar -->
+        ${
+          mm.websites && mm.websites.length > 0
+            ? `
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-light);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">
+                🌐 Authoritative Web Sources & Portals
+              </span>
+              <button class="btn-jump-tab" data-target-tab="sources" style="font-size: 11.5px; color: #10a37f; font-weight: 600; background: none; border: none; cursor: pointer;">
+                All Sources (${mm.websites.length}) →
+              </button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              ${mm.websites.slice(0, 3).map((site) => `
+                <div style="padding: 10px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-md); background: #ffffff;">
+                  <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">${this.escapeHtml(site.source || 'Web Resource')}</div>
+                  <a href="${site.url}" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 600; color: #1a73e8; text-decoration: none;">
+                    ${this.escapeHtml(site.title)}
+                  </a>
+                  <p style="font-size: 12px; color: var(--text-secondary); margin: 4px 0 0 0; line-height: 1.4;">
+                    ${this.escapeHtml(site.snippet || site.extracted_text || '')}
+                  </p>
+                </div>
+              `).join('')}
             </div>
           </div>
         `
@@ -363,51 +580,64 @@ export class ChatArea {
       `;
     }
 
-    // 2. IMAGES Tab
+    // 2. BOOKS TAB
+    if (tab === 'books') {
+      if (!mm.books || mm.books.length === 0) {
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No books discovered for this query.</div>`;
+      }
+      return `
+        <div style="margin-bottom: 10px; font-size: 12.5px; color: var(--text-secondary);">
+          Educational literature discovered across <strong>Open Library</strong>, <strong>Google Books</strong>, and <strong>Project Gutenberg</strong>:
+        </div>
+        <div class="google-books-grid">
+          ${mm.books.map((b) => this.renderBookCard(b)).join('')}
+        </div>
+      `;
+    }
+
+    // 3. IMAGES TAB
     if (tab === 'images') {
       if (!mm.images || mm.images.length === 0) {
         return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No image assets associated with this query.</div>`;
       }
       return `
+        <div style="margin-bottom: 10px; font-size: 12.5px; color: var(--text-secondary);">
+          High-resolution photographs from Wikimedia Commons and curated public domain repositories:
+        </div>
         <div class="google-images-grid">
           ${mm.images.map((img) => this.renderImageCard(img)).join('')}
         </div>
       `;
     }
 
-    // 3. VIDEOS Tab
+    // 4. VIDEOS TAB
     if (tab === 'videos') {
       if (!mm.videos || mm.videos.length === 0) {
-        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No video clips indexed for this query.</div>`;
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No video lectures indexed for this query.</div>`;
       }
       return `
-        <div class="google-videos-grid">
-          ${mm.videos
-            .map(
-              (vid) => `
-            <div class="google-video-card">
-              <div class="video-thumb-wrap">
-                <img src="${vid.thumbnail}" class="video-thumb-img" alt="${this.escapeHtml(vid.title)}" />
-                <span class="video-duration-badge">${vid.duration}</span>
-                <span class="video-timestamp-badge">Keyframe ${vid.timestamp}</span>
-              </div>
-              <div class="video-card-info">
-                <span class="video-card-title">${this.escapeHtml(vid.title)}</span>
-                <span style="font-size: 11px; color: var(--brand-indigo);">${this.escapeHtml(vid.channel)}</span>
-                <span class="video-keyframe-desc">${this.escapeHtml(vid.keyframeDesc)}</span>
-              </div>
-            </div>
-          `
-            )
-            .join('')}
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          ${mm.videos.map((vid, idx) => this.renderVideoCard(vid, idx === 0 ? mm.video_transcript : null)).join('')}
         </div>
       `;
     }
 
-    // 4. NEWS Tab
+    // 5. MAPS TAB
+    if (tab === 'maps') {
+      if (!mm.maps || mm.maps.length === 0) {
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No geospatial coordinates mapped for this query.</div>`;
+      }
+      return `
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          ${mm.maps.map((m) => this.renderMapCard(m)).join('')}
+        </div>
+      `;
+    }
+
+    // 6. NEWS TAB
     if (tab === 'news') {
       if (!mm.news || mm.news.length === 0) {
-        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No recent news articles found.</div>`;
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No live news reports found for this query.</div>`;
       }
       return `
         <div class="google-news-list">
@@ -416,11 +646,11 @@ export class ChatArea {
               (item) => `
             <div class="google-news-card">
               <div class="news-card-publisher-row">
-                <span style="font-weight: 600; color: var(--text-primary);">${this.escapeHtml(item.publisher)}</span>
+                <span style="font-weight: 700; color: #10a37f;">${this.escapeHtml(item.source || item.publisher || 'Google News')}</span>
                 <span>•</span>
-                <span>${item.time}</span>
+                <span>${this.escapeHtml(item.publishedAt || item.time || 'Recent')}</span>
               </div>
-              <a href="#" class="news-card-title">${this.escapeHtml(item.title)}</a>
+              <a href="${item.url || '#'}" target="_blank" rel="noopener noreferrer" class="news-card-title">${this.escapeHtml(item.title)}</a>
               <p class="news-card-snippet">${this.escapeHtml(item.snippet)}</p>
             </div>
           `
@@ -430,48 +660,25 @@ export class ChatArea {
       `;
     }
 
-    // 5. MAPS Tab
-    if (tab === 'maps') {
-      const mapItem = (mm.maps && mm.maps[0]) || {
-        locationName: 'Neural Research Center',
-        coordinates: '37.7749° N, 122.4194° W',
-        region: 'San Francisco Innovation Hub',
-        type: 'Facility Blueprint'
-      };
-      return `
-        <div class="google-map-card">
-          <div class="map-visual-placeholder">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            <span>Interactive Spatial Grounding: ${this.escapeHtml(mapItem.coordinates)}</span>
-          </div>
-          <div class="map-info-body">
-            <span style="font-size: 15px; font-weight: 600; color: var(--text-primary);">${this.escapeHtml(mapItem.locationName)}</span>
-            <span style="font-size: 13px; color: var(--text-secondary);">${this.escapeHtml(mapItem.region)}</span>
-            <span style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Context: ${this.escapeHtml(mapItem.floorplan || mapItem.type)}</span>
-          </div>
-        </div>
-      `;
-    }
-
-    // 6. PAPERS & JOURNALS Tab
-    if (tab === 'papers') {
-      if (!mm.papers || mm.papers.length === 0) {
-        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No research papers indexed for this query.</div>`;
+    // 7. SOURCES & CITATIONS TAB
+    if (tab === 'sources') {
+      const sites = mm.websites || [];
+      if (sites.length === 0) {
+        return `<div style="font-size: 13px; color: var(--text-muted); padding: 12px;">No external web citations listed.</div>`;
       }
       return `
-        <div class="google-papers-list">
-          ${mm.papers
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          ${sites
             .map(
-              (p) => `
-            <div class="paper-card">
-              <span class="paper-journal-tag">${this.escapeHtml(p.journal)} (${p.year})</span>
-              <a href="#" class="paper-title">${this.escapeHtml(p.title)}</a>
-              <span class="paper-authors">${this.escapeHtml(p.authors)}</span>
-              <p class="paper-abstract">${this.escapeHtml(p.abstract)}</p>
-              <div style="font-size: 11.5px; color: var(--text-muted); display: flex; gap: 12px; margin-top: 4px;">
-                <span>Citations: <strong>${p.citations}</strong></span>
-                <span>DOI: <code style="font-size: 11px;">${p.doi}</code></span>
-              </div>
+              (site) => `
+            <div style="padding: 12px 14px; border: 1px solid var(--border-medium); border-radius: var(--radius-md); background: #ffffff;">
+              <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 2px;">${this.escapeHtml(site.source || 'Web Resource')}</div>
+              <a href="${site.url}" target="_blank" rel="noopener noreferrer" style="font-size: 14px; font-weight: 600; color: #1a73e8; text-decoration: none;">
+                ${this.escapeHtml(site.title)}
+              </a>
+              <p style="font-size: 12.5px; color: var(--text-secondary); margin: 6px 0 0 0; line-height: 1.45;">
+                ${this.escapeHtml(site.snippet || site.extracted_text || '')}
+              </p>
             </div>
           `
             )
@@ -483,50 +690,253 @@ export class ChatArea {
     return '';
   }
 
+  // Book Card Renderer
+  renderBookCard(book) {
+    const authors = Array.isArray(book.authors) ? book.authors.join(', ') : (book.authors || 'Scholarly Author');
+    const isGutenberg = book.source === 'Project Gutenberg' || (book.id && book.id.includes('gutenberg'));
+    const bookId = book.gutenbergId || (book.id && book.id.split(':')[1]) || 1342;
+
+    return `
+      <div class="google-book-card">
+        <div class="book-card-header">
+          <div class="book-cover-wrap">
+            <img src="${book.coverImage || 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&auto=format&fit=crop&q=80'}" alt="${this.escapeHtml(book.title)}" loading="lazy" />
+          </div>
+          <div class="book-meta-top">
+            <span class="book-source-badge">${this.escapeHtml(book.source || 'Open Library')}</span>
+            <div class="book-title" title="${this.escapeHtml(book.title)}">${this.escapeHtml(book.title)}</div>
+            <div class="book-authors" title="${this.escapeHtml(authors)}">${this.escapeHtml(authors)}</div>
+            ${book.publishedYear ? `<div style="font-size: 11px; color: var(--text-muted);">${book.publishedYear}</div>` : ''}
+          </div>
+        </div>
+        <div class="book-card-body">
+          <div class="book-note">${this.escapeHtml(book.accessNote || 'Digital online catalog.')}</div>
+          <div class="book-card-actions">
+            <a href="${book.readUrl || book.sourceUrl || '#'}" target="_blank" rel="noopener noreferrer" class="btn-read-online">
+              <span>Read Online</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+            ${
+              isGutenberg || book.fullTextAvailable
+                ? `
+              <button class="btn-read-text" data-book-id="${bookId}" data-book-title="${this.escapeHtml(book.title)}" title="Read plain text in browser">
+                <span>📖 Read Text</span>
+              </button>
+            `
+                : ''
+            }
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Image Card Renderer
   renderImageCard(img) {
     return `
-      <div class="google-image-card">
-        <img src="${img.url}" class="image-card-thumb" alt="${this.escapeHtml(img.title)}" />
+      <div class="google-image-card" data-img-url="${img.url}" data-img-title="${this.escapeHtml(img.title)}" style="cursor: pointer;">
+        <img src="${img.thumbnail || img.url}" class="image-card-thumb" alt="${this.escapeHtml(img.title)}" loading="lazy" />
         <div class="image-card-info">
-          <span class="image-card-title">${this.escapeHtml(img.title)}</span>
-          <span class="image-card-source">${this.escapeHtml(img.source)} • <strong style="color: var(--brand-green);">${img.tag}</strong></span>
+          <div class="image-card-title">${this.escapeHtml(img.title)}</div>
+          <div class="image-card-source">${this.escapeHtml(img.sourceName || 'Visual Archive')}</div>
+          ${img.license ? `<span style="font-size: 10px; color: #10a37f; font-weight:600;">${this.escapeHtml(img.license)}</span>` : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  // Video Card Renderer
+  renderVideoCard(vid, transcriptData = null) {
+    const embedUrl = vid.embedUrl || `https://www.youtube.com/embed/${vid.id}`;
+    const segments = (transcriptData && transcriptData.segments) || [];
+
+    return `
+      <div class="google-video-card" style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-medium); background: #ffffff;">
+        <iframe
+          class="video-player-frame"
+          src="${embedUrl}"
+          title="${this.escapeHtml(vid.title)}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <div style="padding: 14px 16px;">
+          <div style="font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">
+            ${this.escapeHtml(vid.title)}
+          </div>
+          <div style="font-size: 12px; color: #2563eb; font-weight: 600; margin-bottom: 8px;">
+            ${this.escapeHtml(vid.channel || 'Educational Channel')}
+          </div>
+          <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.45; margin: 0 0 10px 0;">
+            ${this.escapeHtml(vid.description || '')}
+          </p>
+        </div>
+
+        <!-- Video Transcript & Chapters -->
+        ${
+          segments.length > 0
+            ? `
+          <div class="video-chapters-wrap">
+            <span style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+              Timestamped Video Chapters
+            </span>
+            <div class="chapter-pills-row">
+              ${segments
+                .map(
+                  (seg) => `
+                <button class="chapter-pill" data-ts="${seg.timestamp}" data-text="${this.escapeHtml(seg.text)}">
+                  <strong>${seg.timestamp}</strong> ${this.escapeHtml(seg.text.slice(0, 32))}...
+                </button>
+              `
+                )
+                .join('')}
+            </div>
+            <div class="active-chapter-preview" style="font-size: 12px; color: var(--text-primary); background: #ffffff; padding: 8px 10px; border-radius: 4px; border: 1px solid var(--border-light); margin-top: 4px;">
+              💡 <em>Click any chapter above to inspect subtitle transcription.</em>
+            </div>
+          </div>
+        `
+            : ''
+        }
+      </div>
+    `;
+  }
+
+  // Map Card Renderer
+  renderMapCard(map) {
+    const embedUrl = map.embedUrl || `https://www.openstreetmap.org/export/embed.html?bbox=38.68,8.96,38.80,9.08&layer=mapnik`;
+    const osmUrl = map.osmUrl || `https://www.openstreetmap.org/`;
+
+    return `
+      <div class="google-map-card">
+        <iframe
+          class="map-frame-box"
+          src="${embedUrl}"
+          title="${this.escapeHtml(map.locationName || 'Geospatial Map')}"
+          loading="lazy"
+        ></iframe>
+        <div class="map-info-body">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="font-size: 16px; font-weight: 700; color: var(--text-primary);">
+              ${this.escapeHtml(map.locationName || 'Geographic Entity')}
+            </div>
+            <a href="${osmUrl}" target="_blank" rel="noopener noreferrer" style="font-size: 11.5px; color: #1a73e8; font-weight: 600; text-decoration: none;">
+              OpenStreetMap ↗
+            </a>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
+            <span>📍 <strong>${this.escapeHtml(map.coordinates || '')}</strong></span>
+            ${map.elevation ? `<span>• ⛰️ ${this.escapeHtml(map.elevation)}</span>` : ''}
+            ${map.region ? `<span>• 🗺️ ${this.escapeHtml(map.region)}</span>` : ''}
+          </div>
+          ${
+            map.historicalSignificance
+              ? `
+            <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; margin: 8px 0 0 0;">
+              ${this.escapeHtml(map.historicalSignificance)}
+            </p>
+          `
+              : ''
+          }
+        </div>
+      </div>
+    `;
+  }
+
+  // Plain Text Reading Modal (Inline Project Gutenberg & URL Reader)
+  renderReadingModal() {
+    if (!this.activeReaderBook) return '';
+    return `
+      <div class="reader-modal-overlay" id="reader-modal-overlay">
+        <div class="reader-modal-card">
+          <div class="reader-modal-header">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: #10a37f; text-transform: uppercase;">Project Gutenberg Digital Reader</div>
+              <div style="font-size: 15px; font-weight: 700; color: var(--text-primary);">${this.escapeHtml(this.activeReaderBook.title)}</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 11px; background: #e8f0fe; color: #1a73e8; padding: 3px 8px; border-radius: 10px; font-weight: 600;">
+                ${this.activeReaderBook.characters ? `${Math.round(this.activeReaderBook.characters / 1000)}k chars` : 'Full Text'}
+              </span>
+              <button class="action-icon-btn" id="btn-close-reader" style="font-size: 18px; width: 32px; height: 32px;">×</button>
+            </div>
+          </div>
+          <div class="reader-modal-body" id="reader-modal-body">
+            ${this.activeReaderBook.isLoading ? '<em>Loading plain-text book content from Project Gutenberg archive...</em>' : this.escapeHtml(this.activeReaderBook.text)}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Image Preview Zoom Modal
+  renderImagePreviewModal() {
+    if (!this.activeImagePreview) return '';
+    return `
+      <div class="reader-modal-overlay" id="image-preview-overlay" style="background: rgba(0,0,0,0.85);">
+        <div style="max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <img src="${this.activeImagePreview.url}" style="max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);" />
+          <div style="color: #ffffff; font-size: 14px; font-weight: 600; text-align: center;">
+            ${this.escapeHtml(this.activeImagePreview.title)}
+          </div>
+          <button class="btn-read-online" id="btn-close-image-preview" style="background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.4);">
+            Close Preview
+          </button>
         </div>
       </div>
     `;
   }
 
   bindEvents() {
-    // Toggle Sidebar
-    const toggleSidebarBtn = this.container.querySelector('#btn-toggle-sidebar');
-    if (toggleSidebarBtn) {
-      toggleSidebarBtn.addEventListener('click', () => store.toggleSidebar());
+    // Sidebar Toggle
+    const sidebarToggleBtn = this.container.querySelector('#btn-toggle-sidebar');
+    if (sidebarToggleBtn) {
+      sidebarToggleBtn.addEventListener('click', () => store.toggleSidebar());
     }
 
-    // Top Header Actions
-    const topNewChatBtn = this.container.querySelector('#btn-new-chat-top');
-    if (topNewChatBtn) topNewChatBtn.addEventListener('click', () => store.createChat());
-
-    const headerVoiceBtn = this.container.querySelector('#btn-header-voice');
-    if (headerVoiceBtn && this.onOpenVoice) headerVoiceBtn.addEventListener('click', () => this.onOpenVoice());
-
-    const headerVideoBtn = this.container.querySelector('#btn-header-video');
-    if (headerVideoBtn && this.onOpenVideo) headerVideoBtn.addEventListener('click', () => this.onOpenVideo());
+    // Voice & Video Mode Top Buttons
+    const voiceBtn = this.container.querySelector('#btn-header-voice');
+    if (voiceBtn && this.onOpenVoice) voiceBtn.addEventListener('click', () => this.onOpenVoice());
 
     const quickVoiceBtn = this.container.querySelector('#btn-quick-voice');
     if (quickVoiceBtn && this.onOpenVoice) quickVoiceBtn.addEventListener('click', () => this.onOpenVoice());
 
-    // Settings trigger
-    const modelBtn = this.container.querySelector('#btn-select-model');
-    if (modelBtn && this.onOpenSettings) modelBtn.addEventListener('click', () => this.onOpenSettings());
+    const videoBtn = this.container.querySelector('#btn-header-video');
+    if (videoBtn && this.onOpenVideo) videoBtn.addEventListener('click', () => this.onOpenVideo());
 
-    const postgresBtn = this.container.querySelector('#btn-header-postgres');
-    if (postgresBtn && this.onOpenDbStorage) postgresBtn.addEventListener('click', () => this.onOpenDbStorage());
+    const newChatBtn = this.container.querySelector('#btn-new-chat-top');
+    if (newChatBtn) newChatBtn.addEventListener('click', () => store.createChat());
 
-    // Plus (+) Attachment Menu Toggle
-    const togglePlusBtn = this.container.querySelector('#btn-toggle-plus');
-    const fileInput = this.container.querySelector('#file-upload-input');
-    if (togglePlusBtn) {
-      togglePlusBtn.addEventListener('click', (e) => {
+    // Suggested Prompts
+    this.container.querySelectorAll('.hero-prompt-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const p = chip.dataset.prompt;
+        const textarea = this.container.querySelector('#chat-textarea');
+        if (textarea && p) {
+          textarea.value = p;
+          this.updateTextareaHeight(textarea);
+          this.updateSendButtonState();
+          this.handleSendMessage();
+        }
+      });
+    });
+
+    // Jump to Tab Buttons inside 'All' View
+    this.container.querySelectorAll('.btn-jump-tab').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.dataset.targetTab;
+        const msgRow = btn.closest('.message-row');
+        if (msgRow && targetTab) {
+          const msgId = msgRow.dataset.msgId;
+          this.activeTabs[msgId] = targetTab;
+          this.render();
+        }
+      });
+    });
+
+    // Plus Menu Popover Toggle
+    const plusBtn = this.container.querySelector('#btn-toggle-plus');
+    if (plusBtn) {
+      plusBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         this.showPlusMenu = !this.showPlusMenu;
         this.render();
@@ -541,43 +951,37 @@ export class ChatArea {
       }
     });
 
-    // Plus Popover Options
+    // File Upload Options in Plus Menu
+    const fileInput = this.container.querySelector('#file-upload-input');
     const optDoc = this.container.querySelector('#plus-opt-doc');
+    const optImg = this.container.querySelector('#plus-opt-image');
+    const optVid = this.container.querySelector('#plus-opt-video-file');
+    const optVoice = this.container.querySelector('#plus-opt-voice');
+
     if (optDoc && fileInput) {
       optDoc.addEventListener('click', () => {
-        fileInput.accept = '.pdf,.txt,.docx,.csv';
-        fileInput.click();
         this.showPlusMenu = false;
+        fileInput.accept = '.pdf,.txt,.md,.json,.csv';
+        fileInput.click();
       });
     }
 
-    const optImg = this.container.querySelector('#plus-opt-image');
     if (optImg && fileInput) {
       optImg.addEventListener('click', () => {
-        fileInput.accept = '.png,.jpg,.jpeg,.tiff';
-        fileInput.click();
         this.showPlusMenu = false;
+        fileInput.accept = 'image/*';
+        fileInput.click();
       });
     }
 
-    const optVid = this.container.querySelector('#plus-opt-video-file');
     if (optVid && fileInput) {
       optVid.addEventListener('click', () => {
-        fileInput.accept = '.mp4,.webm,.mkv';
+        this.showPlusMenu = false;
+        fileInput.accept = 'video/*,.mp4,.webm';
         fileInput.click();
-        this.showPlusMenu = false;
       });
     }
 
-    const optVidGen = this.container.querySelector('#plus-opt-video-gen');
-    if (optVidGen && this.onOpenVideo) {
-      optVidGen.addEventListener('click', () => {
-        this.showPlusMenu = false;
-        this.onOpenVideo();
-      });
-    }
-
-    const optVoice = this.container.querySelector('#plus-opt-voice');
     if (optVoice && this.onOpenVoice) {
       optVoice.addEventListener('click', () => {
         this.showPlusMenu = false;
@@ -585,9 +989,10 @@ export class ChatArea {
       });
     }
 
-    // File Input Change
     if (fileInput) {
-      fileInput.addEventListener('change', (e) => this.handleFileUpload(e.target.files));
+      fileInput.addEventListener('change', (e) => {
+        this.handleFileUpload(e.target.files);
+      });
     }
 
     // Remove Attachment Chip
@@ -608,6 +1013,80 @@ export class ChatArea {
         this.render();
       });
     });
+
+    // Chapter Pill Transcript Click
+    this.container.querySelectorAll('.chapter-pill').forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const wrap = pill.closest('.video-chapters-wrap');
+        const preview = wrap.querySelector('.active-chapter-preview');
+        const ts = pill.dataset.ts;
+        const txt = pill.dataset.text;
+        if (preview) {
+          preview.innerHTML = `<strong>[${ts}]</strong> ${this.escapeHtml(txt)}`;
+        }
+      });
+    });
+
+    // Read Plain Text Gutenberg Book Button
+    this.container.querySelectorAll('.btn-read-text').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const bookId = btn.dataset.bookId || 1342;
+        const bookTitle = btn.dataset.bookTitle || `Book #${bookId}`;
+
+        this.activeReaderBook = {
+          title: bookTitle,
+          isLoading: true,
+          text: ''
+        };
+        this.render();
+
+        try {
+          const res = await api.readGutenbergBook(bookId);
+          this.activeReaderBook = {
+            title: bookTitle,
+            isLoading: false,
+            text: res.text || 'Text content could not be retrieved.',
+            characters: res.characters_returned
+          };
+          this.render();
+        } catch (e) {
+          this.activeReaderBook = {
+            title: bookTitle,
+            isLoading: false,
+            text: `Error loading text: ${e.message}. You can still read this title directly on Project Gutenberg website.`
+          };
+          this.render();
+        }
+      });
+    });
+
+    // Close Reader Modal
+    const closeReaderBtn = this.container.querySelector('#btn-close-reader');
+    if (closeReaderBtn) {
+      closeReaderBtn.addEventListener('click', () => {
+        this.activeReaderBook = null;
+        this.render();
+      });
+    }
+
+    // Image Zoom Preview
+    this.container.querySelectorAll('.google-image-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        this.activeImagePreview = {
+          url: card.dataset.imgUrl,
+          title: card.dataset.imgTitle
+        };
+        this.render();
+      });
+    });
+
+    const closeImgBtn = this.container.querySelector('#btn-close-image-preview');
+    if (closeImgBtn) {
+      closeImgBtn.addEventListener('click', () => {
+        this.activeImagePreview = null;
+        this.render();
+      });
+    }
 
     // Textarea & Send Button
     const textarea = this.container.querySelector('#chat-textarea');
@@ -734,12 +1213,12 @@ export class ChatArea {
 
     this.abortController = new AbortController();
 
-    // Show transparent reflective light animation for ~500ms before chunk streaming starts
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    // Subtle reflective light animation for ~400ms before chunk streaming starts
+    await new Promise((resolve) => setTimeout(resolve, 400));
 
     try {
       const result = await api.queryVisionRAG({
-        prompt: text || 'Analyze uploaded visual assets.',
+        prompt: text || 'Analyze attached visual asset.',
         chatId: activeChat.id,
         attachments: attachments,
         settings: store.getState().settings,
@@ -764,7 +1243,7 @@ export class ChatArea {
         if (currentMsg) {
           currentMsg.isThinking = false;
           currentMsg.text = result.text;
-          currentMsg.multimodal = result.multimodal;
+          currentMsg.multimodal = result.multimodal || {};
           currentMsg.isStreaming = false;
         }
       }
@@ -784,9 +1263,7 @@ export class ChatArea {
       if (panel) {
         let textEl = panel.querySelector('.assistant-text');
         if (!textEl) {
-          panel.innerHTML = `
-            <div class="assistant-text"></div>
-          `;
+          panel.innerHTML = `<div class="assistant-text"></div>`;
           textEl = panel.querySelector('.assistant-text');
         }
         textEl.innerHTML = `${this.formatMarkdown(text)}${isStreaming ? `<span style="display:inline-block; width:6px; height:15px; background:#0d0d0d; margin-left:3px; animation:micPulse 0.8s infinite;"></span>` : ''}`;
@@ -804,13 +1281,17 @@ export class ChatArea {
 
   formatMarkdown(text) {
     if (!text) return '';
-    text = text.replace(/^### (.*$)/gim, '<h3 style="font-size:16px; font-weight:600; margin:10px 0 6px 0;">$1</h3>');
-    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    text = text.replace(/^\s*-\s+(.*$)/gim, '<li style="margin-bottom:4px;">$1</li>');
-    text = text.replace(/(<li.*<\/li>)/gms, '<ul style="padding-left:18px; margin-bottom:10px;">$1</ul>');
-    const paras = text.split(/\n\n+/);
-    return paras.map((p) => (p.startsWith('<h') || p.startsWith('<ul') ? p : `<p style="margin-bottom:10px;">${p.replace(/\n/g, '<br/>')}</p>`)).join('');
+    let html = text;
+    html = html.replace(/^#### (.*$)/gim, '<h4 style="font-size:14px; font-weight:700; margin:10px 0 4px 0; color:var(--text-primary);">$1</h4>');
+    html = html.replace(/^### (.*$)/gim, '<h3 style="font-size:16px; font-weight:700; margin:12px 0 6px 0; color:var(--text-primary);">$1</h3>');
+    html = html.replace(/^## (.*$)/gim, '<h2 style="font-size:18px; font-weight:700; margin:14px 0 8px 0; color:var(--text-primary);">$1</h2>');
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    html = html.replace(/`([^`]+)`/g, '<code style="background:#f3f4f6; padding:2px 5px; border-radius:4px; font-size:12.5px; font-family:monospace;">$1</code>');
+    html = html.replace(/^\s*-\s+(.*$)/gim, '<li style="margin-bottom:4px;">$1</li>');
+    html = html.replace(/(<li.*<\/li>)/gms, '<ul style="padding-left:20px; margin:8px 0 12px 0;">$1</ul>');
+    const paras = html.split(/\n\n+/);
+    return paras.map((p) => (p.startsWith('<h') || p.startsWith('<ul') || p.startsWith('<pre') ? p : `<p style="margin-bottom:12px; line-height:1.6;">${p.replace(/\n/g, '<br/>')}</p>`)).join('');
   }
 
   escapeHtml(str) {

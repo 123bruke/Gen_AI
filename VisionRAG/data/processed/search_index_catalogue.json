@@ -1,0 +1,21 @@
+{
+  "index_version": "1.0",
+  "total_indexed_terms": 15,
+  "inverted_index": {
+    "yared": ["saint_yared_zema_musicology.md", "ethiopian_education_history_charter.md"],
+    "zema": ["saint_yared_zema_musicology.md", "ethiopian_education_history_charter.md"],
+    "nebab": ["ethiopian_education_history_charter.md"],
+    "qene": ["ethiopian_education_history_charter.md"],
+    "fetha negest": ["traditional_fetha_negest_legal_jurisprudence.md", "ethiopian_education_history_charter.md"],
+    "menelik": ["menelik_ii_and_modern_schooling.md", "ethiopian_education_history_charter.md"],
+    "addis ababa university": ["ethiopian_education_history_charter.md"],
+    "walia": ["walia_ibex_ecological_field_study.json", "walia_ibex_simien_escarpment.json"],
+    "ibex": ["walia_ibex_ecological_field_study.json", "walia_ibex_simien_escarpment.json"],
+    "wolf": ["ethiopian_wolf_bale_sanetti_census.json", "ethiopian_wolf_sanetti_plateau.json"],
+    "simien": ["walia_ibex_ecological_field_study.json", "staged_geospatial_features.geojson"],
+    "bale": ["ethiopian_wolf_bale_sanetti_census.json", "staged_geospatial_features.geojson"],
+    "coffee": ["coffea_arabica_wild_genomics.csv"],
+    "endod": ["cleaned_biological_taxa.json"],
+    "lalibela": ["lalibela_bet_giyorgis_aerial.json", "staged_geospatial_features.geojson"]
+  }
+}

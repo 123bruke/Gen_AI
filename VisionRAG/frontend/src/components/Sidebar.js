@@ -4,12 +4,13 @@ import { store } from '../store/state.js';
 import { api } from '../services/api.js';
 
 export class Sidebar {
-  constructor(containerEl, { onOpenSettings, onReplayIntro, onOpenAuth, onOpenDbStorage }) {
+  constructor(containerEl, { onOpenSettings, onReplayIntro, onOpenAuth, onOpenDbStorage, onOpenAgentHub }) {
     this.container = containerEl;
     this.onOpenSettings = onOpenSettings;
     this.onReplayIntro = onReplayIntro;
     this.onOpenAuth = onOpenAuth;
     this.onOpenDbStorage = onOpenDbStorage;
+    this.onOpenAgentHub = onOpenAgentHub;
     this.searchQuery = '';
     this.collapsedFolders = new Set();
 
@@ -80,11 +81,6 @@ export class Sidebar {
             </svg>
           </button>
         </div>
-        <button class="btn-new-chat" id="btn-sidebar-db" style="margin-top: 6px; width: 100%; background: rgba(16, 163, 127, 0.08); border: 1px solid rgba(16, 163, 127, 0.25); color: #10a37f; font-weight: 600; font-size: 12px; gap: 6px; padding: 6px 10px;">
-          <span>🐘</span>
-          <span>PostgreSQL Storage</span>
-          <span style="font-size: 10px; background: #10a37f; color: #fff; padding: 1px 6px; border-radius: 10px; font-weight: 700; margin-left: auto;">Online</span>
-        </button>
       </div>
 
       <div class="sidebar-scroll">
@@ -187,7 +183,6 @@ export class Sidebar {
               <span>Create Account</span>
             </button>
             <div style="display: flex; gap: 4px;">
-              <button class="action-icon-btn" id="btn-sidebar-db-footer" title="PostgreSQL Database & Stored Files">🐘</button>
               <button class="action-icon-btn" id="sidebar-settings-btn" title="Open Settings">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="3"></circle>
@@ -249,6 +244,9 @@ export class Sidebar {
 
     const dbBtn = this.container.querySelector('#btn-sidebar-db');
     if (dbBtn && this.onOpenDbStorage) dbBtn.addEventListener('click', () => this.onOpenDbStorage());
+
+    const agentHubBtn = this.container.querySelector('#btn-sidebar-agent-hub');
+    if (agentHubBtn && this.onOpenAgentHub) agentHubBtn.addEventListener('click', () => this.onOpenAgentHub());
 
     const dbFooterBtn = this.container.querySelector('#btn-sidebar-db-footer');
     if (dbFooterBtn && this.onOpenDbStorage) dbFooterBtn.addEventListener('click', () => this.onOpenDbStorage());

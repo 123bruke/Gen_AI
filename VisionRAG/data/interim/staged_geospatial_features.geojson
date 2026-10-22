@@ -1,0 +1,131 @@
+{
+  "type": "FeatureCollection",
+  "name": "Ethiopian_Historical_and_Ecological_Sanctuaries",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_01",
+        "name": "Lalibela Rock-Hewn Monoliths",
+        "category": "Historical & Religious",
+        "unesco_year": 1978,
+        "elevation_m": 2500,
+        "region": "Amhara"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [39.0412, 12.0319]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_02",
+        "name": "Axum Obelisks and Necropolis",
+        "category": "Ancient Kingdom Capital",
+        "unesco_year": 1980,
+        "elevation_m": 2131,
+        "region": "Tigray"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [38.7214, 14.1278]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_03",
+        "name": "Simien Mountains National Park",
+        "category": "Afro-alpine Biodiversity Reserve",
+        "unesco_year": 1978,
+        "elevation_m": 4550,
+        "key_fauna": "Capra walie, Theropithecus gelada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [38.0667, 13.1833]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_04",
+        "name": "Bale Mountains National Park & Sanetti",
+        "category": "Afro-alpine Biodiversity Reserve",
+        "elevation_m": 4377,
+        "key_fauna": "Canis simensis, Tragelaphus buxtoni"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [39.7744, 6.8711]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_05",
+        "name": "Fasil Ghebbi, Gondar",
+        "category": "Royal Castle Enclosure",
+        "unesco_year": 1979,
+        "elevation_m": 2133,
+        "period": "17th Century Imperial"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.4650, 12.6075]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_06",
+        "name": "Harar Jugol Historical City",
+        "category": "Walled Islamic Center",
+        "unesco_year": 2006,
+        "elevation_m": 1885,
+        "mosques_count": 82
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [42.1382, 9.3139]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_07",
+        "name": "Addis Ababa University (Sidist Kilo)",
+        "category": "Academic & Research Flagship",
+        "founded_year": 1950,
+        "elevation_m": 2355,
+        "landmark": "Guenete Leul Palace"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [38.7611, 9.0483]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "geo_08",
+        "name": "Grand Ethiopian Renaissance Dam (GERD)",
+        "category": "Strategic Hydropower Infrastructure",
+        "capacity_mw": 5150,
+        "elevation_m": 600,
+        "river": "Blue Nile (Abay)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [35.0936, 11.2156]
+      }
+    }
+  ]
+}

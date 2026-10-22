@@ -110,30 +110,25 @@ class ChromaVectorStore:
         self._init_client()
 
     def _init_client(self):
-        import socket
-        port_open = False
-        try:
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                s.settimeout(0.05)
-                port_open = (s.connect_ex(("127.0.0.1", 8000)) == 0)
-        except Exception:
-            port_open = False
-
-        if port_open:
-            try:
-                import chromadb
-                client = chromadb.HttpClient(host="localhost", port=8000)
-                self.collection = client.get_or_create_collection(
-                    name="ethiopia_multimodal_knowledge",
-                    metadata={"description": "Multimodal RAG layer for Ethiopian enterprises and media"}
-                )
-                self.client = client
-                return
-            except Exception:
-                pass
-
-        # Resilient embedded vector collection
         storage_file = os.path.join(self.persist_dir, "ethiopia_vectors.json")
+        # Check if dedicated ChromaDB server is reachable on port 8001
+        try:
+            import urllib.request
+            req = urllib.request.Request("http://127.0.0.1:8001/api/v1/heartbeat")
+            with urllib.request.urlopen(req, timeout=0.2) as resp:
+                if resp.status == 200:
+                    import chromadb
+                    client = chromadb.HttpClient(host="localhost", port=8001)
+                    self.collection = client.get_or_create_collection(
+                        name="ethiopia_multimodal_knowledge",
+                        metadata={"description": "Multimodal RAG layer for Ethiopian enterprises and media"}
+                    )
+                    self.client = client
+                    return
+        except Exception:
+            pass
+
+        # Resilient persistent embedded vector collection
         self.collection = LocalVectorCollection("ethiopia_multimodal_knowledge", storage_file)
         self._use_fallback = True
 

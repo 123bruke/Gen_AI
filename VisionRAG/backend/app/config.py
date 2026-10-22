@@ -8,7 +8,10 @@ from typing import Optional
 from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 
-# Load .env if present
+# Load .env from backend directory as well as cwd
+env_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".env"))
+if os.path.exists(env_path):
+    load_dotenv(env_path)
 load_dotenv()
 
 class Settings(BaseSettings):

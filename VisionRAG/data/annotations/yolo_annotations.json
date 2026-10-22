@@ -1,0 +1,93 @@
+{
+  "info": {
+    "description": "VisionRAG Multimodal Computer Vision Annotations (Ethiopian Cultural Heritage & Endemic Fauna)",
+    "version": "2.0.0",
+    "year": 2026,
+    "contributor": "VisionRAG AI Research Consortium"
+  },
+  "categories": [
+    {"id": 1, "name": "walia_ibex", "supercategory": "endemic_fauna"},
+    {"id": 2, "name": "ethiopian_wolf", "supercategory": "endemic_fauna"},
+    {"id": 3, "name": "gelada_baboon", "supercategory": "endemic_fauna"},
+    {"id": 4, "name": "mountain_nyala", "supercategory": "endemic_fauna"},
+    {"id": 5, "name": "rock_hewn_monolith", "supercategory": "cultural_architecture"},
+    {"id": 6, "name": "ancient_granite_stela", "supercategory": "cultural_architecture"},
+    {"id": 7, "name": "geez_illuminated_manuscript", "supercategory": "historical_literature"},
+    {"id": 8, "name": "wild_coffee_canopy", "supercategory": "botanical_genomics"}
+  ],
+  "annotations": [
+    {
+      "id": "ann_001",
+      "image_id": "img_eth_walia_01",
+      "category_id": 1,
+      "category_name": "walia_ibex",
+      "bbox_normalized": [0.28, 0.22, 0.54, 0.72],
+      "segmentation_polygon": [
+        [0.28, 0.45], [0.34, 0.22], [0.48, 0.24], [0.62, 0.38],
+        [0.82, 0.55], [0.78, 0.82], [0.65, 0.94], [0.42, 0.94], [0.28, 0.75]
+      ],
+      "area_pixels": 432500,
+      "attributes": {
+        "sex": "male",
+        "horn_length_estimate_cm": 105,
+        "cliffs_background": true
+      }
+    },
+    {
+      "id": "ann_002",
+      "image_id": "img_eth_lalibela_02",
+      "category_id": 5,
+      "category_name": "rock_hewn_monolith",
+      "bbox_normalized": [0.35, 0.32, 0.30, 0.36],
+      "segmentation_polygon": [
+        [0.45, 0.32], [0.55, 0.32], [0.55, 0.42], [0.65, 0.42],
+        [0.65, 0.58], [0.55, 0.58], [0.55, 0.68], [0.45, 0.68],
+        [0.45, 0.58], [0.35, 0.58], [0.35, 0.42], [0.45, 0.42]
+      ],
+      "area_pixels": 612000,
+      "attributes": {
+        "structure": "Bet Giyorgis (Greek Cruciform)",
+        "trench_depth_meters": 12.0
+      }
+    },
+    {
+      "id": "ann_003",
+      "image_id": "img_eth_wolf_03",
+      "category_id": 2,
+      "category_name": "ethiopian_wolf",
+      "bbox_normalized": [0.38, 0.42, 0.32, 0.44],
+      "area_pixels": 312000,
+      "attributes": {
+        "coat_color": "tawny_red_with_white_throat",
+        "behavior": "rodent_stalking",
+        "location": "Sanetti Plateau"
+      }
+    },
+    {
+      "id": "ann_004",
+      "image_id": "img_eth_axum_04",
+      "category_id": 6,
+      "category_name": "ancient_granite_stela",
+      "bbox_normalized": [0.36, 0.08, 0.28, 0.88],
+      "area_pixels": 580000,
+      "attributes": {
+        "stela_name": "King Ezana Stela",
+        "carved_storeys": 9,
+        "height_meters": 24.6
+      }
+    },
+    {
+      "id": "ann_005",
+      "image_id": "img_eth_geez_05",
+      "category_id": 7,
+      "category_name": "geez_illuminated_manuscript",
+      "bbox_normalized": [0.18, 0.52, 0.64, 0.40],
+      "area_pixels": 395000,
+      "attributes": {
+        "script": "Classical Ge'ez",
+        "rubrication": "Cinnabar red headings and chapter numbers",
+        "artifact": "Garima Gospels"
+      }
+    }
+  ]
+}

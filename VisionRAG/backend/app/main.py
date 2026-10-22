@@ -25,6 +25,8 @@ from app.api.routes.auth import router as auth_router
 from app.api.routes.uploads import router as uploads_router
 from app.api.routes.chat import router as chat_router
 from app.api.routes.progress import router as progress_router
+from app.api.routes.agents import router as agents_router
+from app.data.knowledge_seeder import knowledge_seeder
 
 app = FastAPI(
     title="VisionRAG Multimodal Agentic AI API",
@@ -46,6 +48,7 @@ app.include_router(auth_router)
 app.include_router(uploads_router)
 app.include_router(chat_router)
 app.include_router(progress_router)
+app.include_router(agents_router)
 
 UPLOAD_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "storage", "uploads"))
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -63,6 +66,11 @@ def on_startup():
             "details": db_status
         }
     )
+    # Automatically seed Ethiopian Education & Biological Knowledge into PostgreSQL and ChromaDB
+    try:
+        knowledge_seeder.seed_all(force=False)
+    except Exception as e:
+        app_logger.error(f"Failed to auto-seed knowledge: {e}")
 
 @app.get("/")
 def read_root():
@@ -75,6 +83,7 @@ def read_root():
     }
 
 @app.get("/health")
+@app.get("/api/health")
 def health_check():
     chroma_health = chroma_client.is_healthy()
     redis_health = redis_cache.is_healthy()
