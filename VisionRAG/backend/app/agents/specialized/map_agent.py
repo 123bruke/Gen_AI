@@ -199,12 +199,15 @@ class MapSearcherAgent:
         # Grounded Spatial Hub Fallback (Ethiopia National Center)
         return self._format_location_dict(self.gazetteer["ethiopia"], query)
 
-    def search_locations(self, query: str, limit: int = 7) -> List[Dict[str, Any]]:
+    def search_locations(self, query: str, limit: int = 2) -> List[Dict[str, Any]]:
         """
-        Resolves query into at least 7 mapped geographic points with interactive OSM embeds.
-        For Ethiopia/regional queries, returns comprehensive national overview + top landmark points.
+        Resolves query into mapped geographic points with interactive OSM embeds.
+        Result count dynamically adapts to situation.
         """
-        target_limit = max(limit, 7)
+        if limit <= 0:
+            return []
+
+        target_limit = limit
         q_clean = query.strip().lower()
         results: List[Dict[str, Any]] = []
         matched_keys = set()
@@ -212,7 +215,6 @@ class MapSearcherAgent:
         # 1. Match against Curated Gazetteer
         is_ethiopia_general = any(w in q_clean for w in ["ethiopia", "ethiopian", "east africa", "habesha", "abyssinia"])
         if is_ethiopia_general:
-            # Put national map first
             results.append(self._format_location_dict(self.gazetteer["ethiopia"], query))
             matched_keys.add("ethiopia")
 
@@ -222,6 +224,8 @@ class MapSearcherAgent:
             if key in q_clean or any(k in q_clean for k in key.split() if len(k) > 3):
                 results.append(self._format_location_dict(info, query))
                 matched_keys.add(key)
+            if len(results) >= target_limit:
+                break
 
         # 2. Live OpenStreetMap Nominatim Geocoding if not yet matched or needed
         if len(results) < target_limit and not is_ethiopia_general:
@@ -254,22 +258,10 @@ class MapSearcherAgent:
                             "tags": [query.title(), category],
                             "source": "OpenStreetMap Live Nominatim"
                         })
+                        if len(results) >= target_limit:
+                            break
             except Exception as e:
                 app_logger.info(f"Nominatim geocoding error: {e}")
-
-        # 3. If fewer than 7 results, backfill with curated landmarks from the gazetteer
-        if len(results) < target_limit:
-            priority_order = [
-                "ethiopia", "addis ababa", "lalibela", "axum", "gondar",
-                "harar", "simien", "bale", "gerd", "lake tana",
-                "danakil", "tiya", "yeha", "sof omar"
-            ]
-            for key in priority_order:
-                if key in self.gazetteer and key not in matched_keys:
-                    results.append(self._format_location_dict(self.gazetteer[key], query))
-                    matched_keys.add(key)
-                if len(results) >= target_limit:
-                    break
 
         return results[:target_limit]
 
