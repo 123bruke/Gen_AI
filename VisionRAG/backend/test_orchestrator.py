@@ -1,7 +1,6 @@
-import sys
-from app.agents.orchestrator import MultiAgentOrchestrator
+from app.agents.orchestrator import orchestrator
 
-orch = MultiAgentOrchestrator()
+orch = orchestrator
 
 # Test 1: Simple greeting
 print('--- TEST 1: GREETING ---')

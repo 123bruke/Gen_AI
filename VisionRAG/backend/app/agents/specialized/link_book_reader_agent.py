@@ -12,7 +12,10 @@ import urllib.parse
 import uuid
 import datetime
 import re
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
 import io
 
 try:

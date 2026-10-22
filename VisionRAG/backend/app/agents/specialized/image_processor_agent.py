@@ -14,8 +14,10 @@ import requests
 import urllib.parse
 from PIL import Image
 import io
-import re
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
 
 from app.vision.yolo_detector import detector
 from app.db.log_db import app_logger
