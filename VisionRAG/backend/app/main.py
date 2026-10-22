@@ -180,13 +180,50 @@ def trigger_ethiopian_crawl(background_tasks: BackgroundTasks):
     }
 
 @app.post("/api/audio/transcribe")
-async def transcribe_audio_endpoint(file: UploadFile = File(...)):
+async def transcribe_audio_endpoint(
+    file: UploadFile = File(...),
+    gemini_key: Optional[str] = Form(None)
+):
     """
-    Whisper speech-to-text audio transcriber.
+    Multimodal speech-to-text audio transcriber.
     """
     audio_bytes = await file.read()
-    result = audio_service.transcribe(audio_bytes)
+    mime_type = file.content_type or "audio/wav"
+    result = audio_service.transcribe(audio_bytes, mime_type=mime_type, gemini_key=gemini_key)
     return result
+
+@app.post("/api/audio/search")
+async def audio_search_endpoint(
+    file: UploadFile = File(...),
+    gemini_key: Optional[str] = Form(None)
+):
+    """
+    Multimodal Voice Search Pipeline:
+    1. Transcribes voice audio into text using AudioTranscriber (Gemini Multimodal / Whisper).
+    2. Feeds the transcribed text into Agent Orchestrator & LLM.
+    3. Returns full synthesized answer with multimodal citations.
+    """
+    audio_bytes = await file.read()
+    mime_type = file.content_type or "audio/wav"
+    transcription = audio_service.transcribe(audio_bytes, mime_type=mime_type, gemini_key=gemini_key)
+    query_text = transcription.get("text", "").strip()
+
+    if not query_text:
+        raise HTTPException(status_code=400, detail="Could not transcribe audio into text.")
+
+    # Execute RAG and multi-agent reasoning on the transcribed text
+    rag_result = agent_orchestrator.plan_and_execute(
+        prompt=query_text,
+        settings={"geminiApiKey": gemini_key} if gemini_key else None
+    )
+
+    return {
+        "transcription": transcription,
+        "query": query_text,
+        "text": rag_result.get("text", ""),
+        "multimodal": rag_result.get("multimodal", {}),
+        "reasoning": rag_result.get("reasoning", "")
+    }
 
 @app.post("/api/audio/synthesize")
 def synthesize_audio_endpoint(req: AudioSynthesizeRequest):
@@ -195,6 +232,15 @@ def synthesize_audio_endpoint(req: AudioSynthesizeRequest):
     """
     result = audio_service.synthesize_speech(req.text)
     return result
+
+@app.get("/api/cache/stats")
+def get_cache_stats():
+    """Returns semantic cache statistics and recent cached queries."""
+    from app.db.semantic_cache import semantic_cache
+    return {
+        "stats": semantic_cache.get_stats(),
+        "recent_queries": semantic_cache.list_cached_queries(limit=25)
+    }
 
 @app.get("/api/documents")
 def list_documents():
