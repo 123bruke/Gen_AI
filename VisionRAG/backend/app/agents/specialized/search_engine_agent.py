@@ -27,16 +27,19 @@ class GoogleSearchEngineAgent:
         self.api_key = os.getenv("GOOGLE_SEARCH_API_KEY", "")
         self.cx = os.getenv("GOOGLE_SEARCH_CX", "")
 
-    def search_and_extract(self, query: str, max_results: int = 7) -> Dict[str, Any]:
+    def search_and_extract(self, query: str, max_results: int = 5) -> Dict[str, Any]:
         """
         Executes unified web search, gathers news and encyclopedic citations,
-        and crawls top pages for deep synthesis. Guarantees at least 7 results in both sections.
+        and crawls top pages for deep synthesis. Result count dynamically adapts to situation.
         """
-        target_results = max(max_results, 7)
+        if max_results <= 0:
+            return {"query": query, "results_count": 0, "websites": [], "news": []}
+
         q = query.strip()
         if not q:
-            return {"query": query, "websites": [], "news": []}
+            return {"query": query, "results_count": 0, "websites": [], "news": []}
 
+        target_results = max_results
         websites = self._search_web(q, max_results=target_results)
         news_items = self._search_news(q, max_results=target_results)
 
@@ -47,9 +50,12 @@ class GoogleSearchEngineAgent:
             "news": news_items[:target_results]
         }
 
-    def _search_news(self, query: str, max_results: int = 7) -> List[Dict[str, Any]]:
-        """Searches live news updates via Google News RSS feed. Guarantees at least 7 items."""
-        target_results = max(max_results, 7)
+    def _search_news(self, query: str, max_results: int = 5) -> List[Dict[str, Any]]:
+        """Searches live news updates via Google News RSS feed. Result count dynamically adapts."""
+        if max_results <= 0:
+            return []
+
+        target_results = max_results
         news: List[Dict[str, Any]] = []
         seen_titles = set()
 
@@ -155,9 +161,11 @@ class GoogleSearchEngineAgent:
 
         return news[:target_results]
 
-    def _search_web(self, query: str, max_results: int = 7) -> List[Dict[str, Any]]:
-        """Multi-tiered web search: Google API -> Wikipedia Live Search -> DuckDuckGo -> Curated Portals. Guarantees at least 7 items."""
-        target_results = max(max_results, 7)
+    def _search_web(self, query: str, max_results: int = 5) -> List[Dict[str, Any]]:
+        """Multi-tiered web search: Google API -> Wikipedia Live Search -> DuckDuckGo -> Curated Portals."""
+        if max_results <= 0:
+            return []
+        target_results = max_results
         results: List[Dict[str, Any]] = []
         seen_urls = set()
 
