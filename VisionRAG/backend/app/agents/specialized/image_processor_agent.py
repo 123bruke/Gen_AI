@@ -202,12 +202,15 @@ class ImageProcessorAgent:
             }
         ]
 
-    def search_images(self, query: str, limit: int = 7) -> List[Dict[str, Any]]:
+    def search_images(self, query: str, limit: int = 4) -> List[Dict[str, Any]]:
         """
         Searches images via Wikimedia Commons API, Openverse/Unsplash, and curated directory.
-        Always returns at least 7 working high-res URLs with thumbnails and source attributions.
+        Result count dynamically adapts to situation and request conditions.
         """
-        target_limit = max(limit, 7)
+        if limit <= 0:
+            return []
+
+        target_limit = limit
         results: List[Dict[str, Any]] = []
         q_clean = query.strip()
         seen_urls = set()
@@ -272,7 +275,8 @@ class ImageProcessorAgent:
                     score += 5
                 if any(w in t for t in tags_lower):
                     score += 4
-            scored_curated.append((score, img))
+            if score > 0:
+                scored_curated.append((score, img))
 
         scored_curated.sort(key=lambda x: x[0], reverse=True)
         for _, img in scored_curated:
@@ -281,15 +285,6 @@ class ImageProcessorAgent:
                 results.append(img)
             if len(results) >= target_limit:
                 break
-
-        # 3. If results still fewer than 7, backfill remaining curated images
-        if len(results) < target_limit:
-            for fallback_img in self.curated_images_db:
-                if fallback_img["url"] not in seen_urls:
-                    seen_urls.add(fallback_img["url"])
-                    results.append(fallback_img)
-                if len(results) >= target_limit:
-                    break
 
         return results[:target_limit]
 

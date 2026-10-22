@@ -170,9 +170,12 @@ class YouTubeSearcherAgent:
             }
         ]
 
-    def search_videos(self, query: str, max_results: int = 7) -> List[Dict[str, Any]]:
-        """Searches YouTube for videos related to the query with multi-tier discovery. Guarantees at least 7 items."""
-        target_results = max(max_results, 7)
+    def search_videos(self, query: str, max_results: int = 5) -> List[Dict[str, Any]]:
+        """Searches YouTube for videos related to the query. Returns relevant results matching the topic."""
+        if max_results <= 0:
+            return []
+
+        target_results = max_results
         results: List[Dict[str, Any]] = []
         q_clean = query.strip()
         seen_ids = set()
@@ -256,7 +259,8 @@ class YouTubeSearcherAgent:
                     score += 4
                 if w in v_desc:
                     score += 2
-            scored_matches.append((score, vid))
+            if score > 0:
+                scored_matches.append((score, vid))
 
         scored_matches.sort(key=lambda x: x[0], reverse=True)
         for _, vid in scored_matches:
@@ -265,15 +269,6 @@ class YouTubeSearcherAgent:
                 results.append(vid)
             if len(results) >= target_results:
                 break
-
-        # 4. Guarantee at least 7 items by backfilling remaining database items
-        if len(results) < target_results:
-            for vid in self.knowledge_database:
-                if vid["id"] not in seen_ids:
-                    seen_ids.add(vid["id"])
-                    results.append(vid)
-                if len(results) >= target_results:
-                    break
 
         return results[:target_results]
 

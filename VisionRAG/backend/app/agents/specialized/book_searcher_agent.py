@@ -150,7 +150,7 @@ class BookSearcherAgent:
         Returns unified metadata, reading URLs, and access status.
         """
         q = query.strip()
-        if not q:
+        if not q or limit <= 0:
             return []
 
         results: List[Dict[str, Any]] = []
@@ -242,13 +242,13 @@ class BookSearcherAgent:
         except Exception as outer_e:
             app_logger.warning(f"Book search client error: {outer_e}")
 
-        # 3. Ensure at least 7 results by supplementing with curated educational books
-        target_limit = max(limit, 7)
+        # 3. Supplement with curated educational books if needed
+        target_limit = limit
         if len(results) < target_limit:
-            curated_list = self._get_curated_matches(q, limit=target_limit * 2)
+            curated_list = self._get_curated_matches(q, limit=target_limit)
             for c_book in curated_list:
                 results.append(c_book)
-                if len(results) >= target_limit * 2:
+                if len(results) >= target_limit:
                     break
 
         # Deduplicate by normalized title
