@@ -146,11 +146,18 @@ export class ChatArea {
                 <span>Transcribe Video or Add Link</span>
               </button>
 
+              <button class="plus-menu-item" id="plus-opt-audio-file">
+                <div class="plus-item-icon" style="color: #8b5cf6;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                </div>
+                <span>Search by Audio File (.wav, .mp3, .m4a)</span>
+              </button>
+
               <button class="plus-menu-item" id="plus-opt-voice">
                 <div class="plus-item-icon" style="color: #ea580c;">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg>
                 </div>
-                <span>Voice Conversation</span>
+                <span>Voice Conversation Mode</span>
               </button>
             </div>
           `
@@ -172,11 +179,11 @@ export class ChatArea {
               id="chat-textarea"
               class="chat-textarea"
               rows="1"
-              placeholder="Ask anything... VitionAI will search books, videos, images, maps & news"
+              placeholder="${this.isRecordingAudio ? '🎙️ Recording voice... Speak clearly (click red mic when done)' : 'Ask anything... VitionAI will search books, videos, images, maps & news'}"
             ></textarea>
 
             <div style="display: flex; align-items: center; gap: 6px; margin-left: 6px;">
-              <button class="action-icon-btn" id="btn-quick-voice" title="Voice Mode">
+              <button class="action-icon-btn ${this.isRecordingAudio ? 'btn-recording-pulse' : ''}" id="btn-quick-voice" title="${this.isRecordingAudio ? 'Click to finish audio search' : 'Search by Voice / Audio'}">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                   <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
