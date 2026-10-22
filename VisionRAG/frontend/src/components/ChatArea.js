@@ -936,7 +936,16 @@ export class ChatArea {
     if (voiceBtn && this.onOpenVoice) voiceBtn.addEventListener('click', () => this.onOpenVoice());
 
     const quickVoiceBtn = this.container.querySelector('#btn-quick-voice');
-    if (quickVoiceBtn && this.onOpenVoice) quickVoiceBtn.addEventListener('click', () => this.onOpenVoice());
+    if (quickVoiceBtn) {
+      quickVoiceBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.isRecordingAudio) {
+          this.stopAudioRecording();
+        } else {
+          this.startAudioRecording();
+        }
+      });
+    }
 
     const videoBtn = this.container.querySelector('#btn-header-video');
     if (videoBtn && this.onOpenVideo) videoBtn.addEventListener('click', () => this.onOpenVideo());
@@ -994,6 +1003,7 @@ export class ChatArea {
     const optDoc = this.container.querySelector('#plus-opt-doc');
     const optImg = this.container.querySelector('#plus-opt-image');
     const optVid = this.container.querySelector('#plus-opt-video-file');
+    const optAudio = this.container.querySelector('#plus-opt-audio-file');
     const optVoice = this.container.querySelector('#plus-opt-voice');
 
     if (optDoc && fileInput) {
@@ -1020,6 +1030,14 @@ export class ChatArea {
       });
     }
 
+    if (optAudio && fileInput) {
+      optAudio.addEventListener('click', () => {
+        this.showPlusMenu = false;
+        fileInput.accept = 'audio/*,.mp3,.wav,.ogg,.m4a,.webm';
+        fileInput.click();
+      });
+    }
+
     if (optVoice && this.onOpenVoice) {
       optVoice.addEventListener('click', () => {
         this.showPlusMenu = false;
@@ -1029,7 +1047,18 @@ export class ChatArea {
 
     if (fileInput) {
       fileInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files || []);
+        if (files.length === 1) {
+          const file = files[0];
+          const isAudio = file.type.startsWith('audio/') || file.name.match(/\.(mp3|wav|ogg|m4a|webm)$/i);
+          if (isAudio) {
+            this.handleAudioSearch(file);
+            fileInput.value = '';
+            return;
+          }
+        }
         this.handleFileUpload(e.target.files);
+        fileInput.value = '';
       });
     }
 
@@ -1251,6 +1280,11 @@ export class ChatArea {
 
     this.abortController = new AbortController();
 
+    // Smoothly scroll the container so the assistant message starts at the top
+    setTimeout(() => {
+      this.scrollToMessageTop(assistantMsgId);
+    }, 40);
+
     // Subtle reflective light animation for ~400ms before chunk streaming starts
     await new Promise((resolve) => setTimeout(resolve, 400));
 
@@ -1307,13 +1341,166 @@ export class ChatArea {
         textEl.innerHTML = `${this.formatMarkdown(text)}${isStreaming ? `<span style="display:inline-block; width:6px; height:15px; background:#0d0d0d; margin-left:3px; animation:micPulse 0.8s infinite;"></span>` : ''}`;
       }
     }
-    this.scrollToBottom();
+    // We intentionally DO NOT call scrollToBottom() so the reading view starts naturally from the top!
+  }
+
+  scrollToMessageTop(msgId) {
+    const row = this.container.querySelector(`[data-msg-id="${msgId}"]`);
+    if (row) {
+      row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   scrollToBottom() {
     const container = this.container.querySelector('#messages-container');
     if (container) {
       container.scrollTop = container.scrollHeight;
+    }
+  }
+
+  // Autonomous Audio Search & LLM Pipeline
+  async handleAudioSearch(audioBlob) {
+    let activeChat = store.getActiveChat();
+    if (!activeChat) {
+      activeChat = store.createChat();
+    }
+
+    const userMsgId = 'msg-' + Date.now();
+    store.addMessage(activeChat.id, {
+      id: userMsgId,
+      sender: 'user',
+      text: '🎙️ [Transcribing spoken audio query with Gemini/Whisper...]',
+      timestamp: Date.now()
+    });
+
+    const assistantMsgId = 'msg-' + (Date.now() + 1);
+    this.activeTabs[assistantMsgId] = 'all';
+
+    store.addMessage(activeChat.id, {
+      id: assistantMsgId,
+      sender: 'assistant',
+      text: '',
+      timestamp: Date.now(),
+      isStreaming: false,
+      isThinking: true,
+      multimodal: {}
+    });
+
+    this.render();
+    setTimeout(() => {
+      this.scrollToMessageTop(assistantMsgId);
+    }, 40);
+
+    try {
+      const settings = store.getState().settings;
+      const resp = await api.searchByAudio(audioBlob, settings.geminiApiKey);
+
+      const currentChat = store.getActiveChat();
+      if (currentChat) {
+        const uMsg = currentChat.messages.find((m) => m.id === userMsgId);
+        if (uMsg) {
+          uMsg.text = `🎙️ "${resp.transcribed_text || 'Audio query'}"`;
+        }
+        const aMsg = currentChat.messages.find((m) => m.id === assistantMsgId);
+        if (aMsg && resp.result) {
+          aMsg.isThinking = false;
+          aMsg.text = resp.result.text;
+          aMsg.multimodal = resp.result.multimodal || {};
+          aMsg.sources = resp.result.sources || [];
+        }
+      }
+    } catch (err) {
+      console.error('Audio search error:', err);
+      const currentChat = store.getActiveChat();
+      if (currentChat) {
+        const aMsg = currentChat.messages.find((m) => m.id === assistantMsgId);
+        if (aMsg) {
+          aMsg.isThinking = false;
+          aMsg.text = `Audio transcription/synthesis error: ${err.message}. Please verify audio device or Gemini API key in Settings.`;
+        }
+      }
+    } finally {
+      this.render();
+      setTimeout(() => {
+        this.scrollToMessageTop(assistantMsgId);
+      }, 50);
+    }
+  }
+
+  async startAudioRecording() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      this.audioChunks = [];
+      const mimeType = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/mp4';
+      this.mediaRecorder = new MediaRecorder(stream, { mimeType });
+
+      this.mediaRecorder.ondataavailable = (e) => {
+        if (e.data && e.data.size > 0) {
+          this.audioChunks.push(e.data);
+        }
+      };
+
+      this.mediaRecorder.onstop = async () => {
+        stream.getTracks().forEach((track) => track.stop());
+        const blob = new Blob(this.audioChunks, { type: mimeType });
+        this.isRecordingAudio = false;
+        clearInterval(this.recordingTimerInterval);
+        this.renderRecordingUI(false);
+        if (blob.size > 500) {
+          await this.handleAudioSearch(blob);
+        }
+      };
+
+      this.mediaRecorder.start();
+      this.isRecordingAudio = true;
+      this.recordingStartTime = Date.now();
+      this.renderRecordingUI(true);
+
+      this.recordingTimerInterval = setInterval(() => {
+        this.updateRecordingTimer();
+      }, 500);
+    } catch (err) {
+      console.warn('Microphone access fallback:', err);
+      if (this.onOpenVoice) {
+        this.onOpenVoice();
+      } else {
+        alert('Could not access microphone: ' + err.message);
+      }
+    }
+  }
+
+  stopAudioRecording() {
+    if (this.mediaRecorder && this.isRecordingAudio) {
+      this.mediaRecorder.stop();
+    }
+  }
+
+  renderRecordingUI(isRecording) {
+    const micBtn = this.container.querySelector('#btn-quick-voice');
+    const textarea = this.container.querySelector('#chat-textarea');
+    if (!micBtn) return;
+
+    if (isRecording) {
+      micBtn.classList.add('btn-recording-pulse');
+      micBtn.title = 'Recording audio... Click to finish and search';
+      if (textarea) {
+        textarea.placeholder = '🎙️ Recording voice... Speak clearly (click red mic when done)';
+      }
+    } else {
+      micBtn.classList.remove('btn-recording-pulse');
+      micBtn.title = 'Search by Voice / Audio';
+      if (textarea) {
+        textarea.placeholder = 'Ask anything... VitionAI will search books, videos, images, maps & news';
+      }
+    }
+  }
+
+  updateRecordingTimer() {
+    if (!this.isRecordingAudio) return;
+    const elapsed = Math.floor((Date.now() - this.recordingStartTime) / 1000);
+    const textarea = this.container.querySelector('#chat-textarea');
+    if (textarea) {
+      textarea.placeholder = `🎙️ Listening (${elapsed}s)... Click red mic to transcribe & search`;
     }
   }
 
