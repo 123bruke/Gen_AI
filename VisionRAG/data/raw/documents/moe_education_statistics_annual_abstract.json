@@ -1,0 +1,109 @@
+{
+  "abstract_metadata": {
+    "report_title": "FDRE Ministry of Education: Education Statistics Annual Abstract (ESAA) National Consolidated Report",
+    "issuing_body": "Ministry of Education, Federal Democratic Republic of Ethiopia",
+    "publication_series": "ESAA National Statistical Compendium",
+    "geographical_coverage": "Federation-wide (12 Regional States and 2 Chartered City Administrations)",
+    "data_collection_method": "National Education Management Information System (EMIS) School Census",
+    "verification_status": "Official Government Statistical Publication"
+  },
+  "executive_national_summary": {
+    "total_learners_all_tiers": 29845210,
+    "total_teaching_personnel": 712430,
+    "total_schools_and_institutions": 49820,
+    "national_gender_parity_index_primary": 0.94,
+    "national_gender_parity_index_secondary": 0.89,
+    "primary_net_enrolment_rate_pct": 89.4,
+    "secondary_net_enrolment_rate_pct": 34.6
+  },
+  "tier_disaggregated_statistics": {
+    "early_childhood_education": {
+      "level_description": "Pre-Primary (O-Class, Kindergarten, Child-to-Child)",
+      "target_age_group": "4 - 6 years",
+      "total_enrolment": 3840250,
+      "male_enrolment": 1968120,
+      "female_enrolment": 1872130,
+      "gross_enrolment_rate_pct": 47.8,
+      "institutions_count": 28410
+    },
+    "primary_education": {
+      "level_description": "Primary Tier (Grades 1 to 6)",
+      "target_age_group": "7 - 12 years",
+      "total_enrolment": 18450120,
+      "male_enrolment": 9520400,
+      "female_enrolment": 8929720,
+      "gross_enrolment_rate_pct": 104.2,
+      "net_enrolment_rate_pct": 89.4,
+      "gender_parity_index": 0.94,
+      "primary_schools_count": 39420,
+      "government_schools_pct": 92.4,
+      "private_and_faith_based_schools_pct": 7.6,
+      "pupil_teacher_ratio": 43.5,
+      "pupil_section_ratio": 48.2,
+      "average_textbook_to_pupil_ratio": 1.2
+    },
+    "middle_school_education": {
+      "level_description": "Middle School Tier (Grades 7 to 8)",
+      "target_age_group": "13 - 14 years",
+      "total_enrolment": 3680450,
+      "male_enrolment": 1912300,
+      "female_enrolment": 1768150,
+      "gross_enrolment_rate_pct": 74.5,
+      "net_enrolment_rate_pct": 52.8,
+      "gender_parity_index": 0.92,
+      "pupil_teacher_ratio": 34.2
+    },
+    "secondary_education": {
+      "level_description": "General and Senior Secondary (Grades 9 to 12)",
+      "target_age_group": "15 - 18 years",
+      "total_enrolment": 3120650,
+      "male_enrolment": 1653940,
+      "female_enrolment": 1466710,
+      "gross_enrolment_rate_pct": 42.1,
+      "net_enrolment_rate_pct": 34.6,
+      "gender_parity_index": 0.89,
+      "secondary_schools_count": 4850,
+      "pupil_teacher_ratio": 26.8,
+      "pupil_section_ratio": 44.1,
+      "natural_science_stream_students_pct": 58.4,
+      "social_science_stream_students_pct": 41.6
+    },
+    "higher_education": {
+      "level_description": "Undergraduate, Postgraduate, and Doctoral Programs",
+      "total_enrolment": 953740,
+      "public_universities_enrolment": 782400,
+      "private_higher_education_enrolment": 171340,
+      "undergraduate_regular_degree": 684200,
+      "evening_and_distance_degree": 182100,
+      "postgraduate_masters_degree": 79240,
+      "doctoral_phd_enrolment": 8200,
+      "public_universities_count": 47,
+      "accredited_private_higher_institutions_count": 312,
+      "national_exit_exam_sitting_candidates": 164280,
+      "national_exit_exam_pass_rate_pct": 46.2
+    }
+  },
+  "school_infrastructure_and_facilities": {
+    "schools_with_potable_drinking_water_pct": 38.4,
+    "schools_with_grid_or_solar_electricity_pct": 42.1,
+    "schools_with_separate_gender_latrines_pct": 68.7,
+    "secondary_schools_with_functional_science_labs_pct": 54.2,
+    "secondary_schools_with_broadband_or_satellite_ict_pct": 36.8
+  },
+  "equity_and_targeted_support_programs": {
+    "pastoralist_mobile_and_boarding_schools": {
+      "institutions_count": 1420,
+      "enrolled_pastoralist_children": 485000,
+      "focal_regions": ["Afar", "Somali", "Oromia (Borena/Guji)", "South Ethiopia (South Omo)"]
+    },
+    "special_needs_and_inclusive_education": {
+      "total_students_with_special_needs_enrolled": 168420,
+      "special_needs_resource_centers_operational": 820,
+      "braille_and_sign_language_certified_teachers": 4250
+    },
+    "national_school_feeding_program": {
+      "participating_students_daily": 4200000,
+      "documented_impact": "Reduced chronic absenteeism by 42% and increased primary school completion by 18% in food-insecure woredas."
+    }
+  }
+}

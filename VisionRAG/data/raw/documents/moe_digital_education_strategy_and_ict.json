@@ -1,0 +1,100 @@
+{
+  "document_metadata": {
+    "title": "Ethiopian National Digital Education Strategy & SchoolNet ICT Architecture",
+    "issuing_authority": "FDRE Ministry of Education - ICT and Digital Education Executive",
+    "document_id": "MOE_DIGITAL_STRATEGY_2023_2030",
+    "publication_year": 2023,
+    "current_status": "Active National Strategy",
+    "official_portal": "https://moe.gov.et/"
+  },
+  "strategic_vision": "Creating a digitally enabled national educational ecosystem that eliminates geographic barriers to quality learning, equips Ethiopian youth with 21st-century technological competencies, and modernizes school management through data-driven governance.",
+  "core_strategic_pillars": [
+    {
+      "pillar_id": "PIL-01",
+      "pillar_name": "SchoolNet Infrastructure & National Connectivity",
+      "lead_executive": "SchoolNet ICT Desk",
+      "partner_agencies": ["Ethio Telecom", "Ministry of Innovation and Technology (MInT)", "Ethiopian Electric Power"],
+      "objectives": [
+        "Connect all secondary schools and teacher training colleges to broadband high-speed fiber-optic and satellite internet.",
+        "Equip remote rural schools with off-grid solar power generators to support computer laboratory servers.",
+        "Establish localized offline intranet caching servers (Zero-Rated Local Area Networks) enabling textbook access without internet bandwidth."
+      ],
+      "infrastructure_targets_2030": {
+        "secondary_schools_connected_target_pct": 92.5,
+        "primary_schools_connected_target_pct": 55.0,
+        "solar_powered_rural_labs_target": 8500,
+        "broadband_minimum_speed_mbps": 50
+      }
+    },
+    {
+      "pillar_id": "PIL-02",
+      "pillar_name": "National Digital Curriculum, Cloud Repository & E-Learning Portals",
+      "lead_executive": "Educational Multimedia Program Development Desk",
+      "objectives": [
+        "Digitize all KG-12 student textbooks and teacher guides into interactive EPUB, PDF, and audio formats.",
+        "Deploy the National Cloud Learning Management System (National LMS) hosting interactive STEM simulations and video lectures.",
+        "Translate core digital learning content into major national languages (Afaan Oromoo, Amharic, Tigrinya, Somali, Sidama)."
+      ],
+      "digital_assets_cataloged": {
+        "digitized_textbooks_count": 482,
+        "multimedia_video_lessons_archived": 3650,
+        "interactive_stem_simulations": 840,
+        "national_e_library_titles": 45000
+      }
+    },
+    {
+      "pillar_id": "PIL-03",
+      "pillar_name": "Smart Classrooms & Secondary Student Device Deployment",
+      "lead_executive": "Infrastructure and Input Desk",
+      "objectives": [
+        "Distribute ruggedized student e-learning tablets pre-loaded with digital textbooks and assessment software to secondary schools.",
+        "Install interactive smart digital displays and projection units in high school science and mathematics laboratories.",
+        "Facilitate secure computer laboratories in all public universities to host computerized national entrance and exit examinations."
+      ],
+      "device_deployment_metrics": {
+        "tablets_distributed_to_date": 320000,
+        "smart_classrooms_operational": 1850,
+        "cbt_exam_computer_seats_in_universities": 145000
+      }
+    },
+    {
+      "pillar_id": "PIL-04",
+      "pillar_name": "Teacher ICT Competency & Digital Pedagogical Training",
+      "lead_executive": "Teachers and Educational Leaders Development Desk",
+      "framework_standard": "UNESCO-Aligned Ethiopian Teacher ICT Competency Framework",
+      "proficiency_levels": [
+        {
+          "level": "Technology Literacy",
+          "target": "Basic computer operation, digital presentation tools, and internet research."
+        },
+        {
+          "level": "Knowledge Deepening",
+          "target": "Integrating digital simulations in STEM lessons and continuous formative digital assessment."
+        },
+        {
+          "level": "Knowledge Creation",
+          "target": "Designing localized open educational resources (OER) and collaborating on teacher networks."
+        }
+      ],
+      "training_metrics": {
+        "teachers_certified_digital_literacy": 184500,
+        "master_ict_trainers_deployed": 2400
+      }
+    },
+    {
+      "pillar_id": "PIL-05",
+      "pillar_name": "Education Management Information System (EMIS) Modernization",
+      "lead_executive": "Network Technical and Network Operation Desk",
+      "objectives": [
+        "Transition from annual paper surveys to real-time cloud-based Student Information Management Systems (SIMS).",
+        "Assign a unique national National Student Identification Number (NSIN) linked to federal digital ID (Fayda).",
+        "Enable automated tracking of teacher deployment, textbook distribution, school infrastructure deficits, and student attendance."
+      ],
+      "system_specifications": {
+        "platform_architecture": "Centralized Cloud Database with Regional Edge Synchronization",
+        "data_security": "AES-256 Encryption at Rest, Role-Based Access Control (RBAC)",
+        "annual_statistical_automation": "Automated generation of Education Statistics Annual Abstract (ESAA)"
+      }
+    }
+  ]
+}

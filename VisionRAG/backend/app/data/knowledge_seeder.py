@@ -10,7 +10,6 @@ import datetime
 from typing import Dict, Any
 
 from app.data.ethiopian_education_history import ETHIOPIAN_EDUCATION_RECORDS
-from app.data.ethiopian_biology_data import ETHIOPIAN_BIOLOGY_RECORDS
 from app.data.ethiopia_moe_knowledge import get_all_moe_records
 from app.db.postgres_db import postgres_manager
 from app.models.postgres_models import UploadedFile, Conversation, ChatMessage, TaskProgress
@@ -19,7 +18,7 @@ from app.rag.embeddings import embedding_service
 from app.db.log_db import app_logger
 
 class KnowledgeSeeder:
-    """Populates PostgreSQL relational tables and ChromaDB vector store with rich Ethiopian intelligence and MOE Educational Knowledge."""
+    """Populates PostgreSQL relational tables and ChromaDB vector store with MOE Educational Knowledge."""
 
     def seed_all(self, force: bool = False) -> Dict[str, Any]:
         task_id = f"seed_{uuid.uuid4().hex[:10]}"
@@ -38,7 +37,6 @@ class KnowledgeSeeder:
                 metadata_={
                     "moe_records_count": len(moe_records),
                     "education_records_count": len(ETHIOPIAN_EDUCATION_RECORDS),
-                    "biology_records_count": len(ETHIOPIAN_BIOLOGY_RECORDS),
                     "started_at": now.isoformat()
                 }
             )
@@ -46,7 +44,6 @@ class KnowledgeSeeder:
 
         moe_ingested = 0
         education_ingested = 0
-        biology_ingested = 0
 
         # Ingest MOE Official Policy & Educational Dossiers
         for rec in moe_records:

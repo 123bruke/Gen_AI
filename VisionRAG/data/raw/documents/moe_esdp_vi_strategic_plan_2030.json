@@ -1,0 +1,83 @@
+{
+  "strategic_plan_metadata": {
+    "title": "Federal Democratic Republic of Ethiopia: Education Sector Development Programme VI (ESDP VI)",
+    "subtitle": "Education and Training Roadmap 2030 Objectives & Strategic Implementation Matrix",
+    "issuing_authority": "Ministry of Education, Ethiopia",
+    "planning_horizon": "2020/21 – 2024/25 with Horizon Projections to 2030",
+    "document_type": "Official National Sector Plan",
+    "official_url": "https://www.moe.gov.et/storage/Books/Ethiopian%20Education%20Sector%20Development%20Program%206%20%28ESDP%20VI%29.pdf"
+  },
+  "overarching_goal": "To sustainably establish a quality, equitable, inclusive, and technologically resilient education and training system that equips all learners with relevant knowledge, critical thinking skills, and ethical values required to propel Ethiopia into a middle-income knowledge economy by 2030.",
+  "strategic_priority_programs": [
+    {
+      "priority_code": "SP-1",
+      "priority_title": "Foundational Literacy, Numeracy & Quality Enhancement",
+      "strategic_focus": "Eliminating learning poverty through evidence-based phonics instruction in mother tongue, competency-based textbooks, and structured continuous assessment.",
+      "key_targets_2030": {
+        "early_grade_reading_proficiency_grade2_pct": 75.0,
+        "primary_completion_rate_grade6_pct": 88.0,
+        "middle_school_transition_rate_pct": 85.0
+      },
+      "lead_directorate": "Curriculum Development Executive & Teachers Development Desk"
+    },
+    {
+      "priority_code": "SP-2",
+      "priority_title": "Equity, Inclusiveness & Universal Secondary Access",
+      "strategic_focus": "Expanding secondary schools to rural woredas, scaling the national school feeding initiative, and subsidizing educational inputs for pastoralist, drought-affected, and marginalized communities.",
+      "key_targets_2030": {
+        "secondary_gross_enrolment_rate_pct": 65.0,
+        "gender_parity_index_secondary": 0.98,
+        "special_needs_enrolment_growth_pct": 120.0,
+        "pastoralist_area_ger_pct": 78.0
+      },
+      "lead_directorate": "Pastoralist & Special Needs Education Desk"
+    },
+    {
+      "priority_code": "SP-3",
+      "priority_title": "Teacher Professionalization & Leadership Accountability",
+      "strategic_focus": "Mandatory licensing of all educators, restructuring career progression around demonstrated pedagogical competency, and upgrading primary teachers to Bachelor of Education qualifications.",
+      "key_targets_2030": {
+        "licensed_teachers_share_pct": 95.0,
+        "certified_school_principals_pct": 90.0,
+        "female_teachers_share_in_secondary_pct": 35.0
+      },
+      "lead_directorate": "Teachers and Educational Leaders Development Desk"
+    },
+    {
+      "priority_code": "SP-4",
+      "priority_title": "Education in Emergencies (EiE) & Climate Resilient Reconstruction",
+      "strategic_focus": "Rebuilding conflict-damaged schools in Tigray, Amhara, Afar, and Oromia, restoring psychosocial support, and establishing disaster-resilient water and sanitation infrastructure.",
+      "operational_interventions": [
+        "Rapid rehabilitation of 4,200 conflict-affected and flood-damaged schools.",
+        "Accelerated Learning Programs (ALP) for out-of-school children.",
+        "Psychosocial trauma counseling integration in primary teacher training."
+      ],
+      "lead_directorate": "Planning and Resource Mobilization Directorate"
+    },
+    {
+      "priority_code": "SP-5",
+      "priority_title": "Higher Education Excellence, Research & Innovation",
+      "strategic_focus": "Phased transition of public research universities to autonomous governance, rigorous execution of national exit exams, and expanding industry incubation hubs.",
+      "key_targets_2030": {
+        "autonomous_public_universities_count": 8,
+        "undergraduate_exit_exam_pass_rate_pct": 70.0,
+        "stem_enrolment_ratio_in_higher_education_pct": 70.0,
+        "phd_qualified_academic_staff_pct": 45.0
+      },
+      "lead_directorate": "Higher Education Academic Affairs Executive"
+    }
+  ],
+  "multilateral_development_partnerships": [
+    {
+      "program_name": "General Education Quality Improvement Program for Equity (GEQIP-E)",
+      "lead_partners": ["World Bank (IDA)", "UK FCDO", "UNICEF", "Global Partnership for Education (GPE)"],
+      "funding_modality": "Results-Based Financing (Disbursement Linked Indicators - DLIs)",
+      "core_investments": ["Textbook distribution", "Teacher licensing system", "School improvement grants (SIG)", "O-Class quality standards"]
+    },
+    {
+      "program_name": "Education Cannot Wait (ECW) Multi-Year Resilience Programme",
+      "lead_partners": ["Education Cannot Wait", "UNICEF", "Save the Children", "Plan International"],
+      "core_investments": ["Temporary learning centers", "School feeding in drought zones", "Emergency textbook printing"]
+    }
+  ]
+}

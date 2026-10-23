@@ -1,0 +1,17 @@
+discipline_code,field_of_study,academic_cluster,degree_level,exam_delivery_mode,pass_mark_cutoff_pct,participating_universities_count,core_competency_domains
+EXIT-MED-01,Medicine (Doctor of Medicine),Health & Medical Sciences,Undergraduate (MD),Online CBT Proctored,50,34,Internal Medicine; General Surgery; Pediatrics; Obstetrics & Gynecology; Public Health
+EXIT-NUR-02,Nursing (B.Sc.),Health & Medical Sciences,Undergraduate (B.Sc.),Online CBT Proctored,50,42,Adult Health Nursing; Community Health; Maternity Nursing; Pediatric Nursing; Pharmacology
+EXIT-PHAR-03,Pharmacy (B.Pharm),Health & Medical Sciences,Undergraduate (B.Pharm),Online CBT Proctored,50,28,Pharmacotherapy; Pharmaceutics; Clinical Pharmacy; Medicinal Chemistry; Toxicology
+EXIT-CIV-04,Civil Engineering,Engineering & Technology,Undergraduate (B.Sc.),Online CBT Proctored,50,38,Structural Analysis; Geotechnical Engineering; Hydraulics & Water Resources; Highway Design; Construction Management
+EXIT-MEC-05,Mechanical Engineering,Engineering & Technology,Undergraduate (B.Sc.),Online CBT Proctored,50,32,Thermodynamics; Fluid Mechanics; Machine Design; Manufacturing Technology; CAD/CAM
+EXIT-ECE-06,Electrical & Computer Engineering,Engineering & Technology,Undergraduate (B.Sc.),Online CBT Proctored,50,36,Power Systems; Control Systems; Communication Networks; Signal Processing; Embedded Microcontrollers
+EXIT-CS-07,Computer Science,Informatics & Computing,Undergraduate (B.Sc.),Online CBT Proctored,50,44,Data Structures & Algorithms; Operating Systems; Database Systems; Software Engineering; Computer Networks & Cybersecurity
+EXIT-SE-08,Software Engineering,Informatics & Computing,Undergraduate (B.Sc.),Online CBT Proctored,50,35,Software Architecture; Object-Oriented Design; Web & Mobile Technologies; Agile Methodologies; System Testing
+EXIT-LAW-09,Law (Bachelor of Laws - LL.B.),Law & Jurisprudence,Undergraduate (LL.B.),Online CBT Proctored,50,38,Constitutional Law; Criminal Law & Procedure; Civil Code (Contracts/Tort); Commercial Law; Human Rights Law
+EXIT-ACC-10,Accounting & Finance,Business & Economics,Undergraduate (B.A.),Online CBT Proctored,50,46,Financial Accounting (IFRS); Cost & Management Accounting; Auditing & Assurance; Taxation; Corporate Finance
+EXIT-ECO-11,Economics,Business & Economics,Undergraduate (B.A.),Online CBT Proctored,50,45,Microeconomics; Macroeconomics; Econometrics; Ethiopian Economy; Development Economics
+EXIT-MGT-12,Management,Business & Economics,Undergraduate (B.A.),Online CBT Proctored,50,46,Organizational Behavior; Strategic Management; Operations Research; Human Resource Management; Marketing Management
+EXIT-AGR-13,Plant Science (Agronomy),Agricultural Sciences,Undergraduate (B.Sc.),Online CBT Proctored,50,36,Crop Production; Soil Fertility & Soil Management; Plant Pathology; Weed Science; Agricultural Extension
+EXIT-BIO-14,Biology & Biotechnology,Natural & Computational Sciences,Undergraduate (B.Sc.),Online CBT Proctored,50,40,Cell & Molecular Biology; Genetics; Ecology & Biodiversity; Microbiology; Plant & Animal Physiology
+EXIT-CHM-15,Chemistry,Natural & Computational Sciences,Undergraduate (B.Sc.),Online CBT Proctored,50,38,Organic Synthesis; Inorganic Chemistry; Analytical Chemistry & Spectroscopy; Physical Chemistry; Industrial Chemistry
+EXIT-PHY-16,Physics,Natural & Computational Sciences,Undergraduate (B.Sc.),Online CBT Proctored,50,36,Classical Mechanics; Quantum Mechanics; Electrodynamics; Thermodynamics & Statistical Physics; Nuclear Physics

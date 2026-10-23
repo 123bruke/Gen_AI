@@ -1,0 +1,15 @@
+region_code,region_name,primary_schools,secondary_schools,primary_enrolment_total,secondary_enrolment_total,primary_ger_pct,primary_ner_pct,secondary_ger_pct,gender_parity_index,pupil_teacher_ratio_primary,pupil_teacher_ratio_secondary,schools_with_electricity_pct,schools_with_clean_water_pct,schools_with_internet_pct
+ETH-AA,Addis Ababa (Chartered City),890,265,584200,248500,128.4,98.2,88.5,1.06,28.4,21.2,99.2,98.4,84.6
+ETH-DD,Dire Dawa (Chartered City),185,42,86400,32100,94.2,82.5,46.8,0.96,36.2,25.4,72.4,68.2,42.5
+ETH-OR,Oromia,15420,1780,7820400,1245000,108.5,91.4,41.2,0.93,45.8,27.6,38.5,36.2,32.4
+ETH-AM,Amhara,9650,980,4320100,724000,102.4,88.6,39.4,0.95,44.2,26.8,41.2,39.4,31.8
+ETH-TG,Tigray,2480,245,984200,168500,86.2,74.2,28.4,0.97,48.5,31.2,32.4,30.5,21.4
+ETH-SM,Somali,2140,185,892400,118400,78.4,64.2,22.8,0.84,52.4,34.8,24.5,22.1,16.8
+ETH-AF,Afar,940,68,342100,38400,72.1,58.4,18.6,0.82,54.8,36.2,21.8,19.4,14.2
+ETH-SI,Sidama,1920,195,945000,154200,112.4,93.2,44.2,0.94,42.1,25.8,44.8,42.1,35.4
+ETH-SE,South Ethiopia,2150,210,1024000,162400,106.2,89.5,38.5,0.92,44.8,27.1,36.2,34.8,28.6
+ETH-CE,Central Ethiopia,1840,182,884200,146800,104.8,88.9,40.1,0.93,43.5,26.4,40.1,38.2,30.2
+ETH-SW,Southwest Ethiopia,980,88,442100,68400,98.6,84.1,34.2,0.91,46.2,28.4,31.4,29.8,22.4
+ETH-BG,Benishangul-Gumuz,680,62,284500,42100,89.4,76.5,29.8,0.88,48.1,30.2,28.4,26.5,19.2
+ETH-GA,Gambella,380,34,162400,24600,92.1,78.2,32.4,0.89,46.8,29.5,29.2,27.4,20.5
+ETH-HA,Harari,165,25,68400,22400,105.2,89.4,52.4,0.97,34.5,23.8,78.5,74.2,46.8

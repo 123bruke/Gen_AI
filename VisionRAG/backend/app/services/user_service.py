@@ -30,7 +30,7 @@ class UserService:
     """Manages User Accounts, Authentication Sessions, Large Files BYTEA Binary, Conversations, and Task Progress."""
 
     # ==========================================
-    # 1. USER REGISTRATION & AUTHENTICATION
+    # 1. USER REGISTRATION & AUTHENTICATION  
     # ==========================================
     def register_user(
         self,
