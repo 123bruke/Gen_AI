@@ -439,6 +439,26 @@ def generate_exam_prep_notes() -> Dict[str, Any]:
             "step_by_step_worked_example": {
                 "problem_description": ex,
                 "analytical_resolution": f"Verified against official EAES examination blueprints and scoring keys for {subj}."
+            },
+            "multiple_choice_practice_question": {
+                "question_en": f"Standard Grade {gr} National Exam Problem on {t_en}: Which statement represents the scientifically verified model?",
+                "question_am": f"የ{gr}ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በ{t_am} ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+                "question_om": f"Gaaffii Qormaata Biyyoolessaa Kutaa {gr} {t_om} irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+                "options": {
+                    "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+                    "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+                    "C": "Independent variable diverges exponentially without critical equilibrium.",
+                    "D": "All boundary parameters collapse to zero at asymptotic states."
+                },
+                "correct_option": "B",
+                "explanation_en": f"Option B is correct because {c_en}",
+                "explanation_am": f"ምርጫ 'B' ትክክል ነው ምክንያቱም {c_am}",
+                "explanation_om": f"Filannoon 'B' sirriidha sababni isaas {c_om}"
+            },
+            "pedagogical_remedial_guide": {
+                "struggling_student_intervention": f"Review core foundational definitions in Grade {gr-1} prerequisite units before attempting multivariable problems.",
+                "intervention_am": f"ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ{gr-1}ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+                "intervention_om": f"Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa {gr-1} irra deebi'aa ilaalaa."
             }
         })
 
