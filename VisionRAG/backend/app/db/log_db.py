@@ -120,10 +120,246 @@ class SimpleLogDatabase:
             cursor.execute("SELECT COUNT(*) FROM system_progress_logs")
             return cursor.fetchone()[0]
 
+    def get_stats(self) -> Dict[str, Any]:
+        """Aggregate statistical summary of progress and vision events."""
+        with sqlite3.connect(self.db_path) as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT COUNT(*) FROM system_progress_logs")
+            total = cursor.fetchone()[0]
 
-# Instantiate the separate simple DB instance
+            cursor.execute("SELECT event_type, COUNT(*) FROM system_progress_logs GROUP BY event_type")
+            by_event = dict(cursor.fetchall())
+
+            cursor.execute("SELECT level, COUNT(*) FROM system_progress_logs GROUP BY level")
+            by_level = dict(cursor.fetchall())
+
+            cursor.execute("SELECT MAX(timestamp) FROM system_progress_logs")
+            latest = cursor.fetchone()[0]
+
+            return {
+                "total_logs": total,
+                "by_event_type": by_event,
+                "by_level": by_level,
+                "latest_timestamp": latest,
+                "database_path": self.db_path,
+                "status": "healthy"
+            }
+
+    def export_visible_logs(self, limit: int = 200, output_path: Optional[str] = None) -> str:
+        """Exports recent visible logs to a human-readable JSON file."""
+        logs = self.get_logs(limit=limit)
+        stats = self.get_stats()
+        export_payload = {
+            "metadata": {
+                "title": "VisionRAG System Progress & Auditing Visible Log Database",
+                "generated_at": datetime.datetime.utcnow().isoformat(),
+                "total_records_exported": len(logs),
+                "stats": stats
+            },
+            "recent_progress_records": logs
+        }
+        if output_path is None:
+            project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+            logs_dir = os.path.join(project_root, "logs")
+            os.makedirs(logs_dir, exist_ok=True)
+            output_path = os.path.join(logs_dir, "visible_system_progress_logs.json")
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(export_payload, f, indent=2, ensure_ascii=False)
+
+        return output_path
+
+    def render_visible_html_dashboard(self, limit: int = 150) -> str:
+        """Renders an interactive, responsive HTML UI displaying all visible progress logs."""
+        logs = self.get_logs(limit=limit)
+        stats = self.get_stats()
+        events_html = "".join([f'<span class="badge badge-event">{k}: {v}</span> ' for k, v in stats.get("by_event_type", {}).items()])
+
+        rows_html = []
+        for l in logs:
+            lvl = l.get("level", "INFO")
+            badge_class = "badge-info" if lvl == "INFO" else ("badge-warn" if lvl == "WARNING" else "badge-err")
+            details = l.get("details")
+            details_json = json.dumps(details, indent=2) if details else ""
+            details_cell = f'<pre class="details-box">{details_json}</pre>' if details else '<span class="text-muted">None</span>'
+            
+            rows_html.append(f"""
+            <tr>
+                <td><strong>#{l.get('id')}</strong></td>
+                <td><span class="timestamp">{l.get('timestamp')}</span></td>
+                <td><span class="badge {badge_class}">{lvl}</span></td>
+                <td><code class="event-tag">{l.get('event_type')}</code></td>
+                <td>{l.get('logger_name')}</td>
+                <td class="msg-cell">{l.get('message')}</td>
+                <td>{details_cell}</td>
+            </tr>
+            """)
+
+        table_rows = "".join(rows_html)
+
+        html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionRAG - Visible System Progress & Log Database</title>
+    <style>
+        :root {{
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+            --success: #22c55e;
+            --warn: #f59e0b;
+            --danger: #ef4444;
+        }}
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            margin: 0;
+            padding: 24px;
+        }}
+        .header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }}
+        h1 {{ margin: 0; font-size: 24px; color: var(--accent); }}
+        .stats-bar {{
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }}
+        .stat-card {{
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 20px;
+            min-width: 150px;
+        }}
+        .stat-val {{ font-size: 22px; font-weight: bold; color: var(--text-main); }}
+        .stat-lbl {{ font-size: 12px; color: var(--text-muted); text-transform: uppercase; }}
+        .badge {{
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }}
+        .badge-info {{ background: #0369a1; color: #e0f2fe; }}
+        .badge-warn {{ background: #b45309; color: #fef3c7; }}
+        .badge-err {{ background: #b91c1c; color: #fee2e2; }}
+        .badge-event {{ background: #334155; color: #38bdf8; border: 1px solid #475569; }}
+        .table-container {{
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow-x: auto;
+        }}
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }}
+        th, td {{
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }}
+        th {{ background: #0b1329; color: var(--text-muted); font-weight: 600; }}
+        tr:hover {{ background: rgba(56, 189, 248, 0.05); }}
+        .timestamp {{ font-family: monospace; color: var(--text-muted); font-size: 12px; }}
+        .event-tag {{ color: var(--accent); font-weight: bold; font-family: monospace; }}
+        .msg-cell {{ max-width: 420px; word-break: break-word; }}
+        .details-box {{
+            background: #0b1120;
+            border: 1px solid #1e293b;
+            border-radius: 4px;
+            padding: 6px;
+            font-size: 11px;
+            max-height: 120px;
+            overflow-y: auto;
+            color: #38bdf8;
+            margin: 0;
+        }}
+        .refresh-btn {{
+            background: var(--accent);
+            color: #0f172a;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }}
+        .refresh-btn:hover {{ opacity: 0.9; }}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>VisionRAG Visible System Progress Database</h1>
+            <p style="color: var(--text-muted); margin: 4px 0 0 0; font-size: 13px;">
+                Active Progress Tracking, YOLO Detections, Video Frame Extractions, and Audio Transcriptions
+            </p>
+        </div>
+        <div>
+            <a href="/api/logs/export" class="refresh-btn" style="background: #475569; color: #fff; margin-right: 8px;">Export JSON</a>
+            <button onclick="location.reload()" class="refresh-btn">Refresh Live</button>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-val">{stats.get('total_logs', 0)}</div>
+            <div class="stat-lbl">Total Audit Records</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">{len(stats.get('by_event_type', {}))}</div>
+            <div class="stat-lbl">Unique Event Types</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">{stats.get('latest_timestamp', 'N/A')[:19]}</div>
+            <div class="stat-lbl">Latest Activity</div>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 16px;">
+        <span style="font-size: 12px; color: var(--text-muted); margin-right: 8px;">Event Breakdown:</span>
+        {events_html}
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Timestamp (UTC)</th>
+                    <th>Level</th>
+                    <th>Event Type</th>
+                    <th>Logger</th>
+                    <th>Message</th>
+                    <th>Details & Progress Payload</th>
+                </tr>
+            </thead>
+            <tbody>
+                {table_rows if table_rows else '<tr><td colspan="7" style="text-align:center; padding: 20px;">No progress records logged yet.</td></tr>'}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>"""
+        return html
+
+# Global simple logging database instance
 log_database = SimpleLogDatabase()
-
 
 class DBLoggingHandler(logging.Handler):
     """

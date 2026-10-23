@@ -1,0 +1,1249 @@
+{
+  "metadata": {
+    "catalog_title": "Ethiopian Secondary Education - Official Learning Portals and Multilingual Websites Directory",
+    "catalog_title_am": "የኢትዮጵያ ሁለተኛ ደረጃ ትምህርት - ይፋዊ የመማሪያ ፖርታሎች እና የባለብዙ ቋንቋ ድረ-ገጾች ማውጫ",
+    "catalog_title_om": "Barnoota Sadarkaa Lammaffaa Itoophiyaa - Pootaalota Barnootaa fi Weebsaayitoota Afaan Baay'ee",
+    "curator": "Ministry of Education Information Communication Technology Directorate",
+    "publication_date": "2024-10-15",
+    "version": "v5.2-Multilingual",
+    "total_listed_portals": 30
+  },
+  "portals": [
+    {
+      "id": "PORTAL-001",
+      "name": "Ethiopian Ministry of Education Official Digital Portal",
+      "name_am": "የኢትዮጵያ ትምህርት ሚኒስቴር ይፋዊ ዲጂታል ፖርታል",
+      "name_om": "Pootaalii Diijitaalaa Ministeera Barnootaa Itoophiyaa",
+      "url": "https://www.moe.gov.et",
+      "category": "Ministerial Governance & Policy Repository",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo",
+        "Tigrigna",
+        "Somali"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Ethiopian Ministry of Education Official Digital Portal.",
+      "description_am": "የየኢትዮጵያ ትምህርት ሚኒስቴር ይፋዊ ዲጂታል ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Diijitaalaa Ministeera Barnootaa Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://www.moe.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://www.moe.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://www.moe.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-002",
+      "name": "Educational Assessment and Examinations Service (EAES)",
+      "name_am": "የትምህርት ምዘና እና ፈተናዎች አገልግሎት (ኢኤኤስ)",
+      "name_om": "Tajaajila Madaallii fi Qormaata Barnootaa Itoophiyaa (EAES)",
+      "url": "https://eaes.et",
+      "category": "National Examinations & Results Verification",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Educational Assessment and Examinations Service (EAES).",
+      "description_am": "የየትምህርት ምዘና እና ፈተናዎች አገልግሎት (ኢኤኤስ) ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Tajaajila Madaallii fi Qormaata Barnootaa Itoophiyaa (EAES) kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://eaes.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://eaes.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://eaes.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-003",
+      "name": "Ethiopian Digital Library & Open Educational Resources (OER)",
+      "name_am": "የኢትዮጵያ ዲጂታል ቤተ-መጽሐፍት እና ክፍት የትምህርት ግብዓቶች",
+      "name_om": "Kuusaa Kitaabaa Diijitaalaa Itoophiyaa",
+      "url": "https://digitallibrary.edu.et",
+      "category": "Curriculum Digital Textbooks Repository",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Ethiopian Digital Library & Open Educational Resources (OER).",
+      "description_am": "የየኢትዮጵያ ዲጂታል ቤተ-መጽሐፍት እና ክፍት የትምህርት ግብዓቶች ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Kuusaa Kitaabaa Diijitaalaa Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://digitallibrary.edu.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://digitallibrary.edu.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://digitallibrary.edu.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-004",
+      "name": "Ethio-National E-Learning & SchoolNet Video Channel",
+      "name_am": "የኢትዮ-ብሔራዊ ኢ-ትምህርት እና የትምህርት ኔትወርክ የቪዲዮ ቻናል",
+      "name_om": "Barnoota Ilektirooniksii Biyyoolessaa IskuulNeet",
+      "url": "https://elearning.moe.gov.et",
+      "category": "Interactive Video Lessons & Practice Quizzes",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Ethio-National E-Learning & SchoolNet Video Channel.",
+      "description_am": "የየኢትዮ-ብሔራዊ ኢ-ትምህርት እና የትምህርት ኔትወርክ የቪዲዮ ቻናል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Barnoota Ilektirooniksii Biyyoolessaa IskuulNeet kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://elearning.moe.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://elearning.moe.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://elearning.moe.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-005",
+      "name": "Oromia Education Bureau Digital Learning Platform (Barnoota Oromiyaa)",
+      "name_am": "የኦሮሚያ ትምህርት ቢሮ ዲጂታል የመማሪያ መድረክ",
+      "name_om": "Waltajjii Barnoota Diijitaalaa Biiroo Barnootaa Oromiyaa",
+      "url": "https://learn.oeb.gov.et",
+      "category": "Regional Curricular & Afaan Oromoo Resource Hub",
+      "supported_languages": [
+        "Afaan Oromoo",
+        "English"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Oromia Education Bureau Digital Learning Platform (Barnoota Oromiyaa).",
+      "description_am": "የየኦሮሚያ ትምህርት ቢሮ ዲጂታል የመማሪያ መድረክ ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Waltajjii Barnoota Diijitaalaa Biiroo Barnootaa Oromiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://learn.oeb.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://learn.oeb.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://learn.oeb.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-006",
+      "name": "Amhara Education Bureau E-Portal & Teacher Resource Base",
+      "name_am": "የአማራ ትምህርት ቢሮ ኢ-ፖርታል እና የመምህራን ግብዓት ማዕከል",
+      "name_om": "Pootaalii Biiroo Barnootaa Naannoo Amaaraa",
+      "url": "https://amharaeducation.gov.et",
+      "category": "Regional Curricular & Amharic Medium Hub",
+      "supported_languages": [
+        "Amharic",
+        "English"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Amhara Education Bureau E-Portal & Teacher Resource Base.",
+      "description_am": "የየአማራ ትምህርት ቢሮ ኢ-ፖርታል እና የመምህራን ግብዓት ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Biiroo Barnootaa Naannoo Amaaraa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://amharaeducation.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://amharaeducation.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://amharaeducation.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-007",
+      "name": "Addis Ababa City Education Bureau Digital Learning Cloud",
+      "name_am": "የአዲስ አበባ ከተማ አስተዳደር ትምህርት ቢሮ ዲጂታል ክላውድ",
+      "name_om": "Kilaawudii Barnoota Diijitaalaa Finfinnee",
+      "url": "https://aaeb.gov.et",
+      "category": "Metropolitan Smart Classroom & Digital Library",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Addis Ababa City Education Bureau Digital Learning Cloud.",
+      "description_am": "የየአዲስ አበባ ከተማ አስተዳደር ትምህርት ቢሮ ዲጂታል ክላውድ ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Kilaawudii Barnoota Diijitaalaa Finfinnee kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://aaeb.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://aaeb.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://aaeb.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-008",
+      "name": "Tigray Education Bureau Digital Recovery & Curriculum Portal",
+      "name_am": "የትግራይ ትምህርት ቢሮ ዲጂታል ማገገሚያ እና የስርዓተ-ትምህርት ፖርታል",
+      "name_om": "Pootaalii Barnootaa fi Deebisanii Dhaabuu Naannoo Tigraay",
+      "url": "https://tigrayedu.gov.et",
+      "category": "Regional Curricular & Tigrigna Medium Educational Hub",
+      "supported_languages": [
+        "Tigrigna",
+        "English",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Tigray Education Bureau Digital Recovery & Curriculum Portal.",
+      "description_am": "የየትግራይ ትምህርት ቢሮ ዲጂታል ማገገሚያ እና የስርዓተ-ትምህርት ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Barnootaa fi Deebisanii Dhaabuu Naannoo Tigraay kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://tigrayedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://tigrayedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://tigrayedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-009",
+      "name": "Sidama Education Bureau E-Learning Portal",
+      "name_am": "የሲዳማ ትምህርት ቢሮ የኢ-ትምህርት ፖርታል",
+      "name_om": "Pootaalii Barnoota Diijitaalaa Biiroo Barnootaa Sidaamaa",
+      "url": "https://sidamaeducation.gov.et",
+      "category": "Regional Curricular & Sidaamu Afoo Hub",
+      "supported_languages": [
+        "Sidaamu Afoo",
+        "Amharic",
+        "English"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Sidama Education Bureau E-Learning Portal.",
+      "description_am": "የየሲዳማ ትምህርት ቢሮ የኢ-ትምህርት ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Barnoota Diijitaalaa Biiroo Barnootaa Sidaamaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://sidamaeducation.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://sidamaeducation.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://sidamaeducation.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-010",
+      "name": "Somali Regional State Education Bureau Digital Portal",
+      "name_am": "የሶማሌ ክልል ትምህርት ቢሮ ዲጂታል ፖርታል",
+      "name_om": "Xafiiska Waxbarashada Dawlad Deegaanka Soomaalida",
+      "url": "https://somaliedu.gov.et",
+      "category": "Regional Curricular & Somali Medium Hub",
+      "supported_languages": [
+        "Somali",
+        "English",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Somali Regional State Education Bureau Digital Portal.",
+      "description_am": "የየሶማሌ ክልል ትምህርት ቢሮ ዲጂታል ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Xafiiska Waxbarashada Dawlad Deegaanka Soomaalida kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://somaliedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://somaliedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://somaliedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-011",
+      "name": "South Ethiopia Regional State Education Bureau Hub",
+      "name_am": "የደቡብ ኢትዮጵያ ክልላዊ መንግስት የትምህርት ቢሮ ማዕከል",
+      "name_om": "Biiroo Barnootaa Naannoo Kibba Itoophiyaa",
+      "url": "https://southethiopiaedu.gov.et",
+      "category": "Regional Multilingual Curricular Platform",
+      "supported_languages": [
+        "Amharic",
+        "English",
+        "Wolaytta",
+        "Gamo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for South Ethiopia Regional State Education Bureau Hub.",
+      "description_am": "የየደቡብ ኢትዮጵያ ክልላዊ መንግስት የትምህርት ቢሮ ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Biiroo Barnootaa Naannoo Kibba Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://southethiopiaedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://southethiopiaedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://southethiopiaedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-012",
+      "name": "Central Ethiopia Regional State Education Directorate",
+      "name_am": "የማዕከላዊ ኢትዮጵያ ክልላዊ መንግስት የትምህርት ቢሮ",
+      "name_om": "Biiroo Barnootaa Naannoo Giddu-galeessa Itoophiyaa",
+      "url": "https://centralethiopiaedu.gov.et",
+      "category": "Regional Multilingual Education Base",
+      "supported_languages": [
+        "Amharic",
+        "English",
+        "Hadiya",
+        "Kambaata",
+        "Gurage"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Central Ethiopia Regional State Education Directorate.",
+      "description_am": "የየማዕከላዊ ኢትዮጵያ ክልላዊ መንግስት የትምህርት ቢሮ ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Biiroo Barnootaa Naannoo Giddu-galeessa Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://centralethiopiaedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://centralethiopiaedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://centralethiopiaedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-013",
+      "name": "South West Ethiopia Peoples Region Education Portal",
+      "name_am": "የደቡብ ምዕራብ ኢትዮጵያ ህዝቦች ክልል የትምህርት ፖርታል",
+      "name_om": "Pootaalii Barnootaa Naannoo Kibba Lixa Itoophiyaa",
+      "url": "https://swethiopiaedu.gov.et",
+      "category": "Regional Curricular and Indigenous Heritage Base",
+      "supported_languages": [
+        "Amharic",
+        "English",
+        "Kafa",
+        "Bench"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for South West Ethiopia Peoples Region Education Portal.",
+      "description_am": "የየደቡብ ምዕራብ ኢትዮጵያ ህዝቦች ክልል የትምህርት ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Barnootaa Naannoo Kibba Lixa Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://swethiopiaedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://swethiopiaedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://swethiopiaedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-014",
+      "name": "Benishangul-Gumuz Region Education Bureau Hub",
+      "name_am": "የቤኒሻንጉል ጉሙዝ ክልል ትምህርት ቢሮ ማዕከል",
+      "name_om": "Biiroo Barnootaa Naannoo Beenshangul Gumuz",
+      "url": "https://bgedu.gov.et",
+      "category": "Borderland Regional Curricular Resource",
+      "supported_languages": [
+        "Amharic",
+        "English",
+        "Berta",
+        "Gumuz"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Benishangul-Gumuz Region Education Bureau Hub.",
+      "description_am": "የየቤኒሻንጉል ጉሙዝ ክልል ትምህርት ቢሮ ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Biiroo Barnootaa Naannoo Beenshangul Gumuz kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://bgedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://bgedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://bgedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-015",
+      "name": "Afar Regional State Education Bureau Digital Platform",
+      "name_am": "የአፋር ክልል ትምህርት ቢሮ ዲጂታል መድረክ",
+      "name_om": "Ugul Xisbik Qokol Qafar Rakaakayak",
+      "url": "https://afaredu.gov.et",
+      "category": "Pastoralist & Distance Learning Educational Base",
+      "supported_languages": [
+        "Qafaraf",
+        "Amharic",
+        "English"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Afar Regional State Education Bureau Digital Platform.",
+      "description_am": "የየአፋር ክልል ትምህርት ቢሮ ዲጂታል መድረክ ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Ugul Xisbik Qokol Qafar Rakaakayak kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://afaredu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://afaredu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://afaredu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-016",
+      "name": "Gambella Regional State Education Bureau Portal",
+      "name_am": "የጋምቤላ ክልል ትምህርት ቢሮ ፖርታል",
+      "name_om": "Pootaalii Biiroo Barnootaa Naannoo Gaambeellaa",
+      "url": "https://gambellaedu.gov.et",
+      "category": "Regional Curricular and Anuak-Nuer Literacy Hub",
+      "supported_languages": [
+        "Amharic",
+        "English",
+        "Anuak",
+        "Nuer"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Gambella Regional State Education Bureau Portal.",
+      "description_am": "የየጋምቤላ ክልል ትምህርት ቢሮ ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Biiroo Barnootaa Naannoo Gaambeellaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://gambellaedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://gambellaedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://gambellaedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-017",
+      "name": "Harari Regional State Education Bureau Heritage Hub",
+      "name_am": "የሐረሪ ክልል ትምህርት ቢሮ የቅርስ እና የትምህርት ማዕከል",
+      "name_om": "Geediri Biiroo Barnootaa Naannoo Hararii",
+      "url": "https://harariedu.gov.et",
+      "category": "Historical Heritage & Bilingual Curricular Hub",
+      "supported_languages": [
+        "Harari",
+        "Afaan Oromoo",
+        "Amharic",
+        "English"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Harari Regional State Education Bureau Heritage Hub.",
+      "description_am": "የየሐረሪ ክልል ትምህርት ቢሮ የቅርስ እና የትምህርት ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Geediri Biiroo Barnootaa Naannoo Hararii kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://harariedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://harariedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://harariedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-018",
+      "name": "Dire Dawa Administration Education Bureau Portal",
+      "name_am": "የድሬዳዋ አስተዳደር ትምህርት ቢሮ ፖርታል",
+      "name_om": "Pootaalii Biiroo Barnootaa Bulchiinsa Dirree Dhawaa",
+      "url": "https://diredawaedu.gov.et",
+      "category": "Charter City Multilingual Secondary Base",
+      "supported_languages": [
+        "Amharic",
+        "Afaan Oromoo",
+        "Somali",
+        "English"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Dire Dawa Administration Education Bureau Portal.",
+      "description_am": "የየድሬዳዋ አስተዳደር ትምህርት ቢሮ ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Biiroo Barnootaa Bulchiinsa Dirree Dhawaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://diredawaedu.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://diredawaedu.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://diredawaedu.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-019",
+      "name": "Federal Technical and Vocational Education Training (TVET) Institute",
+      "name_am": "የፌዴራል ቴክኒክና ሙያ ስልጠና ኢንስቲትዩት",
+      "name_om": "Dhaabbata Leenjii Teeknikaa fi Ogummaa Federaalaa",
+      "url": "https://tvet.gov.et",
+      "category": "Occupational Standards & Vocational Apprenticeship",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Federal Technical and Vocational Education Training (TVET) Institute.",
+      "description_am": "የየፌዴራል ቴክኒክና ሙያ ስልጠና ኢንስቲትዩት ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Dhaabbata Leenjii Teeknikaa fi Ogummaa Federaalaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://tvet.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://tvet.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://tvet.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-020",
+      "name": "Ethio-Telecom Tele-Education & Virtual Academy",
+      "name_am": "የኢትዮ ቴሌኮም ቴሌ-ትምህርት እና ቨርቹዋል አካዳሚ",
+      "name_om": "Akaadaamii Barnootaa fi Teeknooloojii Itoophiyaa Telekoom",
+      "url": "https://tele-education.ethiotelecom.et",
+      "category": "Nationwide Mobile Education & Zero-Rating Service",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo",
+        "Tigrigna",
+        "Somali"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Ethio-Telecom Tele-Education & Virtual Academy.",
+      "description_am": "የየኢትዮ ቴሌኮም ቴሌ-ትምህርት እና ቨርቹዋል አካዳሚ ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Akaadaamii Barnootaa fi Teeknooloojii Itoophiyaa Telekoom kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://tele-education.ethiotelecom.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://tele-education.ethiotelecom.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://tele-education.ethiotelecom.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-021",
+      "name": "Addis Ababa University Academic Open CourseWare & Transition Prep",
+      "name_am": "የአዲስ አበባ ዩኒቨርሲቲ ክፍት የኮርስ ግብዓት እና የመግቢያ ዝግጅት",
+      "name_om": "Koorsii Banaa Yuunivarsiitii Finfinnee",
+      "url": "https://ocw.aau.edu.et",
+      "category": "University Prep & Freshman Academic Bridging",
+      "supported_languages": [
+        "English",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Addis Ababa University Academic Open CourseWare & Transition Prep.",
+      "description_am": "የየአዲስ አበባ ዩኒቨርሲቲ ክፍት የኮርስ ግብዓት እና የመግቢያ ዝግጅት ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Koorsii Banaa Yuunivarsiitii Finfinnee kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://ocw.aau.edu.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://ocw.aau.edu.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://ocw.aau.edu.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-022",
+      "name": "Khan Academy Ethiopia Localized Multilingual Initiative",
+      "name_am": "ካን አካዳሚ የኢትዮጵያ ባለብዙ ቋንቋ ትምህርታዊ መድረክ",
+      "name_om": "Inishatiivii Kaan Akaadaamii Itoophiyaa",
+      "url": "https://ethiopia.khanacademy.org",
+      "category": "Open-Access Global Mathematics & Science Localization",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Khan Academy Ethiopia Localized Multilingual Initiative.",
+      "description_am": "የካን አካዳሚ የኢትዮጵያ ባለብዙ ቋንቋ ትምህርታዊ መድረክ ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Inishatiivii Kaan Akaadaamii Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://ethiopia.khanacademy.org using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://ethiopia.khanacademy.org ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://ethiopia.khanacademy.org fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-023",
+      "name": "Ethiopian Science and Technology Information Center (STIC)",
+      "name_am": "የኢትዮጵያ የሳይንስና ቴክኖሎጂ መረጃ ማዕከል",
+      "name_om": "Giddu-galeessa Odeeffannoo Saayinsii fi Teeknooloojii",
+      "url": "https://stic.gov.et",
+      "category": "Scientific Research Publications & STEM Datasets",
+      "supported_languages": [
+        "English",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Ethiopian Science and Technology Information Center (STIC).",
+      "description_am": "የየኢትዮጵያ የሳይንስና ቴክኖሎጂ መረጃ ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Giddu-galeessa Odeeffannoo Saayinsii fi Teeknooloojii kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://stic.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://stic.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://stic.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-024",
+      "name": "National Higher Education Relevance and Quality Agency (HERQA/HEERA)",
+      "name_am": "የከፍተኛ ትምህርት አግባብነትና ጥራት ኤጀንሲ",
+      "name_om": "Ejensii Qulqullina fi Fudhatamummaa Barnoota Olaanaa",
+      "url": "https://heera.gov.et",
+      "category": "University Quality Assurance & Exit Exam Standards",
+      "supported_languages": [
+        "English",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for National Higher Education Relevance and Quality Agency (HERQA/HEERA).",
+      "description_am": "የየከፍተኛ ትምህርት አግባብነትና ጥራት ኤጀንሲ ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Ejensii Qulqullina fi Fudhatamummaa Barnoota Olaanaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://heera.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://heera.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://heera.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-025",
+      "name": "Ethiopian Space Science and Geospatial Institute (SSGI) Outreach",
+      "name_am": "የኢትዮጵያ ስፔስ ሳይንስ እና ጂኦስፓሻል ኢንስቲትዩት",
+      "name_om": "Dhaabbata Saayinsii Hawaa fi Jiwoospaashalii Itoophiyaa",
+      "url": "https://ssgi.gov.et",
+      "category": "Secondary Astronomy, GIS & Satellite Science Academy",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Afaan Oromoo"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Ethiopian Space Science and Geospatial Institute (SSGI) Outreach.",
+      "description_am": "የየኢትዮጵያ ስፔስ ሳይንስ እና ጂኦስፓሻል ኢንስቲትዩት ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Dhaabbata Saayinsii Hawaa fi Jiwoospaashalii Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://ssgi.gov.et using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://ssgi.gov.et ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://ssgi.gov.et fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-026",
+      "name": "African Virtual University (AVU) Ethiopia Distance Hub",
+      "name_am": "የአፍሪካ ቨርቹዋል ዩኒቨርሲቲ የኢትዮጵያ የርቀት ትምህርት ማዕከል",
+      "name_om": "Yuunivarsiitii Verchuwaalii Afrikaa Qooda Itoophiyaa",
+      "url": "https://avu.org/ethiopia",
+      "category": "Pan-African E-Learning & STEM Teacher Modules",
+      "supported_languages": [
+        "English",
+        "French",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for African Virtual University (AVU) Ethiopia Distance Hub.",
+      "description_am": "የየአፍሪካ ቨርቹዋል ዩኒቨርሲቲ የኢትዮጵያ የርቀት ትምህርት ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Yuunivarsiitii Verchuwaalii Afrikaa Qooda Itoophiyaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://avu.org/ethiopia using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://avu.org/ethiopia ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://avu.org/ethiopia fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-027",
+      "name": "Jimma University E-Curriculum & Medical Transition Center",
+      "name_am": "የጅማ ዩኒቨርሲቲ የኢ-ስርዓተ-ትምህርት እና የህክምና ሽግግር ማዕከል",
+      "name_om": "Giddu-galeessa Barnootaa fi Fayyaa Yuunivarsiitii Jimmaa",
+      "url": "https://ju.edu.et/e-learning",
+      "category": "Community-Based STEM & Health Sciences Bridging",
+      "supported_languages": [
+        "English",
+        "Afaan Oromoo",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Jimma University E-Curriculum & Medical Transition Center.",
+      "description_am": "የየጅማ ዩኒቨርሲቲ የኢ-ስርዓተ-ትምህርት እና የህክምና ሽግግር ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Giddu-galeessa Barnootaa fi Fayyaa Yuunivarsiitii Jimmaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://ju.edu.et/e-learning using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://ju.edu.et/e-learning ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://ju.edu.et/e-learning fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-028",
+      "name": "Hawassa University Secondary Teacher Pedagogy Institute",
+      "name_am": "የሀዋሳ ዩኒቨርሲቲ የሁለተኛ ደረጃ መምህራን ስነ-ዘዴ ኢንስቲትዩት",
+      "name_om": "Dhaabbata Barsiisotaa fi Saayinsii Yuunivarsiitii Hawaasaa",
+      "url": "https://hu.edu.et/stem",
+      "category": "Southern Ethiopian Secondary Teacher Resource Platform",
+      "supported_languages": [
+        "English",
+        "Amharic",
+        "Sidama"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Hawassa University Secondary Teacher Pedagogy Institute.",
+      "description_am": "የየሀዋሳ ዩኒቨርሲቲ የሁለተኛ ደረጃ መምህራን ስነ-ዘዴ ኢንስቲትዩት ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Dhaabbata Barsiisotaa fi Saayinsii Yuunivarsiitii Hawaasaa kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://hu.edu.et/stem using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://hu.edu.et/stem ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://hu.edu.et/stem fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-029",
+      "name": "Bahir Dar University STEM Incubation Center for Youth",
+      "name_am": "የባህር ዳር ዩኒቨርሲቲ የSTEM ፈጠራ እና የስልጠና ማዕከል",
+      "name_om": "Giddu-galeessa Kilaawudii fi STEM Yuunivarsiitii Baahir Daar",
+      "url": "https://bdu.edu.et/stem",
+      "category": "Secondary Science Fair Projects & Coding Bootcamps",
+      "supported_languages": [
+        "English",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Bahir Dar University STEM Incubation Center for Youth.",
+      "description_am": "የየባህር ዳር ዩኒቨርሲቲ የSTEM ፈጠራ እና የስልጠና ማዕከል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Giddu-galeessa Kilaawudii fi STEM Yuunivarsiitii Baahir Daar kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://bdu.edu.et/stem using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://bdu.edu.et/stem ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://bdu.edu.et/stem fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    },
+    {
+      "id": "PORTAL-030",
+      "name": "Mekelle University Digital Science and Recovery Portal",
+      "name_am": "የመቀሌ ዩኒቨርሲቲ ዲጂታል ሳይንስ እና መልሶ ማቋቋም ፖርታል",
+      "name_om": "Pootaalii Saayinsii Diijitaalaa Yuunivarsiitii Maqalee",
+      "url": "https://mu.edu.et/digital-hub",
+      "category": "Post-War Academic Restoration and STEM Digital Lab",
+      "supported_languages": [
+        "Tigrigna",
+        "English",
+        "Amharic"
+      ],
+      "target_audience": [
+        "Secondary Candidates (Grades 9-12)",
+        "Teachers & Department Leads",
+        "Regional Supervisors",
+        "Parents"
+      ],
+      "description_en": "Official digital service providing curriculum-aligned textbooks, examination materials, policy circulars, and teacher development modules for Mekelle University Digital Science and Recovery Portal.",
+      "description_am": "የየመቀሌ ዩኒቨርሲቲ ዲጂታል ሳይንስ እና መልሶ ማቋቋም ፖርታል ይፋዊ ዲጂታል ፖርታል ሲሆን የመማሪያ መጽሐፍትን፣ የፈተና ሰነዶችን፣ መመሪያዎችን እና የመምህራን ማሻሻያ ሞጁሎችን ያቀርባል።",
+      "description_om": "Tajaajila qajeelchaa Pootaalii Saayinsii Diijitaalaa Yuunivarsiitii Maqalee kan kitaabota barnootaa, qormaata, qajeelfamoota fi mojuulota barsiisotaa dhiyeessu.",
+      "featured_resources": [
+        "Full Digital PDF Textbooks & Teachers Guides",
+        "Regional & National Examination Question Blueprints",
+        "Interactive Science Simulations and Audio Lessons",
+        "Teacher Continuing Professional Development (CPD) Portfolios",
+        "Continuous Assessment Rubrics & Student Records"
+      ],
+      "access_type": "Free / Open Access",
+      "bandwidth_requirement": "Low to Medium (Optimized for 2G/3G mobile networks)",
+      "navigation_instructions": {
+        "english": "Navigate to https://mu.edu.et/digital-hub using desktop or mobile browser. Direct PDF downloads are enabled without registration. Candidate verification modules require an active student registration number.",
+        "amharic": "በስልክ ወይም በኮምፒውተር ወደ https://mu.edu.et/digital-hub ይግቡ። የመማሪያ መጽሐፍትን በነፃ ያውርዱ። የፈተና ውጤት ለማየት የተማሪ መለያ ቁጥርዎን ይጠቀሙ።",
+        "afaan_oromoo": "Weebsaayitii https://mu.edu.et/digital-hub fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee fayyadamaa."
+      },
+      "server_specifications": {
+        "hosting_provider": "Ethio Telecom National Cloud Data Center, Addis Ababa",
+        "encryption": "TLS 1.3 256-Bit Cryptographic Security",
+        "compliance": "INSA Cyber Resilience & Data Protection Certified"
+      }
+    }
+  ]
+}

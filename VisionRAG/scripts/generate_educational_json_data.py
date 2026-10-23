@@ -419,7 +419,57 @@ def generate_exam_prep_notes() -> Dict[str, Any]:
          "Rule of law dictates no individual or governmental organ is above the constitution.",
          "የህግ የበላይነት ማለት ማንም ግለሰብ ወይም የመንግስት አካል ከህግ በላይ ሊሆን እንደማይችል ያረጋግጣል።",
          "Ol'aantummaan seeraa namni ykn mootummaan kamiyyuu heera mootummaa irra akka hin taane mirkaneessa.",
-         "Article 9 establishes that international agreements ratified by Ethiopia are integral parts of the law of the land.")
+         "Article 9 establishes that international agreements ratified by Ethiopia are integral parts of the law of the land."),
+
+        ("Mathematics", "MATH", 10, "Trigonometry & Circle Geometry", "Trigonometric Ratios and Angles Subtended in Circles", "የትሪጎኖሜትሪ ጥምርታዎች እና በክበብ ውስጥ የተሰመሩ ማዕዘናት", "Reeshoo Tirigoonomeetirii fi Kofa Geengoo",
+         ["Right Triangle Ratios: sinθ = opp/hyp, cosθ = adj/hyp, tanθ = opp/adj", "Pythagorean Identity: sin^2θ + cos^2θ = 1", "Angle at Center: Subtended arc angle is double the inscribed angle at the circumference (θ_center = 2 * θ_inscribed)", "Angle in a Semicircle: Always equals 90 degrees"],
+         "Angles subtended by the same arc at the circle circumference are equal; the inscribed angle in a semicircle is a right angle.",
+         "በአንድ ቅስት የሚሰመሩ ማዕዘናት እኩል ናቸው፤ በግማሽ ክበብ ላይ የሚሰመረው ማዕዘን ሁል ጊዜ 90 ዲግሪ ነው።",
+         "Kofaan geengoo walakkaa irratti uumamu yeroo hunda digirii 90 dha.",
+         "Remember to verify whether the angle vertex lies on the circle circumference or at the center.",
+         "የማዕዘኑ ጫፍ በክበቡ ዙሪያ ላይ ወይም መሃል ላይ መሆኑን በጥንቃቄ ያረጋግጡ።",
+         "Kofichi handhuura geengoo irratti ykn sarara alaa irratti ta'uu adda baasaa.",
+         "If angle at circumference is 35 degrees, the angle at center subtended by same arc is 2 * 35 = 70 degrees."),
+
+        ("Physics", "PHYS", 10, "Work, Energy, and Power", "Work-Energy Theorem and Mechanical Efficiency", "የስራ እና የጉልበት ንድፈ-ሀሳብ እና ሜካኒካል ብቃት", "Tiyoorii Hojii fi Annisaa",
+         ["Work Done: W = F * d * cos(θ) (Joules)", "Kinetic Energy: KE = 0.5 * m * v^2", "Gravitational Potential: PE = m * g * h", "Efficiency: η = (Useful Work Output / Total Work Input) * 100%"],
+         "The net work done on an object equals the change in its kinetic energy: W_net = ΔKE = KE_final - KE_initial.",
+         "በአንድ አካል ላይ የሚሰራው ጠቅላላ ስራ የኪነቲክ ኃይሉን ለውጥ ይወክላል: W_net = ΔKE።",
+         "Hojiin hojjetame jijjiirama annisaa sochii (KE) wajjin walqixa.",
+         "If force acts perpendicular to displacement (cos 90° = 0), zero mechanical work is done.",
+         "ኃይል ከመፈናቀል ጋር ቀጥተኛ (90 ዲግሪ) ሲሆን የሚሰራው ስራ ዜሮ ነው።",
+         "Humni fi fageenyi yoo wal-qaxxaamuran hojiin hojjetamu zeeroo dha.",
+         "Pushing a 10 kg box with 50 N horizontally across 4 meters: W = 50 * 4 = 200 Joules."),
+
+        ("Chemistry", "CHEM", 10, "Stoichiometry & Solutions", "Molar Mass, Molarity, and Limiting Reactant Calculations", "ሞላር ማስ፣ ሞላሪቲ እና ወሳኝ ምላሽ ሰጪዎች", "Moolaar Maasi fi Qorannoo Furmaataa",
+         ["Moles Formula: n = mass / Molar_Mass", "Molarity Concentration: M = moles of solute / Volume of solution in Liters (mol/L)", "Dilution Formula: M1 * V1 = M2 * V2", "Percentage Yield: (Actual Yield / Theoretical Yield) * 100%"],
+         "The limiting reactant is completely consumed first in a chemical reaction, limiting the maximum theoretical product yield.",
+         "ገዳቢው ምላሽ ሰጪ መጀመሪያ ሙሉ በሙሉ የሚያልቅ ሲሆን የሚፈጠረውን ከፍተኛ ምርት ይወስናል።",
+         "Ree'aaktaantiin daangessaa inni jalqaba dhumu omisha olaanaa murteessa.",
+         "Always convert grams to moles before applying stoichiometric coefficients from the balanced equation.",
+         "ስሌት ከመስራትዎ በፊት ሁል ጊዜ ግራምን ወደ ሞል ይለውጡ።",
+         "Herrega dura yeroo hunda giraamii gara mooliitti jijjiiraa.",
+         "Dissolving 58.5 g NaCl (1 mol) in 2.0 L water produces a 0.50 M solution."),
+
+        ("Biology", "BIO", 10, "Human Coordination & Nervous System", "Action Potential, Synaptic Transmission, and Reflex Arcs", "የነርቭ ምልክት ስርጭት እና ሪፍሌክስ አርክ", "Sirna Narvii fi Sochii Rifileeksii",
+         ["Resting Membrane Potential: -70 mV maintained by Na+/K+ ATPase pump (3 Na+ out, 2 K+ in)", "Depolarization Threshold: -55 mV triggers voltage-gated Na+ influx up to +30 mV", "Reflex Arc Pathway: Receptor -> Sensory Neuron -> Interneuron (Spinal Cord) -> Motor Neuron -> Effector"],
+         "Nerve impulses propagate as all-or-nothing action potentials through sequential membrane depolarization and repolarization.",
+         "የነርቭ መልዕክቶች በሴል ሽፋን ላይ በሚፈጠር የኤሌክትሪክ ምልክት ለውጥ በፍጥነት ይተላለፋሉ።",
+         "Ergaan narvii saffisaan karaa sarara narviitiin darba.",
+         "Myelinated axons exhibit saltatory conduction, increasing impulse velocity up to 120 m/s compared to unmyelinated fibers.",
+         "ማይሊን ያላቸው የነርቭ ሴሎች ምልክቶችን በከፍተኛ ፍጥነት (እስከ 120 ሜ/ሰ) ያስተላልፋሉ።",
+         "Narviin maayiliinii qabu saffisaan ergaa dabarsa.",
+         "Withdrawing hand from a hot stove is mediated by spinal cord reflex arc without initial brain delay."),
+
+        ("Economics", "ECON", 11, "Market Structures & Competition", "Perfect Competition, Monopoly, and Price Determination", "ፍጹም ውድድር እና ሞኖፖሊ ገበያ", "Dorgommii Guutuu fi Gabaa Monoopoolii",
+         ["Profit Maximization Rule: Marginal Revenue = Marginal Cost (MR = MC)", "Perfect Competition: Price = MR = MC = minimum Average Total Cost (ATC) in long run", "Monopoly Profit: Price > MR = MC; deadweight loss generated"],
+         "Perfect competition yields allocative and productive efficiency, while monopoly yields supernormal economic profits and deadweight loss.",
+         "ፍጹም ውድድር ከፍተኛ ኢኮኖሚያዊ ብቃትን ሲያስገኝ ሞኖፖሊ ግን የገበያ መዛባትን ይፈጥራል።",
+         "Dorgommiin guutuun fayidaa guddaa kan qabu yoo ta'u, monoopooliin garuu gatii mi'eessa.",
+         "Under perfect competition, firms are price takers with perfectly elastic demand curves.",
+         "በፍጹም ውድድር ውስጥ ድርጅቶች የገበያ ዋጋ ተቀባዮች እንጂ ዋጋ አውጪዎች አይደሉም።",
+         "Dorgommii guutuu keessatti dhaabbileen gatii gabaa fudhatu malee hin murteessan.",
+         "Firm producing at MC = $15 facing price P = $15 maximizes profit where MR = MC.")
     ]
 
     notes = []
@@ -653,7 +703,35 @@ def generate_educational_annotations() -> Dict[str, Any]:
           {"class_name": "HumanStudentExamCandidate", "confidence": 0.98, "box": [480, 260, 720, 900], "attributes": {"role": "Student with Tablet", "human_verified": True}},
           {"class_name": "HumanStudentExamCandidate", "confidence": 0.98, "box": [820, 270, 1060, 910], "attributes": {"role": "Student with Tablet", "human_verified": True}}],
          "Verify whether the subjects in this smart digital classroom are authentic human students and teacher.", "በዚህ ስማርት ክላስሩም ውስጥ ያሉት አካላት እውነተኛ ተማሪዎች እና መምህር መሆናቸውን ያረጋግጡ።", "Daree barnootaa ammayyaa kana keessa namoonni jiran barattoota fi barsiisaa dhugaa ta'uu mirkaneessi.",
-         "Verified: 3 confirmed human subjects actively utilizing digital tablets. No non-human spoofing detected.", "ተረጋግጧል: 3 እውነተኛ የሰው አካላት ታብሌት ሲጠቀሙ ተረጋግጠዋል። ምንም የማስመሰል ችግር የለም።", "Mirkanaa'eera: Namoota dhugaa 3 to'atameera. Dogoggorri hin jiru.", "Facial and skeletal posture verified.")
+         "Verified: 3 confirmed human subjects actively utilizing digital tablets. No non-human spoofing detected.", "ተረጋግጧል: 3 እውነተኛ የሰው አካላት ታብሌት ሲጠቀሙ ተረጋግጠዋል። ምንም የማስመሰል ችግር የለም።", "Mirkanaa'eera: Namoota dhugaa 3 to'atameera. Dogoggorri hin jiru.", "Facial and skeletal posture verified."),
+
+        ("biology_plant_chloroplast_photosynthesis_calvin_cycle.png", "Biology (Plant Physiology)",
+         [{"class_name": "BiologyCellularOrganelle", "confidence": 0.99, "box": [100, 80, 1180, 640], "attributes": {"organelle": "Chloroplast", "membranes": 2}},
+          {"class_name": "ThylakoidGranaStack", "confidence": 0.98, "box": [220, 180, 520, 560], "attributes": {"reaction": "Light-Dependent Photolysis"}},
+          {"class_name": "StromaFluidMatrix", "confidence": 0.97, "box": [620, 160, 1080, 580], "attributes": {"reaction": "Calvin Cycle Carbon Fixation (RuBisCO)"}}],
+         "Which compartment of the chloroplast hosts the light-independent Calvin cycle reactions?", "በክሎሮፕላስት ውስጥ ብርሃን-አልባው የካልቪን ዑደት የትኛው ክፍል ውስጥ ይካሄዳል?", "Kutaan kilooroopilaastii inni adeemsi kaalviin keessatti gaggeeffamu kami?",
+         "The stroma fluid matrix hosts the Calvin cycle, utilizing ATP and NADPH to reduce CO2 into glyceraldehyde-3-phosphate.", "የካልቪን ዑደት በስትሮማ (stroma) ውስጥ ይካሄዳል።", "Adeemsi kaalviin 'stroma' keessatti gaggeeffama.", "RuBisCO enzyme resides in the stroma."),
+
+        ("chemistry_electrolysis_brine_chloralkali_membrane_cell.png", "Chemistry (Industrial Electrochemistry)",
+         [{"class_name": "ChemicalLaboratoryGlassware", "confidence": 0.98, "box": [120, 80, 1160, 640], "attributes": {"cell_type": "Chloralkali Membrane Cell"}},
+          {"class_name": "TitaniumAnodeChlorineEvolution", "confidence": 0.97, "box": [180, 180, 380, 560], "attributes": {"product": "Cl2(g)"}},
+          {"class_name": "NickelCathodeHydrogenEvolution", "confidence": 0.97, "box": [900, 180, 1100, 560], "attributes": {"product": "H2(g) & NaOH(aq)"}}],
+         "Identify the three commercially valuable chemicals produced by industrial electrolysis of aqueous brine (NaCl).", "የጨው ውህድ (NaCl) በኤሌክትሮላይሲስ ሲበሰብስ የሚመረቱትን ሶስት ጠቃሚ ኬሚካሎች ለዩ።", "Koompaawundii NaCl elektiroolaayisiisii gochuun keemikaalota sadii kam fa'atu omishama?",
+         "The products are Chlorine gas (Cl2), Hydrogen gas (H2), and aqueous Sodium Hydroxide (NaOH).", "ውጤቶቹ የክሎሪን ጋዝ (Cl2)፣ የሃይድሮጂን ጋዝ (H2) እና ሶዲየም ሃይድሮክሳይድ (NaOH) ናቸው።", "Omishni isaa gaasii Kilooriinii, Haayidiroojiinii fi Soodiyeem Haayidirooksaayidiidha.", "Membrane chloralkali process."),
+
+        ("physics_projectile_velocity_vector_resolution.png", "Physics (Vector Mechanics)",
+         [{"class_name": "PhysicsVectorFreeBodyDiagram", "confidence": 0.99, "box": [80, 80, 1200, 640], "attributes": {"v0_m_s": 50.0, "angle_deg": 37.0}},
+          {"class_name": "HorizontalVelocityVectorVx", "confidence": 0.98, "box": [120, 480, 520, 520], "attributes": {"vx": "v0 * cos(37) = 40.0 m/s"}},
+          {"class_name": "VerticalVelocityVectorVy", "confidence": 0.98, "box": [120, 180, 160, 480], "attributes": {"vy": "v0 * sin(37) = 30.0 m/s"}}],
+         "Resolve an initial velocity of 50 m/s at 37 degrees above horizontal into its rectangular components (cos 37° = 0.8, sin 37° = 0.6).", "በ 37 ዲግሪ ማዕዘን በ 50 ሜ/ሰ ፍጥነት የተወረወረ አካልን አግድም እና አቀባዊ ፍጥነቶች አስሉ።", "Saffisa jalqabaa 50 m/s kofa digirii 37 tiin darbame gara dalgaa fi olka'iinsaatti shallagi.",
+         "Horizontal component Vx = 50 * 0.8 = 40.0 m/s; Vertical component Vy = 50 * 0.6 = 30.0 m/s.", "አግድም ፍጥነት Vx = 40 ሜ/ሰ ሲሆን አቀባዊ ፍጥነት Vy = 30 ሜ/ሰ ነው።", "Vx = 40 m/s fi Vy = 30 m/s dha.", "Orthogonal Cartesian resolution."),
+
+        ("biology_dna_double_helix_watson_crick_base_pairing.png", "Biology (Molecular Genetics)",
+         [{"class_name": "BiologyCellularOrganelle", "confidence": 0.99, "box": [160, 60, 1120, 660], "attributes": {"structure": "B-DNA Double Helix", "helical_pitch_nm": 3.4}},
+          {"class_name": "AdenineThymineHydrogenBonds", "confidence": 0.98, "box": [480, 200, 720, 320], "attributes": {"base_pair": "A-T", "h_bonds": 2}},
+          {"class_name": "GuanineCytosineHydrogenBonds", "confidence": 0.98, "box": [480, 400, 720, 520], "attributes": {"base_pair": "G-C", "h_bonds": 3}}],
+         "How many hydrogen bonds stabilize Guanine-Cytosine (G-C) compared to Adenine-Thymine (A-T) base pairs?", "በጓኒን-ሳይቶሲን (G-C) እና በአዲኒን-ታይሚን (A-T) መካከል ስንት የሃይድሮጂን ትስስሮች አሉ?", "Cimdiin G-C fi A-T hidhoo haayidiroojiinii meeqa qabu?",
+         "G-C pairs are bonded by 3 hydrogen bonds, whereas A-T pairs are bonded by 2 hydrogen bonds.", "G-C በ 3 የሃይድሮጂን ትስስሮች ሲገናኝ A-T ደግሞ በ 2 የሃይድሮጂን ትስስሮች ይገናኛል።", "G-C hidhoo 3 yoo qabaatu, A-T immoo hidhoo 2 qaba.", "Higher thermal melting temperature for GC-rich DNA.")
     ]
 
     images = []

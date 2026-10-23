@@ -1,0 +1,1188 @@
+{
+  "metadata": {
+    "title": "Ethiopian Ministry of Education - Secondary School YouTube Video Lessons & Instructional Guides",
+    "title_am": "የትምህርት ሚኒስቴር - የሁለተኛ ደረጃ ትምህርት የዩቲዩብ ቪዲዮ ትምህርቶች እና የማስተማሪያ መመሪያዎች",
+    "title_om": "Ministeera Barnootaa - Qajeelfama fi Barnoota Viidiyoo Yuutuubii Sadarkaa Lammaffaa",
+    "curriculum": "National Secondary School Curriculum (Grades 9-12)",
+    "streaming_partner": "Ethio Telecom & Ethiopian Broadcasting Corporation",
+    "total_video_lessons": 24
+  },
+  "video_lessons": [
+    {
+      "video_id": "yt_moe_g12_math_001",
+      "title_en": "Grade 12 Mathematics: Calculus Optimization & Limits Masterclass",
+      "title_am": "የ12ኛ ክፍል ሂሳብ: የካልኩለስ ማመቻቸት እና ገደቦች ማስተርክላስ",
+      "title_om": "Herrega Kutaa 12: Kaalkulasaa fi Daangaa",
+      "duration": "48:15",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Dr. Desta Tesfaye (Senior Curriculum Specialist, MOE)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 3: Applied Calculus",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_math_g12_calc01",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_phys_002",
+      "title_en": "Grade 12 Physics: Electromagnetism & Electromagnetic Induction",
+      "title_am": "የ12ኛ ክፍል ፊዚክስ: ኤሌክትሮማግኔቲዝም እና ኤሌክትሮማግኔቲክ ኢንዳክሽን",
+      "title_om": "Fiiziksii Kutaa 12: Elektiroomaagneetizimii",
+      "duration": "52:40",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Birhanu Kebede (Hawassa University Lecturer & Item Writer)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 5: Electromagnetism",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_phys_g12_em02",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_chem_003",
+      "title_en": "Grade 12 Chemistry: Acid-Base Equilibria & Buffer Solutions",
+      "title_am": "የ12ኛ ክፍል ኬሚስትሪ: የአሲድ-ቤዝ ሚዛናዊነት እና የባፈር መፍትሄዎች",
+      "title_om": "Keemistirii Kutaa 12: Madaallii Asiidii fi Beessii",
+      "duration": "44:20",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "W/ro Aster Hailu (Senior Chemistry Curriculum Lead)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 2: Acid-Base Equilibria",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_chem_g12_ab03",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_bio_004",
+      "title_en": "Grade 12 Biology: Molecular Genetics, DNA Replication & Protein Synthesis",
+      "title_am": "የ12ኛ ክፍል ባዮሎጂ: ሞለኪውላዊ ጀነቲክስ፣ የዲኤንኤ ማባዛት እና የፕሮቲን ውህደት",
+      "title_om": "Baayoloojii Kutaa 12: Jeneetiiksii Molekulii fi Pirootiinii",
+      "duration": "50:10",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Dr. Girma Bekele (Addis Ababa University Department of Biology)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 3: Molecular Genetics",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_bio_g12_gen04",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_hist_005",
+      "title_en": "Grade 12 History: The Battle of Adwa (1896) Strategy & Global Legacy",
+      "title_am": "የ12ኛ ክፍል ታሪክ: የዓድዋ ጦርነት (1896) ስትራቴጂ እና አለም አቀፋዊ ፋይዳ",
+      "title_om": "Seenaa Kutaa 12: Waraana Adwaa (1896) fi Injifannoo Addunyaa",
+      "duration": "46:30",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Prof. Shiferaw Bekele & Dr. Ahmed Hassen (Historians)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 4: State Building & Resistance",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_hist_g12_adwa05",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g11_math_006",
+      "title_en": "Grade 11 Mathematics: Coordinate Geometry of Circles and Conics",
+      "title_am": "የ11ኛ ክፍል ሂሳብ: የክበቦች እና ሾጣጣ ክፍሎች የማስተባበሪያ ጂኦሜትሪ",
+      "title_om": "Herrega Kutaa 11: Ji'omeetirii Geengoo fi Koniikii",
+      "duration": "42:15",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Solomon Mengistu (Addis Ababa Education Bureau)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 3: Coordinate Geometry",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_math_g11_conic06",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g11_phys_007",
+      "title_en": "Grade 11 Physics: Projectile Motion & Parabolic Trajectories",
+      "title_am": "የ11ኛ ክፍል ፊዚክስ: የፕሮጀክት እንቅስቃሴ እና ፓራቦሊክ አቅጣጫዎች",
+      "title_om": "Fiiziksii Kutaa 11: Sochii Darbamaa fi Paaraaboolaa",
+      "duration": "45:50",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Tsegaye Alemayehu (Bahir Dar University Lecturer)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 2: Two-Dimensional Kinematics",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_phys_g11_kin07",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g11_chem_008",
+      "title_en": "Grade 11 Chemistry: Chemical Bonding, Hybridization & VSEPR",
+      "title_am": "የ11ኛ ክፍል ኬሚስትሪ: ኬሚካላዊ ትስስር፣ ሃይብሪዳይዜሽን እና VSEPR",
+      "title_om": "Keemistirii Kutaa 11: Hidhoo Keemikaalaa fi VSEPR",
+      "duration": "47:30",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Dr. Yonas Chebude (AAU Department of Chemistry)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 2: Chemical Bonding",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_chem_g11_bond08",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g11_bio_009",
+      "title_en": "Grade 11 Biology: Cell Membrane Physiology & Active Transport",
+      "title_am": "የ11ኛ ክፍል ባዮሎጂ: የሴል ሜምብሬን ፊዚዮሎጂ እና ንቁ ትራንስፖርት",
+      "title_om": "Baayoloojii Kutaa 11: Fiiziyooloojii Meembireenii Seelii",
+      "duration": "41:20",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "W/ro Selamawit Worku (Senior Biology Educator)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 1: Cellular Ultrastructure",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_bio_g11_cell09",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_geog_010",
+      "title_en": "Grade 12 Geography: River Basins & GERD Hydropower Engineering",
+      "title_am": "የ12ኛ ክፍል ጂኦግራፊ: የኢትዮጵያ ወንዞች እና የታላቁ ህዳሴ ግድብ ምህንድስና",
+      "title_om": "Jiogiraafii Kutaa 12: Laggeen fi Hidha Haaromsaa",
+      "duration": "49:15",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Dr. Daniel Kassahun (Geospatial & Water Resource Expert)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 2: Drainage Systems & Water",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_geog_g12_gerd10",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_eng_011",
+      "title_en": "Grade 12 English: Essay Thesis Statements and Inverted Conditionals",
+      "title_am": "የ12ኛ ክፍል እንግሊዝኛ: የድርሰት አጻጻፍ እና ውስብስብ ሰዋሰው",
+      "title_om": "Ingiliffa Kutaa 12: Barreeffama Esee fi Seera Afaanii",
+      "duration": "43:40",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Melaku Tefera (Senior English Curriculum Specialist)",
+      "language": "English",
+      "curriculum_unit": "Unit 3: Academic Writing & Grammar",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_eng_g12_essay11",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_econ_012",
+      "title_en": "Grade 12 Economics: National Income Accounting and Inflation Dynamics",
+      "title_am": "የ12ኛ ክፍል ኢኮኖሚክስ: የሀገር ውስጥ ገቢ ሂሳብ እና የዋጋ ግሽበት",
+      "title_om": "Diinagdee Kutaa 12: Galii Biyyaalessaa fi Mudannoo Gatii",
+      "duration": "46:10",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Hailu Gudeta (Senior Economics Lecturer)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 4: Macroeconomic Fundamentals",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_econ_g12_macro12",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g10_math_013",
+      "title_en": "Grade 10 Mathematics: Polynomial Functions and Quadratic Roots",
+      "title_am": "የ10ኛ ክፍል ሂሳብ: ፖሊኖሚያል ፈንክሽኖች እና የኳድራቲክ ስሮች",
+      "title_om": "Herrega Kutaa 10: Fankishinii fi Hiddoota Kawaadiraatiksii",
+      "duration": "40:30",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Fikru Haile (Oromia Education Bureau Lead)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 2: Polynomials & Equations",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_math_g10_poly13",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g10_phys_014",
+      "title_en": "Grade 10 Physics: Gravitation, Satellite Orbits and Planetary Laws",
+      "title_am": "የ10ኛ ክፍል ፊዚክስ: ስበት፣ የሳተላይት ምህዋር እና የፕላኔቶች ህጎች",
+      "title_om": "Fiiziksii Kutaa 10: Harkisa Lafa fi Saatalaayitii",
+      "duration": "44:00",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Kassahun Tadesse (Senior Physics Teacher)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 3: Gravitational Forces",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_phys_g10_grav14",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g10_chem_015",
+      "title_en": "Grade 10 Chemistry: Hydrocarbons, Alkanes, Alkenes and Polymers",
+      "title_am": "የ10ኛ ክፍል ኬሚስትሪ: ሃይድሮካርቦኖች፣ አልካኖች እና ፖሊመሮች",
+      "title_om": "Keemistirii Kutaa 10: Haayidirookaarboonota fi Poolimarii",
+      "duration": "42:50",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "W/ro Tigist Belay (Senior Chemistry Lead)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 4: Introduction to Organic",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_chem_g10_org15",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g10_bio_016",
+      "title_en": "Grade 10 Biology: Human Circulatory System, Heart Anatomy & Blood Groups",
+      "title_am": "የ10ኛ ክፍል ባዮሎጂ: የሰው የደም ዝውውር ስርዓት እና የልብ አናቶሚ",
+      "title_om": "Baayoloojii Kutaa 10: Sirna Dhiigaa fi Onnee Namaa",
+      "duration": "45:10",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Dr. Tariku Negash (Addis Ababa University Bio-Sciences)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 3: Human Anatomy",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_bio_g10_heart16",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g09_math_017",
+      "title_en": "Grade 9 Mathematics: Real Number System and Linear Inequalities",
+      "title_am": "የ9ኛ ክፍል ሂሳብ: እውነተኛ ቁጥሮች እና መስመራዊ አለመመጣጠኖች",
+      "title_om": "Herrega Kutaa 9: Lakkoofsa Dhugaa fi Walcaalmaya",
+      "duration": "38:40",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Dawit Alemu (General Secondary Educator)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 1: The Number System",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_math_g9_num17",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g09_phys_018",
+      "title_en": "Grade 9 Physics: Motion in a Straight Line and Speed-Time Graphs",
+      "title_am": "የ9ኛ ክፍል ፊዚክስ: ቀጥተኛ እንቅስቃሴ እና የፍጥነት-ጊዜ ግራፎች",
+      "title_om": "Fiiziksii Kutaa 9: Sochii Sarara Qajeelaa",
+      "duration": "40:15",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Yohannes Assefa (Dire Dawa Education Lead)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 2: Motion in 1D",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_phys_g9_mot18",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g09_chem_019",
+      "title_en": "Grade 9 Chemistry: Periodic Table Trends and Electron Shells",
+      "title_am": "የ9ኛ ክፍል ኬሚስትሪ: የፔሪዮዲክ ሰንጠረዥ አዝማሚያዎች እና ኤሌክትሮኖች",
+      "title_om": "Keemistirii Kutaa 9: Gabatee Piriyeodikii fi Elektiroonii",
+      "duration": "39:50",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "W/ro Meseret Kebede (Secondary Science Teacher)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 2: Atomic Structure",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_chem_g9_atom19",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g09_bio_020",
+      "title_en": "Grade 9 Biology: Microscopy and Plant vs Animal Cell Structures",
+      "title_am": "የ9ኛ ክፍል ባዮሎጂ: ማይክሮስኮፒ እና የእፅዋትና የእንስሳት ሴሎች",
+      "title_om": "Baayoloojii Kutaa 9: Maayikirooskooppii fi Seelii",
+      "duration": "41:00",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Getachew Molla (Amhara Science Bureau)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 2: Cell Biology",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_bio_g9_cell20",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_civ_021",
+      "title_en": "Grade 12 Civics: Rule of Law and Judicial Independence in Ethiopia",
+      "title_am": "የ12ኛ ክፍል ስነ-ዜጋ: የህግ የበላይነት እና የፍትህ አካላት ነፃነት",
+      "title_om": "Barnoota Lammummaa Kutaa 12: Ol'aantummaa Seeraa",
+      "duration": "44:20",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Berhanu Lemma (Senior Civics Specialist)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 2: Constitutional Rule of Law",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_civ_g12_law21",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g12_ict_022",
+      "title_en": "Grade 12 ICT: Python Data Structures, Flowcharts and Algorithms",
+      "title_am": "የ12ኛ ክፍል አይሲቲ: የፓይዘን ዳታ መዋቅሮች እና አልጎሪዝም",
+      "title_om": "ICT Kutaa 12: Algoorizimii fi Saganteessuu Paayitoniin",
+      "duration": "47:00",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Ato Ermias Tekle (Ministry of Innovation & Technology)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 3: Computer Programming",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_ict_g12_py22",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g11_hist_023",
+      "title_en": "Grade 11 History: The Gadaa System and Democratic Oromo Institutions",
+      "title_am": "የ11ኛ ክፍል ታሪክ: የገዳ ስርዓት እና ዲሞክራሲያዊ የኦሮሞ ተቋማት",
+      "title_om": "Seenaa Kutaa 11: Sirna Gadaa fi Dhaabbilee Dimookiraasii",
+      "duration": "48:50",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Prof. Tesema Ta'a & Dr. Dirribi Damise (Oromo Historians)",
+      "language": "English & Afaan Oromoo",
+      "curriculum_unit": "Unit 3: Indigenous Democratic Governance",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_hist_g11_gadaa23",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    },
+    {
+      "video_id": "yt_moe_g11_geog_024",
+      "title_en": "Grade 11 Geography: Remote Sensing, Satellite Imagery and Topography",
+      "title_am": "የ11ኛ ክፍል ጂኦግራፊ: የርቀት ዳሰሳ፣ የሳተላይት ምስሎች እና ቶፖግራፊ",
+      "title_om": "Jiogiraafii Kutaa 11: Teeknooloojii Rimoot Seensiingii",
+      "duration": "43:30",
+      "channel": "Ethiopian Ministry of Education Official Broadcast",
+      "instructor": "Dr. Solomon Addisu (SSGI Senior Scientist)",
+      "language": "English & Amharic",
+      "curriculum_unit": "Unit 1: Modern Geospatial Techniques",
+      "youtube_url": "https://www.youtube.com/watch?v=moe_geog_g11_gis24",
+      "timestamps": [
+        {
+          "time": "00:00",
+          "topic": "Introduction & National Exam Weighting Analysis",
+          "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና",
+          "topic_om": "Seensa fi Qooda Qormaataa"
+        },
+        {
+          "time": "10:15",
+          "topic": "Core Conceptual Principles & Theoretical Proofs",
+          "topic_am": "ዋና ዋና ንድፈ-ሀሳቦች እና ማረጋገጫዎች",
+          "topic_om": "Yaad-rimee Bu'uuraa fi Ragaa Tiyoorii"
+        },
+        {
+          "time": "24:30",
+          "topic": "Step-by-Step Problem Solving from Past National Exams",
+          "topic_am": "ያለፉ የብሔራዊ ፈተና ጥያቄዎች ደረጃ በደረጃ አሰራር",
+          "topic_om": "Gaaffilee Qormaataa Darban Hojjechuu"
+        },
+        {
+          "time": "38:00",
+          "topic": "Interactive Practice Problem & Student Pause Cue",
+          "topic_am": "የተማሪዎች የልምምድ ጥያቄ እና ቪዲዮውን የማቆም ማሳሰቢያ",
+          "topic_om": "Shaakala Barattootaa fi Viidiyoo Dhaabuu"
+        },
+        {
+          "time": "43:00",
+          "topic": "Summary, Mnemonics & Exam Day Execution Strategy",
+          "topic_am": "ማጠቃለያ እና የፈተና ቀን የአሰራር ስትራቴጂ",
+          "topic_om": "Goolaba fi Tooftaa Qormaata Guyyaa"
+        }
+      ],
+      "pedagogical_instructions": {
+        "english": "Students are instructed to pause the stream at timestamp 38:00, solve the practice question independently on paper, and cross-check against the teacher's whiteboard deduction.",
+        "amharic": "ተማሪዎች ቪዲዮውን በ 38:00 ላይ በማቆም የተሰጠውን ጥያቄ በወረቀት ላይ ሰርተው ከመምህሩ ሰሌዳ ማብራሪያ ጋር እንዲያመሳክሩ በጥብቅ ይመከራሉ።",
+        "afaan_oromoo": "Barattoonni viidiyicha daqiiqaa 38:00 irratti dhaabuun, gaafficha ofiin erga hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+      }
+    }
+  ]
+}

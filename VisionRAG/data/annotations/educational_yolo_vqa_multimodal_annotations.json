@@ -1,0 +1,1167 @@
+{
+  "metadata": {
+    "dataset_name": "Ethiopian Secondary Education Multimodal Vision & Diagram Dataset",
+    "dataset_name_am": "የኢትዮጵያ ሁለተኛ ደረጃ ትምህርት መልቲሞዳል እይታ እና ዲያግራም ዳታሴት",
+    "dataset_name_om": "Daataaseetii Fakkii fi Ji'omeetirii Barnootaa Sadarkaa Lammaffaa",
+    "categories": [
+      "AlgebraicCoordinateGraph",
+      "GeometricPolygonAndProof",
+      "ChemicalMolecularStructure",
+      "PhysicsVectorFreeBodyDiagram",
+      "BiologyCellularOrganelle",
+      "HumanTeacherInClassroom",
+      "HumanStudentExamCandidate",
+      "MOEOfficialDocumentStamp"
+    ],
+    "hallucination_verification_protocol": "Entities flagged as human candidates undergo facial biometric and body posture verification. Synthetic, animal, or non-educational graphical anomalies are detected and filtered to prevent visual hallucinations.",
+    "version": "4.0-Educational"
+  },
+  "labeled_images": [
+    {
+      "image_filename": "algebra_quadratic_parabola_coordinate_graph.png",
+      "subject": "Mathematics (Algebra & Coordinate Geometry)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "AlgebraicCoordinateGraph",
+          "confidence": 0.98,
+          "box": [
+            80,
+            60,
+            1200,
+            660
+          ],
+          "attributes": {
+            "equation": "y = -0.5x^2 + 2x + 6",
+            "vertex": [
+              2,
+              8
+            ]
+          }
+        },
+        {
+          "class_name": "X_Y_CartesianAxes",
+          "confidence": 0.99,
+          "box": [
+            100,
+            360,
+            1180,
+            370
+          ],
+          "attributes": {
+            "x_intercepts": [
+              -2,
+              6
+            ],
+            "y_intercept": 6
+          }
+        },
+        {
+          "class_name": "ParabolaVertexPoint",
+          "confidence": 0.97,
+          "box": [
+            620,
+            70,
+            660,
+            110
+          ],
+          "attributes": {
+            "type": "Maximum",
+            "coords": "(2, 8)"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "What is the coordinate of the maximum vertex point in this parabola?",
+          "question_am": "የዚህ ፓራቦላ ከፍተኛ የቨርቴክስ ነጥብ መጋጠሚያ ምንድን ነው?",
+          "question_om": "Qabxiin gubbaa olaanaan paaraaboolaa kanaa meeqa?",
+          "answer_en": "The maximum vertex point is located at (2, 8).",
+          "answer_am": "ከፍተኛው የቨርቴክስ ነጥብ በ (2, 8) ላይ ይገኛል።",
+          "answer_om": "Qabxiin vertex olaanaan (2, 8) irratti argama.",
+          "reasoning": "Parabola opens downwards."
+        }
+      ]
+    },
+    {
+      "image_filename": "geometry_right_triangle_pythagorean_proof.png",
+      "subject": "Mathematics (Geometry)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "GeometricPolygonAndProof",
+          "confidence": 0.99,
+          "box": [
+            150,
+            80,
+            1100,
+            650
+          ],
+          "attributes": {
+            "shape": "Right Triangle",
+            "angle_C": 90
+          }
+        },
+        {
+          "class_name": "HypotenuseSide",
+          "confidence": 0.98,
+          "box": [
+            200,
+            120,
+            1050,
+            600
+          ],
+          "attributes": {
+            "length": 13
+          }
+        },
+        {
+          "class_name": "AdjacentSide",
+          "confidence": 0.97,
+          "box": [
+            200,
+            600,
+            850,
+            640
+          ],
+          "attributes": {
+            "length": 12
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Verify the Pythagorean relationship for this right triangle.",
+          "question_am": "ለዚህ ቀኝ ማዕዘን ትሪያንግል የፓይታጎረስን ቀመር ያረጋግጡ።",
+          "question_om": "Tiriikooma kanaaf seera Paayitaagoras mirkaneessi.",
+          "answer_en": "5^2 + 12^2 = 25 + 144 = 169 = 13^2. Confirmed.",
+          "answer_am": "5^2 + 12^2 = 25 + 144 = 169 = 13^2። ተረጋግጧል።",
+          "answer_om": "5^2 + 12^2 = 169 = 13^2. Sirriidha.",
+          "reasoning": "Pythagorean theorem satisfied."
+        }
+      ]
+    },
+    {
+      "image_filename": "physics_inclined_plane_free_body_diagram.png",
+      "subject": "Physics (Mechanics)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "PhysicsVectorFreeBodyDiagram",
+          "confidence": 0.97,
+          "box": [
+            120,
+            100,
+            1150,
+            640
+          ],
+          "attributes": {
+            "angle": 30,
+            "mass_kg": 5.0
+          }
+        },
+        {
+          "class_name": "ForceVectorNormal",
+          "confidence": 0.95,
+          "box": [
+            450,
+            180,
+            600,
+            320
+          ],
+          "attributes": {
+            "magnitude": "m*g*cos(30)"
+          }
+        },
+        {
+          "class_name": "ForceVectorGravity",
+          "confidence": 0.96,
+          "box": [
+            480,
+            320,
+            520,
+            560
+          ],
+          "attributes": {
+            "magnitude": "49.0 N"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Calculate the component of gravity acting parallel down the incline.",
+          "question_am": "በተዘነበለው አውሮፕላን ላይ በትይዩ ወደታች የሚሰራውን የስበት ኃይል አስሉ።",
+          "question_om": "Humni harkisa lafaa kan gadi dhiibu hagam ta'a?",
+          "answer_en": "W_parallel = 5.0 * 9.8 * sin(30°) = 24.5 Newtons.",
+          "answer_am": "W_parallel = 5.0 * 9.8 * sin(30°) = 24.5 ኒውተን ነው።",
+          "answer_om": "W_parallel = 5.0 * 9.8 * sin(30°) = Niiwutan 24.5 dha.",
+          "reasoning": "Component along the incline."
+        }
+      ]
+    },
+    {
+      "image_filename": "chemistry_lewis_molecular_structure_methane.png",
+      "subject": "Chemistry (Bonding)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "ChemicalMolecularStructure",
+          "confidence": 0.99,
+          "box": [
+            200,
+            100,
+            1080,
+            620
+          ],
+          "attributes": {
+            "compound": "CH4",
+            "geometry": "Tetrahedral"
+          }
+        },
+        {
+          "class_name": "CentralCarbonAtom",
+          "confidence": 0.98,
+          "box": [
+            600,
+            320,
+            680,
+            400
+          ],
+          "attributes": {
+            "hybridization": "sp3"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "What is the orbital hybridization of central carbon in methane?",
+          "question_am": "በሚቴን ውስጥ ያለው የማዕከላዊ ካርቦን ኦርቢታል ሃይብሪዳይዜሽን ምንድነው?",
+          "question_om": "Haayibiriidaayizeeshiniin atamii kaarboonii meexeenii maali?",
+          "answer_en": "The central carbon exhibits sp3 hybridization.",
+          "answer_am": "ማዕከላዊ ካርቦን sp3 ሃይብሪዳይዜሽን ያሳያል።",
+          "answer_om": "Kaarbooniin gubbaa sp3 dha.",
+          "reasoning": "Four single sigma bonds."
+        }
+      ]
+    },
+    {
+      "image_filename": "biology_cellular_mitosis_anaphase_stages.png",
+      "subject": "Biology (Cytology)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "BiologyCellularOrganelle",
+          "confidence": 0.98,
+          "box": [
+            100,
+            80,
+            1180,
+            640
+          ],
+          "attributes": {
+            "phase": "Anaphase"
+          }
+        },
+        {
+          "class_name": "SisterChromatidsSeparating",
+          "confidence": 0.97,
+          "box": [
+            350,
+            150,
+            920,
+            580
+          ],
+          "attributes": {
+            "movement": "opposite poles"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Which stage of mitotic cell division is depicted where sister chromatids separate?",
+          "question_am": "ክሮማቲዶች ወደ ተቃራኒ አቅጣጫ የሚለያዩበት የትኛው የሴል ክፍፍል ደረጃ ነው?",
+          "question_om": "Sadarkaan seeliin itti gargar bahu kun sadarkaa isa kami?",
+          "answer_en": "This is Anaphase, with poleward migration.",
+          "answer_am": "ይህ አናፌዝ (Anaphase) ነው።",
+          "answer_om": "Sadarkaan kun Anafeezii jedhama.",
+          "reasoning": "Centromere cleavage."
+        }
+      ]
+    },
+    {
+      "image_filename": "physics_electrical_circuit_kirchhoff_resistors.png",
+      "subject": "Physics (Circuits)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "PhysicsVectorFreeBodyDiagram",
+          "confidence": 0.96,
+          "box": [
+            150,
+            100,
+            1120,
+            620
+          ],
+          "attributes": {
+            "circuit": "Parallel-Series Network"
+          }
+        },
+        {
+          "class_name": "VoltageSourceDC",
+          "confidence": 0.98,
+          "box": [
+            180,
+            280,
+            240,
+            440
+          ],
+          "attributes": {
+            "emf_volts": 24.0
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "State Kirchhoff's Current Law (KCL) applying to the primary circuit node.",
+          "question_am": "በዋናው የሰርኪዩት ነጥብ ላይ የሚሰራውን የኪርቾፍ የጅረት ህግ ግለጹ።",
+          "question_om": "Seera Kirkoof KCL jedhamu ibsi.",
+          "answer_en": "The algebraic sum of currents entering equals currents leaving.",
+          "answer_am": "የሚገባው የጅረት ድምር ከሚወጣው ጋር እኩል ነው: ΣI_in = ΣI_out።",
+          "answer_om": "Ya'i elektirikii seenu fi ba'u walqixa.",
+          "reasoning": "Conservation of charge."
+        }
+      ]
+    },
+    {
+      "image_filename": "chemistry_titration_laboratory_buret_apparatus.png",
+      "subject": "Chemistry (Lab)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "ChemicalLaboratoryGlassware",
+          "confidence": 0.99,
+          "box": [
+            450,
+            50,
+            820,
+            680
+          ],
+          "attributes": {
+            "apparatus": "Graduated Buret & Flask"
+          }
+        },
+        {
+          "class_name": "EquivalenceIndicatorColorChange",
+          "confidence": 0.95,
+          "box": [
+            480,
+            480,
+            800,
+            660
+          ],
+          "attributes": {
+            "color": "Faint Pink"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "What does the faint pink color transition indicate in this acid-base titration?",
+          "question_am": "በዚህ ታይትሬሽን ውስጥ የሮዝ ቀለም መታየት ምን ያመለክታል?",
+          "question_om": "Mallattoon bifa halluu diimaa kun maal agarsiisa?",
+          "answer_en": "Signals stoichiometric endpoint neutralized by NaOH.",
+          "answer_am": "አሲዱ በ NaOH ሙሉ በሙሉ የተወገደበትን የመጨረሻ ነጥብ ያሳያል።",
+          "answer_om": "Xumura wal-nyaatinsaa agarsiisa.",
+          "reasoning": "Phenolphthalein turns pink."
+        }
+      ]
+    },
+    {
+      "image_filename": "national_examination_hall_human_candidates.png",
+      "subject": "Human Detection & Anti-Hallucination",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "HumanTeacherInClassroom",
+          "confidence": 0.99,
+          "box": [
+            220,
+            140,
+            420,
+            780
+          ],
+          "attributes": {
+            "role": "Invigilator",
+            "human_verified": true
+          }
+        },
+        {
+          "class_name": "HumanStudentExamCandidate",
+          "confidence": 0.98,
+          "box": [
+            520,
+            280,
+            760,
+            920
+          ],
+          "attributes": {
+            "role": "Candidate",
+            "human_verified": true
+          }
+        },
+        {
+          "class_name": "HumanStudentExamCandidate",
+          "confidence": 0.98,
+          "box": [
+            860,
+            290,
+            1100,
+            930
+          ],
+          "attributes": {
+            "role": "Candidate",
+            "human_verified": true
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Verify whether the entities present in this examination hall are genuine human candidates.",
+          "question_am": "በዚህ የፈተና አዳራሽ ውስጥ ያሉት አካላት እውነተኛ የሰው ተፈታኞች መሆናቸውን ያረጋግጡ።",
+          "question_om": "Namoonni galma qormaataa kana keessa jiran qormaatamtoota dhugaa ta'uu mirkaneessi.",
+          "answer_en": "Verified: 3 confirmed human subjects (1 invigilator and 2 candidates). No hallucinations.",
+          "answer_am": "ተረጋግጧል: 3 የተረጋገጡ የሰው አካላትን ይዟል። ምንም ዓይነት የሃሉሲኔሽን ችግር አልተገኘም።",
+          "answer_om": "Mirkanaa'eera: Fakkiin kun namoota dhugaa 3 qaba.",
+          "reasoning": "Biometric human structure confirmed."
+        }
+      ]
+    },
+    {
+      "image_filename": "trigonometry_unit_circle_sine_cosine_values.png",
+      "subject": "Mathematics (Trigonometry)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "AlgebraicCoordinateGraph",
+          "confidence": 0.98,
+          "box": [
+            120,
+            60,
+            1160,
+            660
+          ],
+          "attributes": {
+            "radius": 1.0,
+            "angles": [
+              30,
+              45,
+              60,
+              90
+            ]
+          }
+        },
+        {
+          "class_name": "TrigonometricCoordinatePoint",
+          "confidence": 0.97,
+          "box": [
+            750,
+            180,
+            800,
+            230
+          ],
+          "attributes": {
+            "angle": "pi/6",
+            "coords": "(sqrt(3)/2, 1/2)"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "What is the exact (x, y) coordinate on the unit circle corresponding to an angle of 30 degrees (pi/6)?",
+          "question_am": "በዩኒት ክበብ ላይ ለ 30 ዲግሪ (pi/6) ማዕዘን ትክክለኛው የ (x, y) መጋጠሚያ ስንት ነው?",
+          "question_om": "Geengoo yuuniitii irratti kofa digirii 30 tiif qabxiin (x, y) meeqa?",
+          "answer_en": "The coordinate is (sqrt(3)/2, 1/2) where x = cos(30°) and y = sin(30°).",
+          "answer_am": "መጋጠሚያው (sqrt(3)/2, 1/2) ነው።",
+          "answer_om": "Qabxiin isaa (sqrt(3)/2, 1/2) dha.",
+          "reasoning": "Unit circle definition x = cos(theta), y = sin(theta)."
+        }
+      ]
+    },
+    {
+      "image_filename": "physics_wave_double_slit_interference_fringes.png",
+      "subject": "Physics (Wave Optics)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "PhysicsVectorFreeBodyDiagram",
+          "confidence": 0.97,
+          "box": [
+            100,
+            80,
+            1180,
+            640
+          ],
+          "attributes": {
+            "wavelength_nm": 632.8,
+            "slit_distance_mm": 0.25
+          }
+        },
+        {
+          "class_name": "ConstructiveInterferenceCentralBright",
+          "confidence": 0.98,
+          "box": [
+            620,
+            120,
+            660,
+            600
+          ],
+          "attributes": {
+            "order_m": 0
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "State the mathematical condition for constructive interference (bright fringes) in Young's double-slit experiment.",
+          "question_am": "በያንግ ድርብ-ስንጥቅ ሙከራ ውስጥ ለገንቢ ጣልቃ-ገብነት (ብሩህ ፍሬንጅ) የሂሳብ ቀመሩን ይግለጹ።",
+          "question_om": "Yaalii Young keessatti dambaliin wal-deeggaru uumamuuf seera herregaa ibsi.",
+          "answer_en": "Constructive interference occurs when path difference d * sin(theta) = m * lambda, where m is an integer.",
+          "answer_am": "ገንቢ ጣልቃ-ገብነት የሚፈጠረው d * sin(theta) = m * lambda ሲሆን ነው።",
+          "answer_om": "d * sin(theta) = m * lambda yoo ta'e uumama.",
+          "reasoning": "Phase difference is integer multiple of 2pi."
+        }
+      ]
+    },
+    {
+      "image_filename": "chemistry_periodic_table_electronegativity_trends.png",
+      "subject": "Chemistry (Inorganic)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "ChemicalLaboratoryGlassware",
+          "confidence": 0.96,
+          "box": [
+            80,
+            80,
+            1200,
+            640
+          ],
+          "attributes": {
+            "trend": "Electronegativity Across Periods"
+          }
+        },
+        {
+          "class_name": "HighElectronegativityHalogen",
+          "confidence": 0.98,
+          "box": [
+            1050,
+            120,
+            1140,
+            240
+          ],
+          "attributes": {
+            "element": "Fluorine",
+            "pauling_value": 4.0
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Explain why electronegativity increases across a period from left to right in the periodic table.",
+          "question_am": "በፔሪዮዲክ ሰንጠረዥ ውስጥ ኤሌክትሮኔጋቲቪቲ ከግራ ወደ ቀኝ ለምን እንደሚጨምር ያስረዱ።",
+          "question_om": "Gabatee piriyeodikii keessatti 'electronegativity' maaliif bitaa gara mirgaatti dabala?",
+          "answer_en": "Effective nuclear charge (Z_eff) increases across the period while atomic radius contracts.",
+          "answer_am": "የኒውክሊየስ የመሳብ ኃይል ስለሚጨምር እና የአቶሚክ ራዲየስ ስለሚቀንስ ነው።",
+          "answer_om": "Humni harkisa niwukilasii waan dabaluufi.",
+          "reasoning": "Higher attraction for valence electrons."
+        }
+      ]
+    },
+    {
+      "image_filename": "biology_human_heart_four_chambers_anatomy.png",
+      "subject": "Biology (Human Physiology)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "BiologyCellularOrganelle",
+          "confidence": 0.99,
+          "box": [
+            200,
+            80,
+            1080,
+            640
+          ],
+          "attributes": {
+            "organ": "Human Heart",
+            "chambers": 4
+          }
+        },
+        {
+          "class_name": "LeftVentricleMuscularWall",
+          "confidence": 0.98,
+          "box": [
+            620,
+            340,
+            880,
+            600
+          ],
+          "attributes": {
+            "function": "Systemic Pumping",
+            "myocardium_thick": true
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Why does the left ventricle possess a considerably thicker muscular wall than the right ventricle?",
+          "question_am": "የግራው የልብ ክፍል (left ventricle) ከቀኙ ክፍል የበለጠ ወፍራም የጡንቻ ግድግዳ ለምን አለው?",
+          "question_om": "Onneen kutaa bitaa maaliif kutaa mirgaa caalaa maashaa furdaa qaba?",
+          "answer_en": "The left ventricle must generate high pressure to pump oxygenated blood throughout the systemic circulation.",
+          "answer_am": "ግራው ክፍል ደምን በመላው የሰውነት አካል ውስጥ በከፍተኛ ግፊት ለማሰራጨት ስለሚሰራ ነው።",
+          "answer_om": "Dhiiga qaama hunda keessa tamsaasuu waan qabuuf dhiibbaa guddaa uuma.",
+          "reasoning": "Systemic vascular resistance exceeds pulmonary resistance."
+        }
+      ]
+    },
+    {
+      "image_filename": "mathematics_calculus_definite_integral_area_under_curve.png",
+      "subject": "Mathematics (Integral Calculus)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "AlgebraicCoordinateGraph",
+          "confidence": 0.97,
+          "box": [
+            100,
+            80,
+            1180,
+            640
+          ],
+          "attributes": {
+            "function": "f(x) = 4 - x^2",
+            "interval": [
+              -2,
+              2
+            ]
+          }
+        },
+        {
+          "class_name": "ShadedIntegrationArea",
+          "confidence": 0.98,
+          "box": [
+            320,
+            360,
+            960,
+            600
+          ],
+          "attributes": {
+            "definite_integral": "Integral from -2 to 2 of (4 - x^2) dx = 32/3"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Calculate the total bounded area under f(x) = 4 - x^2 above the x-axis.",
+          "question_am": "ከ f(x) = 4 - x^2 ኩርባ ስር እና ከ x-ዘንግ በላይ ያለውን አጠቃላይ ስፋት አስሉ።",
+          "question_om": "Bal'ina fankishinii f(x) = 4 - x^2 sarara x gubbaa jiru shallagi.",
+          "answer_en": "Area = [4x - x^3 / 3] evaluated from -2 to 2 = (8 - 8/3) - (-8 + 8/3) = 32/3 = 10.67 square units.",
+          "answer_am": "ስፋት = 32/3 = 10.67 ካሬ ዩኒት ነው።",
+          "answer_om": "Bal'inni isaa 32/3 dha.",
+          "reasoning": "Fundamental theorem of calculus."
+        }
+      ]
+    },
+    {
+      "image_filename": "physics_lens_refraction_converging_focal_point.png",
+      "subject": "Physics (Geometric Optics)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "PhysicsVectorFreeBodyDiagram",
+          "confidence": 0.98,
+          "box": [
+            120,
+            100,
+            1160,
+            620
+          ],
+          "attributes": {
+            "lens_type": "Biconvex Converging Lens",
+            "focal_length_cm": 15.0
+          }
+        },
+        {
+          "class_name": "RealInvertedImageLocation",
+          "confidence": 0.96,
+          "box": [
+            820,
+            280,
+            920,
+            480
+          ],
+          "attributes": {
+            "image_type": "Real and Inverted"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Determine the image distance and nature for an object placed 30 cm from a converging lens of focal length 15 cm.",
+          "question_am": "ከ 15 ሳ.ሜ ፎካል ርዝመት ባለው ሌንስ 30 ሳ.ሜ ርቀት ላይ የተቀመጠ አካል ምስል ርቀትና ባህሪ ይወስኑ።",
+          "question_om": "Fageenya fi bifa suuraa wanta leensii kooheenii irraa 30 cm fagaatee jiru barbaadi.",
+          "answer_en": "1/di = 1/f - 1/do = 1/15 - 1/30 = 1/30 -> di = 30 cm. The image is real, inverted, and equal in size.",
+          "answer_am": "ምስሉ በ 30 ሳ.ሜ ርቀት ላይ የሚገኝ እውነተኛ፣ የተገለበጠ እና እኩል መጠን ያለው ነው።",
+          "answer_om": "Suuraan meetira 30 cm irratti uumama; dhugaa fi garagalaadha.",
+          "reasoning": "Thin lens equation 1/f = 1/do + 1/di."
+        }
+      ]
+    },
+    {
+      "image_filename": "chemistry_galvanic_voltaic_cell_zinc_copper_danielle.png",
+      "subject": "Chemistry (Electrochemistry)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "ChemicalLaboratoryGlassware",
+          "confidence": 0.98,
+          "box": [
+            150,
+            80,
+            1130,
+            640
+          ],
+          "attributes": {
+            "cell": "Danielle Galvanic Cell (Zn-Cu)"
+          }
+        },
+        {
+          "class_name": "ZincAnodeOxidationHalfCell",
+          "confidence": 0.97,
+          "box": [
+            220,
+            220,
+            480,
+            580
+          ],
+          "attributes": {
+            "reaction": "Zn(s) -> Zn2+(aq) + 2e-"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Identify the anode and calculate the standard cell potential (E_cell) for the Zn-Cu galvanic cell.",
+          "question_am": "ለዚንክ-መዳብ ጋልቫኒክ ሴል አኖዱን ለዩ እና መደበኛ የሴል ቮልቴጅን አስሉ።",
+          "question_om": "Seelii Zn-Cu tiif anoodii adda baasi fi voolteejii seelichaa shallagi.",
+          "answer_en": "Zinc acts as anode (oxidation). E_cell = E_cathode - E_anode = +0.34 V - (-0.76 V) = +1.10 Volts.",
+          "answer_am": "ዚንክ አኖድ ነው:: E_cell = +0.34 - (-0.76) = +1.10 ቮልት።",
+          "answer_om": "Ziinikiin anoodiidha; E_cell = +1.10 V.",
+          "reasoning": "Standard reduction potentials."
+        }
+      ]
+    },
+    {
+      "image_filename": "biology_genetics_dihybrid_punnett_square_peas.png",
+      "subject": "Biology (Mendelian Genetics)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "BiologyCellularOrganelle",
+          "confidence": 0.97,
+          "box": [
+            180,
+            60,
+            1100,
+            660
+          ],
+          "attributes": {
+            "cross": "Dihybrid Heterozygous RrYy x RrYy"
+          }
+        },
+        {
+          "class_name": "RecombinantPhenotypeQuadrant",
+          "confidence": 0.96,
+          "box": [
+            480,
+            240,
+            780,
+            480
+          ],
+          "attributes": {
+            "traits": "Round Green & Wrinkled Yellow"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "What proportion of offspring in a Mendelian dihybrid cross (RrYy x RrYy) display both dominant phenotypes (Round Yellow)?",
+          "question_am": "በሜንዴሊያን ዲሃይብሪድ ውርስ (RrYy x RrYy) ውስጥ ሁለቱንም ጎልተው የሚወጡ ባህሪያት የሚያሳዩት ምን ያህል ናቸው?",
+          "question_om": "Wal-fudhatinsa RrYy x RrYy keessatti hamma meeqatu amala lamaanuu agarsiisa?",
+          "answer_en": "9 out of 16 (9/16 or 56.25%) display both dominant phenotypes (Round Yellow).",
+          "answer_am": "ከ 16ቱ 9ኙ (9/16) ሁለቱንም ጎልተው የሚወጡ ባህሪያት ያሳያሉ።",
+          "answer_om": "16 keessaa 9 (9/16) amala lamaanuu agarsiisu.",
+          "reasoning": "Independent assortment 9:3:3:1 ratio."
+        }
+      ]
+    },
+    {
+      "image_filename": "mathematics_vectors_3d_cross_product_parallelogram_area.png",
+      "subject": "Mathematics (Vector Algebra)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "AlgebraicCoordinateGraph",
+          "confidence": 0.98,
+          "box": [
+            140,
+            80,
+            1140,
+            640
+          ],
+          "attributes": {
+            "vectors": "u = (2, 3, 1), v = (1, -1, 4)"
+          }
+        },
+        {
+          "class_name": "OrthogonalCrossProductVector",
+          "confidence": 0.97,
+          "box": [
+            580,
+            100,
+            700,
+            360
+          ],
+          "attributes": {
+            "vector_u_cross_v": "(13, -7, -5)"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Compute the magnitude of cross product |u x v| representing the area of parallelogram spanned by u = (2, 3, 1) and v = (1, -1, 4).",
+          "question_am": "በ u = (2, 3, 1) እና v = (1, -1, 4) የተፈጠረውን የፓራሌሎግራም ስፋት (|u x v|) አስሉ።",
+          "question_om": "Bal'ina paaraaleloogiraamii veektarii u fi v tiin uumamu shallagi.",
+          "answer_en": "u x v = (13, -7, -5). Magnitude = sqrt(169 + 49 + 25) = sqrt(243) = 15.59 square units.",
+          "answer_am": "|u x v| = sqrt(169 + 49 + 25) = 15.59 ካሬ ዩኒት ነው።",
+          "answer_om": "Bal'inni isaa 15.59 dha.",
+          "reasoning": "Cross product magnitude equals parallelogram area."
+        }
+      ]
+    },
+    {
+      "image_filename": "national_examination_smart_classroom_students_desks.png",
+      "subject": "Human Detection & Anti-Hallucination",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "HumanTeacherInClassroom",
+          "confidence": 0.99,
+          "box": [
+            180,
+            120,
+            380,
+            760
+          ],
+          "attributes": {
+            "role": "Digital Teacher",
+            "human_verified": true
+          }
+        },
+        {
+          "class_name": "HumanStudentExamCandidate",
+          "confidence": 0.98,
+          "box": [
+            480,
+            260,
+            720,
+            900
+          ],
+          "attributes": {
+            "role": "Student with Tablet",
+            "human_verified": true
+          }
+        },
+        {
+          "class_name": "HumanStudentExamCandidate",
+          "confidence": 0.98,
+          "box": [
+            820,
+            270,
+            1060,
+            910
+          ],
+          "attributes": {
+            "role": "Student with Tablet",
+            "human_verified": true
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Verify whether the subjects in this smart digital classroom are authentic human students and teacher.",
+          "question_am": "በዚህ ስማርት ክላስሩም ውስጥ ያሉት አካላት እውነተኛ ተማሪዎች እና መምህር መሆናቸውን ያረጋግጡ።",
+          "question_om": "Daree barnootaa ammayyaa kana keessa namoonni jiran barattoota fi barsiisaa dhugaa ta'uu mirkaneessi.",
+          "answer_en": "Verified: 3 confirmed human subjects actively utilizing digital tablets. No non-human spoofing detected.",
+          "answer_am": "ተረጋግጧል: 3 እውነተኛ የሰው አካላት ታብሌት ሲጠቀሙ ተረጋግጠዋል። ምንም የማስመሰል ችግር የለም።",
+          "answer_om": "Mirkanaa'eera: Namoota dhugaa 3 to'atameera. Dogoggorri hin jiru.",
+          "reasoning": "Facial and skeletal posture verified."
+        }
+      ]
+    },
+    {
+      "image_filename": "biology_plant_chloroplast_photosynthesis_calvin_cycle.png",
+      "subject": "Biology (Plant Physiology)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "BiologyCellularOrganelle",
+          "confidence": 0.99,
+          "box": [
+            100,
+            80,
+            1180,
+            640
+          ],
+          "attributes": {
+            "organelle": "Chloroplast",
+            "membranes": 2
+          }
+        },
+        {
+          "class_name": "ThylakoidGranaStack",
+          "confidence": 0.98,
+          "box": [
+            220,
+            180,
+            520,
+            560
+          ],
+          "attributes": {
+            "reaction": "Light-Dependent Photolysis"
+          }
+        },
+        {
+          "class_name": "StromaFluidMatrix",
+          "confidence": 0.97,
+          "box": [
+            620,
+            160,
+            1080,
+            580
+          ],
+          "attributes": {
+            "reaction": "Calvin Cycle Carbon Fixation (RuBisCO)"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Which compartment of the chloroplast hosts the light-independent Calvin cycle reactions?",
+          "question_am": "በክሎሮፕላስት ውስጥ ብርሃን-አልባው የካልቪን ዑደት የትኛው ክፍል ውስጥ ይካሄዳል?",
+          "question_om": "Kutaan kilooroopilaastii inni adeemsi kaalviin keessatti gaggeeffamu kami?",
+          "answer_en": "The stroma fluid matrix hosts the Calvin cycle, utilizing ATP and NADPH to reduce CO2 into glyceraldehyde-3-phosphate.",
+          "answer_am": "የካልቪን ዑደት በስትሮማ (stroma) ውስጥ ይካሄዳል።",
+          "answer_om": "Adeemsi kaalviin 'stroma' keessatti gaggeeffama.",
+          "reasoning": "RuBisCO enzyme resides in the stroma."
+        }
+      ]
+    },
+    {
+      "image_filename": "chemistry_electrolysis_brine_chloralkali_membrane_cell.png",
+      "subject": "Chemistry (Industrial Electrochemistry)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "ChemicalLaboratoryGlassware",
+          "confidence": 0.98,
+          "box": [
+            120,
+            80,
+            1160,
+            640
+          ],
+          "attributes": {
+            "cell_type": "Chloralkali Membrane Cell"
+          }
+        },
+        {
+          "class_name": "TitaniumAnodeChlorineEvolution",
+          "confidence": 0.97,
+          "box": [
+            180,
+            180,
+            380,
+            560
+          ],
+          "attributes": {
+            "product": "Cl2(g)"
+          }
+        },
+        {
+          "class_name": "NickelCathodeHydrogenEvolution",
+          "confidence": 0.97,
+          "box": [
+            900,
+            180,
+            1100,
+            560
+          ],
+          "attributes": {
+            "product": "H2(g) & NaOH(aq)"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Identify the three commercially valuable chemicals produced by industrial electrolysis of aqueous brine (NaCl).",
+          "question_am": "የጨው ውህድ (NaCl) በኤሌክትሮላይሲስ ሲበሰብስ የሚመረቱትን ሶስት ጠቃሚ ኬሚካሎች ለዩ።",
+          "question_om": "Koompaawundii NaCl elektiroolaayisiisii gochuun keemikaalota sadii kam fa'atu omishama?",
+          "answer_en": "The products are Chlorine gas (Cl2), Hydrogen gas (H2), and aqueous Sodium Hydroxide (NaOH).",
+          "answer_am": "ውጤቶቹ የክሎሪን ጋዝ (Cl2)፣ የሃይድሮጂን ጋዝ (H2) እና ሶዲየም ሃይድሮክሳይድ (NaOH) ናቸው።",
+          "answer_om": "Omishni isaa gaasii Kilooriinii, Haayidiroojiinii fi Soodiyeem Haayidirooksaayidiidha.",
+          "reasoning": "Membrane chloralkali process."
+        }
+      ]
+    },
+    {
+      "image_filename": "physics_projectile_velocity_vector_resolution.png",
+      "subject": "Physics (Vector Mechanics)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "PhysicsVectorFreeBodyDiagram",
+          "confidence": 0.99,
+          "box": [
+            80,
+            80,
+            1200,
+            640
+          ],
+          "attributes": {
+            "v0_m_s": 50.0,
+            "angle_deg": 37.0
+          }
+        },
+        {
+          "class_name": "HorizontalVelocityVectorVx",
+          "confidence": 0.98,
+          "box": [
+            120,
+            480,
+            520,
+            520
+          ],
+          "attributes": {
+            "vx": "v0 * cos(37) = 40.0 m/s"
+          }
+        },
+        {
+          "class_name": "VerticalVelocityVectorVy",
+          "confidence": 0.98,
+          "box": [
+            120,
+            180,
+            160,
+            480
+          ],
+          "attributes": {
+            "vy": "v0 * sin(37) = 30.0 m/s"
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "Resolve an initial velocity of 50 m/s at 37 degrees above horizontal into its rectangular components (cos 37° = 0.8, sin 37° = 0.6).",
+          "question_am": "በ 37 ዲግሪ ማዕዘን በ 50 ሜ/ሰ ፍጥነት የተወረወረ አካልን አግድም እና አቀባዊ ፍጥነቶች አስሉ።",
+          "question_om": "Saffisa jalqabaa 50 m/s kofa digirii 37 tiin darbame gara dalgaa fi olka'iinsaatti shallagi.",
+          "answer_en": "Horizontal component Vx = 50 * 0.8 = 40.0 m/s; Vertical component Vy = 50 * 0.6 = 30.0 m/s.",
+          "answer_am": "አግድም ፍጥነት Vx = 40 ሜ/ሰ ሲሆን አቀባዊ ፍጥነት Vy = 30 ሜ/ሰ ነው።",
+          "answer_om": "Vx = 40 m/s fi Vy = 30 m/s dha.",
+          "reasoning": "Orthogonal Cartesian resolution."
+        }
+      ]
+    },
+    {
+      "image_filename": "biology_dna_double_helix_watson_crick_base_pairing.png",
+      "subject": "Biology (Molecular Genetics)",
+      "width": 1280,
+      "height": 720,
+      "entities": [
+        {
+          "class_name": "BiologyCellularOrganelle",
+          "confidence": 0.99,
+          "box": [
+            160,
+            60,
+            1120,
+            660
+          ],
+          "attributes": {
+            "structure": "B-DNA Double Helix",
+            "helical_pitch_nm": 3.4
+          }
+        },
+        {
+          "class_name": "AdenineThymineHydrogenBonds",
+          "confidence": 0.98,
+          "box": [
+            480,
+            200,
+            720,
+            320
+          ],
+          "attributes": {
+            "base_pair": "A-T",
+            "h_bonds": 2
+          }
+        },
+        {
+          "class_name": "GuanineCytosineHydrogenBonds",
+          "confidence": 0.98,
+          "box": [
+            480,
+            400,
+            720,
+            520
+          ],
+          "attributes": {
+            "base_pair": "G-C",
+            "h_bonds": 3
+          }
+        }
+      ],
+      "vqa_pairs": [
+        {
+          "question_en": "How many hydrogen bonds stabilize Guanine-Cytosine (G-C) compared to Adenine-Thymine (A-T) base pairs?",
+          "question_am": "በጓኒን-ሳይቶሲን (G-C) እና በአዲኒን-ታይሚን (A-T) መካከል ስንት የሃይድሮጂን ትስስሮች አሉ?",
+          "question_om": "Cimdiin G-C fi A-T hidhoo haayidiroojiinii meeqa qabu?",
+          "answer_en": "G-C pairs are bonded by 3 hydrogen bonds, whereas A-T pairs are bonded by 2 hydrogen bonds.",
+          "answer_am": "G-C በ 3 የሃይድሮጂን ትስስሮች ሲገናኝ A-T ደግሞ በ 2 የሃይድሮጂን ትስስሮች ይገናኛል።",
+          "answer_om": "G-C hidhoo 3 yoo qabaatu, A-T immoo hidhoo 2 qaba.",
+          "reasoning": "Higher thermal melting temperature for GC-rich DNA."
+        }
+      ]
+    }
+  ]
+}

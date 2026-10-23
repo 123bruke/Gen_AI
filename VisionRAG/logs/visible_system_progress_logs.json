@@ -1,0 +1,2811 @@
+{
+  "metadata": {
+    "title": "VisionRAG System Progress & Auditing Visible Log Database",
+    "generated_at": "2026-10-23T22:29:07.820702",
+    "total_records_exported": 200,
+    "stats": {
+      "total_logs": 234,
+      "by_event_type": {
+        "ACCOUNT_CREATED": 7,
+        "CHAT_QUERY": 16,
+        "FILE_UPLOAD": 5,
+        "KNOWLEDGE_SEEDING": 36,
+        "LINK_BOOK_INGESTION": 3,
+        "SERVER_STARTUP": 90,
+        "SYSTEM_LOG": 69,
+        "USER_LOGIN": 4,
+        "USER_LOGOUT": 4
+      },
+      "by_level": {
+        "ERROR": 33,
+        "INFO": 194,
+        "WARNING": 7
+      },
+      "latest_timestamp": "2026-10-23T21:19:09.952359",
+      "database_path": "C:\\Users\\FSC CORE i5\\Downloads\\VisionRAG\\VisionRAG\\backend\\storage\\visionrag_logs.db",
+      "status": "healthy"
+    }
+  },
+  "recent_progress_records": [
+    {
+      "id": 234,
+      "timestamp": "2026-10-23T21:19:09.952359",
+      "level": "INFO",
+      "logger_name": "visionrag.db",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 00:19:09,952 - visionrag.db - INFO - Main DB running on local fallback storage: C:\\Users\\FSC CORE i5\\Downloads\\VisionRAG\\VisionRAG\\backend\\storage\\visionrag_main.db",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 233,
+      "timestamp": "2026-10-23T21:19:09.837294",
+      "level": "WARNING",
+      "logger_name": "visionrag.db",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 00:19:09,835 - visionrag.db - WARNING - PostgreSQL connection could not be established ((psycopg.errors.ConnectionTimeout) connection timeout expired\n(Background on this error at: https://sqlalche.me/e/21/e3q8)). Activating resilient SQLite main DB fallback.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 232,
+      "timestamp": "2026-10-23T20:47:37.819424",
+      "level": "INFO",
+      "logger_name": "visionrag.db",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 23:47:37,819 - visionrag.db - INFO - Main DB running on local fallback storage: C:\\Users\\FSC CORE i5\\Downloads\\VisionRAG\\VisionRAG\\backend\\storage\\visionrag_main.db",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 231,
+      "timestamp": "2026-10-23T20:47:37.714416",
+      "level": "WARNING",
+      "logger_name": "visionrag.db",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 23:47:37,714 - visionrag.db - WARNING - PostgreSQL connection could not be established ((psycopg.errors.ConnectionTimeout) connection timeout expired\n(Background on this error at: https://sqlalche.me/e/21/e3q8)). Activating resilient SQLite main DB fallback.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 230,
+      "timestamp": "2026-10-23T20:46:46.953269",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 23:46:46,953 - visionrag - INFO - Wikimedia image search note: name 're' is not defined",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 229,
+      "timestamp": "2026-10-23T20:46:45.272964",
+      "level": "INFO",
+      "logger_name": "visionrag.db",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 23:46:45,271 - visionrag.db - INFO - Main DB running on local fallback storage: C:\\Users\\FSC CORE i5\\Downloads\\VisionRAG\\VisionRAG\\backend\\storage\\visionrag_main.db",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 228,
+      "timestamp": "2026-10-23T20:46:45.090955",
+      "level": "WARNING",
+      "logger_name": "visionrag.db",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 23:46:45,090 - visionrag.db - WARNING - PostgreSQL connection could not be established ((psycopg.errors.ConnectionTimeout) connection timeout expired\n(Background on this error at: https://sqlalche.me/e/21/e3q8)). Activating resilient SQLite main DB fallback.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 227,
+      "timestamp": "2026-10-23T01:23:12.952777",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 04:23:12,952 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_a04c9fffeb"
+      }
+    },
+    {
+      "id": 226,
+      "timestamp": "2026-10-23T01:23:12.389016",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 04:23:12,389 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 225,
+      "timestamp": "2026-10-23T01:00:40.154043",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 04:00:40,154 - visionrag - INFO - News RSS fetch note: HTTPSConnectionPool(host='news.google.com', port=443): Max retries exceeded with url: /rss/search?q=What%20are%20the%20official%20powers%20and%20educational%20frameworks%20of%20the%20Ministry%20of%20Education%20under%20General%20Education%20Proclamation%20No.%201368/2025%3F&hl=en-US&gl=US&ceid=US:en (Caused by ConnectTimeoutError(<HTTPSConnection(host='news.google.com', port=443) at 0x21844bf6290>, 'Connection to news.google.com timed out. (connect timeout=4.0)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 224,
+      "timestamp": "2026-10-23T00:58:22.396004",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:58:22,396 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_27dd94561b"
+      }
+    },
+    {
+      "id": 223,
+      "timestamp": "2026-10-23T00:58:21.672067",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:58:21,672 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 222,
+      "timestamp": "2026-10-23T00:57:58.991612",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:57:58,991 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_4770b2aa90"
+      }
+    },
+    {
+      "id": 221,
+      "timestamp": "2026-10-23T00:57:58.431766",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:57:58,431 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 220,
+      "timestamp": "2026-10-23T00:57:20.362092",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:57:20,362 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_c542bee65b"
+      }
+    },
+    {
+      "id": 219,
+      "timestamp": "2026-10-23T00:57:19.821969",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:57:19,821 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 218,
+      "timestamp": "2026-10-23T00:55:52.922185",
+      "level": "WARNING",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:55:52,922 - visionrag - WARNING - Open Library search error: timed out",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 217,
+      "timestamp": "2026-10-23T00:53:11.387533",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:53:11,386 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_8c2dcfcf4d"
+      }
+    },
+    {
+      "id": 216,
+      "timestamp": "2026-10-23T00:53:10.614752",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:53:10,614 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 215,
+      "timestamp": "2026-10-23T00:52:51.876158",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:52:51,876 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_a01e6d7b55"
+      }
+    },
+    {
+      "id": 214,
+      "timestamp": "2026-10-23T00:52:51.415779",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:52:51,415 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 213,
+      "timestamp": "2026-10-23T00:52:43.208913",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:52:43,208 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_499acb40ce"
+      }
+    },
+    {
+      "id": 212,
+      "timestamp": "2026-10-23T00:52:42.667177",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:52:42,667 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 211,
+      "timestamp": "2026-10-23T00:38:55.945261",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:38:55,944 - visionrag - INFO - News RSS fetch note: HTTPSConnectionPool(host='news.google.com', port=443): Max retries exceeded with url: /rss/search?q=What%20are%20the%20official%20powers%20and%20educational%20frameworks%20of%20the%20Ministry%20of%20Education%20in%20Ethiopia%3F&hl=en-US&gl=US&ceid=US:en (Caused by ConnectTimeoutError(<HTTPSConnection(host='news.google.com', port=443) at 0x1f26e82e350>, 'Connection to news.google.com timed out. (connect timeout=4.0)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 210,
+      "timestamp": "2026-10-23T00:38:50.411114",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:38:50,410 - visionrag - INFO - Wikipedia API search note: HTTPSConnectionPool(host='en.wikipedia.org', port=443): Max retries exceeded with url: /w/api.php?action=query&list=search&srsearch=What%20are%20the%20official%20powers%20and%20educational%20frameworks%20of%20the%20Ministry%20of%20Education%20in%20Ethiopia%3F&format=json&utf8=1&srlimit=3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='en.wikipedia.org', port=443) at 0x1f26e82f150>, 'Connection to en.wikipedia.org timed out. (connect timeout=3.5)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 209,
+      "timestamp": "2026-10-23T00:35:43.055090",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:35:43,055 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_5c086cf618"
+      }
+    },
+    {
+      "id": 208,
+      "timestamp": "2026-10-23T00:35:42.383264",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:35:42,383 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 207,
+      "timestamp": "2026-10-23T00:35:08.525699",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:35:08,525 - visionrag - INFO - Seeded 8 regional student records into PostgreSQL.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 206,
+      "timestamp": "2026-10-23T00:35:05.505960",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-23 03:35:05,505 - visionrag - INFO - Seeded Ethiopian Knowledge: 10 education records, 10 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_41f941408d"
+      }
+    },
+    {
+      "id": 205,
+      "timestamp": "2026-10-23T00:32:43.654530",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:32:43,654 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('MOE-P1-001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 204,
+      "timestamp": "2026-10-23T00:32:43.332596",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:32:43,332 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 203,
+      "timestamp": "2026-10-23T00:32:04.985794",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:32:04,985 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('MOE-P1-001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 202,
+      "timestamp": "2026-10-23T00:32:04.802599",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:32:04,802 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 201,
+      "timestamp": "2026-10-23T00:31:21.588961",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:31:21,588 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('MOE-P1-001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 200,
+      "timestamp": "2026-10-23T00:31:20.962962",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:31:20,962 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 199,
+      "timestamp": "2026-10-23T00:31:11.579587",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 03:31:11,579 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('MOE-P1-001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 198,
+      "timestamp": "2026-10-23T00:31:10.726358",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 03:31:10,726 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 197,
+      "timestamp": "2026-10-22T23:59:13.294029",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:59:13,294 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 196,
+      "timestamp": "2026-10-22T23:59:12.134810",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:59:12,134 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 195,
+      "timestamp": "2026-10-22T23:58:33.965029",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:58:33,965 - visionrag - INFO - SemanticCache HIT (Exact) for: 'Tell me about the significance of the Ba'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 194,
+      "timestamp": "2026-10-22T23:58:33.733278",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:58:33,732 - visionrag - INFO - SemanticCache HIT (Exact) for: 'What was the significance of the Battle '",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 193,
+      "timestamp": "2026-10-22T23:56:20.629244",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:56:20,629 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 192,
+      "timestamp": "2026-10-22T23:56:20.497631",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:56:20,496 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 191,
+      "timestamp": "2026-10-22T23:56:01.027923",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:56:01,027 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 190,
+      "timestamp": "2026-10-22T23:56:00.948273",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:56:00,948 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 189,
+      "timestamp": "2026-10-22T23:55:25.016742",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:55:25,016 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 188,
+      "timestamp": "2026-10-22T23:55:24.918401",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:55:24,918 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 187,
+      "timestamp": "2026-10-22T23:55:10.283879",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:55:10,283 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 186,
+      "timestamp": "2026-10-22T23:55:10.174567",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:55:10,174 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 185,
+      "timestamp": "2026-10-22T23:51:56.689654",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:51:56,689 - visionrag - INFO - Wikipedia API search note: HTTPSConnectionPool(host='en.wikipedia.org', port=443): Max retries exceeded with url: /w/api.php?action=query&list=search&srsearch=Tell%20me%20about%20the%20significance%20of%20the%20Battle%20of%20Adwa%20in%201896&format=json&utf8=1&srlimit=2 (Caused by ConnectTimeoutError(<HTTPSConnection(host='en.wikipedia.org', port=443) at 0x1e873e6a890>, 'Connection to en.wikipedia.org timed out. (connect timeout=3.5)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 184,
+      "timestamp": "2026-10-22T23:49:32.997446",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:49:32,997 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 183,
+      "timestamp": "2026-10-22T23:49:32.647502",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:49:32,647 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 182,
+      "timestamp": "2026-10-22T23:46:55.242415",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:46:55,242 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 181,
+      "timestamp": "2026-10-22T23:46:54.969305",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:46:54,969 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 180,
+      "timestamp": "2026-10-22T23:46:34.769144",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:46:34,769 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 179,
+      "timestamp": "2026-10-22T23:46:34.459974",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:46:34,459 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 178,
+      "timestamp": "2026-10-22T23:46:24.799894",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:46:24,799 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 177,
+      "timestamp": "2026-10-22T23:46:24.547612",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:46:24,546 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 176,
+      "timestamp": "2026-10-22T23:40:10.498112",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:40:10,498 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 175,
+      "timestamp": "2026-10-22T23:40:10.280936",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:40:10,280 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 174,
+      "timestamp": "2026-10-22T23:37:30.962929",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:37:30,962 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 173,
+      "timestamp": "2026-10-22T23:37:30.789004",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:37:30,789 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 172,
+      "timestamp": "2026-10-22T23:37:13.730689",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:37:13,730 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 171,
+      "timestamp": "2026-10-22T23:37:13.554816",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:37:13,554 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 170,
+      "timestamp": "2026-10-22T23:36:18.369138",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:36:18,369 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 169,
+      "timestamp": "2026-10-22T23:36:17.563447",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:36:17,562 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 168,
+      "timestamp": "2026-10-22T23:17:29.140490",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:17:29,140 - visionrag - INFO - SemanticCache HIT (Exact) for: 'Lalibela rock-hewn churches'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 167,
+      "timestamp": "2026-10-22T23:15:01.197332",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:15:01,197 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 166,
+      "timestamp": "2026-10-22T23:14:59.874597",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:14:59,874 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 165,
+      "timestamp": "2026-10-22T23:14:39.283746",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:14:39,283 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 164,
+      "timestamp": "2026-10-22T23:14:37.339874",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:14:37,339 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 163,
+      "timestamp": "2026-10-22T23:14:16.529761",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:14:16,529 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 162,
+      "timestamp": "2026-10-22T23:14:15.459774",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:14:15,459 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 161,
+      "timestamp": "2026-10-22T23:12:31.528653",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:12:31,528 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 160,
+      "timestamp": "2026-10-22T23:12:31.125728",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:12:31,125 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 159,
+      "timestamp": "2026-10-22T23:12:01.926146",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:12:01,926 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 158,
+      "timestamp": "2026-10-22T23:12:01.638661",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:12:01,638 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 157,
+      "timestamp": "2026-10-22T23:10:46.964859",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:10:46,964 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 156,
+      "timestamp": "2026-10-22T23:10:45.755366",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:10:45,755 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 155,
+      "timestamp": "2026-10-22T23:10:31.867396",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:10:31,867 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 154,
+      "timestamp": "2026-10-22T23:10:31.571912",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:10:31,571 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 153,
+      "timestamp": "2026-10-22T23:10:16.147148",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:10:16,147 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 152,
+      "timestamp": "2026-10-22T23:10:15.390864",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:10:15,390 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 151,
+      "timestamp": "2026-10-22T23:10:04.493578",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:10:04,493 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 150,
+      "timestamp": "2026-10-22T23:10:04.077648",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:10:04,077 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 149,
+      "timestamp": "2026-10-22T23:09:44.978362",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:09:44,978 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 148,
+      "timestamp": "2026-10-22T23:09:44.622300",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:09:44,622 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 147,
+      "timestamp": "2026-10-22T23:09:36.457321",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:09:36,457 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 146,
+      "timestamp": "2026-10-22T23:09:35.811587",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:09:35,811 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 145,
+      "timestamp": "2026-10-22T23:08:37.800797",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:08:37,800 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 144,
+      "timestamp": "2026-10-22T23:08:37.398050",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:08:37,398 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 143,
+      "timestamp": "2026-10-22T23:08:23.966272",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:08:23,966 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 142,
+      "timestamp": "2026-10-22T23:08:23.672233",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:08:23,672 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 141,
+      "timestamp": "2026-10-22T23:07:50.288930",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:07:50,288 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 140,
+      "timestamp": "2026-10-22T23:07:49.909357",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:07:49,909 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 139,
+      "timestamp": "2026-10-22T23:07:22.504935",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 02:07:22,504 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 138,
+      "timestamp": "2026-10-22T23:07:21.897924",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 02:07:21,897 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 137,
+      "timestamp": "2026-10-22T22:50:19.215173",
+      "level": "ERROR",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-23 01:50:19,215 - visionrag - ERROR - Failed to auto-seed knowledge: (sqlite3.OperationalError) no such column: uploaded_files.progress_percent\n[SQL: SELECT uploaded_files.id AS uploaded_files_id, uploaded_files.user_id AS uploaded_files_user_id, uploaded_files.original_filename AS uploaded_files_original_filename, uploaded_files.stored_filename AS uploaded_files_stored_filename, uploaded_files.file_path AS uploaded_files_file_path, uploaded_files.file_type AS uploaded_files_file_type, uploaded_files.file_size_bytes AS uploaded_files_file_size_bytes, uploaded_files.file_size_display AS uploaded_files_file_size_display, uploaded_files.checksum_md5 AS uploaded_files_checksum_md5, uploaded_files.status AS uploaded_files_status, uploaded_files.progress_percent AS uploaded_files_progress_percent, uploaded_files.has_binary AS uploaded_files_has_binary, uploaded_files.file_blob AS uploaded_files_file_blob, uploaded_files.metadata AS uploaded_files_metadata, uploaded_files.uploaded_at AS uploaded_files_uploaded_at \nFROM uploaded_files \nWHERE uploaded_files.id = ?\n LIMIT ? OFFSET ?]\n[parameters: ('edu_eth_001', 1, 0)]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 136,
+      "timestamp": "2026-10-22T22:50:19.038808",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-23 01:50:19,038 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "healthy": false,
+        "error": "(sqlite3.OperationalError) no such column: users.role\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.full_name AS users_full_name, users.hashed_password AS users_hashed_password, users.avatar AS users_avatar, users.role AS users_role, users.is_active AS users_is_active, users.metadata AS users_metadata, users.created_at AS users_created_at, users.last_login AS users_last_login \nFROM users) AS anon_1]\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "id": 135,
+      "timestamp": "2026-10-20T23:24:29.815657",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:24:29,815 - visionrag - INFO - Direct YouTube transcript unavailable for k8P4_g6u8k8: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 134,
+      "timestamp": "2026-10-20T23:24:16.763817",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:24:16,763 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792538619869': 'Endemic wildlife of Simien & Bale Mountains: Walia Ibex, Eth...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792538619869",
+        "query_length": 90,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 133,
+      "timestamp": "2026-10-20T23:20:11.188573",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:20:11,188 - visionrag - INFO - Wikimedia image search note: HTTPSConnectionPool(host='commons.wikimedia.org', port=443): Max retries exceeded with url: /w/api.php?action=query&generator=search&gsrsearch=Endemic%20wildlife%20of%20Simien%20%26%20Bale%20Mountains%3A%20Walia%20Ibex%2C%20Ethiopian%20Wolf%2C%20and%20Gelada%20Baboon&gsrnamespace=6&gsrlimit=7&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&format=json (Caused by ConnectTimeoutError(<HTTPSConnection(host='commons.wikimedia.org', port=443) at 0x22a4e21c7d0>, 'Connection to commons.wikimedia.org timed out. (connect timeout=4.0)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 132,
+      "timestamp": "2026-10-20T23:20:00.382455",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:20:00,382 - visionrag - INFO - Direct YouTube transcript unavailable for k8P4_g6u8k8: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 131,
+      "timestamp": "2026-10-20T23:19:46.296987",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:19:46,295 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792538361547': 'Endemic wildlife of Simien & Bale Mountains: Walia Ibex, Eth...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792538361547",
+        "query_length": 90,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 130,
+      "timestamp": "2026-10-20T23:15:25.678926",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:15:25,678 - visionrag - INFO - Wikimedia image search note: HTTPSConnectionPool(host='commons.wikimedia.org', port=443): Max retries exceeded with url: /w/api.php?action=query&generator=search&gsrsearch=what%20is%20this&gsrnamespace=6&gsrlimit=7&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&format=json (Caused by ConnectTimeoutError(<HTTPSConnection(host='commons.wikimedia.org', port=443) at 0x22a4e214f50>, 'Connection to commons.wikimedia.org timed out. (connect timeout=4.0)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 129,
+      "timestamp": "2026-10-20T23:15:13.385041",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:15:13,385 - visionrag - INFO - Direct YouTube transcript unavailable for aircAruvnKk: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 128,
+      "timestamp": "2026-10-20T23:14:58.735735",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:14:58,735 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792537015007': 'what is this...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792537015007",
+        "query_length": 12,
+        "attachments_count": 1
+      }
+    },
+    {
+      "id": 127,
+      "timestamp": "2026-10-20T23:14:15.431232",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "FILE_UPLOAD",
+      "message": "2026-10-21 02:14:15,431 - visionrag - INFO - File uploaded & stored in PostgreSQL: 'Screenshot 2026-10-19 205004.png' (8.4 KB) [Binary in DB: True]",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "file_id": "f_5bd116f12feb",
+        "filename": "Screenshot 2026-10-19 205004.png",
+        "size": "8.4 KB",
+        "has_binary": true,
+        "md5": "f51b1cc78d86a9c711fc7c92cff65d4f"
+      }
+    },
+    {
+      "id": 126,
+      "timestamp": "2026-10-20T23:13:14.911578",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:13:14,911 - visionrag - INFO - Wikimedia image search note: HTTPSConnectionPool(host='commons.wikimedia.org', port=443): Max retries exceeded with url: /w/api.php?action=query&generator=search&gsrsearch=ghjkjhjgghjk&gsrnamespace=6&gsrlimit=7&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata&format=json (Caused by ConnectTimeoutError(<HTTPSConnection(host='commons.wikimedia.org', port=443) at 0x22a4e216710>, 'Connection to commons.wikimedia.org timed out. (connect timeout=4.0)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 125,
+      "timestamp": "2026-10-20T23:13:05.754470",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:13:05,754 - visionrag - INFO - Direct YouTube transcript unavailable for qR8VqM5PswA: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 124,
+      "timestamp": "2026-10-20T23:12:54.149574",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:12:54,149 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792537660156': 'ghjkjhjgghjk...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792537660156",
+        "query_length": 12,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 123,
+      "timestamp": "2026-10-20T23:09:28.351680",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:09:28,351 - visionrag - INFO - Wikipedia API search note: HTTPSConnectionPool(host='en.wikipedia.org', port=443): Max retries exceeded with url: /w/api.php?action=query&list=search&srsearch=some%20quation%20ethiopia&format=json&utf8=1&srlimit=7 (Caused by ConnectTimeoutError(<HTTPSConnection(host='en.wikipedia.org', port=443) at 0x22a4e216090>, 'Connection to en.wikipedia.org timed out. (connect timeout=3.5)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 122,
+      "timestamp": "2026-10-20T23:09:24.718880",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:09:24,718 - visionrag - INFO - Direct YouTube transcript unavailable for k8P4_g6u8k8: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 121,
+      "timestamp": "2026-10-20T23:09:12.020739",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:09:12,020 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792537660156': 'some quation ethiopia...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792537660156",
+        "query_length": 21,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 120,
+      "timestamp": "2026-10-20T23:08:13.464620",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:08:13,464 - visionrag - INFO - Wikipedia API search note: HTTPSConnectionPool(host='en.wikipedia.org', port=443): Max retries exceeded with url: /w/api.php?action=query&list=search&srsearch=some%20quation%20ethiopia&format=json&utf8=1&srlimit=7 (Caused by ConnectTimeoutError(<HTTPSConnection(host='en.wikipedia.org', port=443) at 0x22a4e216dd0>, 'Connection to en.wikipedia.org timed out. (connect timeout=3.5)'))",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 119,
+      "timestamp": "2026-10-20T23:08:09.365356",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:08:09,365 - visionrag - INFO - Direct YouTube transcript unavailable for k8P4_g6u8k8: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 118,
+      "timestamp": "2026-10-20T23:08:00.784214",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:08:00,784 - visionrag - INFO - Processing RAG chat query for chat 'chat_2380722486112': 'some quation ethiopia...'",
+      "user_id": null,
+      "details": {
+        "chat_id": "chat_2380722486112",
+        "query_length": 21,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 117,
+      "timestamp": "2026-10-20T23:07:54.281253",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:07:54,281 - visionrag - INFO - Direct YouTube transcript unavailable for k8P4_g6u8k8: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 116,
+      "timestamp": "2026-10-20T23:07:44.407645",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:07:44,406 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792537660156': 'Endemic wildlife of Simien & Bale Mountains: Walia Ibex, Eth...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792537660156",
+        "query_length": 90,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 115,
+      "timestamp": "2026-10-20T23:06:35.338409",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:06:35,338 - visionrag - INFO - Direct YouTube transcript unavailable for qR8VqM5PswA: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 114,
+      "timestamp": "2026-10-20T23:06:27.205002",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:06:27,205 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792537015007': 'hey...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792537015007",
+        "query_length": 3,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 113,
+      "timestamp": "2026-10-20T23:05:02.814445",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:05:02,814 - visionrag - INFO - Direct YouTube transcript unavailable for aircAruvnKk: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 112,
+      "timestamp": "2026-10-20T23:04:54.225296",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:04:54,225 - visionrag - INFO - Processing RAG chat query for chat 'chat-1792537015007': 'what is bioplogy...'",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "chat_id": "chat-1792537015007",
+        "query_length": 16,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 111,
+      "timestamp": "2026-10-20T23:04:28.373661",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 02:04:28,373 - visionrag - INFO - Direct YouTube transcript unavailable for k8P4_g6u8k8: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 110,
+      "timestamp": "2026-10-20T23:04:18.734939",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 02:04:18,734 - visionrag - INFO - Processing RAG chat query for chat 'chat_2380719884800': 'some quation ethiopia...'",
+      "user_id": null,
+      "details": {
+        "chat_id": "chat_2380719884800",
+        "query_length": 21,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 109,
+      "timestamp": "2026-10-20T22:57:14.952136",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:57:14,952 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_b8a82ade9d"
+      }
+    },
+    {
+      "id": 108,
+      "timestamp": "2026-10-20T22:57:14.768562",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:57:14,768 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 38,
+        "healthy": true
+      }
+    },
+    {
+      "id": 107,
+      "timestamp": "2026-10-20T22:57:00.335730",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:57:00,335 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_da531a1cb4"
+      }
+    },
+    {
+      "id": 106,
+      "timestamp": "2026-10-20T22:57:00.055143",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:57:00,055 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 37,
+        "healthy": true
+      }
+    },
+    {
+      "id": 105,
+      "timestamp": "2026-10-20T22:51:42.574514",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:51:42,574 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_ef5a5aba6d"
+      }
+    },
+    {
+      "id": 104,
+      "timestamp": "2026-10-20T22:51:42.463874",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:51:42,463 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 36,
+        "healthy": true
+      }
+    },
+    {
+      "id": 103,
+      "timestamp": "2026-10-20T22:50:52.255709",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:50:52,255 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_cb28ac699a"
+      }
+    },
+    {
+      "id": 102,
+      "timestamp": "2026-10-20T22:50:52.100325",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:50:52,099 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 35,
+        "healthy": true
+      }
+    },
+    {
+      "id": 101,
+      "timestamp": "2026-10-20T22:49:51.238146",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:49:51,238 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_9fce88831f"
+      }
+    },
+    {
+      "id": 100,
+      "timestamp": "2026-10-20T22:49:51.138726",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:49:51,138 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 34,
+        "healthy": true
+      }
+    },
+    {
+      "id": 99,
+      "timestamp": "2026-10-20T22:48:56.696147",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:48:56,696 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_bcface40d3"
+      }
+    },
+    {
+      "id": 98,
+      "timestamp": "2026-10-20T22:48:56.563383",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:48:56,563 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 33,
+        "healthy": true
+      }
+    },
+    {
+      "id": 97,
+      "timestamp": "2026-10-20T22:48:47.055635",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:48:47,055 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_7f6a711f14"
+      }
+    },
+    {
+      "id": 96,
+      "timestamp": "2026-10-20T22:48:46.878276",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:48:46,878 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 32,
+        "healthy": true
+      }
+    },
+    {
+      "id": 95,
+      "timestamp": "2026-10-20T22:48:42.007631",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:48:42,007 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_c9ea4b8b35"
+      }
+    },
+    {
+      "id": 94,
+      "timestamp": "2026-10-20T22:48:41.815477",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:48:41,815 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 31,
+        "healthy": true
+      }
+    },
+    {
+      "id": 93,
+      "timestamp": "2026-10-20T22:20:47.563224",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:20:47,562 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_cb4d1b6200"
+      }
+    },
+    {
+      "id": 92,
+      "timestamp": "2026-10-20T22:20:46.958332",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:20:46,958 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 49,
+        "conversations_count": 6,
+        "messages_count": 10,
+        "task_progress_count": 30,
+        "healthy": true
+      }
+    },
+    {
+      "id": 91,
+      "timestamp": "2026-10-20T22:18:48.340903",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 01:18:48,340 - visionrag - INFO - Direct YouTube transcript unavailable for e_XU2gPqN3w: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 90,
+      "timestamp": "2026-10-20T22:18:39.641507",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-21 01:18:39,641 - visionrag - INFO - Processing RAG chat query for chat 'chat_1661801794928': 'Explain Saint Yared music and Lalibela churches with books a...'",
+      "user_id": null,
+      "details": {
+        "chat_id": "chat_1661801794928",
+        "query_length": 69,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 89,
+      "timestamp": "2026-10-20T22:18:17.609186",
+      "level": "WARNING",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 01:18:17,609 - visionrag - WARNING - PostgreSQL book persistence note: (psycopg.errors.ForeignKeyViolation) insert or update on table \"uploaded_files\" violates foreign key constraint \"uploaded_files_user_id_fkey\"\nDETAIL:  Key (user_id)=(book_searcher_agent) is not present in table \"users\".\n[SQL: INSERT INTO uploaded_files (id, user_id, original_filename, stored_filename, file_path, file_type, file_size_bytes, file_size_display, checksum_md5, status, progress_percent, has_binary, file_blob, metadata, uploaded_at) VALUES (%(id)s::VARCHAR, %(user_id)s::VARCHAR, %(original_filename)s::VARCHAR, %(stored_filename)s::VARCHAR, %(file_path)s::VARCHAR, %(file_type)s::VARCHAR, %(file_size_bytes)s::BIGINT, %(file_size_display)s::VARCHAR, %(checksum_md5)s::VARCHAR, %(status)s::VARCHAR, %(progress_percent)s::INTEGER, %(has_binary)s, %(file_blob)s, %(metadata)s::JSON, %(uploaded_at)s::TIMESTAMP WITH TIME ZONE)]\n[parameters: {'id': 'gutenberg_1342', 'user_id': 'book_searcher_agent', 'original_filename': 'gutenberg_1342.txt', 'stored_filename': 'pg_gutenberg_1342.txt', 'file_path': 'https://www.gutenberg.org/cache/epub/1342/pg1342.txt', 'file_type': 'text/plain; kind=gutenberg_ebook', 'file_size_bytes': 122087, 'file_size_display': '119.2 KB', 'checksum_md5': '73af672d8e3a4f0eb50c4698dd5aeca3', 'status': 'indexed', 'progress_percent': 100, 'has_binary': True, 'file_blob': Binary(b'The Project Gutenberg eBook of Pr ... (136576 byteschars)), 'metadata': Json({'book_id': 1342, 'source': 'Projec ... (138 chars)), 'uploaded_at': datetime.datetime(2026, 10, 20, 22, 18, 17, 459101)}]\n(Background on this error at: https://sqlalche.me/e/21/gkpj)",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 88,
+      "timestamp": "2026-10-20T22:18:05.197928",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 01:18:05,197 - visionrag - INFO - Direct YouTube transcript unavailable for qR8VqM5PswA: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 87,
+      "timestamp": "2026-10-20T22:16:01.210601",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "LINK_BOOK_INGESTION",
+      "message": "2026-10-21 01:16:01,210 - visionrag - INFO - Link Book Reader Ingested: Walia Ibex Field Study (https://en.wikipedia.org/wiki/Walia_ibex)",
+      "user_id": null,
+      "details": {
+        "fileId": "link_110bb38fe7ba",
+        "words": 496
+      }
+    },
+    {
+      "id": 86,
+      "timestamp": "2026-10-20T22:11:19.510850",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:11:19,510 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_ffdb3e84ea"
+      }
+    },
+    {
+      "id": 85,
+      "timestamp": "2026-10-20T22:11:19.270985",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:11:19,270 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 47,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 28,
+        "healthy": true
+      }
+    },
+    {
+      "id": 84,
+      "timestamp": "2026-10-20T22:08:13.549506",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:08:13,549 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_a19e9e4353"
+      }
+    },
+    {
+      "id": 83,
+      "timestamp": "2026-10-20T22:08:13.343911",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:08:13,343 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 47,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 27,
+        "healthy": true
+      }
+    },
+    {
+      "id": 82,
+      "timestamp": "2026-10-20T22:08:09.415942",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 01:08:09,415 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_6498336809"
+      }
+    },
+    {
+      "id": 81,
+      "timestamp": "2026-10-20T22:08:09.137273",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 01:08:09,137 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 47,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 26,
+        "healthy": true
+      }
+    },
+    {
+      "id": 80,
+      "timestamp": "2026-10-20T21:30:31.757641",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "LINK_BOOK_INGESTION",
+      "message": "2026-10-21 00:30:31,757 - visionrag - INFO - Link Book Reader Ingested: Wikipedia: Education in Ethiopia History (https://en.wikipedia.org/wiki/Education_in_Ethiopia)",
+      "user_id": null,
+      "details": {
+        "fileId": "link_65d0585ce26e",
+        "words": 76
+      }
+    },
+    {
+      "id": 79,
+      "timestamp": "2026-10-20T21:30:31.604100",
+      "level": "WARNING",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 00:30:31,604 - visionrag - WARNING - Remote fetch timed out or failed for https://en.wikipedia.org/wiki/Education_in_Ethiopia: HTTPSConnectionPool(host='en.wikipedia.org', port=443): Max retries exceeded with url: /wiki/Education_in_Ethiopia (Caused by ConnectTimeoutError(<HTTPSConnection(host='en.wikipedia.org', port=443) at 0x21e0bb7a450>, 'Connection to en.wikipedia.org timed out. (connect timeout=6.0)')). Using resilient knowledge extractor.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 78,
+      "timestamp": "2026-10-20T21:30:19.067893",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:30:19,067 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_5037ee91de"
+      }
+    },
+    {
+      "id": 77,
+      "timestamp": "2026-10-20T21:21:56.584727",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:21:56,584 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_02ea8e3a1e"
+      }
+    },
+    {
+      "id": 76,
+      "timestamp": "2026-10-20T21:21:56.386977",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:21:56,386 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 42,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 22,
+        "healthy": true
+      }
+    },
+    {
+      "id": 75,
+      "timestamp": "2026-10-20T21:21:46.954076",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:21:46,954 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_27883c1178"
+      }
+    },
+    {
+      "id": 74,
+      "timestamp": "2026-10-20T21:21:46.718547",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:21:46,718 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 42,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 21,
+        "healthy": true
+      }
+    },
+    {
+      "id": 73,
+      "timestamp": "2026-10-20T21:21:31.592520",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:21:31,592 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_5aed531fd4"
+      }
+    },
+    {
+      "id": 72,
+      "timestamp": "2026-10-20T21:21:31.471703",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:21:31,471 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 42,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 20,
+        "healthy": true
+      }
+    },
+    {
+      "id": 71,
+      "timestamp": "2026-10-20T21:21:00.331600",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:21:00,331 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_6d09182703"
+      }
+    },
+    {
+      "id": 70,
+      "timestamp": "2026-10-20T21:21:00.138939",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:21:00,138 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 42,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 19,
+        "healthy": true
+      }
+    },
+    {
+      "id": 69,
+      "timestamp": "2026-10-20T21:18:10.394294",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "LINK_BOOK_INGESTION",
+      "message": "2026-10-21 00:18:10,394 - visionrag - INFO - Link Book Reader Ingested: Walia Ibex Biological Study (https://en.wikipedia.org/wiki/Walia_ibex)",
+      "user_id": null,
+      "details": {
+        "fileId": "link_c1a3db725e78",
+        "words": 75
+      }
+    },
+    {
+      "id": 68,
+      "timestamp": "2026-10-20T21:18:10.248720",
+      "level": "WARNING",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-21 00:18:10,248 - visionrag - WARNING - Remote fetch timed out or failed for https://en.wikipedia.org/wiki/Walia_ibex: HTTPSConnectionPool(host='en.wikipedia.org', port=443): Max retries exceeded with url: /wiki/Walia_ibex (Caused by ConnectTimeoutError(<HTTPSConnection(host='en.wikipedia.org', port=443) at 0x155b2d94a90>, 'Connection to en.wikipedia.org timed out. (connect timeout=6.0)')). Using resilient knowledge extractor.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 67,
+      "timestamp": "2026-10-20T21:17:57.025408",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:17:57,025 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_56aae0592f"
+      }
+    },
+    {
+      "id": 66,
+      "timestamp": "2026-10-20T21:17:56.798680",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:17:56,798 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 38,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 16,
+        "healthy": true
+      }
+    },
+    {
+      "id": 65,
+      "timestamp": "2026-10-20T21:17:41.601117",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:17:41,601 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_04840a2fb5"
+      }
+    },
+    {
+      "id": 64,
+      "timestamp": "2026-10-20T21:17:41.414114",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:17:41,414 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 38,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 15,
+        "healthy": true
+      }
+    },
+    {
+      "id": 63,
+      "timestamp": "2026-10-20T21:16:56.505947",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:16:56,505 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_e0759fa807"
+      }
+    },
+    {
+      "id": 62,
+      "timestamp": "2026-10-20T21:16:56.353335",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:16:56,353 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 38,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 13,
+        "healthy": true
+      }
+    },
+    {
+      "id": 61,
+      "timestamp": "2026-10-20T21:16:49.385354",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:16:49,385 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_f221c3c9c7"
+      }
+    },
+    {
+      "id": 60,
+      "timestamp": "2026-10-20T21:16:49.206410",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:16:49,206 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 38,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 12,
+        "healthy": true
+      }
+    },
+    {
+      "id": 59,
+      "timestamp": "2026-10-20T21:11:45.704404",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:11:45,704 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_cc1d838306"
+      }
+    },
+    {
+      "id": 58,
+      "timestamp": "2026-10-20T21:11:45.477925",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:11:45,477 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 38,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 11,
+        "healthy": true
+      }
+    },
+    {
+      "id": 57,
+      "timestamp": "2026-10-20T21:11:37.074185",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:11:37,074 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_dd0aca33c0"
+      }
+    },
+    {
+      "id": 56,
+      "timestamp": "2026-10-20T21:11:36.871025",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:11:36,871 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 38,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 10,
+        "healthy": true
+      }
+    },
+    {
+      "id": 55,
+      "timestamp": "2026-10-20T21:11:26.461526",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:11:26,461 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_24b125b9e3"
+      }
+    },
+    {
+      "id": 54,
+      "timestamp": "2026-10-20T21:11:26.303317",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:11:26,303 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 13,
+        "session_count": 9,
+        "uploaded_files_count": 38,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 9,
+        "healthy": true
+      }
+    },
+    {
+      "id": 53,
+      "timestamp": "2026-10-20T21:05:40.468774",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:05:40,468 - visionrag - INFO - Seeded Ethiopian Knowledge: 10 education records, 10 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_162306d616"
+      }
+    },
+    {
+      "id": 52,
+      "timestamp": "2026-10-20T21:03:56.002160",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:03:56,002 - visionrag - INFO - Seeded Ethiopian Knowledge: 0 education records, 0 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_849632d0fc"
+      }
+    },
+    {
+      "id": 51,
+      "timestamp": "2026-10-20T21:02:04.355004",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "KNOWLEDGE_SEEDING",
+      "message": "2026-10-21 00:02:04,355 - visionrag - INFO - Seeded Ethiopian Knowledge: 10 education records, 10 biology records.",
+      "user_id": null,
+      "details": {
+        "task_id": "seed_37c23c3ba3"
+      }
+    },
+    {
+      "id": 50,
+      "timestamp": "2026-10-20T21:02:04.006088",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-21 00:02:04,006 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 8,
+        "session_count": 9,
+        "uploaded_files_count": 17,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 6,
+        "healthy": true
+      }
+    },
+    {
+      "id": 49,
+      "timestamp": "2026-10-20T20:27:38.288780",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:27:38,288 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 48,
+      "timestamp": "2026-10-20T20:27:20.104529",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:27:20,104 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 47,
+      "timestamp": "2026-10-20T20:26:57.337383",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:26:57,336 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 46,
+      "timestamp": "2026-10-20T20:26:43.635923",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:26:43,635 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 45,
+      "timestamp": "2026-10-20T20:26:26.262215",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:26:26,262 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 44,
+      "timestamp": "2026-10-20T20:26:01.521041",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:26:01,521 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 43,
+      "timestamp": "2026-10-20T20:25:31.053978",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:25:31,053 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 42,
+      "timestamp": "2026-10-20T20:25:12.441934",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:25:12,441 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 41,
+      "timestamp": "2026-10-20T20:24:27.223727",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:24:27,223 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 40,
+      "timestamp": "2026-10-20T20:23:13.991257",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:23:13,991 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 39,
+      "timestamp": "2026-10-20T20:23:11.630175",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 23:23:11,630 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 6,
+        "session_count": 9,
+        "uploaded_files_count": 3,
+        "conversations_count": 5,
+        "messages_count": 8,
+        "task_progress_count": 4,
+        "healthy": true
+      }
+    },
+    {
+      "id": 38,
+      "timestamp": "2026-10-20T20:01:37.370952",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "ACCOUNT_CREATED",
+      "message": "2026-10-20 23:01:37,370 - visionrag - INFO - Account created successfully for 'biruk Ahmye' (bababruke@gmail.com) in PostgreSQL.",
+      "user_id": "usr_bcaae55b8216",
+      "details": {
+        "email": "bababruke@gmail.com",
+        "full_name": "biruk Ahmye",
+        "ip_address": "127.0.0.1",
+        "created_at": "2026-10-20T20:01:37.370952"
+      }
+    },
+    {
+      "id": 37,
+      "timestamp": "2026-10-20T19:53:25.325949",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "ACCOUNT_CREATED",
+      "message": "2026-10-20 22:53:25,325 - visionrag - INFO - Account created successfully for 'Dr. Elena Vance' (researcher@visionrag.ai) in PostgreSQL.",
+      "user_id": "usr_07f5fa18a5f6",
+      "details": {
+        "email": "researcher@visionrag.ai",
+        "full_name": "Dr. Elena Vance",
+        "ip_address": "127.0.0.1",
+        "created_at": "2026-10-20T19:53:25.296403"
+      }
+    },
+    {
+      "id": 36,
+      "timestamp": "2026-10-20T19:49:21.863833",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGOUT",
+      "message": "2026-10-20 22:49:21,863 - visionrag - INFO - User logged out: user_id=usr_e850c46a72b8",
+      "user_id": "usr_e850c46a72b8",
+      "details": {
+        "logout_time": "2026-10-20T19:49:21.846104+00:00",
+        "duration_seconds": 10815,
+        "session_id": "sess_e71ea3cedbff"
+      }
+    },
+    {
+      "id": 35,
+      "timestamp": "2026-10-20T19:49:14.799305",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-20 22:49:14,799 - visionrag - INFO - Processing RAG chat query for chat 'chat_9c95d084': 'Explain architectural schematic and multimodal token alignme...'",
+      "user_id": "usr_e850c46a72b8",
+      "details": {
+        "chat_id": "chat_9c95d084",
+        "query_length": 62,
+        "attachments_count": 1
+      }
+    }
+  ]
+}

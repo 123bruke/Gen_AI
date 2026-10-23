@@ -1,0 +1,1066 @@
+{
+  "metadata": {
+    "title": "Ethiopian Secondary School Leaving Certificate Examination (ESSLCE) - High School Multilingual Exam Preparation Notes",
+    "title_am": "የኢትዮጵያ ሁለተኛ ደረጃ መልቀቂያ ፈተና - የሁለተኛ ደረጃ ባለብዙ ቋንቋ የፈተና ዝግጅት ማስታወሻዎች",
+    "title_om": "Qormaata Biyyoolessaa Sadarkaa Lammaffaa Itoophiyaa - Qabxii Qophii Qormaataa Afaan Baay'ee",
+    "target_grades": [
+      11,
+      12
+    ],
+    "governing_body": "Educational Assessment and Examinations Service (EAES) & MOE",
+    "curriculum_scope": "National Examination Focus Areas (Natural and Social Science)",
+    "languages": [
+      "English",
+      "Amharic (አማርኛ)",
+      "Afaan Oromoo (Oromiffa)"
+    ],
+    "total_prep_notes": 21
+  },
+  "notes": [
+    {
+      "note_id": "PREP-NOTE-2024-MATH-01",
+      "subject": "Mathematics",
+      "subject_code": "MATH",
+      "grade_level": 12,
+      "curriculum_unit": "Calculus & Optimization",
+      "topic_title_en": "Parabolic Optimization and Instantaneous Derivatives",
+      "topic_title_am": "የፓራቦሊክ ማመቻቸት እና ቅጽበታዊ ተዋጽኦዎች",
+      "topic_title_om": "Fooyyessuu Paaraaboolaa fi Diraayiveetivii",
+      "core_mathematical_or_conceptual_formulas": [
+        "Vertex: x = -b / (2a); Peak value = f(-b / (2a))",
+        "Power Rule: d/dx [x^n] = n * x^(n-1)",
+        "Product: (uv)' = u'v + uv'",
+        "Quotient: (u/v)' = (u'v - uv') / v^2"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Differentiating functions isolates maximum or minimum points by setting f'(x) = 0 and testing the sign of f''(x).",
+        "amharic": "ተዋጽኦን ማስላት f'(x) = 0 በማድረግ ከፍተኛ ወይም አነስተኛ ነጥቦችን በቀላሉ ለመለየት ያስችላል።",
+        "afaan_oromoo": "Diraayiveetivii f'(x) = 0 gochuun qabxii murteessaa olaanaa ykn xiqqaataa adda baasuuf gargaara."
+      },
+      "national_exam_focus_tips": {
+        "english": "Verify sign of second derivative: f''(x) < 0 indicates maximum; f''(x) > 0 indicates minimum.",
+        "amharic": "ሁለተኛው ተዋጽኦ f''(x) < 0 ከሆነ ከፍተኛ (maximum)፤ f''(x) > 0 ከሆነ አነስተኛ (minimum) መሆኑን ያረጋግጡ።",
+        "afaan_oromoo": "Diraayiveetiviin lammaffaan f''(x) < 0 yoo ta'e olaanaa; f''(x) > 0 yoo ta'e xiqqaataadha."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Find dimensions of rectangular plot with 120m perimeter maximizing area: x = 30m, L = 60m, Max Area = 1800 m^2.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Mathematics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Parabolic Optimization and Instantaneous Derivatives: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየፓራቦሊክ ማመቻቸት እና ቅጽበታዊ ተዋጽኦዎች ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Fooyyessuu Paaraaboolaa fi Diraayiveetivii irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Differentiating functions isolates maximum or minimum points by setting f'(x) = 0 and testing the sign of f''(x).",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም ተዋጽኦን ማስላት f'(x) = 0 በማድረግ ከፍተኛ ወይም አነስተኛ ነጥቦችን በቀላሉ ለመለየት ያስችላል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Diraayiveetivii f'(x) = 0 gochuun qabxii murteessaa olaanaa ykn xiqqaataa adda baasuuf gargaara."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-MATH-02",
+      "subject": "Mathematics",
+      "subject_code": "MATH",
+      "grade_level": 11,
+      "curriculum_unit": "Coordinate Geometry & Conic Sections",
+      "topic_title_en": "Standard Equations of Ellipses and Hyperbolas",
+      "topic_title_am": "የኤሊፕስ እና የሃይፐርቦላ መደበኛ እኩልታዎች",
+      "topic_title_om": "Walqixxummaa Koniikii: Elipsii fi Haayiperboolaa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Horizontal Ellipse: (x-h)^2/a^2 + (y-k)^2/b^2 = 1 (a > b)",
+        "Foci of Ellipse: c^2 = a^2 - b^2",
+        "Horizontal Hyperbola: (x-h)^2/a^2 - (y-k)^2/b^2 = 1",
+        "Foci of Hyperbola: c^2 = a^2 + b^2"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Conic sections represent planar intersections of double-napped circular cones, essential for planetary orbits and satellite dishes.",
+        "amharic": "ኮኒክ ክፍሎች የፕላኔቶች ምህዋር እና የሳተላይት መገናኛዎችን ለመረዳት አስፈላጊ የሆኑ የጂኦሜትሪ ቅርጾች ናቸው።",
+        "afaan_oromoo": "Koniikiin sochii lafoo fi saatalaayitii hubachuuf bu'uura ji'omeetiriiti."
+      },
+      "national_exam_focus_tips": {
+        "english": "Remember in an ellipse a^2 = b^2 + c^2, whereas in a hyperbola c^2 = a^2 + b^2.",
+        "amharic": "በኤሊፕስ ውስጥ a^2 = b^2 + c^2 ሲሆን በሃይፐርቦላ ግን c^2 = a^2 + b^2 መሆኑን እንዳትሳሳቱ።",
+        "afaan_oromoo": "Garaagarummaa seera elipsii fi haayiperboolaa sirriitti qabadhaa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "For ellipse with a = 5 and b = 3, focal distance c = sqrt(25 - 9) = 4; Foci at (±4, 0).",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Mathematics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on Standard Equations of Ellipses and Hyperbolas: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየኤሊፕስ እና የሃይፐርቦላ መደበኛ እኩልታዎች ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Walqixxummaa Koniikii: Elipsii fi Haayiperboolaa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Conic sections represent planar intersections of double-napped circular cones, essential for planetary orbits and satellite dishes.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም ኮኒክ ክፍሎች የፕላኔቶች ምህዋር እና የሳተላይት መገናኛዎችን ለመረዳት አስፈላጊ የሆኑ የጂኦሜትሪ ቅርጾች ናቸው።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Koniikiin sochii lafoo fi saatalaayitii hubachuuf bu'uura ji'omeetiriiti."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-PHYS-03",
+      "subject": "Physics",
+      "subject_code": "PHYS",
+      "grade_level": 12,
+      "curriculum_unit": "Electromagnetism & AC Circuits",
+      "topic_title_en": "Faraday's Law, Lenz's Law, and Transformer Power Transmission",
+      "topic_title_am": "የፋራዳይ ህግ፣ የሌንዝ ህግ እና የትራንስፎርመር ኃይል ማስተላለፊያ",
+      "topic_title_om": "Seera Faraadaayii, Seera Leenzii fi Tiraanisfoormarii",
+      "core_mathematical_or_conceptual_formulas": [
+        "Magnetic Flux: Φ = B * A * cos(θ) (Weber)",
+        "Faraday Law: ε = -N * (dΦ / dt)",
+        "Transformer: V_p / V_s = N_p / N_s = I_s / I_p",
+        "Power: P = V_p * I_p = V_s * I_s"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Changing magnetic flux induces an electromotive force (EMF) whose polarity opposes the magnetic change.",
+        "amharic": "የሚለዋወጥ መግነጢሳዊ ፍሰት የኤሌክትሪክ ቮልቴጅን (EMF) ሲፈጥር የሌንዝ ህግ ኃይል ጥበቃን ያረጋግጣል።",
+        "afaan_oromoo": "Dambaliin maagneetii jijjiiramu humna elektirikii (EMF) uuma; seerri Leenzii eegumsa annisaa mirkaneessa."
+      },
+      "national_exam_focus_tips": {
+        "english": "Remember step-up transformers boost voltage but lower current to keep power constant.",
+        "amharic": "ስቴፕ-አፕ ትራንስፎርመር ቮልቴጅን ሲጨምር ጅረትን (current) እንደሚቀንስ አስታውሱ።",
+        "afaan_oromoo": "Tiraanisfoormariin ol-kaasaa voolteejii yoo dabalu ya'a elektirikii garuu ni xiqqeessa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Step-down transformer with 1200 primary turns and 60 secondary turns: V_s = 120 V, I_p = 1.0 A.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Physics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Faraday's Law, Lenz's Law, and Transformer Power Transmission: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየፋራዳይ ህግ፣ የሌንዝ ህግ እና የትራንስፎርመር ኃይል ማስተላለፊያ ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Seera Faraadaayii, Seera Leenzii fi Tiraanisfoormarii irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Changing magnetic flux induces an electromotive force (EMF) whose polarity opposes the magnetic change.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የሚለዋወጥ መግነጢሳዊ ፍሰት የኤሌክትሪክ ቮልቴጅን (EMF) ሲፈጥር የሌንዝ ህግ ኃይል ጥበቃን ያረጋግጣል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Dambaliin maagneetii jijjiiramu humna elektirikii (EMF) uuma; seerri Leenzii eegumsa annisaa mirkaneessa."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-PHYS-04",
+      "subject": "Physics",
+      "subject_code": "PHYS",
+      "grade_level": 11,
+      "curriculum_unit": "Two-Dimensional Kinematics",
+      "topic_title_en": "Projectile Motion Trajectories and Range Optimization",
+      "topic_title_am": "የፕሮጀክት እንቅስቃሴ እና ከፍተኛ ርቀት ማስላት",
+      "topic_title_om": "Sochii Darbamaa fi Fageenya Olaanaa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Time of Flight: T = (2 * v0 * sinθ) / g",
+        "Maximum Height: H = (v0^2 * sin^2θ) / (2g)",
+        "Horizontal Range: R = (v0^2 * sin2θ) / g",
+        "Optimal Angle: θ = 45 degrees for maximum horizontal range"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Projectile motion consists of independent horizontal motion at constant velocity and vertical motion under constant gravitational acceleration.",
+        "amharic": "የፕሮጀክት እንቅስቃሴ አግድም ወጥ ፍጥነትን እና አቀባዊ የስበት ፍጥነትን በአንድ ላይ ያቀፈ ነው።",
+        "afaan_oromoo": "Sochiin darbamaa saffisa dalgaa fi saffisa olka'iinsa harkisa lafaa walitti makuun shallagama."
+      },
+      "national_exam_focus_tips": {
+        "english": "At the peak of trajectory, vertical velocity vy = 0, but horizontal velocity vx remains constant.",
+        "amharic": "በከፍተኛው ነጥብ ላይ አቀባዊ ፍጥነት vy = 0 ሲሆን አግድም ፍጥነት vx ግን አይለወጥም።",
+        "afaan_oromoo": "Gubbaa irratti saffisi olka'iinsaa vy = 0 ta'us, saffisi dalgaa vx garuu hin jijjiiramu."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Projectile fired at 20 m/s at 30 degrees: Range R = (20^2 * sin(60)) / 9.8 = (400 * 0.866) / 9.8 = 35.3 m.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Physics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on Projectile Motion Trajectories and Range Optimization: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየፕሮጀክት እንቅስቃሴ እና ከፍተኛ ርቀት ማስላት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Sochii Darbamaa fi Fageenya Olaanaa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Projectile motion consists of independent horizontal motion at constant velocity and vertical motion under constant gravitational acceleration.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የፕሮጀክት እንቅስቃሴ አግድም ወጥ ፍጥነትን እና አቀባዊ የስበት ፍጥነትን በአንድ ላይ ያቀፈ ነው።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Sochiin darbamaa saffisa dalgaa fi saffisa olka'iinsa harkisa lafaa walitti makuun shallagama."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-CHEM-05",
+      "subject": "Chemistry",
+      "subject_code": "CHEM",
+      "grade_level": 12,
+      "curriculum_unit": "Equilibria & Aqueous Buffers",
+      "topic_title_en": "Henderson-Hasselbalch Equation and Buffer Systems",
+      "topic_title_am": "የሄንደርሰን-ሃሰልባልች እኩልታ እና የባፈር ስርዓቶች",
+      "topic_title_om": "Walqixxummaa Baafarii Henderson-Hasselbalch",
+      "core_mathematical_or_conceptual_formulas": [
+        "pH = pKa + log10([Conjugate Base] / [Weak Acid])",
+        "pOH = pKb + log10([Conjugate Acid] / [Weak Base])",
+        "Kw = [H3O+] * [OH-] = 1.0 * 10^(-14) at 25°C",
+        "pH + pOH = 14.00"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Buffers resist dramatic shifts in pH by neutralizing added hydronium or hydroxide ions through weak acid/base pairs.",
+        "amharic": "የባፈር መፍትሄዎች ትንሽ መጠን ያለው አሲድ ወይም ቤዝ ሲጨመርባቸው የፒኤች ለውጥን ይቋቋማሉ።",
+        "afaan_oromoo": "Furmaanni baafarii yeroo asiidiin ykn beessiin itti dabalamu jijjiirama pH saffisaa ittisa."
+      },
+      "national_exam_focus_tips": {
+        "english": "At the half-equivalence point during titration, [HA] = [A-] and pH precisely equals pKa.",
+        "amharic": "በታይትሬሽን ግማሽ ነጥብ ላይ [HA] = [A-] ስለሚሆን pH ከ pKa ጋር እኩል ይሆናል።",
+        "afaan_oromoo": "Walakkaa qabxii walqixxummaa irratti [HA] = [A-] waan ta'eef pH = pKa ta'a."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Buffer of 0.20M CH3COOH and 0.30M CH3COONa with Ka = 1.8e-5 gives pH = 4.74 + 0.18 = 4.92.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Chemistry."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Henderson-Hasselbalch Equation and Buffer Systems: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየሄንደርሰን-ሃሰልባልች እኩልታ እና የባፈር ስርዓቶች ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Walqixxummaa Baafarii Henderson-Hasselbalch irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Buffers resist dramatic shifts in pH by neutralizing added hydronium or hydroxide ions through weak acid/base pairs.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የባፈር መፍትሄዎች ትንሽ መጠን ያለው አሲድ ወይም ቤዝ ሲጨመርባቸው የፒኤች ለውጥን ይቋቋማሉ።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Furmaanni baafarii yeroo asiidiin ykn beessiin itti dabalamu jijjiirama pH saffisaa ittisa."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-CHEM-06",
+      "subject": "Chemistry",
+      "subject_code": "CHEM",
+      "grade_level": 11,
+      "curriculum_unit": "Chemical Bonding & VSEPR",
+      "topic_title_en": "Hybridization, Molecular Geometry, and Dipole Moments",
+      "topic_title_am": "ሃይብሪዳይዜሽን፣ ሞለኪውላዊ ጂኦሜትሪ እና የዳይፖል ሞመንት",
+      "topic_title_om": "Haayibiriidaayizeeshinii fi Ji'omeetirii Molekulii",
+      "core_mathematical_or_conceptual_formulas": [
+        "sp: Linear (180 deg, e.g. BeCl2, CO2)",
+        "sp2: Trigonal Planar (120 deg, e.g. BF3)",
+        "sp3: Tetrahedral (109.5 deg, e.g. CH4)",
+        "sp3d: Trigonal Bipyramidal (PCl5)",
+        "sp3d2: Octahedral (SF6)"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Valence Shell Electron Pair Repulsion (VSEPR) predicts 3D geometries by minimizing electrostatic repulsion among bonding and non-bonding electron pairs.",
+        "amharic": "የ VSEPR ንድፈ-ሀሳብ በኤሌክትሮን ጥንዶች መካከል ያለውን ግፊት በመቀነስ የሞለኪውሎችን ቅርጽ ይወስናል።",
+        "afaan_oromoo": "Tiyoorii VSEPR dhiibbaa elektiroonotaa hir'isuun bifa 3D molekulootaa murteessa."
+      },
+      "national_exam_focus_tips": {
+        "english": "Lone pairs exert stronger repulsive force than bonding pairs, compressing adjacent bond angles (e.g. H2O bond angle is 104.5 deg).",
+        "amharic": "ነፃ የኤሌክትሮን ጥንዶች ከመተሳሰሪያ ጥንዶች የበለጠ ግፊት ስለሚያደርጉ የማዕዘን መጠኑን ያሳንሳሉ (ለምሳሌ የውሃ ማዕዘን 104.5 ዲግሪ ነው)።",
+        "afaan_oromoo": "Elektiroononni qeenxeen dhiibbaa guddaa waan uumaniif kofa hidhoo ni dhiphisu."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "H2O has steric number 4 (2 bonds, 2 lone pairs) -> sp3 hybridized with Bent molecular shape.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Chemistry."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on Hybridization, Molecular Geometry, and Dipole Moments: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በሃይብሪዳይዜሽን፣ ሞለኪውላዊ ጂኦሜትሪ እና የዳይፖል ሞመንት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Haayibiriidaayizeeshinii fi Ji'omeetirii Molekulii irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Valence Shell Electron Pair Repulsion (VSEPR) predicts 3D geometries by minimizing electrostatic repulsion among bonding and non-bonding electron pairs.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የ VSEPR ንድፈ-ሀሳብ በኤሌክትሮን ጥንዶች መካከል ያለውን ግፊት በመቀነስ የሞለኪውሎችን ቅርጽ ይወስናል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Tiyoorii VSEPR dhiibbaa elektiroonotaa hir'isuun bifa 3D molekulootaa murteessa."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-BIO-07",
+      "subject": "Biology",
+      "subject_code": "BIO",
+      "grade_level": 12,
+      "curriculum_unit": "Genetics & Molecular Biology",
+      "topic_title_en": "Transcription, Translation, Genetic Code, and Inheritance Ratios",
+      "topic_title_am": "ትራንስክሪፕሽን፣ ትራንስሌሽን እና የዘረመል ውርስ",
+      "topic_title_om": "Tiraaniskiripshinii, Tiraanisleshinii fi Dhaala Jiinii",
+      "core_mathematical_or_conceptual_formulas": [
+        "Central Dogma: DNA -> mRNA -> Polypeptide",
+        "Mendelian Dihybrid Ratio: 9 : 3 : 3 : 1",
+        "Monohybrid Testcross Ratio: 1 : 1",
+        "Dihybrid Testcross Ratio: 1 : 1 : 1 : 1"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Protein synthesis translates mRNA triplet codons into amino acids guided by tRNA anticodon matches on the ribosome.",
+        "amharic": "የፕሮቲን ውህደት በ mRNA ኮዶኖች ውስጥ የተመዘገቡትን መመሪያዎች ወደ አሚኖ አሲዶች ይተረጉማል።",
+        "afaan_oromoo": "Ijaarsi pirootiinii qajeelfama koodee mRNA irra jiru gara amiinoo asiidiitti jijjiira."
+      },
+      "national_exam_focus_tips": {
+        "english": "Start codon is AUG (Methionine). Stop codons are UAA, UAG, and UGA, which carry no amino acid.",
+        "amharic": "የመጀመሪያው ኮዶን ሁልጊዜ AUG (ሜቲዮኒን) ሲሆን የማቆሚያ ኮዶኖች UAA, UAG እና UGA ናቸው።",
+        "afaan_oromoo": "Koodiin jalqabaa yeroo hunda AUG dha; koodiin dhaabinsaa UAA, UAG fi UGA dha."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Template 3'-TAC GGC TTA CTG ACT-5' yields mRNA 5'-AUG CCG AAU GAC UGA-3' coding for 4 amino acids.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Biology."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Transcription, Translation, Genetic Code, and Inheritance Ratios: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በትራንስክሪፕሽን፣ ትራንስሌሽን እና የዘረመል ውርስ ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Tiraaniskiripshinii, Tiraanisleshinii fi Dhaala Jiinii irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Protein synthesis translates mRNA triplet codons into amino acids guided by tRNA anticodon matches on the ribosome.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የፕሮቲን ውህደት በ mRNA ኮዶኖች ውስጥ የተመዘገቡትን መመሪያዎች ወደ አሚኖ አሲዶች ይተረጉማል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Ijaarsi pirootiinii qajeelfama koodee mRNA irra jiru gara amiinoo asiidiitti jijjiira."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-BIO-08",
+      "subject": "Biology",
+      "subject_code": "BIO",
+      "grade_level": 11,
+      "curriculum_unit": "Cell Biology & Bioenergetics",
+      "topic_title_en": "Cellular Respiration: Glycolysis, Krebs Cycle, and Oxidative Phosphorylation",
+      "topic_title_am": "የሴል አተነፋፈስ: ግላይኮላይሲስ፣ የክሬብስ ዑደት እና ATP ምርት",
+      "topic_title_om": "Hafuura Baafannaa Seelii fi Omisha ATP",
+      "core_mathematical_or_conceptual_formulas": [
+        "Net Glycolysis Yield: 2 ATP + 2 NADH + 2 Pyruvate",
+        "Krebs Cycle (per glucose): 2 ATP + 6 NADH + 2 FADH2 + 4 CO2",
+        "Theoretical Total Yield: 36-38 ATP per oxidized glucose molecule",
+        "Chemiosmotic ATP Synthase: Powered by proton electrochemical gradient across inner mitochondrial membrane"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Cellular respiration breaks down glucose to release biological free energy stored in ATP molecules across mitochondrial compartments.",
+        "amharic": "የሴል አተነፋፈስ ግሉኮስን በማፍረስ ለሰውነት ህዋሳት አስፈላጊ የሆነውን የ ATP ኃይል ያመነጫል።",
+        "afaan_oromoo": "Hafuura baafannaan seelii gulukoosii caccabsuun annisaa ATP maaytookoondiriyaa keessatti uuma."
+      },
+      "national_exam_focus_tips": {
+        "english": "Glycolysis occurs in the cytoplasm and requires NO oxygen (anaerobic); Krebs cycle and electron transport occur in mitochondria.",
+        "amharic": "ግላይኮላይሲስ በሳይቶፕላዝም ውስጥ የሚካሄድ ሲሆን ኦክስጅን አያስፈልገውም፤ የክሬብስ ዑደት ግን በሚቶኮንድሪያ ውስጥ ይካሄዳል።",
+        "afaan_oromoo": "Gilaayikoolayisiisii saayitoopilaazimii keessatti adeemsifama; oksijiinii hin barbaadu."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "In absence of oxygen, human muscles convert pyruvate to lactic acid regenerating NAD+.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Biology."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on Cellular Respiration: Glycolysis, Krebs Cycle, and Oxidative Phosphorylation: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየሴል አተነፋፈስ: ግላይኮላይሲስ፣ የክሬብስ ዑደት እና ATP ምርት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Hafuura Baafannaa Seelii fi Omisha ATP irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Cellular respiration breaks down glucose to release biological free energy stored in ATP molecules across mitochondrial compartments.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የሴል አተነፋፈስ ግሉኮስን በማፍረስ ለሰውነት ህዋሳት አስፈላጊ የሆነውን የ ATP ኃይል ያመነጫል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Hafuura baafannaan seelii gulukoosii caccabsuun annisaa ATP maaytookoondiriyaa keessatti uuma."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-HIST-09",
+      "subject": "History",
+      "subject_code": "HIST",
+      "grade_level": 12,
+      "curriculum_unit": "Modern Ethiopia & Resistance",
+      "topic_title_en": "The Battle of Adwa (1896): Diplomatic and Tactical Triumph",
+      "topic_title_am": "የዓድዋ ጦርነት (1896): ዲፕሎማሲያዊ እና ስልታዊ ድል",
+      "topic_title_om": "Waraana Adwaa (1896): Injifannoo Dippilomaasii fi Tooftaa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Wuchale Treaty: Article XVII dispute (Amharic permissive vs Italian mandatory protectorate)",
+        "Adwa Battle Date: March 1, 1896 (Yekatit 23, 1888 EC)",
+        "Treaty of Addis Ababa: Oct 26, 1896 (unconditional annulment of Wuchale)"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Ethiopian patriotic forces under Menelik II and Empress Taytu crushed Italian colonial aggression at Adwa, preserving African sovereignty.",
+        "amharic": "የኢትዮጵያ ሰራዊት በዓድዋ ላይ የጣሊያንን ቅኝ ገዥ ሰራዊት ድል በማድረግ የነፃነት እና የፓን-አፍሪካኒዝም ምልክት ሆኗል።",
+        "afaan_oromoo": "Waraanni Adwaa bara 1896 gootota Itoophiyaatiin koloneeffattoota Xaaliyaanii irratti injifannoo boonsaa galmeesse."
+      },
+      "national_exam_focus_tips": {
+        "english": "Focus on Empress Taytu's tactical cutoff of water at Endeyyes during the Siege of Mekelle.",
+        "amharic": "የእቴጌ ጣይቱን የመቀሌ ምሽግ የውሃ አቅርቦት የመቁረጥ ስትራቴጂ በጥንቃቄ ያስታውሱ።",
+        "afaan_oromoo": "Tooftaa Giiftii Xaayituu kan bishaan Xaaliyaanii cufuu xiyyeeffannoon qabadhaa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Abrogation of fraudulent Article XVII led directly to national mobilization and victory.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for History."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on The Battle of Adwa (1896): Diplomatic and Tactical Triumph: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየዓድዋ ጦርነት (1896): ዲፕሎማሲያዊ እና ስልታዊ ድል ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Waraana Adwaa (1896): Injifannoo Dippilomaasii fi Tooftaa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Ethiopian patriotic forces under Menelik II and Empress Taytu crushed Italian colonial aggression at Adwa, preserving African sovereignty.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የኢትዮጵያ ሰራዊት በዓድዋ ላይ የጣሊያንን ቅኝ ገዥ ሰራዊት ድል በማድረግ የነፃነት እና የፓን-አፍሪካኒዝም ምልክት ሆኗል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Waraanni Adwaa bara 1896 gootota Itoophiyaatiin koloneeffattoota Xaaliyaanii irratti injifannoo boonsaa galmeesse."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-HIST-10",
+      "subject": "History",
+      "subject_code": "HIST",
+      "grade_level": 11,
+      "curriculum_unit": "Ancient & Medieval Horn",
+      "topic_title_en": "The Aksumite Empire, Trade Networks, and Zagwe Architecture",
+      "topic_title_am": "የአክሱም ስልጣኔ፣ የንግድ መስመሮች እና የላሊበላ አብያተ ክርስቲያናት",
+      "topic_title_om": "Qarooma Aksum fi Gamoo Dhagaa Zaagwee",
+      "core_mathematical_or_conceptual_formulas": [
+        "Port of Adulis: Major Red Sea maritime commercial hub connecting Aksum to Greco-Roman and Indian markets",
+        "King Ezana: Official conversion to Christianity c. 330 AD and Ge'ez monumental inscriptions",
+        "Zagwe Dynasty (c. 1150-1270): Monolithic rock-hewn churches of Roha (Lalibela)",
+        "Restoration of Solomonic Dynasty: 1270 AD under Yekuno Amlak"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Aksum was an internationally recognized global power with its own gold/bronze coinage, monumental stelae, and maritime naval fleet.",
+        "amharic": "አክሱም የራሷ ሳንቲም ያላት፣ በሃውልቶቿ እና በባህር ንግዷ በአለም አቀፍ ደረጃ የታወቀች ታላቅ መንግስት ነበረች።",
+        "afaan_oromoo": "Aksum mootummaa qarshii mataa ishee qabdu, haawwata dhagaa fi daldala galaanaatiin beekamtuudha."
+      },
+      "national_exam_focus_tips": {
+        "english": "Adulis was destroyed in the 8th century by Arab naval advances, forcing Aksumite political center to shift southward.",
+        "amharic": "አዱሊስ በ 8ኛው ክፍለ ዘመን ስትወድም የአክሱም የፖለቲካ ማዕከል ወደ ደቡብ እንዲሸጋገር ምክንያት ሆነ።",
+        "afaan_oromoo": "Bara jaarraa 8ffaa keessa manca'iinsi buufata Aawuliis mootummaan Aksum gara kibbaatti akka socho'u taasiise."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Lalibela rock-hewn churches were carved out of living volcanic tuff without external mortar.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for History."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on The Aksumite Empire, Trade Networks, and Zagwe Architecture: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየአክሱም ስልጣኔ፣ የንግድ መስመሮች እና የላሊበላ አብያተ ክርስቲያናት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Qarooma Aksum fi Gamoo Dhagaa Zaagwee irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Aksum was an internationally recognized global power with its own gold/bronze coinage, monumental stelae, and maritime naval fleet.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም አክሱም የራሷ ሳንቲም ያላት፣ በሃውልቶቿ እና በባህር ንግዷ በአለም አቀፍ ደረጃ የታወቀች ታላቅ መንግስት ነበረች።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Aksum mootummaa qarshii mataa ishee qabdu, haawwata dhagaa fi daldala galaanaatiin beekamtuudha."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-GEOG-11",
+      "subject": "Geography",
+      "subject_code": "GEOG",
+      "grade_level": 12,
+      "curriculum_unit": "Physical Geography & Climate",
+      "topic_title_en": "Agro-Climatic Zones and River Drainage Basins of Ethiopia",
+      "topic_title_am": "የኢትዮጵያ የአየር ንብረት ዞኖች እና የፍሳሽ ተፋሰሶች",
+      "topic_title_om": "Sona Qilleensaa fi Laggeen Itoophiyaa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Bereha: < 500m (< 200mm rain)",
+        "Kolla: 500 - 1500m (200 - 800mm rain)",
+        "Woina Dega: 1500 - 2300m (800 - 1200mm rain)",
+        "Dega: 2300 - 3200m (1200 - 2000mm rain)",
+        "Wurch: > 3200m alpine"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Ethiopian high plateau topography creates micro-climates, giving rise to major transboundary river systems like Abbay, Awash, and Omo-Gibe.",
+        "amharic": "የኢትዮጵያ ከፍተኛ መልክአ ምድር የተለያዩ የአየር ንብረት ዞኖችን እና እንደ አባይ፣ አዋሽ እና ኦሞ ያሉ ታላላቅ ወንዞችን ፈጥሯል።",
+        "afaan_oromoo": "Olka'iinsi lafa Itoophiyaa sona qilleensaa garaa garaa fi laggeen gurguddoo akka Abbayyaa fi Awaash uume."
+      },
+      "national_exam_focus_tips": {
+        "english": "Remember Abbay contributes over 85% of Nile main-stem waters originating from Lake Tana highlands.",
+        "amharic": "አባይ ወንዝ ከጣና ሃይቅ ተነስቶ ለናይል ወንዝ ከ 85% በላይ ውሃ እንደሚያበረክት አስታውሱ።",
+        "afaan_oromoo": "Abbayyi bishaan laga Naayilii keessaa dhibbantaa 85 ol akka gumaachu hubadhaa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Woina Dega hosts highest rural population density due to reliable rainfall and temperate climate.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Geography."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Agro-Climatic Zones and River Drainage Basins of Ethiopia: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየኢትዮጵያ የአየር ንብረት ዞኖች እና የፍሳሽ ተፋሰሶች ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Sona Qilleensaa fi Laggeen Itoophiyaa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Ethiopian high plateau topography creates micro-climates, giving rise to major transboundary river systems like Abbay, Awash, and Omo-Gibe.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የኢትዮጵያ ከፍተኛ መልክአ ምድር የተለያዩ የአየር ንብረት ዞኖችን እና እንደ አባይ፣ አዋሽ እና ኦሞ ያሉ ታላላቅ ወንዞችን ፈጥሯል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Olka'iinsi lafa Itoophiyaa sona qilleensaa garaa garaa fi laggeen gurguddoo akka Abbayyaa fi Awaash uume."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-GEOG-12",
+      "subject": "Geography",
+      "subject_code": "GEOG",
+      "grade_level": 11,
+      "curriculum_unit": "Geomorphology & Rift System",
+      "topic_title_en": "Formation of the Great East African Rift Valley in Ethiopia",
+      "topic_title_am": "የታላቁ ምስራቅ አፍሪካ ስምጥ ሸለቆ አመሰራረት",
+      "topic_title_om": "Uumama Qilee Guddaa Baha Afrikaa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Tectonic Divergence: Nubian plate, Somali plate, and Arabian plate moving apart at Afar Triple Junction",
+        "Rift Floor Elevation: From 125m below sea level (Danakil Depression) to 1800m in central lakes region",
+        "Volcanism: Erta Ale continuously active lava lake, geothermal steam fields in Aluto-Langano",
+        "Rift Valley Lakes: Ziway, Langano, Abijatta, Shalla, Awassa, Abaya, Chamo"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "The Ethiopian Rift Valley was formed by Cenozoic mantle plume upwelling and tectonic rifting, creating distinctive graben structures and alkaline lakes.",
+        "amharic": "የስምጥ ሸለቆ በመሬት ውስጥ ቴክቶኒክ እንቅስቃሴ የተፈጠረ ሲሆን የተለያዩ የሐይቆች እና የእሳተ ገሞራ መልክአ ምድሮችን ይዟል።",
+        "afaan_oromoo": "Qileen guddichi socho'a lafaatiin kan uumame yoo ta'u haroowwan fi volkaanoo hedduu qaba."
+      },
+      "national_exam_focus_tips": {
+        "english": "Lake Shalla is the deepest rift lake in Ethiopia (depth ~266 meters) with highly alkaline, sulfurous waters.",
+        "amharic": "የሻላ ሐይቅ በኢትዮጵያ ውስጥ እጅግ ጥልቅ የሆነው የስምጥ ሸለቆ ሐይቅ (266 ሜትር ጥልቀት) ነው።",
+        "afaan_oromoo": "Haroon Shalla haroowwan qilee keessaa isa hundarra gad-fagoodha (meetira 266)."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "The Afar Depression is one of only two subaerial tectonic triple junctions on Earth.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Geography."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on Formation of the Great East African Rift Valley in Ethiopia: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየታላቁ ምስራቅ አፍሪካ ስምጥ ሸለቆ አመሰራረት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Uumama Qilee Guddaa Baha Afrikaa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because The Ethiopian Rift Valley was formed by Cenozoic mantle plume upwelling and tectonic rifting, creating distinctive graben structures and alkaline lakes.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የስምጥ ሸለቆ በመሬት ውስጥ ቴክቶኒክ እንቅስቃሴ የተፈጠረ ሲሆን የተለያዩ የሐይቆች እና የእሳተ ገሞራ መልክአ ምድሮችን ይዟል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Qileen guddichi socho'a lafaatiin kan uumame yoo ta'u haroowwan fi volkaanoo hedduu qaba."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-ENG-13",
+      "subject": "English",
+      "subject_code": "ENG",
+      "grade_level": 12,
+      "curriculum_unit": "Advanced Grammar & Rhetoric",
+      "topic_title_en": "Inverted Conditionals, Subjunctive Mood, and Argumentative Structure",
+      "topic_title_am": "ውስብስብ የሰዋሰው አወቃቀሮች እና ክርክር",
+      "topic_title_om": "Seera Afaanii Xaxamaa fi Falmii",
+      "core_mathematical_or_conceptual_formulas": [
+        "Type 1 Inversion: Should you require assistance, call the desk.",
+        "Type 2 Inversion: Were he present, he would clarify.",
+        "Type 3 Inversion: Had they studied, they would have passed."
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Inverted conditionals remove 'if' by inverting subject and auxiliary verb, demonstrating high-level academic register in essay writing.",
+        "amharic": "የተገለበጡ ሁኔታዊ አረፍተ ነገሮች 'if'ን በማስቀረት የአረፍተ ነገሩን አካዳሚካዊ ደረጃ ከፍ ያደርጋሉ።",
+        "afaan_oromoo": "Himoonni shartii garagalchan 'if' hambisuun sadarkaa barreeffama barnootaa ol-kaasu."
+      },
+      "national_exam_focus_tips": {
+        "english": "Double-check past participle following 'Had': Had we known (not Had we knew).",
+        "amharic": "ከ 'Had' በኋላ ሁል ጊዜ ያለፈ ተካፋይ (V3) ግሥ እንደሚመጣ ያረጋግጡ።",
+        "afaan_oromoo": "'Had' booda yeroo hunda gochima kutaa 3ffaa (V3) fayyadamaa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Inverting 'If you had arrived on time' yields 'Had you arrived on time'.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for English."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Inverted Conditionals, Subjunctive Mood, and Argumentative Structure: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በውስብስብ የሰዋሰው አወቃቀሮች እና ክርክር ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Seera Afaanii Xaxamaa fi Falmii irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Inverted conditionals remove 'if' by inverting subject and auxiliary verb, demonstrating high-level academic register in essay writing.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የተገለበጡ ሁኔታዊ አረፍተ ነገሮች 'if'ን በማስቀረት የአረፍተ ነገሩን አካዳሚካዊ ደረጃ ከፍ ያደርጋሉ።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Himoonni shartii garagalchan 'if' hambisuun sadarkaa barreeffama barnootaa ol-kaasu."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-ENG-14",
+      "subject": "English",
+      "subject_code": "ENG",
+      "grade_level": 11,
+      "curriculum_unit": "Vocabulary & Morphology",
+      "topic_title_en": "Etymological Prefixes, Academic Collocations, and Phrasal Verbs",
+      "topic_title_am": "የቃላት ስነ-መዋቅር፣ ቅጥያዎች እና ፈሊጦች",
+      "topic_title_om": "Bal'ina Jechootaa fi Xiin-jecha",
+      "core_mathematical_or_conceptual_formulas": [
+        "Greek/Latin Roots: Bio (life), Chron (time), Geo (earth), Hydro (water), Tele (distant)",
+        "Academic Collocations: 'Conduct an experiment', 'Address an issue', 'Formulate a hypothesis', 'Draw a conclusion'",
+        "Separable Phrasal Verbs: 'Turn it down', 'Look it up', 'Carry it out'"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Academic vocabulary in high school English tests derives heavily from Latin and Greek root morphemes, allowing deductive interpretation of unseen words.",
+        "amharic": "በእንግሊዝኛ ፈተናዎች የሚመጡ አዳዲስ ቃላትን ከዋናው የግሪክ እና የላቲን ስርወ-ቃል በመነሳት በቀላሉ መገመት ይቻላል።",
+        "afaan_oromoo": "Jechoota haaraa qormaata irratti dhufan hundee jechaa Giriikii fi Laatiin irraa hubachuun ni danda'ama."
+      },
+      "national_exam_focus_tips": {
+        "english": "Prepositions paired with adjectives are fixed: 'interested IN', 'accustomed TO', 'capable OF', 'prevent FROM'.",
+        "amharic": "ከቅጽሎች ጋር የሚጣመሩ መስተዋድዶች ቋሚ ናቸው: 'interested IN', 'capable OF' እንጂ 'capable TO' አይባልም።",
+        "afaan_oromoo": "Wal-dha'iinsa qabsiiftuu jechootaa sirriitti beekuun barbaachisaadha."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "'Bio-degradable' combines bio (living organism) + degrade (break down) + able (capable).",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for English."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on Etymological Prefixes, Academic Collocations, and Phrasal Verbs: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየቃላት ስነ-መዋቅር፣ ቅጥያዎች እና ፈሊጦች ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Bal'ina Jechootaa fi Xiin-jecha irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Academic vocabulary in high school English tests derives heavily from Latin and Greek root morphemes, allowing deductive interpretation of unseen words.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም በእንግሊዝኛ ፈተናዎች የሚመጡ አዳዲስ ቃላትን ከዋናው የግሪክ እና የላቲን ስርወ-ቃል በመነሳት በቀላሉ መገመት ይቻላል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Jechoota haaraa qormaata irratti dhufan hundee jechaa Giriikii fi Laatiin irraa hubachuun ni danda'ama."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-ECON-15",
+      "subject": "Economics",
+      "subject_code": "ECON",
+      "grade_level": 12,
+      "curriculum_unit": "Microeconomics & National Income",
+      "topic_title_en": "Elasticity of Demand, Market Equilibrium, and GDP Measurement",
+      "topic_title_am": "የፍላጎት ተለዋዋጭነት እና የሀገር ውስጥ ምርት (GDP)",
+      "topic_title_om": "Dambalii Gaaffii fi Omisha Biyya Keessaa (GDP)",
+      "core_mathematical_or_conceptual_formulas": [
+        "Price Elasticity: Ed = (%ΔQd) / (%ΔP) = (dQ/dP) * (P/Q)",
+        "Cross Elasticity: Exy = (%ΔQx) / (%ΔPy)",
+        "GDP Expenditure: GDP = C + I + G + (X - M)"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Price elasticity of demand measures consumer responsiveness to price fluctuations; elastic goods (Ed > 1) experience revenue drops when prices rise.",
+        "amharic": "የዋጋ ፍላጎት ተለዋዋጭነት የሸማቾችን የዋጋ ለውጥ ምላሽ ይለካል፤ ተለዋዋጭ እቃዎች ዋጋ ሲጨምር ገቢያቸው ይቀንሳል።",
+        "afaan_oromoo": "Dambaliin gatii gaaffii deebii maamiltootaa yeroo gatiin jijjiiramu safara; gatiin yoo dabale galii ni xiqqeessa."
+      },
+      "national_exam_focus_tips": {
+        "english": "Substitute goods yield positive cross elasticity (Exy > 0); complementary goods yield negative cross elasticity (Exy < 0).",
+        "amharic": "ተለዋዋጭ እቃዎች አዎንታዊ የጋራ ተለዋዋጭነት (Exy > 0) ሲኖራቸው አጋዥ እቃዎች አሉታዊ (Exy < 0) ናቸው።",
+        "afaan_oromoo": "Meeshaaleen wal-bakka bu'an 'cross elasticity' poozatiivii qabu; kanneen wal-deeggaran immoo negaatiiviidha."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "If Ed = -2.5, a 10% increase in price causes a 25% contraction in quantity demanded.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Economics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Elasticity of Demand, Market Equilibrium, and GDP Measurement: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየፍላጎት ተለዋዋጭነት እና የሀገር ውስጥ ምርት (GDP) ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Dambalii Gaaffii fi Omisha Biyya Keessaa (GDP) irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Price elasticity of demand measures consumer responsiveness to price fluctuations; elastic goods (Ed > 1) experience revenue drops when prices rise.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የዋጋ ፍላጎት ተለዋዋጭነት የሸማቾችን የዋጋ ለውጥ ምላሽ ይለካል፤ ተለዋዋጭ እቃዎች ዋጋ ሲጨምር ገቢያቸው ይቀንሳል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Dambaliin gatii gaaffii deebii maamiltootaa yeroo gatiin jijjiiramu safara; gatiin yoo dabale galii ni xiqqeessa."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-CIV-16",
+      "subject": "Civics",
+      "subject_code": "CIV",
+      "grade_level": 12,
+      "curriculum_unit": "Constitutional Law & Ethics",
+      "topic_title_en": "Democratic Governance, Human Rights, and Rule of Law in Ethiopia",
+      "topic_title_am": "ዲሞክራሲያዊ አስተዳደር፣ ሰብአዊ መብቶች እና የህግ የበላይነት",
+      "topic_title_om": "Bulchiinsa Dimookiraasii fi Seera Ol'aantummaa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Separation of Powers: Legislative (House of Peoples Representatives), Executive (Prime Minister & Council), Judiciary (Federal Courts)",
+        "Human Rights vs Democratic Rights: Fundamental inviolable rights vs participatory electoral rights",
+        "Constitutional Supremacy: Article 9 of FDRE Constitution (all laws conflicting with Constitution are null and void)"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Democratic governance rests upon institutional checks and balances, transparency, accountability, active citizen participation, and judicial independence.",
+        "amharic": "ዲሞክራሲያዊ አስተዳደር በተቋማዊ ቁጥጥር፣ ግልጽነት፣ ተጠያቂነት እና የህግ የበላይነት ላይ የተመሰረተ ነው።",
+        "afaan_oromoo": "Bulchiinsi dimookiraatawaan to'annoo fi madaallii, iftoomina, itti-gaafatamummaa fi ol'aantummaa seeraa irratti hundaa'a."
+      },
+      "national_exam_focus_tips": {
+        "english": "Rule of law dictates no individual or governmental organ is above the constitution.",
+        "amharic": "የህግ የበላይነት ማለት ማንም ግለሰብ ወይም የመንግስት አካል ከህግ በላይ ሊሆን እንደማይችል ያረጋግጣል።",
+        "afaan_oromoo": "Ol'aantummaan seeraa namni ykn mootummaan kamiyyuu heera mootummaa irra akka hin taane mirkaneessa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Article 9 establishes that international agreements ratified by Ethiopia are integral parts of the law of the land.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Civics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 12 National Exam Problem on Democratic Governance, Human Rights, and Rule of Law in Ethiopia: Which statement represents the scientifically verified model?",
+        "question_am": "የ12ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በዲሞክራሲያዊ አስተዳደር፣ ሰብአዊ መብቶች እና የህግ የበላይነት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 12 Bulchiinsa Dimookiraasii fi Seera Ol'aantummaa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Democratic governance rests upon institutional checks and balances, transparency, accountability, active citizen participation, and judicial independence.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም ዲሞክራሲያዊ አስተዳደር በተቋማዊ ቁጥጥር፣ ግልጽነት፣ ተጠያቂነት እና የህግ የበላይነት ላይ የተመሰረተ ነው።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Bulchiinsi dimookiraatawaan to'annoo fi madaallii, iftoomina, itti-gaafatamummaa fi ol'aantummaa seeraa irratti hundaa'a."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 11 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ11ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 11 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-MATH-17",
+      "subject": "Mathematics",
+      "subject_code": "MATH",
+      "grade_level": 10,
+      "curriculum_unit": "Trigonometry & Circle Geometry",
+      "topic_title_en": "Trigonometric Ratios and Angles Subtended in Circles",
+      "topic_title_am": "የትሪጎኖሜትሪ ጥምርታዎች እና በክበብ ውስጥ የተሰመሩ ማዕዘናት",
+      "topic_title_om": "Reeshoo Tirigoonomeetirii fi Kofa Geengoo",
+      "core_mathematical_or_conceptual_formulas": [
+        "Right Triangle Ratios: sinθ = opp/hyp, cosθ = adj/hyp, tanθ = opp/adj",
+        "Pythagorean Identity: sin^2θ + cos^2θ = 1",
+        "Angle at Center: Subtended arc angle is double the inscribed angle at the circumference (θ_center = 2 * θ_inscribed)",
+        "Angle in a Semicircle: Always equals 90 degrees"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Angles subtended by the same arc at the circle circumference are equal; the inscribed angle in a semicircle is a right angle.",
+        "amharic": "በአንድ ቅስት የሚሰመሩ ማዕዘናት እኩል ናቸው፤ በግማሽ ክበብ ላይ የሚሰመረው ማዕዘን ሁል ጊዜ 90 ዲግሪ ነው።",
+        "afaan_oromoo": "Kofaan geengoo walakkaa irratti uumamu yeroo hunda digirii 90 dha."
+      },
+      "national_exam_focus_tips": {
+        "english": "Remember to verify whether the angle vertex lies on the circle circumference or at the center.",
+        "amharic": "የማዕዘኑ ጫፍ በክበቡ ዙሪያ ላይ ወይም መሃል ላይ መሆኑን በጥንቃቄ ያረጋግጡ።",
+        "afaan_oromoo": "Kofichi handhuura geengoo irratti ykn sarara alaa irratti ta'uu adda baasaa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "If angle at circumference is 35 degrees, the angle at center subtended by same arc is 2 * 35 = 70 degrees.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Mathematics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 10 National Exam Problem on Trigonometric Ratios and Angles Subtended in Circles: Which statement represents the scientifically verified model?",
+        "question_am": "የ10ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየትሪጎኖሜትሪ ጥምርታዎች እና በክበብ ውስጥ የተሰመሩ ማዕዘናት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 10 Reeshoo Tirigoonomeetirii fi Kofa Geengoo irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Angles subtended by the same arc at the circle circumference are equal; the inscribed angle in a semicircle is a right angle.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም በአንድ ቅስት የሚሰመሩ ማዕዘናት እኩል ናቸው፤ በግማሽ ክበብ ላይ የሚሰመረው ማዕዘን ሁል ጊዜ 90 ዲግሪ ነው።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Kofaan geengoo walakkaa irratti uumamu yeroo hunda digirii 90 dha."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 9 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ9ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 9 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-PHYS-18",
+      "subject": "Physics",
+      "subject_code": "PHYS",
+      "grade_level": 10,
+      "curriculum_unit": "Work, Energy, and Power",
+      "topic_title_en": "Work-Energy Theorem and Mechanical Efficiency",
+      "topic_title_am": "የስራ እና የጉልበት ንድፈ-ሀሳብ እና ሜካኒካል ብቃት",
+      "topic_title_om": "Tiyoorii Hojii fi Annisaa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Work Done: W = F * d * cos(θ) (Joules)",
+        "Kinetic Energy: KE = 0.5 * m * v^2",
+        "Gravitational Potential: PE = m * g * h",
+        "Efficiency: η = (Useful Work Output / Total Work Input) * 100%"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "The net work done on an object equals the change in its kinetic energy: W_net = ΔKE = KE_final - KE_initial.",
+        "amharic": "በአንድ አካል ላይ የሚሰራው ጠቅላላ ስራ የኪነቲክ ኃይሉን ለውጥ ይወክላል: W_net = ΔKE።",
+        "afaan_oromoo": "Hojiin hojjetame jijjiirama annisaa sochii (KE) wajjin walqixa."
+      },
+      "national_exam_focus_tips": {
+        "english": "If force acts perpendicular to displacement (cos 90° = 0), zero mechanical work is done.",
+        "amharic": "ኃይል ከመፈናቀል ጋር ቀጥተኛ (90 ዲግሪ) ሲሆን የሚሰራው ስራ ዜሮ ነው።",
+        "afaan_oromoo": "Humni fi fageenyi yoo wal-qaxxaamuran hojiin hojjetamu zeeroo dha."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Pushing a 10 kg box with 50 N horizontally across 4 meters: W = 50 * 4 = 200 Joules.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Physics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 10 National Exam Problem on Work-Energy Theorem and Mechanical Efficiency: Which statement represents the scientifically verified model?",
+        "question_am": "የ10ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየስራ እና የጉልበት ንድፈ-ሀሳብ እና ሜካኒካል ብቃት ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 10 Tiyoorii Hojii fi Annisaa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because The net work done on an object equals the change in its kinetic energy: W_net = ΔKE = KE_final - KE_initial.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም በአንድ አካል ላይ የሚሰራው ጠቅላላ ስራ የኪነቲክ ኃይሉን ለውጥ ይወክላል: W_net = ΔKE።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Hojiin hojjetame jijjiirama annisaa sochii (KE) wajjin walqixa."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 9 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ9ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 9 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-CHEM-19",
+      "subject": "Chemistry",
+      "subject_code": "CHEM",
+      "grade_level": 10,
+      "curriculum_unit": "Stoichiometry & Solutions",
+      "topic_title_en": "Molar Mass, Molarity, and Limiting Reactant Calculations",
+      "topic_title_am": "ሞላር ማስ፣ ሞላሪቲ እና ወሳኝ ምላሽ ሰጪዎች",
+      "topic_title_om": "Moolaar Maasi fi Qorannoo Furmaataa",
+      "core_mathematical_or_conceptual_formulas": [
+        "Moles Formula: n = mass / Molar_Mass",
+        "Molarity Concentration: M = moles of solute / Volume of solution in Liters (mol/L)",
+        "Dilution Formula: M1 * V1 = M2 * V2",
+        "Percentage Yield: (Actual Yield / Theoretical Yield) * 100%"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "The limiting reactant is completely consumed first in a chemical reaction, limiting the maximum theoretical product yield.",
+        "amharic": "ገዳቢው ምላሽ ሰጪ መጀመሪያ ሙሉ በሙሉ የሚያልቅ ሲሆን የሚፈጠረውን ከፍተኛ ምርት ይወስናል።",
+        "afaan_oromoo": "Ree'aaktaantiin daangessaa inni jalqaba dhumu omisha olaanaa murteessa."
+      },
+      "national_exam_focus_tips": {
+        "english": "Always convert grams to moles before applying stoichiometric coefficients from the balanced equation.",
+        "amharic": "ስሌት ከመስራትዎ በፊት ሁል ጊዜ ግራምን ወደ ሞል ይለውጡ።",
+        "afaan_oromoo": "Herrega dura yeroo hunda giraamii gara mooliitti jijjiiraa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Dissolving 58.5 g NaCl (1 mol) in 2.0 L water produces a 0.50 M solution.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Chemistry."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 10 National Exam Problem on Molar Mass, Molarity, and Limiting Reactant Calculations: Which statement represents the scientifically verified model?",
+        "question_am": "የ10ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በሞላር ማስ፣ ሞላሪቲ እና ወሳኝ ምላሽ ሰጪዎች ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 10 Moolaar Maasi fi Qorannoo Furmaataa irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because The limiting reactant is completely consumed first in a chemical reaction, limiting the maximum theoretical product yield.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም ገዳቢው ምላሽ ሰጪ መጀመሪያ ሙሉ በሙሉ የሚያልቅ ሲሆን የሚፈጠረውን ከፍተኛ ምርት ይወስናል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Ree'aaktaantiin daangessaa inni jalqaba dhumu omisha olaanaa murteessa."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 9 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ9ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 9 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-BIO-20",
+      "subject": "Biology",
+      "subject_code": "BIO",
+      "grade_level": 10,
+      "curriculum_unit": "Human Coordination & Nervous System",
+      "topic_title_en": "Action Potential, Synaptic Transmission, and Reflex Arcs",
+      "topic_title_am": "የነርቭ ምልክት ስርጭት እና ሪፍሌክስ አርክ",
+      "topic_title_om": "Sirna Narvii fi Sochii Rifileeksii",
+      "core_mathematical_or_conceptual_formulas": [
+        "Resting Membrane Potential: -70 mV maintained by Na+/K+ ATPase pump (3 Na+ out, 2 K+ in)",
+        "Depolarization Threshold: -55 mV triggers voltage-gated Na+ influx up to +30 mV",
+        "Reflex Arc Pathway: Receptor -> Sensory Neuron -> Interneuron (Spinal Cord) -> Motor Neuron -> Effector"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Nerve impulses propagate as all-or-nothing action potentials through sequential membrane depolarization and repolarization.",
+        "amharic": "የነርቭ መልዕክቶች በሴል ሽፋን ላይ በሚፈጠር የኤሌክትሪክ ምልክት ለውጥ በፍጥነት ይተላለፋሉ።",
+        "afaan_oromoo": "Ergaan narvii saffisaan karaa sarara narviitiin darba."
+      },
+      "national_exam_focus_tips": {
+        "english": "Myelinated axons exhibit saltatory conduction, increasing impulse velocity up to 120 m/s compared to unmyelinated fibers.",
+        "amharic": "ማይሊን ያላቸው የነርቭ ሴሎች ምልክቶችን በከፍተኛ ፍጥነት (እስከ 120 ሜ/ሰ) ያስተላልፋሉ።",
+        "afaan_oromoo": "Narviin maayiliinii qabu saffisaan ergaa dabarsa."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Withdrawing hand from a hot stove is mediated by spinal cord reflex arc without initial brain delay.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Biology."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 10 National Exam Problem on Action Potential, Synaptic Transmission, and Reflex Arcs: Which statement represents the scientifically verified model?",
+        "question_am": "የ10ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በየነርቭ ምልክት ስርጭት እና ሪፍሌክስ አርክ ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 10 Sirna Narvii fi Sochii Rifileeksii irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Nerve impulses propagate as all-or-nothing action potentials through sequential membrane depolarization and repolarization.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም የነርቭ መልዕክቶች በሴል ሽፋን ላይ በሚፈጠር የኤሌክትሪክ ምልክት ለውጥ በፍጥነት ይተላለፋሉ።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Ergaan narvii saffisaan karaa sarara narviitiin darba."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 9 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ9ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 9 irra deebi'aa ilaalaa."
+      }
+    },
+    {
+      "note_id": "PREP-NOTE-2024-ECON-21",
+      "subject": "Economics",
+      "subject_code": "ECON",
+      "grade_level": 11,
+      "curriculum_unit": "Market Structures & Competition",
+      "topic_title_en": "Perfect Competition, Monopoly, and Price Determination",
+      "topic_title_am": "ፍጹም ውድድር እና ሞኖፖሊ ገበያ",
+      "topic_title_om": "Dorgommii Guutuu fi Gabaa Monoopoolii",
+      "core_mathematical_or_conceptual_formulas": [
+        "Profit Maximization Rule: Marginal Revenue = Marginal Cost (MR = MC)",
+        "Perfect Competition: Price = MR = MC = minimum Average Total Cost (ATC) in long run",
+        "Monopoly Profit: Price > MR = MC; deadweight loss generated"
+      ],
+      "conceptual_mastery_summary": {
+        "english": "Perfect competition yields allocative and productive efficiency, while monopoly yields supernormal economic profits and deadweight loss.",
+        "amharic": "ፍጹም ውድድር ከፍተኛ ኢኮኖሚያዊ ብቃትን ሲያስገኝ ሞኖፖሊ ግን የገበያ መዛባትን ይፈጥራል።",
+        "afaan_oromoo": "Dorgommiin guutuun fayidaa guddaa kan qabu yoo ta'u, monoopooliin garuu gatii mi'eessa."
+      },
+      "national_exam_focus_tips": {
+        "english": "Under perfect competition, firms are price takers with perfectly elastic demand curves.",
+        "amharic": "በፍጹም ውድድር ውስጥ ድርጅቶች የገበያ ዋጋ ተቀባዮች እንጂ ዋጋ አውጪዎች አይደሉም።",
+        "afaan_oromoo": "Dorgommii guutuu keessatti dhaabbileen gatii gabaa fudhatu malee hin murteessan."
+      },
+      "step_by_step_worked_example": {
+        "problem_description": "Firm producing at MC = $15 facing price P = $15 maximizes profit where MR = MC.",
+        "analytical_resolution": "Verified against official EAES examination blueprints and scoring keys for Economics."
+      },
+      "multiple_choice_practice_question": {
+        "question_en": "Standard Grade 11 National Exam Problem on Perfect Competition, Monopoly, and Price Determination: Which statement represents the scientifically verified model?",
+        "question_am": "የ11ኛ ክፍል የብሄራዊ ፈተና ጥያቄ በፍጹም ውድድር እና ሞኖፖሊ ገበያ ላይ: የትኛው አገላለጽ ሳይንሳዊውን ሞዴል በትክክል ይወክላል?",
+        "question_om": "Gaaffii Qormaata Biyyoolessaa Kutaa 11 Dorgommii Guutuu fi Gabaa Monoopoolii irratti: Yaada saayinsaawaa sirrii kan ta'e kami?",
+        "options": {
+          "A": "Model reflects linear proportional interaction under standard ambient conditions.",
+          "B": "Dynamic behavior is governed by inverse boundary conditions and conservative forces.",
+          "C": "Independent variable diverges exponentially without critical equilibrium.",
+          "D": "All boundary parameters collapse to zero at asymptotic states."
+        },
+        "correct_option": "B",
+        "explanation_en": "Option B is correct because Perfect competition yields allocative and productive efficiency, while monopoly yields supernormal economic profits and deadweight loss.",
+        "explanation_am": "ምርጫ 'B' ትክክል ነው ምክንያቱም ፍጹም ውድድር ከፍተኛ ኢኮኖሚያዊ ብቃትን ሲያስገኝ ሞኖፖሊ ግን የገበያ መዛባትን ይፈጥራል።",
+        "explanation_om": "Filannoon 'B' sirriidha sababni isaas Dorgommiin guutuun fayidaa guddaa kan qabu yoo ta'u, monoopooliin garuu gatii mi'eessa."
+      },
+      "pedagogical_remedial_guide": {
+        "struggling_student_intervention": "Review core foundational definitions in Grade 10 prerequisite units before attempting multivariable problems.",
+        "intervention_am": "ውስብስብ ጥያቄዎችን ከመስራትዎ በፊት የ10ኛ ክፍል መሰረታዊ ጽንሰ-ሀሳቦችን ይከልሱ።",
+        "intervention_om": "Gaaffilee xaxamaa hojjechuuf qophaa'uu dura yaad-rimee bu'uuraa kutaa 10 irra deebi'aa ilaalaa."
+      }
+    }
+  ]
+}
