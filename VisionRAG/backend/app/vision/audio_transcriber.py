@@ -175,7 +175,10 @@ class AudioTranscriber:
             "rewritten_queries": {
                 "english": en_rewritten,
                 "amharic": am_rewritten,
-                "afaan_oromoo": om_rewritten
+                "afaan_oromoo": om_rewritten,
+                "en": en_rewritten,
+                "am": am_rewritten,
+                "om": om_rewritten
             },
             "pedagogical_intent": "Curriculum Concept Clarification & National Exam Problem Solving",
             "target_grades": [11, 12]
