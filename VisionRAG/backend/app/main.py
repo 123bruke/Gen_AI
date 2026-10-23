@@ -26,11 +26,12 @@ from app.api.routes.uploads import router as uploads_router
 from app.api.routes.chat import router as chat_router
 from app.api.routes.progress import router as progress_router
 from app.api.routes.agents import router as agents_router
+from app.api.routes.students import router as students_router
 from app.data.knowledge_seeder import knowledge_seeder
 
 app = FastAPI(
-    title="VisionRAG Multimodal Agentic AI API",
-    description="Multimodal RAG with PostgreSQL Account & File Tracking, Dedicated Simple DB Logging, and Ethiopian Corpus",
+    title="VRAG Multimodal Agentic AI API",
+    description="Multimodal Educational RAG with PostgreSQL Student Management, Dedicated Simple DB Logging, and FDRE MOE Corpus",
     version="1.0.0"
 )
 
@@ -49,6 +50,7 @@ app.include_router(uploads_router)
 app.include_router(chat_router)
 app.include_router(progress_router)
 app.include_router(agents_router)
+app.include_router(students_router)
 
 UPLOAD_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "storage", "uploads"))
 os.makedirs(UPLOAD_DIR, exist_ok=True)

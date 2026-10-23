@@ -213,13 +213,13 @@ export class VoiceModal {
       store.addMessage(activeChat.id, {
         id: 'msg-' + (Date.now() + 1),
         sender: 'assistant',
-        text: resp.result.text,
+        text: resp.result ? resp.result.text : (resp.text || ''),
         timestamp: Date.now(),
-        multimodal: resp.result.multimodal || {},
-        sources: resp.result.sources || []
+        multimodal: (resp.result && resp.result.multimodal) || resp.multimodal || {},
+        sources: (resp.result && resp.result.sources) || resp.sources || []
       });
 
-      this.speakResponse(resp.result.text);
+      this.speakResponse(resp.result ? resp.result.text : (resp.text || ''));
     } catch (err) {
       console.error('Audio blob processing error:', err);
       this.updateOrbState('Error processing audio');

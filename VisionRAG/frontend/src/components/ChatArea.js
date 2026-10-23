@@ -1399,14 +1399,15 @@ export class ChatArea {
       if (currentChat) {
         const uMsg = currentChat.messages.find((m) => m.id === userMsgId);
         if (uMsg) {
-          uMsg.text = `🎙️ "${resp.transcribed_text || 'Audio query'}"`;
+          const qText = resp.transcribed_text || resp.query || (resp.transcription && resp.transcription.text) || 'Audio query';
+          uMsg.text = `🎙️ "${qText}"`;
         }
         const aMsg = currentChat.messages.find((m) => m.id === assistantMsgId);
-        if (aMsg && resp.result) {
+        if (aMsg) {
           aMsg.isThinking = false;
-          aMsg.text = resp.result.text;
-          aMsg.multimodal = resp.result.multimodal || {};
-          aMsg.sources = resp.result.sources || [];
+          aMsg.text = resp.result ? resp.result.text : (resp.text || 'Answer generated.');
+          aMsg.multimodal = (resp.result && resp.result.multimodal) || resp.multimodal || {};
+          aMsg.sources = (resp.result && resp.result.sources) || resp.sources || [];
         }
       }
     } catch (err) {

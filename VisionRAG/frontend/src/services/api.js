@@ -951,6 +951,82 @@ export class ApiService {
     if (!res.ok) throw new Error('Failed to extract images from URL');
     return await res.json();
   }
+
+  // --- Student Management Portal API (Password Protected: 123456) ---
+  async verifyStudentPortalPassword(password) {
+    const res = await fetch(`${this.baseUrl}/api/students/verify-portal`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password })
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || 'Access denied. Invalid password.');
+    }
+    return await res.json();
+  }
+
+  async getStudents(params = {}) {
+    const query = new URLSearchParams();
+    if (params.search) query.set('search', params.search);
+    if (params.region && params.region !== 'All') query.set('region', params.region);
+    if (params.grade_level && params.grade_level !== 'All') query.set('grade_level', params.grade_level);
+    if (params.status && params.status !== 'All') query.set('status', params.status);
+    if (params.sort_by) query.set('sort_by', params.sort_by);
+    if (params.limit) query.set('limit', params.limit);
+    if (params.offset) query.set('offset', params.offset);
+
+    const res = await fetch(`${this.baseUrl}/api/students?${query.toString()}`);
+    if (!res.ok) throw new Error('Failed to fetch student records');
+    return await res.json();
+  }
+
+  async getStudentStatistics() {
+    const res = await fetch(`${this.baseUrl}/api/students/statistics`);
+    if (!res.ok) throw new Error('Failed to fetch student statistics');
+    return await res.json();
+  }
+
+  async getStudent(id) {
+    const res = await fetch(`${this.baseUrl}/api/students/${id}`);
+    if (!res.ok) throw new Error('Failed to fetch student details');
+    return await res.json();
+  }
+
+  async createStudent(studentData) {
+    const res = await fetch(`${this.baseUrl}/api/students`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(studentData)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || 'Failed to create student record');
+    }
+    return await res.json();
+  }
+
+  async updateStudent(id, studentData) {
+    const res = await fetch(`${this.baseUrl}/api/students/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(studentData)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.detail || 'Failed to update student record');
+    }
+    return await res.json();
+  }
+
+  async deleteStudent(id) {
+    const res = await fetch(`${this.baseUrl}/api/students/${id}`, {
+      method: 'DELETE'
+    });
+    if (!res.ok) throw new Error('Failed to delete student record');
+    return await res.json();
+  }
 }
 
 export const api = new ApiService();
+

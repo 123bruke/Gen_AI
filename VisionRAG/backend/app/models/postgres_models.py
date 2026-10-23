@@ -231,3 +231,56 @@ class TaskProgress(Base):
             "created_at": self.created_at.isoformat() if self.created_at else None,
             "updated_at": self.updated_at.isoformat() if self.updated_at else None,
         }
+
+
+class StudentRecord(Base):
+    """
+    Dedicated Student Management & Progress Monitoring Model in PostgreSQL.
+    Tracks student identity, regional location, school, curriculum grade, courses,
+    learning progress percentage, and feedback notes.
+    """
+    __tablename__ = "student_records"
+
+    id = Column(String(64), primary_key=True)
+    student_id = Column(String(50), unique=True, nullable=False, index=True)
+    full_name = Column(String(255), nullable=False, index=True)
+    gender = Column(String(20), default="Unspecified")
+    age = Column(Integer, nullable=True)
+    grade_level = Column(String(50), default="Grade 10", index=True) # e.g. Grade 9, Grade 10, Grade 11, Grade 12, TVET, Higher Ed
+    country = Column(String(100), default="Ethiopia", index=True)
+    region = Column(String(100), default="Addis Ababa", index=True) # Ethiopian Regional States & Cities
+    city_or_zone = Column(String(100), nullable=True)
+    school_name = Column(String(255), nullable=True, index=True)
+    progress_percent = Column(Integer, default=0) # 0 to 100
+    attendance_percent = Column(Integer, default=95)
+    performance_gpa = Column(String(50), default="3.50 / 4.0")
+    enrolled_courses = Column(JSON, default=list) # e.g. ["Mathematics", "Physics", "Civic Education"]
+    learning_status = Column(String(50), default="Active", index=True) # Active, Honors, Needs Attention, Graduated
+    feedback_notes = Column(Text, nullable=True)
+    metadata_ = Column("metadata", JSON, default=dict)
+    created_at = Column(DateTime(timezone=True), default=datetime.datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime(timezone=True), default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "student_id": self.student_id,
+            "full_name": self.full_name,
+            "gender": self.gender,
+            "age": self.age,
+            "grade_level": self.grade_level,
+            "country": self.country,
+            "region": self.region,
+            "city_or_zone": self.city_or_zone or "",
+            "school_name": self.school_name or "General Secondary School",
+            "progress_percent": self.progress_percent,
+            "attendance_percent": self.attendance_percent,
+            "performance_gpa": self.performance_gpa,
+            "enrolled_courses": self.enrolled_courses or [],
+            "learning_status": self.learning_status or "Active",
+            "feedback_notes": self.feedback_notes or "",
+            "metadata": self.metadata_ or {},
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+        }
+
