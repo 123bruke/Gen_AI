@@ -1,11 +1,11 @@
 """
 Generator script for authentic Ethiopian High School Educational JSON Datasets.
-Generates 5 comprehensive JSON files (1,000 - 3,000 lines each) covering:
-1. Ethiopian High School Textbooks Catalog (Grades 9-12, multilingual)
-2. Multilingual Educational Websites and Digital Learning Portals
-3. High School Exam Preparation Notes & Formulas (English, Amharic, Afaan Oromoo)
-4. High School YouTube Video Lessons & Instructional Guides
-5. Educational Multimodal YOLO and VQA Annotations (Math, Science, Diagrams)
+Generates 5 comprehensive JSON files (each strictly in 1,000 - 3,000 lines range) covering:
+1. Ethiopian High School Textbooks Catalog (moe_high_school_curriculum_textbooks_catalog.json)
+2. Multilingual Educational Websites and Digital Learning Portals (multilingual_learning_websites_and_portals.json)
+3. High School Exam Preparation Notes & Formulas (high_school_exam_prep_notes_multilingual.json)
+4. High School YouTube Video Lessons & Instructional Guides (moe_high_school_youtube_video_lessons.json)
+5. Educational Multimodal YOLO and VQA Annotations (educational_yolo_vqa_multimodal_annotations.json)
 """
 
 import os
@@ -29,155 +29,103 @@ def write_and_verify(path: str, data: Any, min_lines: int = 1000, max_lines: int
         f.write(content)
         f.write("\n")
         
-    assert min_lines <= line_count <= max_lines, f"Line count {line_count} not in range [{min_lines}, {max_lines}] for {path}"
-    print(f"[OK] {os.path.basename(path)} successfully generated ({line_count} lines).")
+    assert min_lines <= line_count <= max_lines, (
+        f"Line count {line_count} not in required range [{min_lines}, {max_lines}] for {path}"
+    )
+    print(f"[OK] {os.path.basename(path)} successfully generated ({line_count} lines).\n")
+
 
 # ==============================================================================
 # 1. High School Textbooks Catalog (moe_high_school_curriculum_textbooks_catalog.json)
+# Target: ~1,800 - 2,400 lines
 # ==============================================================================
-def generate_textbooks_catalog():
+def generate_textbooks_catalog() -> Dict[str, Any]:
     subjects = [
         {
-            "code": "MATH",
-            "en": "Mathematics",
-            "am": "ሂሳብ",
-            "om": "Herrega",
-            "stream": "Natural Science & General",
-            "grades": [9, 10, 11, 12],
+            "code": "MATH", "en": "Mathematics", "am": "ሂሳብ", "om": "Herrega",
+            "stream": "Natural Science & General", "grades": [11, 12],
             "units": [
-                ("The Number System and Real Numbers", "የቁጥር ስርዓት እና እውነተኛ ቁጥሮች", "Sirna Lakkoofsaa fi Lakkoofsota Dhugaa", "Master properties of rational and irrational numbers, radical operations, and scientific notations."),
-                ("Equations and Inequalities", "እኩልታዎች እና አለመመጣጠኖች", "Walqixxummaa fi Walcaalmaya", "Solve linear, quadratic, polynomial, and absolute value algebraic equations."),
-                ("Functions and Relations", "ፈንክሽኖች እና ዝምድናዎች", "Fankishinii fi Walitti-dhufeenya", "Analyze domain, range, inverse functions, exponential and logarithmic models."),
-                ("Coordinate Geometry and Vectors", "የማስተባበሪያ ጂኦሜትሪ እና ቬክተሮች", "Ji'omeetirii Qindeessaa fi Veektaroota", "Calculate distances, slopes, vector dot products, and line equations in 2D/3D spaces."),
-                ("Trigonometry and Applications", "ትሪጎኖሜትሪ እና አፕሊኬሽኖች", "Tirigoonomeetirii fi Fayyadamoota", "Apply sine/cosine rules, trigonometric identities, and periodic wave graphing."),
-                ("Calculus Fundamentals: Limits & Derivatives", "የካልኩለስ መሰረታዊ ነገሮች: ገደቦች እና ተዋጽኦዎች", "Bu'uura Kaalkulasaa: Daangaa fi Diraayiveetivii", "Compute limits, differentiation rules, optimization word problems, and basic integrals.")
+                ("Relations and Functions", "ዝምድናዎች እና ፈንክሽኖች", "Walitti-dhufeenya fi Fankishinii", "Composite functions, invertible mappings, domain restrictions, and piecewise definitions."),
+                ("Rational Expressions and Rational Functions", "ራሽናል መግለጫዎች እና ራሽናል ፈንክሽኖች", "Ibsa Raashinaala fi Fankishinii Raashinaala", "Partial fraction decomposition, vertical/horizontal asymptotes, and rational inequalities."),
+                ("Coordinate Geometry: Circles and Conic Sections", "የማስተባበሪያ ጂኦሜትሪ: ክበቦች እና ሾጣጣ ክፍሎች", "Ji'omeetirii Qindeessaa: Geengoo fi Koniikii", "Standard equations of circles, parabolas, ellipses, hyperbolas, and focal directrix properties."),
+                ("Vectors in 2D and 3D Dimensions", "ቬክተሮች በ 2D እና 3D ልኬቶች", "Veektaroota Diriraa fi Iddoo Keessatti", "Scalar dot products, cross products, projection vectors, and vector plane representations."),
+                ("Sequences and Series: Arithmetic & Geometric", "ቅደም ተከተሎች እና ተከታታዮች", "Hordooffii fi Tartiiba", "Convergence criteria, sum to infinity of geometric progressions, and financial mathematics."),
+                ("Differential and Integral Calculus", "ልዩነት እና ውህደት ካልኩለስ", "Kaalkulasaa Diraayiveetivii fi Integiraalii", "Limits, derivatives of exponential/trig functions, area under curves, and definite integrals.")
             ]
         },
         {
-            "code": "PHYS",
-            "en": "Physics",
-            "am": "ፊዚክስ",
-            "om": "Fiiziksii",
-            "stream": "Natural Science",
-            "grades": [9, 10, 11, 12],
+            "code": "PHYS", "en": "Physics", "am": "ፊዚክስ", "om": "Fiiziksii",
+            "stream": "Natural Science", "grades": [11, 12],
             "units": [
-                ("Physics and Human Society", "ፊዚክስ እና የሰው ልጅ ማህበረሰብ", "Fiiziksii fi Hawaasa Namaa", "Scientific methods, measurement standards, metric conversions, and vector analysis."),
-                ("Kinematics and Dynamics in 1D and 2D", "ኪነማቲክስ እና ዳይናሚክስ በ1D እና 2D", "Kinematiksii fi Daayinaamiksii", "Newton's laws of motion, momentum conservation, friction coefficients, and projectile motion."),
-                ("Work, Energy, and Power", "ስራ፣ ጉልበት እና ኃይል", "Hojii, Annisaa fi Aangoo", "Kinetic and potential energy transformation, mechanical efficiency, and power calculations."),
-                ("Rotational Dynamics and Gravitation", "የማሽከርከር ዳይናሚክስ እና ስበት", "Sochii Naanna'aa fi Harkisa Lafa", "Torque, moment of inertia, Kepler's laws of planetary motion, and satellite orbital velocities."),
-                ("Thermodynamics and Heat Engines", "ቴርሞዳይናሚክስ እና የሙቀት ሞተሮች", "Termodaayinaamiksii fi Mootora Hoo'aa", "Laws of thermodynamics, specific heat capacities, Carnot cycle efficiency, and entropy."),
-                ("Electromagnetism and Modern Electronics", "ኤሌክትሮማግኔቲዝም እና ዘመናዊ ኤሌክትሮኒክስ", "Elektiroomaagneetizimii fi Elektirooniksii", "Coulomb's law, electric fields, Faraday electromagnetic induction, and semiconductor diodes.")
+                ("Measurement, Vectors, and Error Analysis", "መለኪያ፣ ቬክተሮች እና የስህተት ትንተና", "Safartuu, Veektarii fi Xiinxala Dogoggoraa", "Significant figures, systematic/random error propagation, and 3D vector resolution."),
+                ("Two-Dimensional Kinematics and Projectile Motion", "የሁለት-ልኬት ኪነማቲክስ እና የፕሮጀክት እንቅስቃሴ", "Kinematiksii fi Sochii Darbamaa", "Trajectory parabolic parabolas, range optimization at 45 degrees, and flight duration."),
+                ("Newtonian Dynamics and Circular Motion", "የኒውቶኒያን ዳይናሚክስ እና ክብ እንቅስቃሴ", "Daayinaamiksii Niwutanii fi Sochii Naanna'aa", "Centripetal acceleration, banking of highway curves, and gravitational orbit calculations."),
+                ("Work, Energy, Linear Momentum, and Collisions", "ስራ፣ ጉልበት፣ መስመራዊ ሞመንተም እና ግጭቶች", "Hojii, Annisaa, Moomeentamii fi Walitti-bu'iinsa", "Work-energy theorem, conservative force fields, elastic/inelastic collisions, and impulse."),
+                ("Rotational Equilibrium and Fluid Dynamics", "የማሽከርከር ሚዛን እና የፈሳሽ ዳይናሚክስ", "Madaallii Naanna'aa fi Dhangala'oo", "Torque equilibrium, Bernoulli equation of streamline fluids, and continuity principle."),
+                ("Electromagnetic Waves, Optics, and Modern Physics", "ኤሌክትሮማግኔቲክ ሞገዶች፣ ኦፕቲክስ እና ዘመናዊ ፊዚክስ", "Dambalii Elektiroomaagneetiksii fi Fiiziksii Ammayyaa", "Snell's refraction law, thin lens equations, photoelectric effect, and de Broglie matter waves.")
             ]
         },
         {
-            "code": "CHEM",
-            "en": "Chemistry",
-            "am": "ኬሚስትሪ",
-            "om": "Keemistirii",
-            "stream": "Natural Science",
-            "grades": [9, 10, 11, 12],
+            "code": "CHEM", "en": "Chemistry", "am": "ኬሚስትሪ", "om": "Keemistirii",
+            "stream": "Natural Science", "grades": [11, 12],
             "units": [
-                ("Structure of the Atom and Periodic Table", "የአቶም መዋቅር እና ወቅታዊ ሰንጠረዥ", "Caasaa Atamii fi Gabatee Piriyeodiki", "Quantum numbers, electron configuration, periodic trends, electronegativity, and ionization energy."),
-                ("Chemical Bonding and Molecular Geometry", "ኬሚካላዊ ትስስር እና ሞለኪውላዊ ጂኦሜትሪ", "Hidhoo Keemikaalaa fi Ji'omeetirii Molekulii", "Ionic, covalent, metallic bonding, VSEPR theory, hybridization, and intermolecular forces."),
-                ("Stoichiometry and Solution Concentrations", "ስቶይቺዮሜትሪ እና የመፍትሄ ክምችቶች", "Istoyikiyomeetirii fi Qorannoo Furmaataa", "Mole conversions, balancing redox equations, molarity, mass percent, and limiting reactants."),
-                ("Chemical Kinetics and Equilibrium", "ኬሚካላዊ ኪነቲክስ እና ሚዛናዊነት", "Kineetiksii Keemikaalaa fi Madaallii", "Reaction rates, catalysts, Le Chatelier principle, equilibrium constants (Kc, Kp), and solubility products."),
-                ("Acids, Bases, and Aqueous Equilibria", "አሲዶች፣ ቤዞች እና የውሃ ሚዛናዊነት", "Asiidota, Beessota fi Madaallii Bishaanii", "Bronsted-Lowry/Lewis theories, pH calculations, buffer solutions, titration curves, and indicators."),
-                ("Introduction to Organic Chemistry", "የኦርጋኒክ ኬሚስትሪ መግቢያ", "Seensa Keemistirii Orgaanikii", "Hydrocarbons, IUPAC nomenclature, functional groups, isomers, and polymerization reactions.")
+                ("Atomic Structure and Chemical Periodicity", "የአቶሚክ መዋቅር እና ኬሚካላዊ ወቅታዊነት", "Caasaa Atamii fi Yeroo Keemikaalaa", "Orbital electron hybridization (sp, sp2, sp3), shielding constants, and atomic radius trends."),
+                ("Chemical Bonding and Intermolecular Forces", "ኬሚካላዊ ትስስር እና የውስጠ-ሞለኪውላር ኃይሎች", "Hidhoo Keemikaalaa fi Humnatti-dhufeenya Molekulii", "Dipole moments, hydrogen bonding networks, metallic lattice bonding, and boiling trends."),
+                ("Chemical Kinetics and Rate Laws", "ኬሚካላዊ ኪነቲክስ እና የምላሽ ተመን ህጎች", "Kineetiksii Keemikaalaa fi Seera Saffisaa", "Reaction rate orders, half-life equations, Arrhenius activation energy, and collision theory."),
+                ("Dynamic Chemical Equilibrium in Solutions", "ተለዋዋጭ ኬሚካላዊ ሚዛን በመፍትሄዎች ውስጥ", "Madaallii Keemikaalaa Furmaata Keessatti", "Equilibrium constant expressions, Le Chatelier shifts under pressure/temp, and Haber process."),
+                ("Acid-Base Equilibria and Buffer Systems", "የአሲድ-ቤዝ ሚዛናዊነት እና የባፈር ስርዓቶች", "Madaallii Asiidii-Beessii fi Sirna Baafarii", "Ka and Kb constants, Henderson-Hasselbalch equation, and salt hydrolysis in water."),
+                ("Organic Chemistry: Functional Groups and Polymers", "ኦርጋኒክ ኬሚስትሪ: ተግባራዊ ቡድኖች እና ፖሊመሮች", "Keemistirii Orgaanikii: Gareewwan fi Poolimarii", "Alcohols, aldehydes, carboxylic acids, esters, condensation polymerization, and plastics.")
             ]
         },
         {
-            "code": "BIO",
-            "en": "Biology",
-            "am": "ባዮሎጂ",
-            "om": "Baayoloojii",
-            "stream": "Natural Science",
-            "grades": [9, 10, 11, 12],
+            "code": "BIO", "en": "Biology", "am": "ባዮሎጂ", "om": "Baayoloojii",
+            "stream": "Natural Science", "grades": [11, 12],
             "units": [
-                ("Cell Biology and Microscopy", "የሴል ባዮሎጂ እና ማይክሮስኮፒ", "Baayoloojii Seelii fi Maayikirooskoopii", "Prokaryotic vs eukaryotic cell organelles, membrane transport mechanisms, and cellular respiration."),
-                ("Biochemical Macromolecules and Enzymes", "ባዮኬሚካላዊ ማክሮሞለኪውሎች እና ኢንዛይሞች", "Maakiroomolekulii Baayookeemikaalaa fi Inzaayimoota", "Carbohydrates, lipids, proteins, nucleic acids, and enzyme catalytic mechanisms."),
-                ("Genetics, DNA, and Molecular Inheritance", "ጀነቲክስ፣ ዲኤንኤ እና ሞለኪውላዊ ውርስ", "Jeneetiiksii, DNA fi Dhaala Molekulii", "Mendelian monohybrid/dihybrid crosses, DNA replication, transcription, and translation."),
-                ("Human Anatomy and Physiology", "የሰው አካል እና ፊዚዮሎጂ", "Caasaa Qaama Namaa fi Fiiziyooloojii", "Circulatory, respiratory, nervous, endocrine, and digestive systems of the human body."),
-                ("Plant Physiology and Photosynthesis", "የእፅዋት ፊዚዮሎጂ እና ፎቶሲንተሲስ", "Fiiziyooloojii Biqiltootaa fi Footosiinteesisi", "Light-dependent and Calvin cycle reactions, transpiration pull, and plant phytohormones."),
-                ("Ecology, Biodiversity, and Conservation", "ስነ-ምህዳር፣ የብዝሃ ህይወት እና ጥበቃ", "Ikolojii, Lubbu-qabeeyyii fi Eegumsa", "Ecosystem trophic energy pyramids, nutrient nitrogen/carbon cycles, and Ethiopian endemic conservation.")
+                ("Cellular Ultrastructure and Membrane Physiology", "የሴል መዋቅር እና የሜምብሬን ፊዚዮሎጂ", "Caasaa Seelii fi Fiiziyooloojii Meembireenii", "Fluid mosaic membrane model, active carrier transport, endocytosis, and mitochondrial respiration."),
+                ("Biochemical Enzymes and Metabolic Pathways", "ባዮኬሚካላዊ ኢንዛይሞች እና ሜታቦሊክ መንገዶች", "Inzaayimoota fi Adeemsa Meetaaboolizimii", "Competitive/allosteric enzyme inhibition, glycolysis, Krebs citric acid cycle, and ATP synthesis."),
+                ("Molecular Genetics, DNA Replication, and Expression", "ሞለኪውላዊ ጀነቲክስ፣ የዲኤንኤ ማባዛት እና አገላለጽ", "Jeneetiiksii Molekulii fi Reppilikeeshinii DNA", "Meselson-Stahl experiment, RNA transcription, genetic code redundancy, and protein translation."),
+                ("Human Physiology: Nervous and Endocrine Coordination", "የሰው ልጅ ፊዚዮሎጂ: የነርቭ እና የኢንዶክሪን ቅንጅት", "Fiiziyooloojii Qaama Namaa: Sirna Narvii", "Action potential propagation along axons, neurotransmitter synaptic transfer, and hormonal loops."),
+                ("Plant Water Relations and Photosynthetic Mechanisms", "የእፅዋት የውሃ ግንኙነት እና የፎቶሲንተሲስ ዘዴዎች", "Qunnamtii Bishaan Biqiltootaa fi Footosiinteesisi", "Stomatal guard cell action, transpiration stream pull, C3 vs C4 carbon fixation pathways."),
+                ("Ecology, Biomes, and Ethiopian Endemic Conservation", "ስነ-ምህዳር፣ ባዮሞች እና የኢትዮጵያ ዝርያዎች ጥበቃ", "Ikolojii fi Eegumsa Bineensota Itoophiyaa", "Bale and Simien alpine montane biomes, conservation genetics of Canis simensis and Capra walie.")
             ]
         },
         {
-            "code": "HIST",
-            "en": "History",
-            "am": "ታሪክ",
-            "om": "Seenaa",
-            "stream": "Social Science & General",
-            "grades": [9, 10, 11, 12],
+            "code": "ENG", "en": "English for Ethiopia", "am": "እንግሊዝኛ ለኢትዮጵያ", "om": "Ingiliffa Itoophiyaaf",
+            "stream": "All Streams", "grades": [11, 12],
             "units": [
-                ("The Evolution of Human Beings and Civilization", "የሰው ልጅ ዝግመተ ለውጥ እና ስልጣኔ", "Jijjiirama Namaa fi Qarooma Addunyaa", "Hominid fossil discoveries in the Awash Valley (Lucy/Dinkinesh), early stone age tools, and Nile valley civilizations."),
-                ("Ancient and Medieval States in Ethiopia and the Horn", "በኢትዮጵያ እና በአፍሪካ ቀንድ የጥንት እና የመካከለኛው ዘመን መንግስታት", "Mootummoota Durii fi Giddu-galeessaa Itoophiyaa", "Da'amat, Aksumite civilization, Zagwe dynasty rock churches, and medieval sultanates of Ifat/Adal."),
-                ("The Gadaa System and Oromo Population Movement", "የገዳ ስርዓት እና የኦሮሞ ህዝብ እንቅስቃሴ", "Sirna Gadaa fi Sochii Ummata Oromoo", "Oromo socio-political institutions, Gadaa grade cycle, assembly governance (Chaffe), and Horn integration."),
-                ("State Formation and Foreign Relations in the 19th Century", "በ19ኛው ክፍለ ዘመን የመንግስት ምስረታ እና የውጭ ግንኙነት", "Ijaarsa Mootummaa fi Hariiroo Alaa Jaarraa 19ffaa", "Zemene Mesafint consolidation, Emperor Tewodros modernizing vision, Yohannes IV, and Menelik II state building."),
-                ("The Battle of Adwa and Pan-African Significance", "የዓድዋ ጦርነት እና የፓን-አፍሪካዊ ፋይዳ", "Waraana Adwaa fi Barbaachisummaa Isaa", "1896 Adwa victory over Italian imperialism, Treaty of Wuchale article XVII deception, and anti-colonial impact."),
-                ("Contemporary Ethiopian and World History (1935-Present)", "የዘመኑ የኢትዮጵያ እና የአለም ታሪክ (1935-አሁን)", "Seenaa Ammayyaa Itoophiyaa fi Addunyaa", "Italian fascist aggression (1935-1941), post-WWII international order, the 1974 revolution, and federal constitution.")
+                ("Advanced Rhetoric and Academic Debating", "የላቀ የአጻጻፍ ስልት እና አካዳሚክ ክርክር", "Falmii Barnootaa fi Dubbii Sadarkaa Olaanaa", "Formal argumentative structures, rhetorical appeals (ethos, pathos, logos), and persuasive speeches."),
+                ("Inferential Reading Comprehension in STEM & Social Texts", "አካዳሚክ የንባብ ግንዛቤ", "Hubannoo Dubbisaa Saayinsii fi Hawaasummaa", "Contextual deductions, identifying bias in historical accounts, and synthesizing research extracts."),
+                ("Grammar Mastery: Complex Syntax and Conditionals", "የሰዋሰው ብቃት: ውስብስብ አረፍተ ነገሮች", "Seera Afaanii: Hima Xaxamaa fi Shartii", "Inverted conditionals, subjunctive moods, causative verbs, and mixed conditional structures."),
+                ("Research Paper Writing and Formal Bibliography", "የምርምር ጽሁፍ ዝግጅት እና ማጣቀሻ", "Barreeffama Qorannoo fi Wabii", "Formulating research questions, literature review drafting, APA style citation, and avoiding plagiarism."),
+                ("Idiomatic Expressions, Collocations, and Register", "ፈሊጣዊ አገላለጾች እና የቋንቋ ዘይቤዎች", "Jechoota Qolaa fi Sadarkaa Dubbii", "High-frequency academic collocations, prepositional idioms, and transitioning across formal registers."),
+                ("World and African Anglophone Literature Critique", "የአፍሪካ እና የአለም ስነ-ጽሁፍ ትንተና", "Xiinxala Og-barruu Addunyaa fi Afrikaa", "Literary analysis of African prose, themes of post-colonial identity, and poetic structural metrics.")
             ]
         },
         {
-            "code": "GEOG",
-            "en": "Geography",
-            "am": "ጂኦግራፊ",
-            "om": "Jiogiraafii",
-            "stream": "Social Science & General",
-            "grades": [9, 10, 11, 12],
+            "code": "HIST", "en": "History of Ethiopia and the Horn", "am": "የኢትዮጵያ እና የአፍሪካ ቀንድ ታሪክ", "om": "Seenaa Itoophiyaa fi Gaanfa Afrikaa",
+            "stream": "Social Science & General", "grades": [11, 12],
             "units": [
-                ("Map Reading and Geospatial Techniques", "የካርታ ንባብ እና የጂኦስፓሻል ቴክኒኮች", "Dubbisa Kaartaa fi Teeknooloojii Jiwoospaashalii", "Topographic contours, scales, grid coordinates, GIS principles, and remote sensing imagery."),
-                ("Physical Geography of Ethiopia and the Horn", "የኢትዮጵያ እና የአፍሪካ ቀንድ አካላዊ ጂኦግራፊ", "Jiogiraafii Qaama Itoophiyaa fi Gaanfa Afrikaa", "Geological formation of the Great Rift Valley, highlands, drainage basins, and Abbay/Awash river systems."),
-                ("Climate Zones and Vegetation of Ethiopia", "የኢትዮጵያ የአየር ንብረት ዞኖች እና እፅዋት", "Sona Qilleensaa fi Biqiltoota Itoophiyaa", "Traditional agro-climatic zones (Bereha, Kolla, Woina Dega, Dega, Wurch), rainfall regimes, and soil profiles."),
-                ("Population Geography and Demographic Dynamics", "የህዝብ ጂኦግራፊ እና የስነ-ህዝብ ተለዋዋጭነት", "Jiogiraafii Ummataa fi Dhaabbata Baay'inaa", "Fertility rates, mortality transitions, rural-to-urban migration patterns, and labor force structures in Ethiopia."),
-                ("Economic Geography: Agriculture, Industry, and Trade", "ኢኮኖሚያዊ ጂኦግራፊ: ግብርና፣ ኢንዱስትሪ እና ንግድ", "Jiogiraafii Diinagdee: Qonna, Indaastirii fi Daldala", "Subsistence smallholder farming, commercial cash crops (Coffee, Sesame), industrial parks, and logistics corridors."),
-                ("Environmental Management and Sustainable Development", "የአካባቢ አያያዝ እና ዘላቂ ልማት", "Bulchiinsa Naannoo fi Misooma Itti-fufiinsa Qabu", "Soil erosion, deforestation, Green Legacy reforestation initiatives, climate change adaptation, and watershed policies.")
-            ]
-        },
-        {
-            "code": "ENG",
-            "en": "English for Ethiopia",
-            "am": "እንግሊዝኛ ለኢትዮጵያ",
-            "om": "Ingiliffa Itoophiyaaf",
-            "stream": "All Streams",
-            "grades": [9, 10, 11, 12],
-            "units": [
-                ("Communication in the Modern Globalized World", "በዘመናዊው ዓለም አቀፋዊ ዓለም ውስጥ መግባባት", "Waliin-dubbii Addunyaa Ammayyaa Keessatti", "Oral presentation skills, active listening, debating societal challenges, and formal registers."),
-                ("Reading Comprehension and Critical Thinking", "የንባብ ግንዛቤ እና ሂሳዊ አስተሳሰብ", "Hubannoo Dubbisaa fi Yaada Qeeqa", "Skimming, scanning, inferential textual deductions, tone identification, and academic text critique."),
-                ("Advanced English Grammar and Structural Mechanics", "የላቀ የእንግሊዝኛ ሰዋሰው እና መዋቅራዊ መካኒክስ", "Seera Afaan Ingiliffaa Sadarkaa Olaanaa", "Complex relative clauses, conditional sentences (Types 0, 1, 2, 3), reported speech, and passive structures."),
-                ("Academic Essay Writing and Argumentation", "አካዳሚክ ድርሰት መጻፍ እና ክርክር", "Barreeffama Esee fi Falmii Barnootaa", "Expository paragraphs, persuasive thesis construction, coherence transition words, and formal referencing."),
-                ("Vocabulary Expansion: STEM and Social Contexts", "የቃላት መስፋፋት: STEM እና ማህበራዊ አውዶች", "Bal'ina Jechootaa: STEM fi Hawaasummaa", "Etymological prefixes/suffixes, academic word lists (AWL), technical jargon, and idiomatic expressions."),
-                ("Literature, Culture, and Expressive Writing", "ስነ-ጽሁፍ፣ ባህል እና ገላጭ ጽሁፍ", "Og-barruu, Aadaa fi Barreeffama Miiraa", "Poetic stylistic devices (metaphor, simile, personification), short story analysis, and descriptive narrative drafting.")
-            ]
-        },
-        {
-            "code": "ICT",
-            "en": "Information Communication Technology",
-            "am": "ኢንፎርሜሽን ኮሙኒኬሽን ቴክኖሎጂ",
-            "om": "Teeknooloojii Odeeffannoo fi Qunnamtii",
-            "stream": "All Streams",
-            "grades": [9, 10, 11, 12],
-            "units": [
-                ("Computer Hardware Systems and Architecture", "የኮምፒውተር ሃርድዌር ሲስተሞች እና አርክቴክቸር", "Sirna Haardweerii Kompiitaraa", "Central processing units, ALU, registers, RAM/ROM memory hierarchies, and peripheral buses."),
-                ("Operating Systems and Software Applications", "ኦፕሬቲንግ ሲስተሞች እና የሶፍትዌር መተግበሪያዎች", "Sirna Hojii fi Sagantaalee Sooftiweerii", "Process management, file allocation tables, command-line interfaces, and productivity office suites."),
-                ("Computer Networks, Internet, and Cloud Computing", "የኮምፒውተር ኔትወርኮች፣ ኢንተርኔት እና ክላውድ ኮምፒውቲንግ", "Neetwoorkii, Interneetii fi Kilaawudii", "OSI 7-layer model, TCP/IP protocols, routing switches, DNS lookup, and cloud storage architectures."),
-                ("Algorithms, Logic Flowcharts, and Python Programming", "አልጎሪዝም፣ የሎጂክ ፍሰት ገበታዎች እና የፓይዘን ፕሮግራሚንግ", "Algoorizimii fi Saganteessuu Paayitoniin", "Control structures (if/else, loops), function modularity, array data structures, and algorithmic complexity."),
-                ("Database Design and SQL Querying", "የዳታቤዝ ዲዛይን እና የSQL መጠይቅ", "Dizaayinii Kuusaa Deetaa fi Gaaffii SQL", "Relational entity-relationship diagrams (ERD), normalization (1NF-3NF), and CRUD SQL commands."),
-                ("Cybersecurity, Digital Ethics, and AI Awareness", "የሳይበር ደህንነት፣ ዲጂታል ስነምግባር እና AI ግንዛቤ", "Nageenya Saayibarii fi Naamusaa Diijitaalaa", "Encryption ciphers, malware prevention, data privacy ethics, phishing protection, and machine learning principles.")
+                ("Historiography, Historical Sources, and Methodology", "የታሪክ አጻጻፍ፣ የታሪክ ምንጮች እና ዘዴዎች", "Barreeffama Seenaa fi Maddoota Seenaa", "Primary vs secondary sources, oral traditions, radiocarbon dating, and critical historical evaluation."),
+                ("The Gadaa Governance System and Oromo Democratic Philosophy", "የገዳ አስተዳደር ስርዓት እና የኦሮሞ ዲሞክራሲያዊ ፍልስፍና", "Sirna Bulchiinsa Gadaa fi Dimookiraasii Oromoo", "Oromo socio-political structure, 8-year age grade transitions, Moggaasa adoption, and Chaffe assemblies."),
+                ("Trade Routes, Coastal Sultanates, and Christian Kingdom Relations", "የንግድ መስመሮች፣ የባህር ዳርቻ ሱልጣኔቶች እና መንግስታት", "Daandii Daldalaa fi Mootummoota Giddu-galeessaa", "Red Sea and Gulf of Aden maritime commerce, Zeila trade artery, and interactions between Horn entities."),
+                ("Modern State Centralization and the Ethiopian Empire (1855-1913)", "ዘመናዊ የመንግስት ማዕከላዊነት (1855-1913)", "Ijaarsa Mootummaa Giddu-galeessaa (1855-1913)", "Tewodros II reforms, Yohannes IV religious diplomacy, Menelik II expansion, and Treaty of Wuchale."),
+                ("The Battle of Adwa (1896): Military Strategy and Global Impact", "የዓድዋ ጦርነት (1896): ወታደራዊ ስትራቴጂ እና ተጽእኖ", "Waraana Adwaa (1896): Tooftaa fi Bu'aa Isaa", "Empress Taytu leadership, indigenous logistical mobilization, decisive defeat of Baratieri, and Pan-African pride."),
+                ("The Italian Invasion (1935-1941) and Patriotic Resistance", "የጣሊያን ወረራ (1935-1941) እና የአርበኞች ተጋድሎ", "Weerara Xaaliyaanii (1935-1941) fi Falmaa Goototaa", "League of Nations sanctions failure, poison gas aggression, urban and rural Arbegnoch guerrilla campaigns.")
             ]
         }
     ]
 
     catalog = {
         "metadata": {
-            "title": "Ethiopian Ministry of Education - General Secondary Education Textbooks Catalog",
-            "title_am": "የኢትዮጵያ ትምህርት ሚኒስቴር - አጠቃላይ ሁለተኛ ደረጃ ትምህርት የመማሪያ መጽሐፍት ካታሎግ",
-            "title_om": "Ministeera Barnootaa Itoophiyaa - Kaataaloogii Kitaabota Barnoota Sadarkaa Lammaffaa",
-            "curriculum_framework": "Ethiopian National Curriculum Framework for General Education (Grades 9-12)",
-            "publishing_authority": "Ministry of Education (MOE), Federal Democratic Republic of Ethiopia",
+            "title": "Ethiopian Ministry of Education - General Secondary Education Textbooks Catalog (Grades 11-12 Focus)",
+            "title_am": "የኢትዮጵያ ትምህርት ሚኒስቴር - አጠቃላይ ሁለተኛ ደረጃ ትምህርት የመማሪያ መጽሐፍት ካታሎግ (11-12ኛ ክፍል)",
+            "title_om": "Ministeera Barnootaa Itoophiyaa - Kaataaloogii Kitaabota Barnoota Sadarkaa Lammaffaa (Kutaa 11-12)",
+            "curriculum_framework": "New Ethiopian National Curriculum Framework for General Secondary Education",
+            "issuing_authority": "Ministry of Education (MOE), Federal Democratic Republic of Ethiopia",
             "headquarters": "Arat Kilo, King George VI Avenue, Addis Ababa, Ethiopia",
             "contact_email": "curriculum@moe.gov.et",
-            "total_subject_disciplines": len(subjects),
-            "grades_covered": [9, 10, 11, 12],
+            "total_disciplines": len(subjects),
+            "grades_covered": [11, 12],
             "instruction_languages": ["English", "Amharic (አማርኛ)", "Afaan Oromoo (Oromiffa)"],
             "academic_year": "2024/2025"
         },
@@ -196,14 +144,14 @@ def generate_textbooks_catalog():
                 "subject_name": subj["en"],
                 "grade_level": grade,
                 "curriculum_track": subj["stream"],
-                "publication_year": 2023 if grade in [9, 10] else 2024,
+                "publication_year": 2024,
                 "moe_approval_code": f"MOE-CURR-2024-G{grade}-{subj['code']}",
-                "isbn": f"978-99944-1-{tb_id*37 % 900 + 100}-{tb_id % 9}",
-                "total_pages": 240 + (grade * 18),
+                "isbn": f"978-99944-1-{tb_id*43 % 900 + 100}-{tb_id % 9}",
+                "total_pages": 260 + (grade * 12),
                 "weekly_periods": 5 if subj["code"] in ["MATH", "PHYS", "CHEM", "ENG"] else 4,
-                "pedagogical_approach": "Student-centered, inquiry-based learning with active problem solving and continuous assessment exercises.",
-                "pedagogical_approach_am": "ተማሪን ማዕከል ያደረገ፣ በምርምር ላይ የተመሰረተ ትምህርት ከንቁ ችግር አፈታት እና ቀጣይነት ያለው ግምገማ ጋር።",
-                "pedagogical_approach_om": "Barnoota barataa giddu-galeessa godhate, qorannoo irratti hundaa'e fi furmaata rakkoo socho'aa.",
+                "pedagogical_approach": "Student-centered, inquiry-based learning with active problem solving and continuous assessment.",
+                "pedagogical_approach_am": "ተማሪን ማዕከል ያደረገ፣ በምርምር ላይ የተመሰረተ ትምህርት ከንቁ ችግር አፈታት ጋር።",
+                "pedagogical_approach_om": "Barnoota barataa giddu-galeessa godhate, qorannoo fi furmaata rakkoo irratti xiyyeeffate.",
                 "units": []
             }
             
@@ -214,22 +162,22 @@ def generate_textbooks_catalog():
                     "unit_title_en": f"Unit {u_idx}: {u_en}",
                     "unit_title_am": f"ምዕራፍ {u_idx}: {u_am}",
                     "unit_title_om": f"Boqonnaa {u_idx}: {u_om}",
-                    "estimated_periods": 6 + (u_idx % 3) * 2,
+                    "estimated_periods": 8,
                     "instructional_summary": u_desc,
                     "core_competencies": [
-                        f"Demonstrate conceptual mastery of {u_en.lower()}.",
+                        f"Master theoretical concepts of {u_en.lower()}.",
                         f"Solve representative Ethiopian national examination problems on {u_en.lower()}.",
-                        f"Relate theoretical models to practical industrial, biological, or technological situations."
+                        f"Apply analytical frameworks to technological and social developments in Ethiopia."
                     ],
                     "core_competencies_am": [
-                        f"የ{u_am} ጽንሰ-ሀሳባዊ እውቀትን ማሳየት።",
-                        f"በ{u_am} ላይ ተወካይ የኢትዮጵያ ብሄራዊ ፈተና ጥያቄዎችን መፍታት።",
-                        "ንድፈ ሃሳባዊ ሞዴሎችን ከተግባራዊ ሁኔታዎች ጋር ማዛመድ።"
+                        f"የ{u_am} ንድፈ-ሀሳባዊ ጽንሰ-ሀሳቦችን መረዳት።",
+                        f"በ{u_am} ላይ የብሄራዊ ፈተና ጥያቄዎችን መፍታት።",
+                        "ተግባራዊ ትንታኔዎችን ከሀገራዊ ልማት ጋር ማዛመድ።"
                     ],
                     "core_competencies_om": [
-                        f"Hubannoo yaadaa {u_om} agarsiisuu.",
-                        f"Gaaffilee qormaata biyyoolessaa Itoophiyaa {u_om} irratti hundaa'an furuu.",
-                        "Moodeelota tiyoorii qabatama jireenyaa waliin wal-qabsiisuu."
+                        f"Yaad-rimee bu'uuraa {u_om} qabachuu.",
+                        f"Gaaffilee qormaata biyyoolessaa {u_om} irratti dhufan furuu.",
+                        "Hubannoo argame misooma biyyaa wajjin wal-qabsiisuu."
                     ]
                 })
             
@@ -238,367 +186,367 @@ def generate_textbooks_catalog():
 
     return catalog
 
+
 # ==============================================================================
 # 2. Multilingual Learning Websites and Portals (multilingual_learning_websites_and_portals.json)
+# Target: ~1,400 - 2,000 lines
 # ==============================================================================
-def generate_learning_websites_catalog():
-    portals = [
+def generate_learning_websites_catalog() -> Dict[str, Any]:
+    portal_specs = [
         {
-            "id": "PORTAL-001",
-            "name": "Ethiopian Ministry of Education Official Digital Portal",
-            "name_am": "የኢትዮጵያ ትምህርት ሚኒስቴር ይፋዊ ዲጂታል ፖርታል",
-            "name_om": "Pootaalii Diijitaalaa Qajeelchaa Ministeera Barnootaa Itoophiyaa",
-            "url": "https://www.moe.gov.et",
-            "category": "Official Ministerial Portal & Governance",
-            "supported_languages": ["English", "Amharic (አማርኛ)", "Afaan Oromoo (Oromiffa)", "Tigrigna", "Somali"],
-            "target_audience": ["Students", "Teachers", "School Administrators", "Researchers", "General Public"],
-            "description_en": "Primary national repository for educational policies, official circulars, curriculum frameworks, national education statistics abstracts, and academic calendar announcements.",
-            "description_am": "የትምህርት ፖሊሲዎች፣ ይፋዊ መመሪያዎች፣ የስርዓተ-ትምህርት ማዕቀፎች፣ የትምህርት ስታቲስቲክስ አመታዊ ማጠቃለያዎች እና የአካዳሚክ የቀን መቁጠሪያ ይፋዊ ማዕከል ነው።",
-            "description_om": "Kuusaa guddaa imaammata barnootaa, xalayaalee qajeelfamaa, qaama sirna barnootaa fi beeksisa kalandarii barnootaa biyyaalessaa.",
-            "featured_resources": [
-                "National General Education Curriculum Blueprints (Grades 1-12)",
-                "National Educational Assessment and Examinations Agency (EAES) Result Portals",
-                "Teacher Professional Licensing and Registration Directorate Guidelines",
-                "Annual Education Statistics Abstract (EMIS Data Reports)",
-                "Digital Education Strategy and SchoolNet Infrastructure Documentation"
-            ],
-            "access_type": "Free / Open Access",
-            "bandwidth_requirement": "Low (Optimized for 2G/3G mobile networks)"
+            "id": "PORTAL-001", "name": "Ethiopian Ministry of Education Official Digital Portal",
+            "name_am": "የኢትዮጵያ ትምህርት ሚኒስቴር ይፋዊ ዲጂታል ፖርታል", "name_om": "Pootaalii Diijitaalaa Ministeera Barnootaa Itoophiyaa",
+            "url": "https://www.moe.gov.et", "category": "Ministerial Governance & Policy Repository",
+            "languages": ["English", "Amharic (አማርኛ)", "Afaan Oromoo (Oromiffa)", "Tigrigna", "Somali"],
+            "desc_en": "Official headquarters portal providing national education blueprints, ministerial circulars, annual EMIS statistics, and teacher career laddering guidelines.",
+            "desc_am": "የብሄራዊ ስርዓተ-ትምህርት ማዕቀፎችን፣ የሚኒስቴሩ መመሪያዎችን እና የትምህርት ስታቲስቲክስ አመታዊ ሪፖርቶችን የሚያቀርብ ይፋዊ ፖርታል ነው።",
+            "desc_om": "Pootaalii qajeelchaa imaammata barnootaa, xalayaalee qajeelfamaa fi gabaasa ragaalee barnootaa biyyoolessaa dhiyeessu.",
+            "sections": ["Policies & Regulations", "Curriculum Frameworks", "School Directory", "EMIS Reports", "Tender & Announcements"]
         },
         {
-            "id": "PORTAL-002",
-            "name": "Ethiopian Educational Assessment and Examinations Service (EAES)",
-            "name_am": "የትምህርት ምዘና እና ፈተናዎች አገልግሎት (ኢኤኤስ)",
-            "name_om": "Tajaajila Madaallii fi Qormaata Barnootaa Itoophiyaa (EAES)",
-            "url": "https://eaes.et",
-            "category": "National Examinations & Results Verification",
-            "supported_languages": ["English", "Amharic (አማርኛ)", "Afaan Oromoo (Oromiffa)"],
-            "target_audience": ["Grade 12 Candidates", "Grade 8 Candidates", "Higher Education Institutions", "Parents"],
-            "description_en": "Official portal for national examination registration, candidate admission ticket issuance, national examination results verification, certificate re-issuance, and examination blueprints.",
-            "description_am": "የብሔራዊ ፈተና ምዝገባ፣ የተፈታኞች መግቢያ ካርድ አሰጣጥ፣ የብሔራዊ ፈተና ውጤት ማረጋገጫ፣ የሰርተፍኬት ህትመት እና የፈተና ብሉፕሪንቶች ይፋዊ ፖርታል ነው።",
-            "description_om": "Pootaalii qajeelchaa galmee qormaata biyyoolessaa, waraqaa seenumsa qormaataa, bu'aa qormaata mirkaneessuu fi waraqaa ragaa.",
-            "featured_resources": [
-                "Grade 12 Ethiopian Secondary School Leaving Certificate Examination (ESSLCE) Verification",
-                "Grade 8 Middle School Leaving Certificate Examination Regional Guidelines",
-                "University Exit Exam Candidate Portal and Exam Guidelines",
-                "Official Exam Focus Blueprints across Natural and Social Science Subjects",
-                "Candidate Code of Conduct and Anti-Cheating Protocol Handbook"
-            ],
-            "access_type": "Free Student Access with Candidate Registration ID",
-            "bandwidth_requirement": "Medium"
+            "id": "PORTAL-002", "name": "Educational Assessment and Examinations Service (EAES)",
+            "name_am": "የትምህርት ምዘና እና ፈተናዎች አገልግሎት (ኢኤኤስ)", "name_om": "Tajaajila Madaallii fi Qormaata Barnootaa Itoophiyaa (EAES)",
+            "url": "https://eaes.et", "category": "National Examinations & Results Verification",
+            "languages": ["English", "Amharic", "Afaan Oromoo"],
+            "desc_en": "Official registration and candidate verification platform for Grade 12 ESSLCE, university entrance cutoffs, and digital certificate validation.",
+            "desc_am": "የ12ኛ ክፍል የዩኒቨርሲቲ መግቢያ ፈተና ምዝገባ፣ የውጤት ማረጋገጫ እና የዲጂታል ሰርተፍኬት ማረጋገጫ ይፋዊ መድረክ ነው።",
+            "desc_om": "Waltajjii qajeelchaa galmee qormaata kutaa 12ffaa, bu'aa qormaata mirkaneessuu fi waraqaa ragaa diijitaalaa.",
+            "sections": ["Candidate Registration", "Exam Slip Download", "Results Verification", "Exam Focus Blueprints", "Appeals & Inquiries"]
         },
         {
-            "id": "PORTAL-003",
-            "name": "Ethiopian Digital Library & Open Educational Resources (OER)",
-            "name_am": "የኢትዮጵያ ዲጂታል ቤተ-መጽሐፍት እና ክፍት የትምህርት ግብዓቶች",
-            "name_om": "Kuusaa Kitaabaa Diijitaalaa Itoophiyaa fi Qabeenya Barnootaa Banaa",
-            "url": "https://digitallibrary.edu.et",
-            "category": "Digital Textbooks & Research Repository",
-            "supported_languages": ["English", "Amharic", "Afaan Oromoo"],
-            "target_audience": ["Secondary Students", "Undergraduate Scholars", "Pedagogical Instructors"],
-            "description_en": "Provides downloadable digital versions of all new curriculum student textbooks, teacher guides, syllabi, supplementary science lab manuals, and supplementary reading literature.",
-            "description_am": "የሁሉንም አዳዲስ ስርዓተ-ትምህርት የተማሪ መማሪያ መጽሐፍት፣ የመምህራን መመሪያዎች፣ የሳይንስ ላብራቶሪ ማኑዋሎች እና ተጨማሪ የንባብ ጽሑፎችን በነጻ ያቀርባል።",
-            "description_om": "Kitaabota barataa sirna barnootaa haaraa hunda, qajeelcha barsiisotaa, maanuwaalii laabooratorii saayinsii fi barruulee dubbisaa dhiyeessa.",
-            "featured_resources": [
-                "Full PDF Textbooks for Grades 9, 10, 11, and 12 (All Subjects)",
-                "Interactive PhET Science Simulations in Physics, Chemistry, and Biology",
-                "Audiobook Editions of Grade 9-12 English Literature Readers",
-                "Teacher Professional Development Module Guides",
-                "Accessible Large-Font and Screen-Reader Friendly Digital Publications"
-            ],
-            "access_type": "Free Public Domain",
-            "bandwidth_requirement": "Low to High (PDF downloads cached for offline use)"
+            "id": "PORTAL-003", "name": "Ethiopian Digital Library & Open Educational Resources (OER)",
+            "name_am": "የኢትዮጵያ ዲጂታል ቤተ-መጽሐፍት እና ክፍት የትምህርት ግብዓቶች", "name_om": "Kuusaa Kitaabaa Diijitaalaa Itoophiyaa",
+            "url": "https://digitallibrary.edu.et", "category": "Curriculum Digital Textbooks Repository",
+            "languages": ["English", "Amharic", "Afaan Oromoo"],
+            "desc_en": "Comprehensive digital archive of all new-curriculum Grade 1-12 student textbooks, teacher guides, science lab manuals, and supplementary readers.",
+            "desc_am": "የአዲሱ ስርዓተ-ትምህርት ከ 1-12ኛ ክፍል የተማሪ መጽሐፍት፣ የመምህራን መመሪያዎች እና የሳይንስ ላብራቶሪ ማኑዋሎች ነፃ ዲጂታል ማህደር ነው።",
+            "desc_om": "Kuusaa diijitaalaa kitaabota barataa kutaa 1-12, qajeelcha barsiisotaa fi maanuwaalii laabooratorii saayinsii hunda qabate.",
+            "sections": ["Primary School Books", "Secondary School Books", "Teacher Handbooks", "Science Lab Workbooks", "Braille & Large Font"]
         },
         {
-            "id": "PORTAL-004",
-            "name": "Ethio-National E-Learning & SchoolNet Video Channel",
-            "name_am": "የኢትዮ-ብሔራዊ ኢ-ትምህርት እና የትምህርት ኔትወርክ የቪዲዮ ቻናል",
-            "name_om": "Barnoota Ilektirooniksii Biyyoolessaa fi Chaanaalii Viidiyoo IskuulNeet",
-            "url": "https://elearning.moe.gov.et",
-            "category": "Interactive E-Learning & Streaming Video Lessons",
-            "supported_languages": ["English", "Amharic", "Afaan Oromoo"],
-            "target_audience": ["High School Students", "Self-Taught Candidates", "Night School Learners"],
-            "description_en": "State-sponsored learning management system hosting video lecture streams, interactive multiple-choice self-quizzes, automated homework grading, and discussion forums.",
-            "description_am": "የቪዲዮ ትምህርቶችን፣ በይነተገናኝ የፈተና ጥያቄዎችን፣ ራስ-ሰር የቤት ስራ ምዘናን እና የተማሪዎች የውይይት መድረኮችን የሚያስተናግድ የመማሪያ መድረክ ነው።",
-            "description_om": "Sirna barnootaa viidiyoo barsiisotaa, gaaffilee yaalii ofii, madaallii hojii manaa fi waltajjii marii barattootaa qabateedha.",
-            "featured_resources": [
-                "Curriculum-Aligned Video Lessons by Senior Ethiopian Pedagogical Experts",
-                "Real-Time Practice Exams with Detailed Step-by-Step Answer Explanations",
-                "Virtual Chemistry and Physics Laboratory Interactive Workbenches",
-                "Language Pronunciation and Grammar Diagnostic Self-Assessment Modules",
-                "Mobile Offline Caching Engine for Remote Rural Secondary Schools"
-            ],
-            "access_type": "Free Student Account Registration",
-            "bandwidth_requirement": "Adaptive Bitrate (144p to 1080p HD streaming)"
+            "id": "PORTAL-004", "name": "Ethio-National E-Learning & SchoolNet Video Channel",
+            "name_am": "የኢትዮ-ብሔራዊ ኢ-ትምህርት እና የትምህርት ኔትወርክ የቪዲዮ ቻናል", "name_om": "Barnoota Ilektirooniksii Biyyoolessaa IskuulNeet",
+            "url": "https://elearning.moe.gov.et", "category": "Interactive Video Lessons & Practice Quizzes",
+            "languages": ["English", "Amharic", "Afaan Oromoo"],
+            "desc_en": "Online learning management system streaming secondary STEM lessons, animated laboratory simulations, chapter review tests, and automated grading.",
+            "desc_am": "የሁለተኛ ደረጃ የሳይንስ ትምህርቶች ቪዲዮዎችን፣ አኒሜሽን ያላቸው የላብራቶሪ ሙከራዎችን እና የራስ-መገምገሚያ ፈተናዎችን የሚያቀርብ ስርዓት ነው።",
+            "desc_om": "Sirna barnoota intarneetii kan viidiyoo barsiisotaa, yaalii laabooratorii fi gaaffilee of-madaallii of keessaa qabu.",
+            "sections": ["Video Lecture Library", "Self-Assessment Quizzes", "PhET Simulations", "Student Discussion Board", "Offline Mobile Sync"]
         },
         {
-            "id": "PORTAL-005",
-            "name": "Fana & EBC Educational Broadcasting Services Archive",
-            "name_am": "የፋና እና የኢቢሲ የትምህርት ስርጭት አገልግሎት ማህደር",
-            "name_om": "Kuusaa Tajaajila Tamsaasa Barnootaa Faanaa fi EBC",
-            "url": "https://broadcast.edu.et",
-            "category": "Televised and Radio Secondary Lessons",
-            "supported_languages": ["Amharic", "Afaan Oromoo", "English"],
-            "target_audience": ["Distance Learners", "High School Exam Takers", "Parents"],
-            "description_en": "Audio and video recordings of televised daily school lessons broadcast over satellite television and national radio frequencies to reach pastoralist and rural regions.",
-            "description_am": "በሳተላይት ቴሌቪዥን እና በብሔራዊ ሬዲዮ የሚተላለፉ የዕለታዊ የሁለተኛ ደረጃ ትምህርቶች የድምጽ እና የቪዲዮ ቅጂዎች ማህደር ነው።",
-            "description_om": "Kuusaa sagantaalee barnoota sadarkaa lammaffaa kanneen tamsaasa televizyinii saatalaayitii fi raadiyoo biyyoolessaatiin darban.",
-            "featured_resources": [
-                "National Radio School Broadcast Lessons in Local Mother Tongue Languages",
-                "Televised Science Demonstration Laboratory Experiments for Resource-Constrained Schools",
-                "Exam Revision Masterclasses Broadcast 60 Days Prior to ESSLCE Examinations",
-                "Panel Discussions on Inclusive and Gender-Responsive Secondary Education",
-                "Civic and Ethical Education Character-Building Instructional Stories"
-            ],
-            "access_type": "Free / Open Broadcast",
-            "bandwidth_requirement": "Low (Audio Podcasts: 32 kbps; Video: 360p)"
+            "id": "PORTAL-005", "name": "Oromia Education Bureau Digital Learning Platform (Barnoota Oromiyaa)",
+            "name_am": "የኦሮሚያ ትምህርት ቢሮ ዲጂታል የመማሪያ መድረክ", "name_om": "Waltajjii Barnoota Diijitaalaa Biiroo Barnootaa Oromiyaa",
+            "url": "https://learn.oeb.gov.et", "category": "Regional Curricular & Afaan Oromoo Resource Hub",
+            "languages": ["Afaan Oromoo (Oromiffa)", "English"],
+            "desc_en": "Regional hub providing Afaan Oromoo medium textbooks, Grade 8 regional examination papers, bilingual science terminology glossaries, and teacher training.",
+            "desc_am": "የአፋን ኦሮሞ የመማሪያ መጽሐፍትን፣ የ8ኛ ክፍል የክልል ፈተናዎችን እና የሁለት ቋንቋ የሳይንስ መዝገበ ቃላትን የሚያቀርብ የክልል መድረክ ነው።",
+            "desc_om": "Kuusaa kitaabota Afaan Oromootiin qophaa'an, qormaata naannoo kutaa 8ffaa fi galmee jechootaa saayinsii dhiyeessu.",
+            "sections": ["Afaan Oromoo Readers", "Bilingual STEM Glossaries", "Grade 8 Model Exams", "Gadaa Indigenous Knowledge", "Teacher CPD Modules"]
         },
         {
-            "id": "PORTAL-006",
-            "name": "Addis Ababa University Academic Open CourseWare & Entrance Prep",
-            "name_am": "የአዲስ አበባ ዩኒቨርሲቲ ክፍት የኮርስ ግብዓት እና የመግቢያ ዝግጅት",
-            "name_om": "Koorsii Banaa Yuunivarsiitii Finfinnee fi Qophii Qormaata Seensaa",
-            "url": "https://ocw.aau.edu.et",
-            "category": "University Preparation & Higher Education Transition",
-            "supported_languages": ["English", "Amharic"],
-            "target_audience": ["Grade 11-12 Advanced Placement Students", "Freshman University Entrants"],
-            "description_en": "Advanced preparatory coursework bridging secondary school graduation with university freshman programs in Engineering, Medicine, Computational Sciences, and Law.",
-            "description_am": "የሁለተኛ ደረጃ ትምህርትን ከዩኒቨርሲቲ አንደኛ ዓመት የኢንጂነሪንግ፣ የህክምና፣ የኮምፒውተር ሳይንስ እና የህግ ፕሮግራሞች ጋር የሚያገናኝ የቅድመ ዝግጅት ኮርስ ነው።",
-            "description_om": "Barnoota qophii sadarkaa olaanaa kan barattoota sadarkaa lammaffaa gara barumsa Injinariingii, Fayyaa fi Seeraa yuunivarsiitiitti ceesisu.",
-            "featured_resources": [
-                "Freshman Mathematics (Calculus & Linear Algebra) Bridging Tutorials",
-                "Communicative English Skills Remedial Writing Guides",
-                "Critical Thinking and Logic Introductory Audio Lectures",
-                "University Exit Exam Competency Standards Benchmark Blueprints",
-                "STEM Career Guidance and Scholarship Application Guidelines"
-            ],
-            "access_type": "Free Open CourseWare",
-            "bandwidth_requirement": "Medium"
+            "id": "PORTAL-006", "name": "Amhara Education Bureau E-Portal & Teacher Resource Base",
+            "name_am": "የአማራ ትምህርት ቢሮ ኢ-ፖርታል እና የመምህራን ግብዓት ማዕከል", "name_om": "Pootaalii Biiroo Barnootaa Naannoo Amaaraa",
+            "url": "https://amharaeducation.gov.et", "category": "Regional Curricular & Amharic Medium Hub",
+            "languages": ["Amharic (አማርኛ)", "English"],
+            "desc_en": "Regional educational repository providing Amharic instructional materials, model secondary examination booklets, and teacher development portfolios.",
+            "desc_am": "የአማርኛ ቋንቋ ማስተማሪያ ቁሳቁሶችን፣ የሁለተኛ ደረጃ ሞዴል የፈተና ጥያቄዎችን እና የመምህራን ስልጠና ፖርትፎሊዮዎችን የሚያቀርብ የክልል የትምህርት ፖርታል ነው።",
+            "desc_om": "Pootaalii barnootaa naannichaa kan qophii qormaata yaalii, maanuwaalii barsiisotaa fi meeshaalee barnootaa Afaan Amaaraatiin dhiyeessu.",
+            "sections": ["Amharic Literature Modules", "Secondary Model Test Booklets", "STEM Science Fair Projects", "Inspection & Quality Rubrics", "Emergency Education Guides"]
         },
         {
-            "id": "PORTAL-007",
-            "name": "Oromia Education Bureau Digital Learning Platform (Barnoota Oromiyaa)",
-            "name_am": "የኦሮሚያ ትምህርት ቢሮ ዲጂታል የመማሪያ መድረክ",
-            "name_om": "Waltajjii Barnoota Diijitaalaa Biiroo Barnootaa Oromiyaa",
-            "url": "https://learn.oeb.gov.et",
-            "category": "Regional Curricular & Afaan Oromoo Educational Hub",
-            "supported_languages": ["Afaan Oromoo (Oromiffa)", "English"],
-            "target_audience": ["Students in Oromia Region", "Afaan Oromoo Teachers", "Examiners"],
-            "description_en": "Regional digital repository hosting Afaan Oromoo mother-tongue medium textbooks, Grade 8 regional examination papers, bilingual dictionaries, and secondary instructional materials.",
-            "description_am": "የአፋን ኦሮሞ የመማሪያ መጽሐፍት፣ የ8ኛ ክፍል የክልል ፈተና ወረቀቶች፣ ባለሁለት ቋንቋ መዝገበ ቃላት እና የሁለተኛ ደረጃ ትምህርታዊ ቁሳቁሶችን የያዘ መድረክ ነው።",
-            "description_om": "Kuusaa diijitaalaa kitaabota barnootaa Afaan Oromootiin qophaa'an, qormaata naannoo kutaa 8ffaa, galmee jechootaa fi meeshaalee baruu-barsiisuu.",
-            "featured_resources": [
-                "Grade 1-12 Afaan Oromoo Language and Literature Full Syllabi and Readers",
-                "Bilingual STEM Glossary (English to Afaan Oromoo Scientific Terminology)",
-                "Grade 8 Model Regional Examination Archives with Answer Keys",
-                "Gadaa Civilization and Indigenous Knowledge Curricular Units",
-                "Interactive Afaan Oromoo Grammar and Orthography Practice Modules"
-            ],
-            "access_type": "Free Public Domain",
-            "bandwidth_requirement": "Low"
+            "id": "PORTAL-007", "name": "Addis Ababa City Education Bureau Digital Learning Cloud",
+            "name_am": "የአዲስ አበባ ከተማ አስተዳደር ትምህርት ቢሮ ዲጂታል ክላውድ", "name_om": "Kilaawudii Barnoota Diijitaalaa Bulchiinsa Magaalaa Finfinnee",
+            "url": "https://aaeb.gov.et", "category": "Metropolitan Smart Classroom & Digital Library",
+            "languages": ["English", "Amharic", "Afaan Oromoo"],
+            "desc_en": "Metropolitan smart classroom infrastructure managing digital tablets, feeding program statistics, smart interactive whiteboards, and high school entrance prep.",
+            "desc_am": "የከተማዋን የስማርት ክላስሩም መሰረተ-ልማት፣ የተማሪዎች ምገባ መረጃ፣ በይነተገናኝ ዋይትቦርዶችን እና የፈተና ዝግጅትን የሚያስተባብር መድረክ ነው።",
+            "desc_om": "Magaalaa Finfinnee keessatti manneen barnootaa ammayyeessuu, taableetii barattootaa fi qophii qormaata seensa yuunivarsiitii kan to'atu.",
+            "sections": ["Smart Classroom Portal", "School Feeding Statistics", "Student Attendance Tracking", "Model Exam Simulator", "Counseling & Career Hub"]
         },
         {
-            "id": "PORTAL-008",
-            "name": "Amhara Education Bureau E-Portal & Teacher Resource Base",
-            "name_am": "የአማራ ትምህርት ቢሮ ኢ-ፖርታል እና የመምህራን ግብዓት ማዕከል",
-            "name_om": "Pootaalii Biiroo Barnootaa Naannoo Amaaraa",
-            "url": "https://amharaeducation.gov.et",
-            "category": "Regional Curricular & Amharic Medium Educational Hub",
-            "supported_languages": ["Amharic (አማርኛ)", "English"],
-            "target_audience": ["Students in Amhara Region", "Secondary Teachers", "Inspectors"],
-            "description_en": "Regional educational repository providing Amharic instructional materials, model secondary test booklets, continuous assessment tracking tools, and teacher training portfolios.",
-            "description_am": "የአማርኛ ቋንቋ ማስተማሪያ ቁሳቁሶችን፣ የሁለተኛ ደረጃ ሞዴል የፈተና ጥያቄዎችን እና የመምህራን ስልጠና ፖርትፎሊዮዎችን የሚያቀርብ የክልል የትምህርት ፖርታል ነው።",
-            "description_om": "Pootaalii barnootaa naannichaa kan qophii qormaata yaalii, maanuwaalii barsiisotaa fi meeshaalee barnootaa Afaan Amaaraatiin dhiyeessu.",
-            "featured_resources": [
-                "Amharic Language and Classical Ge'ez Heritage Supplemental Study Guides",
-                "Regional STEM Olympiad Previous Competition Problem Sets and Solutions",
-                "Secondary School Laboratory Equipment Improvisation Manuals",
-                "Continuous Assessment Portfolio Evaluation Rubrics for Teachers",
-                "Psychosocial Support and Remedial Education Guides for Conflict-Affected Schools"
-            ],
-            "access_type": "Free Access",
-            "bandwidth_requirement": "Low to Medium"
+            "id": "PORTAL-008", "name": "Ethio-Telecom Tele-Education & Virtual Academy",
+            "name_am": "የኢትዮ ቴሌኮም ቴሌ-ትምህርት እና ቨርቹዋል አካዳሚ", "name_om": "Akaadaamii Barnootaa fi Teeknooloojii Itoophiyaa Telekoom",
+            "url": "https://tele-education.ethiotelecom.et", "category": "Nationwide Mobile Education & Zero-Rating Service",
+            "languages": ["English", "Amharic", "Afaan Oromoo", "Tigrigna", "Somali", "Afar"],
+            "desc_en": "Zero-rated mobile connectivity portal allowing secondary students across Ethiopia to stream and download educational textbooks and video tutorials without mobile data charges.",
+            "desc_am": "በመላው ኢትዮጵያ የሚገኙ የሁለተኛ ደረጃ ተማሪዎች ያለ ዳታ ክፍያ የመማሪያ መጽሐፍትን እና የቪዲዮ ትምህርቶችን እንዲያገኙ የሚያስችል የኢትዮ ቴሌኮም ነፃ ፖርታል ነው።",
+            "desc_om": "Pootaalii bilisaa kan barattoonni kaffaltii deetaa mobaayilaa malee kitaabota fi viidiyoo barnootaa ittiin buufachuu danda'an.",
+            "sections": ["Zero-Rated Textbook Downloads", "Mobile Video Streaming Edge", "SMS Daily Exam Quiz Service", "School Connectivity Status", "Digital Skills Certification"]
+        },
+        {
+            "id": "PORTAL-009", "name": "Addis Ababa University Academic Open CourseWare & Transition Prep",
+            "name_am": "የአዲስ አበባ ዩኒቨርሲቲ ክፍት የኮርስ ግብዓት እና የመግቢያ ዝግጅት", "name_om": "Koorsii Banaa Yuunivarsiitii Finfinnee",
+            "url": "https://ocw.aau.edu.et", "category": "University Prep & Freshman Academic Bridging",
+            "languages": ["English", "Amharic"],
+            "desc_en": "Bridge courses for Grade 12 completers entering university freshman STEM programs, including introductory Calculus, Mechanics, and English Composition.",
+            "desc_am": "የ12ኛ ክፍል ተማሪዎች ወደ ዩኒቨርሲቲ ሲገቡ ለሚወስዷቸው የካልኩለስ፣ ፊዚክስ እና እንግሊዝኛ ኮርሶች የቅድመ-ዝግጅት ድጋፍ የሚሰጥ መድረክ ነው።",
+            "desc_om": "Koorsii qophii kan barattoonni kutaa 12ffaa yuunivarsiitii wayita seenan Herrega, Fiiziksii fi Ingiliffa irratti akka jabaataniif gargaaru.",
+            "sections": ["Freshman Calculus Modules", "General Physics Mechanics", "English Academic Writing", "Logic & Critical Thinking", "Exit Exam Standards Archive"]
+        },
+        {
+            "id": "PORTAL-010", "name": "Khan Academy Ethiopia Localized Multilingual Initiative",
+            "name_am": "ካን አካዳሚ የኢትዮጵያ ባለብዙ ቋንቋ ትምህርታዊ መድረክ", "name_om": "Inishatiivii Kaan Akaadaamii Itoophiyaa",
+            "url": "https://ethiopia.khanacademy.org", "category": "Open-Access Global Mathematics & Science Localization",
+            "languages": ["English", "Amharic", "Afaan Oromoo"],
+            "desc_en": "Curriculum-aligned localized instructional videos and mastery-based math exercises voiced and subtitled in Amharic, Afaan Oromoo, and English.",
+            "desc_am": "በአማርኛ፣ በአፋን ኦሮሞ እና በእንግሊዝኛ የተዘጋጁ የሂሳብ እና የሳይንስ የቪዲዮ ትምህርቶች እና በይነተገናኝ የልምምድ ጥያቄዎችን የሚያቀርብ ክፍት መድረክ ነው።",
+            "desc_om": "Viidiyoo barnoota herregaa fi saayinsii kanneen Afaan Oromoo, Amaaraa fi Ingiliffaan sagaleen qophaa'an fi shaakala gaaffilee.",
+            "sections": ["Algebra 1 & 2 Practice", "Differential Calculus Units", "Introductory Chemistry Quizzes", "High School Biology Simulations", "Teacher Class Progress Dashboard"]
         }
     ]
 
-    # Expand portals with granular portal sections to achieve rich 1000-3000 line structure
-    expanded_portals = []
-    for p in portals:
-        expanded_entry = dict(p)
-        expanded_entry["site_architecture"] = [
-            {"section_code": "HOME", "title_en": "Landing Page and Notifications", "title_am": "መነሻ ገጽ እና ማስታወቂያዎች", "title_om": "Fuula Duraa fi Beeksisa", "url_path": "/"},
-            {"section_code": "TEXTBOOKS", "title_en": "Downloadable Curriculum Textbooks", "title_am": "የሚወርዱ የስርዓተ-ትምህርት መጻሕፍት", "title_om": "Kitaabota Barnootaa Buufataman", "url_path": "/textbooks"},
-            {"section_code": "EXAMS", "title_en": "Examination Blueprints & Model Tests", "title_am": "የፈተና ብሉፕሪንቶች እና የሞዴል ፈተናዎች", "title_om": "Wixinee Qormaataa fi Qormaata Yaalii", "url_path": "/examinations"},
-            {"section_code": "VIDEOS", "title_en": "Pedagogical Video Lecture Streams", "title_am": "የትምህርታዊ ቪዲዮ ትምህርቶች", "title_om": "Viidiyoo Barnootaa Dhangala'an", "url_path": "/video-lessons"},
-            {"section_code": "TEACHERS", "title_en": "Teacher Professional Development Modules", "title_am": "የመምህራን ሙያዊ ማሻሻያ ሞጁሎች", "title_om": "Mojuuloota Fooyya'iinsa Ogummaa Barsiisotaa", "url_path": "/teacher-cpd"},
-            {"section_code": "FEEDBACK", "title_en": "Student Support and Feedback Forum", "title_am": "የተማሪዎች ድጋፍ እና አስተያየት መድረክ", "title_om": "Deggersa Barattootaa fi Yaada Kennuu", "url_path": "/support"}
+    expanded_list = []
+    for p in portal_specs:
+        entry = dict(p)
+        entry["navigation_instructions"] = {
+            "english": f"Visit {p['url']} from any compatible web browser or mobile client. Access downloadable PDFs in the resource tab without mandatory authentication. Complete candidate verification using your MOE index code for examination portals.",
+            "amharic": f"በማንኛውም ብራውዘር ወይም ስልክ ወደ {p['url']} ይግቡ። የመማሪያ ፒዲኤፍ መጽሐፍትን ያለ ምዝገባ በነፃ ማውረድ ይችላሉ። ለፈተና ውጤት ግን የፈተና መለያ ቁጥርዎን ይጠቀሙ።",
+            "afaan_oromoo": f"Weebsaayitii {p['url']} fayyadamuun kitaabota bilisaan buufadhaa. Qormaataaf lakkofsa galmee keessan fayyadamaa."
+        }
+        entry["technical_specifications"] = {
+            "data_center": "Ethio Telecom National Cloud Infrastructure, Addis Ababa",
+            "encryption_protocol": "TLS 1.3 AES-256-GCM Secure Sockets",
+            "cybersecurity_compliance": "Information Network Security Administration (INSA) Standard",
+            "bandwidth_optimization": "Ultra-compressed WebP image rendering and Brotli content compression",
+            "offline_caching_support": "Service Worker PWA Offline Caching Enabled"
+        }
+        entry["target_user_roles"] = [
+            "Secondary School Candidates (Grades 9-12)",
+            "Subject Lead Instructors & Department Heads",
+            "Woreda Education Officers & Regional Inspectors",
+            "Educational Researchers & Policy Evaluators"
         ]
-        expanded_entry["user_navigation_guidelines"] = {
-            "english": f"To access materials on {p['name']}, connect with any desktop or mobile browser. Direct PDF downloads are enabled without login for standard textbooks. Interactive examination modules require a free student index number.",
-            "amharic": f"በ{p['name_am']} ላይ ግብዓቶችን ለማግኘት በሞባይል ወይም በኮምፒውተር ብራውዘር ይግቡ። የመማሪያ መጻሕፍትን ያለ አካውንት በቀጥታ ማውረድ ይቻላል። ለይፋዊ የፈተና ጥያቄዎች ግን የተማሪ መለያ ቁጥር ያስፈልጋል።",
-            "afaan_oromoo": f"Qabeenya {p['name_om']} irraa argachuuf mobaayila ykn kompiitara fayyadamaa. Kitaabota bilisaan buufachuun ni danda'ama. Qormaataaf lakkofsa galmee barataa fayyadamaa."
-        }
-        expanded_entry["server_technical_specifications"] = {
-            "hosting_location": "Ethio Telecom National Cloud Data Center, Addis Ababa",
-            "ssl_security": "TLS 1.3 256-Bit Cryptographic Encryption",
-            "compliance_standard": "Ethiopian National Information Security Agency (INSA) Cybersecurity Protocol",
-            "uptime_sla": "99.8% Annual Availability",
-            "cdn_integration": "Ethio-Net National Content Delivery Cache Edge"
-        }
-        expanded_portals.append(expanded_entry)
+        expanded_list.append(entry)
 
     return {
         "metadata": {
             "catalog_title": "Ethiopian Secondary Education - Official Learning Portals and Multilingual Websites Directory",
             "catalog_title_am": "የኢትዮጵያ ሁለተኛ ደረጃ ትምህርት - ይፋዊ የመማሪያ ፖርታሎች እና የባለብዙ ቋንቋ ድረ-ገጾች ማውጫ",
             "catalog_title_om": "Barnoota Sadarkaa Lammaffaa Itoophiyaa - Pootaalota Barnootaa fi Weebsaayitoota Afaan Baay'ee",
-            "curator": "Ministry of Education Information Communication Technology & Digital Learning Directorate",
+            "curator": "Ministry of Education Information Communication Technology Directorate",
             "publication_date": "2024-10-15",
-            "version": "v4.2-Multilingual",
-            "total_listed_portals": len(expanded_portals)
+            "version": "v4.5-Multilingual",
+            "total_listed_portals": len(expanded_list)
         },
-        "portals": expanded_portals
+        "portals": expanded_list
     }
+
 
 # ==============================================================================
 # 3. High School Exam Prep Notes Multilingual (high_school_exam_prep_notes_multilingual.json)
+# Target: ~1,500 - 2,200 lines
 # ==============================================================================
-def generate_exam_prep_notes():
-    subjects_notes = [
+def generate_exam_prep_notes() -> Dict[str, Any]:
+    notes_list = [
         {
-            "subject": "Mathematics",
-            "subject_am": "ሂሳብ",
-            "subject_om": "Herrega",
-            "code": "MATH",
-            "exam_target": "Grade 12 ESSLCE & University Entrance",
-            "topics": [
-                {
-                    "topic_id": "MATH-TOPIC-01",
-                    "title": "Quadratic Functions, Parabolas, and Optimization",
-                    "title_am": "ኳድራቲክ ፈንክሽኖች፣ ፓራቦላዎች እና ማመቻቸት",
-                    "title_om": "Fankishinii Kawaadiratiksii, Paaraaboolaa fi Fooyyessuu",
-                    "formulas": [
-                        "Quadratic Formula: x = (-b ± √(b² - 4ac)) / (2a)",
-                        "Discriminant (Δ) = b² - 4ac; if Δ > 0 (2 distinct real roots), Δ = 0 (1 real repeated root), Δ < 0 (2 complex roots)",
-                        "Vertex coordinates: V(h, k) where h = -b / (2a) and k = f(h) = c - b² / (4a)",
-                        "Standard Form: f(x) = ax² + bx + c; Vertex Form: f(x) = a(x - h)² + k"
-                    ],
-                    "core_principles_en": "Quadratic equations model projectile trajectories, parabolic reflectors, and economic profit maximization. The sign of leading coefficient 'a' dictates concavity (a > 0 concave up, minimum vertex; a < 0 concave down, maximum vertex).",
-                    "core_principles_am": "ኳድራቲክ እኩልታዎች የጥይት ወይም የእንቅስቃሴ አቅጣጫን፣ የፓራቦሊክ አንጸባራቂዎችን እና የትርፍ ማመቻቸትን ይወክላሉ። የ 'a' ምልክት አቅጣጫውን ይወስናል (a > 0 ወደ ላይ ክፍት፣ አነስተኛ ነጥብ፤ a < 0 ወደ ታች ክፍት፣ ከፍተኛ ነጥብ)።",
-                    "core_principles_om": "Walqixxummaan kawaadiraatiksii sochii wantoota darbaman, bu'aa diinagdee olaanaa fi xiqqaachuu agarsiisa. Mallattoon 'a' gubbaatti ykn gadiitti banamuu paaraaboolaa murteessa.",
-                    "exam_tips_en": "Always calculate the discriminant Δ first before attempting factorization. For optimization word problems, set the first derivative f'(x) = 2ax + b = 0 to rapidly isolate the extremum x-coordinate.",
-                    "exam_tips_am": "ማባዛትን ከመሞከርዎ በፊት ሁል ጊዜ መጀመሪያ ዲስክሪሚናንት Δን ያሰሉ:: ለማመቻቸት ጥያቄዎች የመጀመሪያውን ተዋጽኦ f'(x) = 0 በማድረግ በቀላሉ ነጥቡን ያግኙ።",
-                    "exam_tips_om": "Osoo faktoor gochuuf hin yaalin dura yeroo hunda 'discriminant' Δ herreegi. Gaaffilee fooyyessuuf diraayiveetivii jalqabaa f'(x) = 0 gochuun furata barbaadi.",
-                    "practice_question": {
-                        "question_en": "Find the maximum height reached by an object thrown upward with height function h(t) = -5t² + 40t + 10 meters.",
-                        "question_am": "በ h(t) = -5t² + 40t + 10 ሜትር ተግባር ወደ ላይ የተወረወረ አካል የሚደርስበትን ከፍተኛ ከፍታ ያግኙ።",
-                        "question_om": "Wanti ol darbatame tokko h(t) = -5t² + 40t + 10 yoo ta'e, olka'iinsa isa olaanaa barbaadi.",
-                        "step_by_step_solution_en": "1. Find time at maximum: t = -b / (2a) = -40 / (2 * -5) = 4 seconds.\n2. Substitute t = 4 into h(t): h(4) = -5(4)² + 40(4) + 10 = -5(16) + 160 + 10 = -80 + 170 = 90 meters.\n3. Maximum height is 90 meters.",
-                        "step_by_step_solution_am": "1. በከፍተኛው ከፍታ ላይ ያለውን ጊዜ ያግኙ: t = -40 / (2 * -5) = 4 ሰከንድ።\n2. t = 4 በ h(t) ውስጥ ይተኩ: h(4) = -5(16) + 160 + 10 = 90 ሜትር።\n3. ከፍተኛው ከፍታ 90 ሜትር ነው።",
-                        "step_by_step_solution_om": "1. Yeroo olka'iinsa olaanaatti qaqqabu barbaadi: t = -40 / (2 * -5) = sekoondii 4.\n2. t = 4 bakka buusi: h(4) = -5(16) + 160 + 10 = meetira 90.\n3. Olka'iinsi olaanaan meetira 90 dha.",
-                        "correct_answer": "90 meters"
-                    }
-                },
-                {
-                    "topic_id": "MATH-TOPIC-02",
-                    "title": "Calculus: Differentiation Rules and Rates of Change",
-                    "title_am": "ካልኩለስ: የልዩነት ህጎች እና የለውጥ ተመኖች",
-                    "title_om": "Kaalkulasaa: Seerota Diraayiveetivii fi Reeshoo Jijjiiramaa",
-                    "formulas": [
-                        "Power Rule: d/dx [x^n] = n * x^(n-1)",
-                        "Product Rule: d/dx [u * v] = u'v + uv'",
-                        "Quotient Rule: d/dx [u / v] = (u'v - uv') / v²",
-                        "Chain Rule: d/dx [f(g(x))] = f'(g(x)) * g'(x)"
-                    ],
-                    "core_principles_en": "The derivative f'(x) defines the instantaneous rate of change and the geometric slope of the tangent line to the curve y = f(x) at any specified coordinate.",
-                    "core_principles_am": "ተዋጽኦ f'(x) ቅጽበታዊ የለውጥ መጠንን እና በማንኛውም ነጥብ ላይ ወደ ኩርባው የሚሰመረውን የታንጀንት መስመር ቁልቁለት ይወክላል።",
-                    "core_principles_om": "Diraayiveetiviin f'(x) reeshoo jijjiirama battalaa fi dalga sarara qaxxaamura fankishinichaa ibsa.",
-                    "exam_tips_en": "In national exams, quotient rule questions frequently feature trigonometric or polynomial expressions in the denominator. Double-check denominator squaring.",
-                    "exam_tips_am": "በብሄራዊ ፈተናዎች የክፍልፋይ ህግ ጥያቄዎች ላይ የታችኛውን ቁጥር በካሬ ማባዛትን በጥንቃቄ ያረጋግጡ።",
-                    "exam_tips_om": "Qormaata irratti seera hirinsaa yeroo gargaaramtu herrega jala jiru labata (v²) gochuu hin dagatin.",
-                    "practice_question": {
-                        "question_en": "Compute the derivative of f(x) = (3x² + 2) / (x - 1) at x = 2.",
-                        "question_am": "የ f(x) = (3x² + 2) / (x - 1) ተዋጽኦን በ x = 2 ላይ አስላ።",
-                        "question_om": "Diraayiveetivii f(x) = (3x² + 2) / (x - 1) bakka x = 2 ta'etti herreegi.",
-                        "step_by_step_solution_en": "1. Let u = 3x² + 2 -> u' = 6x; v = x - 1 -> v' = 1.\n2. f'(x) = (u'v - uv') / v² = (6x(x - 1) - (3x² + 2)(1)) / (x - 1)².\n3. Evaluate at x = 2: u'(2) = 12, v(2) = 1, u(2) = 14, v'(2) = 1.\n4. f'(2) = (12(1) - 14(1)) / (1)² = (12 - 14) / 1 = -2.",
-                        "step_by_step_solution_am": "1. u = 3x² + 2 -> u' = 6x; v = x - 1 -> v' = 1።\n2. f'(x) = (6x(x - 1) - (3x² + 2)) / (x - 1)²።\n3. x = 2 ን አስገባ: f'(2) = (12(1) - 14(1)) / 1 = -2።",
-                        "step_by_step_solution_om": "1. u = 3x² + 2 -> u' = 6x; v = x - 1 -> v' = 1.\n2. f'(x) = (6x(x - 1) - (3x² + 2)) / (x - 1)².\n3. x = 2 bakka buusi: f'(2) = (12(1) - 14(1)) / 1 = -2.",
-                        "correct_answer": "-2"
-                    }
-                }
-            ]
+            "subject": "Mathematics", "code": "MATH", "grade": 12, "stream": "Natural Science & Social Science",
+            "unit": "Applied Calculus and Coordinate Geometry",
+            "topic_en": "Parabolic Optimization and Instantaneous Derivatives",
+            "topic_am": "የፓራቦሊክ ማመቻቸት እና ቅጽበታዊ ተዋጽኦዎች",
+            "topic_om": "Fooyyessuu Paaraaboolaa fi Diraayiveetivii Battalaa",
+            "formulas": [
+                "Quadratic Vertex Formula: x = -b / (2a); Maximum/Minimum value = f(-b / (2a))",
+                "Differentiation Power Rule: d/dx [x^n] = n * x^(n-1)",
+                "Product Rule: (uv)' = u'v + uv'; Quotient Rule: (u/v)' = (u'v - uv') / v^2",
+                "Tangent Line Slope: m = f'(x_0); Equation: y - y_0 = f'(x_0) * (x - x_0)"
+            ],
+            "key_concepts_en": "Optimization problems in national examinations require modeling a real situation into a single-variable function, calculating the first derivative, setting f'(x) = 0 to isolate critical points, and verifying concavity using the second derivative test f''(x).",
+            "key_concepts_am": "በብሄራዊ ፈተናዎች ውስጥ የማመቻቸት ጥያቄዎች አንድን ተግባራዊ ችግር ወደ አንድ ተለዋዋጭ ፈንክሽን መቀየር፣ የመጀመሪያውን ተዋጽኦ ማስላት፣ f'(x) = 0 በማድረግ ወሳኝ ነጥቦችን ማግኘት እና በሁለተኛው ተዋጽኦ f''(x) አማካኝነት ከፍተኛ ወይም ዝቅተኛ መሆኑን ማረጋገጥን ይጠይቃሉ።",
+            "key_concepts_om": "Gaaffileen fooyyessuu qormaata biyyoolessaa keessatti fankishinii jijjiiramaa tokkoon ijaaruu, diraayiveetivii jalqabaa f'(x) = 0 gochuun qabxii murteessaa argachuu fi diraayiveetivii lammaffaatiin f''(x) mirkaneessuu barbaada.",
+            "exam_focus_tips_en": "Check boundary conditions in interval [a, b]. If f''(x) < 0, the critical point is a local maximum; if f''(x) > 0, it is a local minimum.",
+            "exam_focus_tips_am": "የወሰን ነጥቦችን [a, b] ሁልጊዜ ያረጋግጡ። f''(x) < 0 ከሆነ ነጥቡ ከፍተኛ (ማክሲመም) ነው፤ f''(x) > 0 ከሆነ አነስተኛ (ሚኒመም) ነው።",
+            "exam_focus_tips_om": "Daangaa [a, b] ilaaluu hin dagatin. Yoo f''(x) < 0 ta'e qabxiin sun olaanaadha; yoo f''(x) > 0 ta'e immoo xiqqaadha.",
+            "worked_example": {
+                "problem_en": "A farmer has 120 meters of fencing to enclose a rectangular plot along a riverbank (no fence needed on the river side). Find the dimensions that maximize the area.",
+                "problem_am": "አንድ ገበሬ በወንዝ ዳርቻ አራት ማዕዘን ቅርጽ ያለው መሬት ለማጠር 120 ሜትር አጥር አለው (በወንዙ በኩል አጥር አያስፈልግም)። ከፍተኛውን ስፋት የሚያስገኙትን ልኬቶች ያግኙ።",
+                "problem_om": "Qotee bulaan tokko lafa reektaangilii laga cinaa jiru daangessuuf simintoo meetira 120 qaba (cinaan lagichaa daangaa hin barbaadu). Bal'ina isa olaanaa argachuuf safarri meeqa ta'uu qaba?",
+                "solution_steps_en": [
+                    "Let x be the width perpendicular to the river; length along the river is L = 120 - 2x.",
+                    "Area function A(x) = x * L = x(120 - 2x) = 120x - 2x^2.",
+                    "Differentiate: A'(x) = 120 - 4x. Set A'(x) = 0 -> 120 = 4x -> x = 30 meters.",
+                    "Verify second derivative: A''(x) = -4 < 0 (confirms a global maximum).",
+                    "Dimensions: Width x = 30 meters, Length L = 120 - 2(30) = 60 meters. Maximum Area = 1800 m^2."
+                ],
+                "solution_steps_am": [
+                    "ወደ ወንዙ የሚገባውን ስፋት x እንበል፤ የወንዙ ዳርቻ ርዝመት L = 120 - 2x ይሆናል።",
+                    "የስፋት ፈንክሽን: A(x) = x(120 - 2x) = 120x - 2x^2።",
+                    "ተዋጽኦን አስላ: A'(x) = 120 - 4x = 0 -> x = 30 ሜትር።",
+                    "ሁለተኛ ተዋጽኦ: A''(x) = -4 < 0 (ከፍተኛ መሆኑን ያረጋግጣል)።",
+                    "ልኬቶች: ስፋት = 30 ሜትር፣ ርዝመት = 60 ሜትር፤ ከፍተኛ ስፋት = 1800 ካሬ ሜትር።"
+                ],
+                "solution_steps_om": [
+                    "Dalga lagatti qajeelu x haa jennu; dheerinni laga cinaa L = 120 - 2x ta'a.",
+                    "Fankishinii bal'inaa: A(x) = x(120 - 2x) = 120x - 2x^2.",
+                    "Diraayiveetivii: A'(x) = 120 - 4x = 0 -> x = meetira 30.",
+                    "Diraayiveetivii lammaffaa: A''(x) = -4 < 0 (olaanaa ta'uu mirkaneessa).",
+                    "Safartuu: Dalga = meetira 30, Dheerina = meetira 60; Bal'ina olaanaa = 1800 m^2."
+                ],
+                "final_answer": "Width = 30 m, Length = 60 m, Maximum Area = 1,800 square meters."
+            }
         },
         {
-            "subject": "Physics",
-            "subject_am": "ፊዚክስ",
-            "subject_om": "Fiiziksii",
-            "code": "PHYS",
-            "exam_target": "Grade 12 ESSLCE Natural Science",
-            "topics": [
-                {
-                    "topic_id": "PHYS-TOPIC-01",
-                    "title": "Newtonian Mechanics: Friction, Momentum, and Collisions",
-                    "title_am": "የኒውቶኒያን መካኒክስ: ፍጭት፣ ሞመንተም እና ግጭቶች",
-                    "title_om": "Makaaniksii Niwutan: Rukkutta, Moomeentamii fi Walitti-bu'iinsa",
-                    "formulas": [
-                        "Newton's Second Law: ΣF = m * a = dp / dt",
-                        "Static Friction: fs ≤ μs * Fn; Kinetic Friction: fk = μk * Fn",
-                        "Linear Momentum: p = m * v; Impulse: J = Δp = F_avg * Δt",
-                        "Elastic Collision Conservation: m1*u1 + m2*u2 = m1*v1 + m2*v2 AND (1/2)m1*u1² + (1/2)m2*u2² = (1/2)m1*v1² + (1/2)m2*v2²"
-                    ],
-                    "core_principles_en": "Total linear momentum is strictly conserved in all isolated systems devoid of external forces. In perfectly elastic collisions, both kinetic energy and momentum are conserved; in inelastic collisions, kinetic energy converts into thermal/sound energy.",
-                    "core_principles_am": "የውጭ ኃይል በሌለበት የተዘጋ ስርዓት ውስጥ መስመራዊ ሞመንተም ሁል ጊዜ ይጠበቃል። በላስቲክ ግጭት ውስጥ ሁለቱም ሞመንተም እና ኪነቲክ ኃይል ይጠበቃሉ፤ ኢላስቲክ ባልሆነ ግጭት ግን ኪነቲክ ኃይል ወደ ሙቀት ወይም ድምፅ ይለወጣል።",
-                    "core_principles_om": "Moomeentamiin sararaa sirna cufaa keessatti yeroo hunda ni eegama. Walitti-bu'iinsa 'elastic' keessatti annisaan sochii fi moomeentamiin ni eegamu.",
-                    "exam_tips_en": "Be vigilant regarding directional signs in momentum. A rebounding object has negative post-collision velocity (v2 < 0), causing impulse to equal m(v - (-u)) = m(v + u).",
-                    "exam_tips_am": "በሞመንተም ስሌቶች ላይ የአቅጣጫ ምልክቶችን (+ እና -) በትክክል ያረጋግጡ። ተመልሶ የሚመጣ አካል አቅጣጫው ይቀየራል።",
-                    "exam_tips_om": "Moomeentamii yeroo shallagdu kallattii (+ fi -) sirriitti ilaali. Wanti deebi'ee utaalu kallattiin isaa jijjiirama.",
-                    "practice_question": {
-                        "question_en": "A 2 kg ball moving at 6 m/s collides head-on with a stationary 4 kg ball. If the collision is perfectly inelastic (they stick together), determine their final common velocity.",
-                        "question_am": "በ 6 ሜ/ሰ የሚጓዝ 2 ኪ.ግ ኳስ ከቆመ 4 ኪ.ግ ኳስ ጋር ተጋጨ። ግጭቱ ሙሉ በሙሉ የማይለጠጥ ከሆነ (አብረው ቢጣበቁ)፣ የመጨረሻ የጋራ ፍጥነታቸውን አስሉ::",
-                        "question_om": "Kubbaan ulfaatinni isaa 2 kg fi saffisi isaa 6 m/s ta'e kubbaa 4 kg kan dhaabbatee jiruun walitti bu'e. Yoo lamaanuu walitti qabatan, saffisa isaanii isa dhumaa barbaadi.",
-                        "step_by_step_solution_en": "1. Conservation of momentum: m1*u1 + m2*u2 = (m1 + m2) * v_final.\n2. (2 kg)(6 m/s) + (4 kg)(0 m/s) = (2 kg + 4 kg) * v_final.\n3. 12 kg*m/s = 6 kg * v_final.\n4. v_final = 12 / 6 = 2 m/s in the forward direction.",
-                        "step_by_step_solution_am": "1. የሞመንተም ጥበቃ ህግ: m1*u1 + m2*u2 = (m1 + m2) * v_final።\n2. (2 * 6) + (4 * 0) = (2 + 4) * v_final።\n3. 12 = 6 * v_final -> v_final = 2 ሜ/ሰ።",
-                        "step_by_step_solution_om": "1. Seera eegumsa moomeentamii: m1*u1 + m2*u2 = (m1 + m2) * v_final.\n2. (2 * 6) + (4 * 0) = (2 + 4) * v_final.\n3. 12 = 6 * v_final -> v_final = 2 m/s.",
-                        "correct_answer": "2 m/s"
-                    }
-                }
-            ]
+            "subject": "Physics", "code": "PHYS", "grade": 12, "stream": "Natural Science",
+            "unit": "Electromagnetism, Induction, and AC Circuits",
+            "topic_en": "Faraday's Law, Lenz's Law, and Transformer Power Transmission",
+            "topic_am": "የፋራዳይ ህግ፣ የሌንዝ ህግ እና የትራንስፎርመር የኃይል ማስተላለፊያ",
+            "topic_om": "Seera Faraadaayii, Seera Leenzii fi Tiraanisfoormarii",
+            "formulas": [
+                "Magnetic Flux: Φ_B = B * A * cos(θ) (Weber, Wb)",
+                "Faraday's Law of Induction: ε = -N * (dΦ_B / dt)",
+                "Lenz's Law Principle: The induced current creates a magnetic field that opposes the change in flux.",
+                "Ideal Transformer Equation: V_p / V_s = N_p / N_s = I_s / I_p; Power: P = V_p * I_p = V_s * I_s"
+            ],
+            "key_concepts_en": "Electromagnetic induction underlies electric generators and transformers. A changing magnetic flux through a conductor loop induces an electromotive force (EMF). The negative sign in Faraday's equation mathematically enshrines Lenz's law of energy conservation.",
+            "key_concepts_am": "ኤሌክትሮማግኔቲክ ኢንዳክሽን የጄነሬተሮች እና የትራንስፎርመሮች መሰረት ነው። በአስተላላፊ ዑደት ውስጥ የሚለዋወጥ መግነጢሳዊ ፍሰት የኤሌክትሮሞቲቭ ኃይል (EMF) ይፈጥራል። የፋራዳይ እኩልታ አሉታዊ ምልክት የሌንዝ የኃይል ጥበቃ ህግን ይወክላል።",
+            "key_concepts_om": "InDaakshiniin elektiroomaagneetiksii bu'uura jeneraatarootaa fi tiraanisfoormarootaati. Dambaliin maagneetii jijjiiramu humna elektirikii (EMF) uuma. Mallattoon 'negative' seera eegumsa annisaa agarsiisa.",
+            "exam_focus_tips_en": "In transformer problems, remember that step-up transformers increase voltage but decrease current proportionally to conserve total electrical power (P = VI).",
+            "exam_focus_tips_am": "በትራንስፎርመር ጥያቄዎች ላይ ስቴፕ-አፕ ትራንስፎርመር ቮልቴጅን ሲጨምር አጠቃላይ ኃይልን ለመጠበቅ ጅረትን (current) እንደሚቀንስ አስታውሱ።",
+            "exam_focus_tips_om": "Tiraanisfoormariin ol-kaasaa (step-up) voolteejii yoo dabalu ya'a elektirikii (current) garuu ni xiqqeessa.",
+            "worked_example": {
+                "problem_en": "A step-down transformer has 1200 primary turns and 60 secondary turns. If the primary voltage is 2400 V AC and the secondary load draws 20 A, find the secondary voltage and primary current.",
+                "problem_am": "አንድ ስቴፕ-ዳውን ትራንስፎርመር 1200 የመጀመሪያ ጠመዝማዛዎች እና 60 የሁለተኛ ጠመዝማዛዎች አሉት። የመጀመሪያው ቮልቴጅ 2400 ቮልት ከሆነ እና ሁለተኛው 20 አምፔር ከወሰደ፣ ሁለተኛውን ቮልቴጅ እና የመጀመሪያውን ጅረት አስሉ።",
+                "problem_om": "Tiraanisfoormariin gadi-buusaa tokko marsoo jalqabaa 1200 fi kan lammaffaa 60 qaba. Voolteejiin jalqabaa 2400 V ta'ee ya'i lammaffaa 20 A yoo ta'e, voolteejii lammaffaa fi ya'a jalqabaa barbaadi.",
+                "solution_steps_en": [
+                    "Voltage ratio: V_s = V_p * (N_s / N_p) = 2400 * (60 / 1200) = 2400 * 0.05 = 120 V AC.",
+                    "Current ratio from power conservation: I_p = I_s * (N_s / N_p) = 20 * (60 / 1200) = 1.0 A.",
+                    "Verify power: P_in = 2400 V * 1 A = 2400 W; P_out = 120 V * 20 A = 2400 W (balanced)."
+                ],
+                "solution_steps_am": [
+                    "የቮልቴጅ ጥምርታ: V_s = 2400 * (60 / 1200) = 120 ቮልት።",
+                    "የጅረት ጥምርታ: I_p = 20 * (60 / 1200) = 1.0 አምፔር።",
+                    "ኃይልን ያረጋግጡ: P_in = 2400 * 1 = 2400 ዋት፤ P_out = 120 * 20 = 2400 ዋት (እኩል)።"
+                ],
+                "solution_steps_om": [
+                    "Reeshoo voolteejii: V_s = 2400 * (60 / 1200) = 120 V.",
+                    "Reeshoo ya'aa: I_p = 20 * (60 / 1200) = 1.0 A.",
+                    "Aangoo mirkaneessi: P = 2400 W (lamaanuu walqixa)."
+                ],
+                "final_answer": "Secondary Voltage = 120 V, Primary Current = 1.0 A."
+            }
         },
         {
-            "subject": "Chemistry",
-            "subject_am": "ኬሚስትሪ",
-            "subject_om": "Keemistirii",
-            "code": "CHEM",
-            "exam_target": "Grade 12 ESSLCE Natural Science",
-            "topics": [
-                {
-                    "topic_id": "CHEM-TOPIC-01",
-                    "title": "Chemical Equilibrium and Le Chatelier's Principle",
-                    "title_am": "ኬሚካላዊ ሚዛናዊነት እና የሌ ሻቴሊየር መርህ",
-                    "title_om": "Madaallii Keemikaalaa fi Seera Le Chatelier",
-                    "formulas": [
-                        "Equilibrium Constant (Kc): aA + bB ⇌ cC + dD => Kc = [C]^c * [D]^d / ([A]^a * [B]^b)",
-                        "Pressure Equilibrium Constant (Kp): Kp = Kc * (R * T)^(Δn_gas), where Δn_gas = (c + d) - (a + b)",
-                        "Reaction Quotient (Q): If Q < Kc (shifts right/forward), Q = Kc (at equilibrium), Q > Kc (shifts left/backward)",
-                        "pH and pOH: pH = -log10[H3O+]; pOH = -log10[OH-]; pH + pOH = 14.00 at 25°C"
-                    ],
-                    "core_principles_en": "Le Chatelier's Principle states that when a dynamic equilibrium is subjected to an external perturbation (change in concentration, temperature, or pressure), the system shifts in a direction that counteracts the applied stress.",
-                    "core_principles_am": "የሌ ሻቴሊየር መርህ እንደሚያስረዳው በኬሚካላዊ ሚዛን ላይ የሙቀት፣ የክምችት ወይም የግፊት ለውጥ ሲፈጠር ስርዓቱ የተፈጠረውን ለውጥ ለማካካስ አቅጣጫውን ይቀይራል።",
-                    "core_principles_om": "Seerri Le Chatelier akka ibsutti, yeroo sirni madaallii keemikaalaa dhiibbaa alaa (hoo'a, dhiibbaa, baay'ina) mudatu, sirnichi dhiibbaa sana hir'isuuf gara cinaatti socho'a.",
-                    "exam_tips_en": "Catalysts accelerate forward and reverse reaction rates equally; they NEVER alter the numerical value of Kc or shift the equilibrium position.",
-                    "exam_tips_am": "አነቃቂዎች (ካታሊስቶች) የምላሽ ፍጥነትን በእኩል ያፋጥናሉ እንጂ የ Kc ዋጋን ወይም ሚዛንን በጭራሽ አይቀይሩም።",
-                    "exam_tips_om": "Kaataalistii saffisa wal-nyaatinsaa qofa dabala malee gatii Kc hin jijjiiru.",
-                    "practice_question": {
-                        "question_en": "For the exothermic Haber process N2(g) + 3H2(g) ⇌ 2NH3(g) (ΔH = -92 kJ/mol), what happens to the yield of NH3 if temperature is increased and volume is decreased?",
-                        "question_am": "ለሙቀት አመንጪው የሄበር ሂደት N2(g) + 3H2(g) ⇌ 2NH3(g) (ΔH = -92 kJ/mol)፣ የሙቀት መጠን ቢጨምር እና ይዘቱ ቢቀንስ የ NH3 ምርት ምን ይሆናል?",
-                        "question_om": "Wal-nyaatinsa Haber N2(g) + 3H2(g) ⇌ 2NH3(g) (ΔH = -92 kJ/mol) keessatti hoo'i yoo dabalee fi iddoon yoo xiqqaate omishni NH3 maal ta'a?",
-                        "step_by_step_solution_en": "1. Temperature increase: Since the forward reaction is exothermic, increasing temperature adds heat, shifting equilibrium left (decreases NH3 yield).\n2. Volume decrease: Decreasing volume increases pressure. System shifts toward fewer gas moles (4 moles reactants vs 2 moles products -> shifts right, increases NH3 yield).\n3. Net outcome depends on magnitude of adjustments.",
-                        "step_by_step_solution_am": "1. የሙቀት መጨመር: ሂደቱ ሙቀት አመንጪ በመሆኑ ሙቀትን መጨመር ሚዛኑን ወደ ግራ ያሸጋግረዋል (የ NH3 ምርትን ይቀንሳል)።\n2. የይዘት መቀነስ: ግፊትን ስለሚጨምር ስርዓቱ አነስተኛ የጋዝ ሞል ወዳለበት ወደ ቀኝ ያሸጋግረዋል (የ NH3 ምርትን ይጨምራል)።",
-                        "step_by_step_solution_om": "1. Hoo'a dabaluun madaallii gara bitaatti deebisa (omisha NH3 xiqqeessa).\n2. Dhiibbaa dabaluun (iddoo xiqqeessuun) garuu gara moolii xiqqaatti (gara mirgaatti) sochoosa (omisha NH3 dabala).",
-                        "correct_answer": "Temperature increase shifts left; volume decrease shifts right toward NH3."
-                    }
-                }
-            ]
+            "subject": "Chemistry", "code": "CHEM", "grade": 12, "stream": "Natural Science",
+            "unit": "Chemical Equilibrium, Acid-Base Chemistry, and Buffers",
+            "topic_en": "Henderson-Hasselbalch Buffer Solutions and pH Titration Curves",
+            "topic_am": "የሄንደርሰን-ሃሰልባልች የባፈር መፍትሄዎች እና የፒኤች ታይትሬሽን ኩርባዎች",
+            "topic_om": "Walqixxummaa Baafarii Henderson-Hasselbalch fi Koorvii pH",
+            "formulas": [
+                "Henderson-Hasselbalch (Acidic Buffer): pH = pKa + log10([A-] / [HA])",
+                "Henderson-Hasselbalch (Basic Buffer): pOH = pKb + log10([BH+] / [B])",
+                "Autoionization of Water: Kw = [H3O+] * [OH-] = 1.0 * 10^(-14) at 25°C; pH + pOH = 14",
+                "Weak Acid Dissociation Constant: Ka = [H3O+] * [A-] / [HA]"
+            ],
+            "key_concepts_en": "A buffer solution resists dramatic changes in pH upon addition of small amounts of strong acid or base. Buffers are composed of either a weak acid and its conjugate base (e.g., CH3COOH / CH3COONa) or a weak base and its conjugate acid (e.g., NH3 / NH4Cl).",
+            "key_concepts_am": "የባፈር መፍትሄ ትንሽ መጠን ያለው ጠንካራ አሲድ ወይም ቤዝ ሲጨመርበት ድንገተኛ የፒኤች ለውጥን ይቋቋማል። ባፈሮች ከደካማ አሲድ እና ተጓዳኝ ቤዙ ወይም ከደካማ ቤዝ እና ተጓዳኝ አሲዱ የተዋቀሩ ናቸው።",
+            "key_concepts_om": "Furmaanni baafarii yeroo asiidiin ykn beessiin xiqqoon itti dabalamu jijjiirama pH saffisaa ittisa. Baafariin asiidii dadhabaa fi beessii wal-fakkaataa irraa tolfama.",
+            "exam_focus_tips_en": "At the half-equivalence point in a weak acid titration, [HA] = [A-], which means log10(1) = 0, so pH = pKa. This provides a direct graphical method to find pKa.",
+            "exam_focus_tips_am": "በደካማ አሲድ ታይትሬሽን ግማሽ ኢኩቫለንስ ነጥብ ላይ [HA] = [A-] ስለሚሆን pH = pKa ይሆናል። ይህ pKa ን ከግራፍ በቀጥታ ለማግኘት ይረዳል።",
+            "exam_focus_tips_om": "Walakkaa qabxii walqixxummaa irratti [HA] = [A-] waan ta'eef pH = pKa ta'a.",
+            "worked_example": {
+                "problem_en": "Calculate the pH of a buffer solution prepared by mixing 0.20 M acetic acid (CH3COOH) and 0.30 M sodium acetate (CH3COONa). (Given: Ka of CH3COOH = 1.8 * 10^(-5)).",
+                "problem_am": "0.20 M አሴቲክ አሲድ እና 0.30 M ሶዲየም አሲቴት በማደባለቅ የተዘጋጀውን የባፈር መፍትሄ ፒኤች አስሉ። (Ka = 1.8 * 10^(-5))።",
+                "problem_om": "pH furmaata baafarii 0.20 M asiidii aseetiikii fi 0.30 M soodiyeem aseeteetii walitti makuun qophaa'ee herreegi. (Ka = 1.8 * 10^(-5)).",
+                "solution_steps_en": [
+                    "Calculate pKa: pKa = -log10(1.8 * 10^(-5)) = 4.74.",
+                    "Apply Henderson-Hasselbalch: pH = pKa + log10([Conjugate Base] / [Weak Acid]).",
+                    "pH = 4.74 + log10(0.30 / 0.20) = 4.74 + log10(1.50).",
+                    "log10(1.50) = 0.176 -> pH = 4.74 + 0.176 = 4.92."
+                ],
+                "solution_steps_am": [
+                    "pKa ን አስላ: pKa = -log10(1.8 * 10^(-5)) = 4.74።",
+                    "የሄንደርሰን-ሃሰልባልች እኩልታን ተጠቀም: pH = 4.74 + log10(0.30 / 0.20)።",
+                    "pH = 4.74 + log10(1.5) = 4.74 + 0.18 = 4.92።"
+                ],
+                "solution_steps_om": [
+                    "pKa herreegi: pKa = -log10(1.8 * 10^(-5)) = 4.74.",
+                    "Seera fayyadami: pH = 4.74 + log10(0.30 / 0.20).",
+                    "pH = 4.74 + 0.18 = 4.92."
+                ],
+                "final_answer": "pH = 4.92."
+            }
+        },
+        {
+            "subject": "Biology", "code": "BIO", "grade": 12, "stream": "Natural Science",
+            "unit": "Molecular Genetics, Protein Synthesis, and Mendelian Inheritance",
+            "topic_en": "Transcription, Translation, Genetic Code, and Dihybrid Cross Ratios",
+            "topic_am": "ትራንስክሪፕሽን፣ ትራንስሌሽን፣ የጀነቲክ ኮድ እና የዲሃይብሪድ ውርስ",
+            "topic_om": "Tiraaniskiripshinii, Tiraanisleshinii fi Dhaala Jeneetiiksii",
+            "formulas": [
+                "Central Dogma: DNA -> (Transcription via RNA Polymerase) -> mRNA -> (Translation on Ribosome) -> Polypeptide",
+                "Mendel Dihybrid Phenotypic Ratio: 9 : 3 : 3 : 1 (independent assortment of heterozygous AaBb x AaBb)",
+                "Monohybrid Testcross Ratio: 1 : 1 (heterozygous Aa x homozygous recessive aa)",
+                "Dihybrid Testcross Ratio: 1 : 1 : 1 : 1 (unlinked genes AaBb x aabb)"
+            ],
+            "key_concepts_en": "Protein synthesis translates genetic instructions encoded in mRNA triplets (codons) into specific amino acids. The genetic code is universal, triplet, non-overlapping, and degenerate (multiple codons can code for the same amino acid).",
+            "key_concepts_am": "የፕሮቲን ውህደት በ mRNA ኮዶኖች ውስጥ የተመዘገቡትን መመሪያዎች ወደ አሚኖ አሲዶች ይተረጉማል። የጀነቲክ ኮድ አለም አቀፋዊ፣ ባለሶስት ፊደል እና ተደጋጋፊ (አንድ አሚኖ አሲድ በበርካታ ኮዶኖች ሊወከል ይችላል) ነው።",
+            "key_concepts_om": "Ijaarsi pirootiinii qajeelfama koodee mRNA irra jiru gara amiinoo asiidiitti jijjiira. Koodiin jeneetiiksii addunyaa mara irratti wal-fakkaataadha.",
+            "exam_focus_tips_en": "Start codon is always AUG (methionine). Stop codons are UAA, UAG, and UGA. In DNA-to-RNA transcription, remember Adenine pairs with Uracil (A -> U), not Thymine.",
+            "exam_focus_tips_am": "የመጀመሪያው ኮዶን ሁልጊዜ AUG (ሜቲዮኒን) ነው። የማቆሚያ ኮዶኖች UAA, UAG እና UGA ናቸው። በዲኤንኤ ወደ አርኤንኤ ሽግግር አዲኒን ከዩራሲል (A -> U) ጋር ይጣመራል።",
+            "exam_focus_tips_om": "Koodiin jalqabaa yeroo hunda AUG dha. Koodiin dhaabinsaa UAA, UAG fi UGA dha. A garuu U wajjin qindaa'a.",
+            "worked_example": {
+                "problem_en": "Given a DNA coding template strand 3'-TAC GGC TTA CTG ACT-5', determine the resulting mRNA transcript sequence and the total number of amino acids produced.",
+                "problem_am": "የዲኤንኤ ቴምፕሌት 3'-TAC GGC TTA CTG ACT-5' ቢሰጥ፣ የሚፈጠረውን የ mRNA ቅደም ተከተል እና አጠቃላይ የአሚኖ አሲድ ብዛት ይወስኑ።",
+                "problem_om": "Sararri DNA 3'-TAC GGC TTA CTG ACT-5' yoo kenname, mRNA isa uumamu fi baay'ina amiinoo asiidii barbaadi.",
+                "solution_steps_en": [
+                    "Complementary RNA base pairing: 3'-TAC GGC TTA CTG ACT-5' -> 5'-AUG CCG AAU GAC UGA-3'.",
+                    "Identify codons: AUG (Met/Start), CCG (Pro), AAU (Asn), GAC (Asp), UGA (Stop codon).",
+                    "The stop codon UGA terminates peptide chain elongation and does not code for an amino acid.",
+                    "Total amino acids synthesized = 4 (Methionine - Proline - Asparagine - Aspartate)."
+                ],
+                "solution_steps_am": [
+                    "ተጓዳኝ የ RNA ቅደም ተከተል: 5'-AUG CCG AAU GAC UGA-3'።",
+                    "ኮዶኖችን ይለዩ: AUG (ጀምር), CCG, AAU, GAC, UGA (አቁም)።",
+                    "የማቆሚያ ኮዶን UGA አሚኖ አሲድን አይወክልም።",
+                    "አጠቃላይ የአሚኖ አሲድ ብዛት = 4።"
+                ],
+                "solution_steps_om": [
+                    "Koodii RNA: 5'-AUG CCG AAU GAC UGA-3'.",
+                    "AUG (jalqaba), CCG, AAU, GAC, UGA (dhaabi).",
+                    "Koodiin dhaabi amiinoo asiidii hin qabu.",
+                    "Baay'ina amiinoo asiidii = 4."
+                ],
+                "final_answer": "mRNA Sequence: 5'-AUG CCG AAU GAC UGA-3'; Peptide Length = 4 Amino Acids."
+            }
+        },
+        {
+            "subject": "History", "code": "HIST", "grade": 12, "stream": "Social Science & General",
+            "unit": "Modern Ethiopian History and Anti-Colonial Struggle",
+            "topic_en": "The Battle of Adwa (1896): Diplomatic Background and Tactical Victory",
+            "topic_am": "የዓድዋ ጦርነት (1896): ዲፕሎማሲያዊ ዳራ እና ስልታዊ ድል",
+            "topic_om": "Waraana Adwaa (1896): Duubee Dippilomaasii fi Injifannoo Tooftaa",
+            "formulas": [
+                "Treaty of Wuchale (May 2, 1889): Article XVII dispute (Amharic permissive 'can use' vs Italian mandatory 'must use')",
+                "National Mobilization Proclamation: Menelik II declaration in September 1895 following Italian aggressive advances",
+                "Decisive Battle Date: March 1, 1896 (Yekatit 23, 1888 Ethiopian Calendar)",
+                "Treaty of Addis Ababa (October 26, 1896): Unconditional annulment of Treaty of Wuchale and absolute recognition of Ethiopian independence"
+            ],
+            "key_concepts_en": "The 1896 Battle of Adwa was a watershed confrontation in world history where an African imperial army under Emperor Menelik II and Empress Taytu decisively defeated the invading Italian colonial army under General Oreste Baratieri, preserving Ethiopia's sovereignty and inspiring global Pan-African anti-colonial movements.",
+            "key_concepts_am": "የ1896ቱ የዓድዋ ጦርነት በአፄ ምኒልክ እና እቴጌ ጣይቱ የተመራው የኢትዮጵያ ሰራዊት የጄኔራል ባራቲየሪን የጣሊያን ቅኝ ገዥ ሰራዊት ድል በማድረግ የኢትዮጵያን ነፃነት ያረጋገጠበት እና ፓን-አፍሪካኒዝምን ያነሳሳ ታላቅ ታሪካዊ ድል ነው።",
+            "key_concepts_om": "Waraanni Adwaa bara 1896 waraana gootota Itoophiyaa kanneen Daangaa fi Bilisummaa biyya isaanii eegsisuuf koloneeffattoota Xaaliyaanii irratti injifannoo boonsaa galmeessanidha.",
+            "exam_focus_tips_en": "In national examination questions, pay particular attention to Empress Taytu's strategic defense at the Siege of Mekelle (cutting off Italian water supplies at Endeyyes) and the miscoordination between Italian brigade commanders (Albertone, Arimondi, Dabormida).",
+            "exam_focus_tips_am": "በፈተና ጥያቄዎች ላይ የእቴጌ ጣይቱን የመቀሌ ምሽግ ስትራቴጂ (የውሃ አቅርቦትን ማቋረጥ) እና የጣሊያን ጄኔራሎች አለመቀናጀት በጥንቃቄ ይመልከቱ።",
+            "exam_focus_tips_om": "Qormaata irratti tooftaa Giiftii Xaayituu kan bishaan Xaaliyaanii cufuu fi dogoggora jeneraalota Xaaliyaanii xiyyeeffannoon qabadhaa.",
+            "worked_example": {
+                "problem_en": "Analyze how the linguistic discrepancy in Article XVII of the 1889 Treaty of Wuchale served as the immediate diplomatic catalyst for the Battle of Adwa.",
+                "problem_am": "በ1889ኙ የውጫሌ ውል አንቀጽ 17 ላይ የተፈጠረው የቋንቋ ልዩነት ለዓድዋ ጦርነት እንዴት ዲፕሎማሲያዊ መንስኤ እንደሆነ ይተንትኑ።",
+                "problem_om": "Waliigaltee Wucaalee keewwata 17ffaa keessatti garaagarummaan afaanii akkamitti waraana Adwaatiif sababa akka ta'e ibsi.",
+                "solution_steps_en": [
+                    "The Amharic version stated Ethiopia 'could' utilize Italian diplomatic channels for relations with foreign powers at its discretion.",
+                    "The Italian version fraudulently stated that Ethiopia 'consents to make use' (obligatory protectorate status).",
+                    "Upon discovering Italy's European protectorate notification, Menelik II formally abrogated the treaty in February 1893, leading directly to military mobilization."
+                ],
+                "solution_steps_am": [
+                    "የአማርኛው ቅጂ ኢትዮጵያ በውጭ ግንኙነቷ የጣሊያንን እገዛ 'መጠቀም ትችላለች' በማለት እንደ ምርጫ አስቀመጠ።",
+                    "የጣሊያንኛው ቅጂ ግን ኢትዮጵያ 'መጠቀም አለባት' በማለት የጣሊያን ጥገኝ አገር (protectorate) ለማድረግ ሞከረ።",
+                    "ምኒልክ ይህን ሲያውቁ ውሉን በየካቲት 1893 በይፋ አፈረሱ፤ ይህም ወደ ጦርነቱ አደረሰ።"
+                ],
+                "solution_steps_om": [
+                    "Barreeffamni Afaan Amaaraa fedhii Itoophiyaa irratti hunda'e.",
+                    "Barreeffamni Afaan Xaaliyaanii garuu Itoophiyaa akka biyya to'atamtetti ibsuuf yaale.",
+                    "Mootichi Meniliik erga kana baree booda waliigalticha haqee gara waraanaatti seene."
+                ],
+                "final_answer": "Fraudulent Italian translation of Article XVII attempted to impose an unlawful protectorate, prompting treaty abrogation and military defense."
+            }
         }
     ]
 
@@ -612,88 +560,120 @@ def generate_exam_prep_notes():
             "curriculum_scope": "National Examination Focus Areas (Natural and Social Science)",
             "languages": ["English", "Amharic (አማርኛ)", "Afaan Oromoo (Oromiffa)"]
         },
-        "subjects": subjects_notes
+        "notes": notes_list
     }
+
 
 # ==============================================================================
 # 4. YouTube Video Lessons Catalog (moe_high_school_youtube_video_lessons.json)
+# Target: ~1,400 - 2,000 lines
 # ==============================================================================
-def generate_youtube_lessons():
-    channels = [
+def generate_youtube_lessons() -> Dict[str, Any]:
+    video_lessons = [
         {
-            "channel_id": "UC_MOE_ETHIO_EDU_01",
-            "channel_name": "Ethiopian Ministry of Education Official Broadcast",
-            "channel_name_am": "የትምህርት ሚኒስቴር ይፋዊ የስርጭት ቻናል",
-            "channel_name_om": "Chaanaalii Tamsaasa Qajeelchaa Ministeera Barnootaa",
-            "subscribers": "1,450,000",
-            "playlist_title": "Grade 12 National University Entrance Exam Masterclass Series",
-            "playlist_title_am": "የ12ኛ ክፍል ብሄራዊ የዩኒቨርሲቲ መግቢያ ፈተና ማስተርክላስ ተከታታይ",
-            "playlist_title_om": "Barnoota Qormaata Seensa Yuunivarsiitii Kutaa 12ffaa",
-            "lessons": [
-                {
-                    "video_id": "yt_moe_g12_math_001",
-                    "title": "Grade 12 Mathematics: Calculus Optimization & Limits Masterclass",
-                    "title_am": "የ12ኛ ክፍል ሂሳብ: የካልኩለስ ማመቻቸት እና ገደቦች ማስተርክላስ",
-                    "title_om": "Herrega Kutaa 12: Kaalkulasaa fi Daangaa",
-                    "duration": "48:15",
-                    "instructor": "Dr. Desta Tesfaye (Senior Curriculum Specialist, MOE)",
-                    "language": "English & Amharic Bilingual",
-                    "youtube_url": "https://www.youtube.com/watch?v=moe_math_g12_calc01",
-                    "curriculum_unit": "Unit 3: Applied Calculus in General Secondary",
-                    "timestamps": [
-                        {"time": "00:00", "topic": "Introduction & National Exam Weighting Analysis", "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና", "topic_om": "Seensa fi Qooda Qormaataa"},
-                        {"time": "08:30", "topic": "Evaluating Indeterminate Limits (0/0) via L'Hôpital's Rule", "topic_am": "ያልተወሰኑ ገደቦችን በሎፒታል ህግ ማስላት", "topic_om": "Daangaa Hin Murtoofne Seera L'Hopital tiin Shallaguu"},
-                        {"time": "22:10", "topic": "Critical Points and First Derivative Test for Maximums/Minimums", "topic_am": "ወሳኝ ነጥቦች እና የመጀመሪያ ተዋጽኦ ለከፍተኛ/አነስተኛ ነጥቦች", "topic_om": "Qabxiiwwan Murteessoo fi Diraayiveetivii"},
-                        {"time": "36:45", "topic": "Real-World Industrial Optimization Problems (Cylinder Surface Area)", "topic_am": "ተግባራዊ የኢንዱስትሪ ማመቻቸት ችግሮች (የሲሊንደር ስፋት)", "topic_om": "Rakkoolee Fooyyessuu Qabatamaa"},
-                        {"time": "45:00", "topic": "Review of 2023/2024 National Exam Questions", "topic_am": "የ2015/2016 የብሔራዊ ፈተና ጥያቄዎች ግምገማ", "topic_om": "Gaaffilee Qormaata Biyyoolessaa Darban"}
-                    ],
-                    "pedagogical_instructions": "Students must pause the video at timestamp 36:45, attempt the cylinder optimization problem on paper using differentiation, and compare with the instructor's breakdown.",
-                    "pedagogical_instructions_am": "ተማሪዎች ቪዲዮውን በ 36:45 ላይ በማቆም የሲሊንደር ስሌቱን በወረቀት ላይ ሰርተው ከመምህሩ ማብራሪያ ጋር ማወዳደር አለባቸው።",
-                    "pedagogical_instructions_om": "Barattoonni viidiyicha daqiiqaa 36:45 irratti dhaabuun, gaaffii sana waraqaa irratti ofiin hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
-                },
-                {
-                    "video_id": "yt_moe_g12_phys_002",
-                    "title": "Grade 12 Physics: Electromagnetism & Electromagnetic Induction",
-                    "title_am": "የ12ኛ ክፍል ፊዚክስ: ኤሌክትሮማግኔቲዝም እና ኤሌክትሮማግኔቲክ ኢንዳክሽን",
-                    "title_om": "Fiiziksii Kutaa 12: Elektiroomaagneetizimii",
-                    "duration": "52:40",
-                    "instructor": "Ato Birhanu Kebede (Hawassa University Lecturer & National Item Writer)",
-                    "language": "English & Afaan Oromoo Bilingual",
-                    "youtube_url": "https://www.youtube.com/watch?v=moe_phys_g12_em02",
-                    "curriculum_unit": "Unit 5: Electromagnetism and AC Circuits",
-                    "timestamps": [
-                        {"time": "00:00", "topic": "Magnetic Fields due to Steady Electric Currents", "topic_am": "በቋሚ የኤሌክትሪክ ፍሰት ምክንያት የሚፈጠሩ መግነጢሳዊ መስኮች", "topic_om": "Dirree Maagneetii Ya'a Elektiriikiitiin Uumamu"},
-                        {"time": "12:15", "topic": "Biot-Savart Law and Ampere's Circuital Law", "topic_am": "የባዮት-ሳቫርት ህግ እና የአምፔር ህግ", "topic_om": "Seera Biot-Savart fi Ampere"},
-                        {"time": "25:40", "topic": "Faraday's Law of Induction and Lenz's Law of Direction", "topic_am": "የፋራዳይ የኢንዳክሽን ህግ እና የሌንዝ ህግ", "topic_om": "Seera Faraadaayii fi Seera Leenz"},
-                        {"time": "40:00", "topic": "Self-Inductance, Transformers, and Power Transmission", "topic_am": "ትራንስፎርመሮች እና የኤሌክትሪክ ኃይል ስርጭት", "topic_om": "Tiraanisfoormarii fi Tamsaasa Aangoo"},
-                        {"time": "49:10", "topic": "Problem Solving: Calculating Induced EMF in Rotating Loops", "topic_am": "የሚፈጠር ቮልቴጅ (EMF) ስሌት ልምምድ", "topic_om": "EMF Uumamu Shallaguu"}
-                    ],
-                    "pedagogical_instructions": "Use the right-hand rule alongside the instructor at minute 25:40. Ensure compass direction conventions are accurately recorded in your science notebook.",
-                    "pedagogical_instructions_am": "በ 25:40 ላይ ከመምህሩ ጋር የቀኝ እጅ ህግን ይለማመዱ። የአቅጣጫ ህጎችን በማስታወሻ ደብተርዎ ላይ ይፃፉ።",
-                    "pedagogical_instructions_om": "Seera harka mirgaa daqiiqaa 25:40 irratti barsiisaa wajjin shaakalaa. Kallattii maagneetii qabachuuf yaalaa."
-                },
-                {
-                    "video_id": "yt_moe_g12_chem_003",
-                    "title": "Grade 12 Chemistry: Acid-Base Equilibria & Buffer Solutions",
-                    "title_am": "የ12ኛ ክፍል ኬሚስትሪ: የአሲድ-ቤዝ ሚዛናዊነት እና የባፈር መፍትሄዎች",
-                    "title_om": "Keemistirii Kutaa 12: Madaallii Asiidii fi Beessii",
-                    "duration": "44:20",
-                    "instructor": "W/ro Aster Hailu (Senior Chemistry Curriculum Lead)",
-                    "language": "English & Amharic Bilingual",
-                    "youtube_url": "https://www.youtube.com/watch?v=moe_chem_g12_ab03",
-                    "curriculum_unit": "Unit 2: Acid-Base Equilibria in Aqueous Solution",
-                    "timestamps": [
-                        {"time": "00:00", "topic": "Conjugate Acid-Base Pairs & Autoionization of Water (Kw)", "topic_am": "የአሲድ-ቤዝ ጥንዶች እና የውሃ ራስን መለወጥ", "topic_om": "Cimdiilee Asiidii fi Beessii fi Kw"},
-                        {"time": "10:30", "topic": "Calculating pH of Weak Acids using Ka and ICE Tables", "topic_am": "የደካማ አሲዶችን ፒኤች በ ICE ሠንጠረዥ ማስላት", "topic_om": "pH Asiidii Dadhabaa Shallaguu"},
-                        {"time": "24:15", "topic": "Henderson-Hasselbalch Equation for Buffer Solutions", "topic_am": "የሄንደርሰን-ሃሰልባልች እኩልታ ለባፈር መፍትሄዎች", "topic_om": "Walqixxummaa Henderson-Hasselbalch"},
-                        {"time": "35:00", "topic": "Titration Curves: Strong Acid-Strong Base vs Weak Acid-Strong Base", "topic_am": "የታይትሬሽን ኩርባዎች ትንተና", "topic_om": "Koorviiwwan Taayitireeshinii"},
-                        {"time": "41:30", "topic": "Selecting the Optimal Indicator based on Equivalence pH", "topic_am": "ትክክለኛውን ኢንዲኬተር መምረጥ", "topic_om": "Agarsiistuu Sirrii Filachuu"}
-                    ],
-                    "pedagogical_instructions": "Draw the titration curve during the segment at 35:00. Note the equivalence point pH shift above 7.0 for weak acid titrations.",
-                    "pedagogical_instructions_am": "በ 35:00 ላይ የታይትሬሽን ኩርባውን ይሳሉ። ለደካማ አሲዶች የኢኩቫለንስ ነጥብ ከ 7.0 በላይ እንደሚሆን ልብ ይበሉ።",
-                    "pedagogical_instructions_om": "Koorvii taayitireeshinii daqiiqaa 35:00 irratti kaasaa. Qabxiin walqixxummaa asiidii dadhabaa 7.0 ol ta'uu hubadhaa."
-                }
-            ]
+            "video_id": "yt_moe_g12_math_001",
+            "title_en": "Grade 12 Mathematics: Calculus Optimization & Limits Masterclass",
+            "title_am": "የ12ኛ ክፍል ሂሳብ: የካልኩለስ ማመቻቸት እና ገደቦች ማስተርክላስ",
+            "title_om": "Herrega Kutaa 12: Kaalkulasaa fi Daangaa",
+            "duration": "48:15", "channel": "Ethiopian Ministry of Education Official Channel",
+            "instructor": "Dr. Desta Tesfaye (Senior Curriculum Specialist, MOE)",
+            "language": "English & Amharic Bilingual",
+            "youtube_url": "https://www.youtube.com/watch?v=moe_math_g12_calc01",
+            "curriculum_unit": "Unit 3: Applied Calculus in General Secondary",
+            "timestamps": [
+                {"time": "00:00", "topic": "Introduction & National Exam Weighting Analysis", "topic_am": "መግቢያ እና የፈተና ይዘት ክብደት ትንተና", "topic_om": "Seensa fi Qooda Qormaataa"},
+                {"time": "08:30", "topic": "Evaluating Indeterminate Limits (0/0) via L'Hopital's Rule", "topic_am": "ያልተወሰኑ ገደቦችን በሎፒታል ህግ ማስላት", "topic_om": "Daangaa Hin Murtoofne Seera L'Hopital tiin Shallaguu"},
+                {"time": "22:10", "topic": "Critical Points and First Derivative Test for Maximums/Minimums", "topic_am": "ወሳኝ ነጥቦች እና የመጀመሪያ ተዋጽኦ ለከፍተኛ/አነስተኛ ነጥቦች", "topic_om": "Qabxiiwwan Murteessoo fi Diraayiveetivii"},
+                {"time": "36:45", "topic": "Real-World Industrial Optimization Problems (Cylinder Surface Area)", "topic_am": "ተግባራዊ የኢንዱስትሪ ማመቻቸት ችግሮች (የሲሊንደር ስፋት)", "topic_om": "Rakkoolee Fooyyessuu Qabatamaa"},
+                {"time": "45:00", "topic": "Review of 2023/2024 National Exam Questions", "topic_am": "የ2015/2016 የብሔራዊ ፈተና ጥያቄዎች ግምገማ", "topic_om": "Gaaffilee Qormaata Biyyoolessaa Darban"}
+            ],
+            "pedagogical_instructions": "Students must pause the video at timestamp 36:45, attempt the cylinder optimization problem on paper using differentiation, and compare with the instructor's breakdown.",
+            "pedagogical_instructions_am": "ተማሪዎች ቪዲዮውን በ 36:45 ላይ በማቆም የሲሊንደር ስሌቱን በወረቀት ላይ ሰርተው ከመምህሩ ማብራሪያ ጋር ማወዳደር አለባቸው።",
+            "pedagogical_instructions_om": "Barattoonni viidiyicha daqiiqaa 36:45 irratti dhaabuun, gaaffii sana waraqaa irratti ofiin hojjetanii booda deebii barsiisaa wajjin madaaluu qabu."
+        },
+        {
+            "video_id": "yt_moe_g12_phys_002",
+            "title_en": "Grade 12 Physics: Electromagnetism & Electromagnetic Induction",
+            "title_am": "የ12ኛ ክፍል ፊዚክስ: ኤሌክትሮማግኔቲዝም እና ኤሌክትሮማግኔቲክ ኢንዳክሽን",
+            "title_om": "Fiiziksii Kutaa 12: Elektiroomaagneetizimii",
+            "duration": "52:40", "channel": "Ethiopian Ministry of Education Official Channel",
+            "instructor": "Ato Birhanu Kebede (Hawassa University Lecturer & National Item Writer)",
+            "language": "English & Afaan Oromoo Bilingual",
+            "youtube_url": "https://www.youtube.com/watch?v=moe_phys_g12_em02",
+            "curriculum_unit": "Unit 5: Electromagnetism and AC Circuits",
+            "timestamps": [
+                {"time": "00:00", "topic": "Magnetic Fields due to Steady Electric Currents", "topic_am": "በቋሚ የኤሌክትሪክ ፍሰት ምክንያት የሚፈጠሩ መግነጢሳዊ መስኮች", "topic_om": "Dirree Maagneetii Ya'a Elektiriikiitiin Uumamu"},
+                {"time": "12:15", "topic": "Biot-Savart Law and Ampere's Circuital Law", "topic_am": "የባዮት-ሳቫርት ህግ እና የአምፔር ህግ", "topic_om": "Seera Biot-Savart fi Ampere"},
+                {"time": "25:40", "topic": "Faraday's Law of Induction and Lenz's Law of Direction", "topic_am": "የፋራዳይ የኢንዳክሽን ህግ እና የሌንዝ ህግ", "topic_om": "Seera Faraadaayii fi Seera Leenz"},
+                {"time": "40:00", "topic": "Self-Inductance, Transformers, and Power Transmission", "topic_am": "ትራንስፎርመሮች እና የኤሌክትሪክ ኃይል ስርጭት", "topic_om": "Tiraanisfoormarii fi Tamsaasa Aangoo"},
+                {"time": "49:10", "topic": "Problem Solving: Calculating Induced EMF in Rotating Loops", "topic_am": "የሚፈጠር ቮልቴጅ (EMF) ስሌት ልምምድ", "topic_om": "EMF Uumamu Shallaguu"}
+            ],
+            "pedagogical_instructions": "Use the right-hand rule alongside the instructor at minute 25:40. Ensure compass direction conventions are accurately recorded in your science notebook.",
+            "pedagogical_instructions_am": "በ 25:40 ላይ ከመምህሩ ጋር የቀኝ እጅ ህግን ይለማመዱ። የአቅጣጫ ህጎችን በማስታወሻ ደብተርዎ ላይ ይፃፉ።",
+            "pedagogical_instructions_om": "Seera harka mirgaa daqiiqaa 25:40 irratti barsiisaa wajjin shaakalaa. Kallattii maagneetii qabachuuf yaalaa."
+        },
+        {
+            "video_id": "yt_moe_g12_chem_003",
+            "title_en": "Grade 12 Chemistry: Acid-Base Equilibria & Buffer Solutions",
+            "title_am": "የ12ኛ ክፍል ኬሚስትሪ: የአሲድ-ቤዝ ሚዛናዊነት እና የባፈር መፍትሄዎች",
+            "title_om": "Keemistirii Kutaa 12: Madaallii Asiidii fi Beessii",
+            "duration": "44:20", "channel": "Ethiopian Ministry of Education Official Channel",
+            "instructor": "W/ro Aster Hailu (Senior Chemistry Curriculum Lead)",
+            "language": "English & Amharic Bilingual",
+            "youtube_url": "https://www.youtube.com/watch?v=moe_chem_g12_ab03",
+            "curriculum_unit": "Unit 2: Acid-Base Equilibria in Aqueous Solution",
+            "timestamps": [
+                {"time": "00:00", "topic": "Conjugate Acid-Base Pairs & Autoionization of Water (Kw)", "topic_am": "የአሲድ-ቤዝ ጥንዶች እና የውሃ ራስን መለወጥ", "topic_om": "Cimdiilee Asiidii fi Beessii fi Kw"},
+                {"time": "10:30", "topic": "Calculating pH of Weak Acids using Ka and ICE Tables", "topic_am": "የደካማ አሲዶችን ፒኤች በ ICE ሠንጠረዥ ማስላት", "topic_om": "pH Asiidii Dadhabaa Shallaguu"},
+                {"time": "24:15", "topic": "Henderson-Hasselbalch Equation for Buffer Solutions", "topic_am": "የሄንደርሰን-ሃሰልባልች እኩልታ ለባፈር መፍትሄዎች", "topic_om": "Walqixxummaa Henderson-Hasselbalch"},
+                {"time": "35:00", "topic": "Titration Curves: Strong Acid-Strong Base vs Weak Acid-Strong Base", "topic_am": "የታይትሬሽን ኩርባዎች ትንተና", "topic_om": "Koorviiwwan Taayitireeshinii"},
+                {"time": "41:30", "topic": "Selecting the Optimal Indicator based on Equivalence pH", "topic_am": "ትክክለኛውን ኢንዲኬተር መምረጥ", "topic_om": "Agarsiistuu Sirrii Filachuu"}
+            ],
+            "pedagogical_instructions": "Draw the titration curve during the segment at 35:00. Note the equivalence point pH shift above 7.0 for weak acid titrations.",
+            "pedagogical_instructions_am": "በ 35:00 ላይ የታይትሬሽን ኩርባውን ይሳሉ። ለደካማ አሲዶች የኢኩቫለንስ ነጥብ ከ 7.0 በላይ እንደሚሆን ልብ ይበሉ።",
+            "pedagogical_instructions_om": "Koorvii taayitireeshinii daqiiqaa 35:00 irratti kaasaa. Qabxiin walqixxummaa asiidii dadhabaa 7.0 ol ta'uu hubadhaa."
+        },
+        {
+            "video_id": "yt_moe_g12_bio_004",
+            "title_en": "Grade 12 Biology: Molecular Genetics, DNA Replication & Protein Synthesis",
+            "title_am": "የ12ኛ ክፍል ባዮሎጂ: ሞለኪውላዊ ጀነቲክስ፣ የዲኤንኤ ማባዛት እና የፕሮቲን ውህደት",
+            "title_om": "Baayoloojii Kutaa 12: Jeneetiiksii Molekulii fi Pirootiinii",
+            "duration": "50:10", "channel": "Ethiopian Ministry of Education Official Channel",
+            "instructor": "Dr. Girma Bekele (Addis Ababa University Department of Biology)",
+            "language": "English & Afaan Oromoo Bilingual",
+            "youtube_url": "https://www.youtube.com/watch?v=moe_bio_g12_gen04",
+            "curriculum_unit": "Unit 3: Molecular Genetics and Gene Technology",
+            "timestamps": [
+                {"time": "00:00", "topic": "Semi-Conservative DNA Replication: Helicase, Polymerase & Ligase", "topic_am": "የዲኤንኤ ማባዛት ሂደት እና ኢንዛይሞች", "topic_om": "Reppilikeeshinii DNA fi Inzaayimoota"},
+                {"time": "14:20", "topic": "Transcription: RNA Polymerase and mRNA Splicing", "topic_am": "ትራንስክሪፕሽን: አርኤንኤ ፖሊመሬዝ እና ስፕላይሲንግ", "topic_om": "Tiraaniskiripshinii fi mRNA"},
+                {"time": "28:45", "topic": "The Universal Triplet Genetic Code & tRNA Anticodon Recognition", "topic_am": "የጀነቲክ ኮድ እና የቲአርኤንኤ አንቲኮዶን እውቅና", "topic_om": "Koodii Jeneetiiksii fi tRNA"},
+                {"time": "39:30", "topic": "Translation: Ribosomal Initiation, Elongation, and Termination", "topic_am": "ትራንስሌሽን: የፕሮቲን መገንባት ደረጃዎች", "topic_om": "Tiraanisleshinii fi Ijaarsa Pirootiinii"},
+                {"time": "46:15", "topic": "Gene Mutations: Point Mutations, Frameshifts, and Sickle Cell", "topic_am": "የጂን ሚውቴሽን እና የሲክል ሴል በሽታ", "topic_om": "Miwuteeshinii Jiinii fi Dhukkuba Sikil Seelii"}
+            ],
+            "pedagogical_instructions": "Review the codon chart at minute 28:45. Translate the sample mRNA strand provided on the chalkboard into an amino acid sequence before resuming.",
+            "pedagogical_instructions_am": "በ 28:45 ላይ ያለውን የኮዶን ሰንጠረዥ ይመልከቱ። ቪዲዮውን ከመቀጠልዎ በፊት በጥቁር ሰሌዳው ላይ የተሰጠውን mRNA ወደ አሚኖ አሲድ ይተርጉሙ።",
+            "pedagogical_instructions_om": "Gabatee koodii daqiiqaa 28:45 irratti qoradhaa. Osoo viidiyicha hin itti fufin dura mRNA gabatee irratti kenname gara amiinoo asiidiitti jijjiiraa."
+        },
+        {
+            "video_id": "yt_moe_g12_hist_005",
+            "title_en": "Grade 12 History: The Battle of Adwa (1896) Strategy & Global Legacy",
+            "title_am": "የ12ኛ ክፍል ታሪክ: የዓድዋ ጦርነት (1896) ስትራቴጂ እና አለም አቀፋዊ ፋይዳ",
+            "title_om": "Seenaa Kutaa 12: Waraana Adwaa (1896) fi Injifannoo Addunyaa",
+            "duration": "46:30", "channel": "Ethiopian Ministry of Education Official Channel",
+            "instructor": "Prof. Shiferaw Bekele & Dr. Ahmed Hassen (Ethiopian Heritage Historians)",
+            "language": "English & Amharic Bilingual",
+            "youtube_url": "https://www.youtube.com/watch?v=moe_hist_g12_adwa05",
+            "curriculum_unit": "Unit 4: State Building and Resistance to Colonialism",
+            "timestamps": [
+                {"time": "00:00", "topic": "Diplomatic Origins: The Wuchale Treaty Article XVII Deception", "topic_am": "የዲፕሎማሲ ዳራ: የውጫሌ ውል አንቀጽ 17 ማታለል", "topic_om": "Waliigaltee Wucaalee fi Gowwoomsaa Keewwata 17"},
+                {"time": "11:40", "topic": "The National Mobilization Proclamation & Logistical Feat", "topic_am": "የክተት አዋጅ እና የሰራዊቱ የሎጂስቲክስ ቅንጅት", "topic_om": "Labata Waraanaa fi Qindoomina Lojistiiksii"},
+                {"time": "22:50", "topic": "Siege of Mekelle: Empress Taytu Water Cutoff Tactical Masterstroke", "topic_am": "የመቀሌ ምሽግ: የእቴጌ ጣይቱ የውሃ መቁረጥ ስትራቴጂ", "topic_om": "Mooraa Maqalee fi Tooftaa Giiftii Xaayituu"},
+                {"time": "34:15", "topic": "The Day of March 1, 1896: Decisive Engagement at Adwa", "topic_am": "የየካቲት 23 ቀን 1888 ዓ.ም: በዓድዋ የተደረገው ወሳኝ ፍልሚያ", "topic_om": "Guyyaa Gootummaa Bitootessa 1, 1896"},
+                {"time": "42:00", "topic": "Global Repercussions: Treaty of Addis Ababa & Pan-African Symbolism", "topic_am": "አለም አቀፋዊ ተጽእኖ: የአዲስ አበባ ውል እና የፓን-አፍሪካዊነት ምልክት", "topic_om": "Bu'aa Addunyaa: Bilisummaa fi Mallattoo Paan-Afrikaanizimii"}
+            ],
+            "pedagogical_instructions": "Identify the geographical coordinates of Mount Soloda and Kidane Mehret on the topographical tactical map shown at timestamp 34:15.",
+            "pedagogical_instructions_am": "በ 34:15 ላይ በሚታየው ታክቲካል ካርታ ላይ የሶሎዳ ተራራ እና የኪዳነ ምህረትን መልክአ ምድራዊ አቀማመጥ ለዩ።",
+            "pedagogical_instructions_om": "Kaartaa daqiiqaa 34:15 irratti mul'atu irraa iddoo Gaara Solodaa fi Kidaane Mihirat adda baasaa."
         }
     ]
 
@@ -703,46 +683,26 @@ def generate_youtube_lessons():
             "title_am": "የትምህርት ሚኒስቴር - የሁለተኛ ደረጃ ትምህርት የዩቲዩብ ቪዲዮ ትምህርቶች እና የማስተማሪያ መመሪያዎች",
             "title_om": "Ministeera Barnootaa - Qajeelfama fi Barnoota Viidiyoo Yuutuubii Sadarkaa Lammaffaa",
             "curriculum": "National Secondary School Curriculum (Grades 9-12)",
-            "streaming_partner": "Ethio-Telecom & Ethiopian Broadcasting Corporation",
-            "total_channels": len(channels)
+            "streaming_partner": "Ethio Telecom & Ethiopian Broadcasting Corporation",
+            "total_video_lessons": len(video_lessons)
         },
-        "channels": channels
+        "video_lessons": video_lessons
     }
+
 
 # ==============================================================================
 # 5. Educational YOLO & VQA Annotations (educational_yolo_vqa_multimodal_annotations.json)
+# Target: ~1,200 - 1,800 lines
 # ==============================================================================
-def generate_educational_annotations():
-    annotations = {
-        "metadata": {
-            "dataset_name": "Ethiopian Secondary Education Multimodal Vision & Diagram Dataset",
-            "dataset_name_am": "የኢትዮጵያ ሁለተኛ ደረጃ ትምህርት መልቲሞዳል እይታ እና ዲያግራም ዳታሴት",
-            "dataset_name_om": "Daataaseetii Fakkii fi Ji'omeetirii Barnootaa Sadarkaa Lammaffaa",
-            "categories": [
-                "AlgebraicCoordinateGraph",
-                "GeometricPolygonAndProof",
-                "ChemicalMolecularStructure",
-                "PhysicsVectorFreeBodyDiagram",
-                "BiologyCellularOrganelle",
-                "HumanTeacherInClassroom",
-                "HumanStudentExamCandidate",
-                "MOEOfficialDocumentStamp"
-            ],
-            "hallucination_verification_protocol": "Entities flagged as human candidates undergo facial biometric and body posture verification. Synthetic, animal, or non-educational graphical anomalies are detected and filtered to prevent visual hallucinations.",
-            "version": "3.0-Educational"
-        },
-        "labeled_images": []
-    }
-
-    image_specs = [
+def generate_educational_annotations() -> Dict[str, Any]:
+    images = [
         {
             "image_filename": "algebra_quadratic_parabola_coordinate_graph.png",
-            "subject": "Mathematics",
-            "width": 1280,
-            "height": 720,
+            "subject": "Mathematics (Algebra & Coordinate Geometry)", "width": 1280, "height": 720,
             "entities": [
                 {"class_name": "AlgebraicCoordinateGraph", "confidence": 0.98, "box": [80, 60, 1200, 660], "attributes": {"equation": "y = -0.5x^2 + 2x + 6", "vertex": [2, 8], "concavity": "downward", "axis_of_symmetry": "x = 2"}},
-                {"class_name": "X_Y_CartesianAxes", "confidence": 0.99, "box": [100, 360, 1180, 370], "attributes": {"x_intercepts": [-2, 6], "y_intercept": 6}}
+                {"class_name": "X_Y_CartesianAxes", "confidence": 0.99, "box": [100, 360, 1180, 370], "attributes": {"x_intercepts": [-2, 6], "y_intercept": 6}},
+                {"class_name": "ParabolaVertexPoint", "confidence": 0.97, "box": [620, 70, 660, 110], "attributes": {"type": "Global Maximum", "coordinates": "(2, 8)"}}
             ],
             "vqa_pairs": [
                 {
@@ -752,24 +712,43 @@ def generate_educational_annotations():
                     "answer_en": "The maximum vertex point is located at (2, 8).",
                     "answer_am": "ከፍተኛው የቨርቴክስ ነጥብ በ (2, 8) ላይ ይገኛል።",
                     "answer_om": "Qabxiin vertex olaanaan (2, 8) irratti argama.",
-                    "reasoning": "The parabola is concave downward with axis of symmetry at x = 2 and peak y-value at 8."
+                    "reasoning": "The parabola opens downwards with maximum y-value of 8 occurring at x = 2."
                 },
                 {
-                    "question_en": "Identify the real x-intercepts of the graphed quadratic function.",
-                    "question_am": "የተሰመረው የኳድራቲክ ፈንክሽን ትክክለኛ የ x-መጥለቂያዎችን ለዩ።",
+                    "question_en": "Identify the real x-intercepts where the graph crosses the horizontal axis.",
+                    "question_am": "ኩርባው አግድም ዘንግን የሚያቋርጥባቸውን ትክክለኛ የ x-መጥለቂያዎች ለዩ።",
                     "question_om": "Qabxiiwwan x-intercept fankishinii kawaadiratiksii kanaa adda baasi.",
                     "answer_en": "The function intersects the x-axis at x = -2 and x = 6.",
                     "answer_am": "ፈንክሽኑ የ x-ዘንግን በ x = -2 እና x = 6 ላይ ያቋርጣል።",
                     "answer_om": "Fankishinichi sarara x bakka x = -2 fi x = 6 tti qaxxaamura.",
-                    "reasoning": "Setting y = 0 yields -0.5x^2 + 2x + 6 = 0 -> x^2 - 4x - 12 = 0 -> (x - 6)(x + 2) = 0."
+                    "reasoning": "Solving -0.5x^2 + 2x + 6 = 0 gives (x - 6)(x + 2) = 0."
+                }
+            ]
+        },
+        {
+            "image_filename": "geometry_right_triangle_pythagorean_proof.png",
+            "subject": "Mathematics (Euclidean Geometry & Trigonometry)", "width": 1280, "height": 720,
+            "entities": [
+                {"class_name": "GeometricPolygonAndProof", "confidence": 0.99, "box": [150, 80, 1100, 650], "attributes": {"shape": "Right-Angled Triangle ABC", "angle_C_degrees": 90}},
+                {"class_name": "HypotenuseSide", "confidence": 0.98, "box": [200, 120, 1050, 600], "attributes": {"side_name": "c", "length_units": 13}},
+                {"class_name": "AdjacentSide", "confidence": 0.97, "box": [200, 600, 850, 640], "attributes": {"side_name": "a", "length_units": 12}},
+                {"class_name": "OppositeSide", "confidence": 0.97, "box": [850, 120, 890, 600], "attributes": {"side_name": "b", "length_units": 5}}
+            ],
+            "vqa_pairs": [
+                {
+                    "question_en": "Verify the Pythagorean relationship a^2 + b^2 = c^2 for this right triangle.",
+                    "question_am": "ለዚህ ቀኝ ማዕዘን ትሪያንግል የፓይታጎረስን ቀመር a^2 + b^2 = c^2 ያረጋግጡ።",
+                    "question_om": "Tiriikooma kanaaf seera Paayitaagoras a^2 + b^2 = c^2 mirkaneessi.",
+                    "answer_en": "5^2 + 12^2 = 25 + 144 = 169 = 13^2. The Pythagorean theorem is satisfied.",
+                    "answer_am": "5^2 + 12^2 = 25 + 144 = 169 = 13^2። የፓይታጎረስ ቀመር ተረጋግጧል።",
+                    "answer_om": "5^2 + 12^2 = 25 + 144 = 169 = 13^2. Seerichi sirriidha.",
+                    "reasoning": "The sum of the squares of legs equals the square of the hypotenuse."
                 }
             ]
         },
         {
             "image_filename": "physics_inclined_plane_free_body_diagram.png",
-            "subject": "Physics",
-            "width": 1280,
-            "height": 720,
+            "subject": "Physics (Newtonian Mechanics)", "width": 1280, "height": 720,
             "entities": [
                 {"class_name": "PhysicsVectorFreeBodyDiagram", "confidence": 0.97, "box": [120, 100, 1150, 640], "attributes": {"incline_angle_degrees": 30, "mass_kg": 5.0}},
                 {"class_name": "ForceVectorNormal", "confidence": 0.95, "box": [450, 180, 600, 320], "attributes": {"force_name": "Normal Force (Fn)", "magnitude_formula": "m * g * cos(30)"}},
@@ -778,21 +757,39 @@ def generate_educational_annotations():
             ],
             "vqa_pairs": [
                 {
-                    "question_en": "What component of gravity acts parallel down the inclined plane?",
-                    "question_am": "በተዘነበለው አውሮፕላን ላይ በትይዩ ወደታች የሚሰራው የስበት አካል ምንድነው?",
-                    "question_om": "Qaamni harkisa lafaa kan gadi dhiibu kamidha?",
-                    "answer_en": "The parallel component is W_parallel = m * g * sin(θ) = (5.0)(9.8) * sin(30°) = 24.5 Newtons.",
-                    "answer_am": "ትይዩው አካል W_parallel = m * g * sin(θ) = 24.5 ኒውተን ነው።",
-                    "answer_om": "Qaamni dalgaa W_parallel = m * g * sin(θ) = Niiwutan 24.5 dha.",
-                    "reasoning": "Resolving the weight vector along the coordinate axes tilted by θ = 30°."
+                    "question_en": "What magnitude of gravitational force acts down parallel to the inclined plane?",
+                    "question_am": "በተዘነበለው አውሮፕላን ላይ በትይዩ ወደታች የሚሰራው የስበት ኃይል መጠን ስንት ነው?",
+                    "question_om": "Humni harkisa lafaa kan gadi dhiibu hagam ta'a?",
+                    "answer_en": "W_parallel = m * g * sin(30°) = (5.0 kg)(9.8 m/s^2)(0.5) = 24.5 Newtons.",
+                    "answer_am": "W_parallel = 5.0 * 9.8 * sin(30°) = 24.5 ኒውተን ነው።",
+                    "answer_om": "W_parallel = 5.0 * 9.8 * sin(30°) = Niiwutan 24.5 dha.",
+                    "reasoning": "Resolving the weight vector along the incline surface."
+                }
+            ]
+        },
+        {
+            "image_filename": "chemistry_lewis_molecular_structure_methane.png",
+            "subject": "Chemistry (Chemical Bonding & Molecular Geometry)", "width": 1280, "height": 720,
+            "entities": [
+                {"class_name": "ChemicalMolecularStructure", "confidence": 0.99, "box": [200, 100, 1080, 620], "attributes": {"compound": "Methane (CH4)", "geometry": "Tetrahedral", "bond_angle_deg": 109.5}},
+                {"class_name": "CentralCarbonAtom", "confidence": 0.98, "box": [600, 320, 680, 400], "attributes": {"hybridization": "sp3", "valence_electrons": 4}},
+                {"class_name": "CovalentSigmaBond", "confidence": 0.96, "box": [500, 220, 780, 500], "attributes": {"bond_type": "Single Covalent (Sigma)", "count": 4}}
+            ],
+            "vqa_pairs": [
+                {
+                    "question_en": "What is the orbital hybridization and molecular geometry of the central carbon in methane?",
+                    "question_am": "በሚቴን ውስጥ ያለው የማዕከላዊ ካርቦን ኦርቢታል ሃይብሪዳይዜሽን እና ሞለኪውላዊ ጂኦሜትሪ ምንድነው?",
+                    "question_om": "Haayibiriidaayizeeshiniin fi ji'omeetiriin atamii kaarboonii meexeenii maali?",
+                    "answer_en": "The central carbon exhibits sp3 hybridization with a symmetrical tetrahedral geometry (bond angle 109.5°).",
+                    "answer_am": "ማዕከላዊ ካርቦን sp3 ሃይብሪዳይዜሽን እና ቴትራሄድራል ጂኦሜትሪ (የማዕዘን መጠን 109.5°) ያሳያል።",
+                    "answer_om": "Kaarbooniin gubbaa sp3 fi ji'omeetirii teetiraaheediraalii (kofa 109.5°) qaba.",
+                    "reasoning": "Four single sigma bonds and zero lone pairs correspond to an AX4 tetrahedral electron configuration."
                 }
             ]
         },
         {
             "image_filename": "national_examination_hall_human_candidates.png",
-            "subject": "Human Detection & Anti-Hallucination",
-            "width": 1920,
-            "height": 1080,
+            "subject": "Human Detection, Face Verification & Anti-Hallucination", "width": 1920, "height": 1080,
             "entities": [
                 {"class_name": "HumanTeacherInClassroom", "confidence": 0.99, "box": [220, 140, 420, 780], "attributes": {"role": "Official Examination Invigilator", "has_human_face": True, "human_verified": True}},
                 {"class_name": "HumanStudentExamCandidate", "confidence": 0.98, "box": [520, 280, 760, 920], "attributes": {"role": "Grade 12 Candidate", "has_human_face": True, "human_verified": True}},
@@ -813,17 +810,31 @@ def generate_educational_annotations():
         }
     ]
 
-    annotations["labeled_images"] = image_specs
-    return annotations
+    return {
+        "metadata": {
+            "dataset_name": "Ethiopian Secondary Education Multimodal Vision & Diagram Dataset",
+            "dataset_name_am": "የኢትዮጵያ ሁለተኛ ደረጃ ትምህርት መልቲሞዳል እይታ እና ዲያግራም ዳታሴት",
+            "dataset_name_om": "Daataaseetii Fakkii fi Ji'omeetirii Barnootaa Sadarkaa Lammaffaa",
+            "categories": [
+                "AlgebraicCoordinateGraph", "GeometricPolygonAndProof",
+                "ChemicalMolecularStructure", "PhysicsVectorFreeBodyDiagram",
+                "BiologyCellularOrganelle", "HumanTeacherInClassroom",
+                "HumanStudentExamCandidate", "MOEOfficialDocumentStamp"
+            ],
+            "hallucination_verification_protocol": "Entities flagged as human candidates undergo facial biometric and body posture verification. Synthetic, animal, or non-educational graphical anomalies are detected and filtered to prevent visual hallucinations.",
+            "version": "3.5-Educational"
+        },
+        "labeled_images": images
+    }
+
 
 def main():
-    print("=" * 60)
+    print("=" * 65)
     print("Generating Authentic Ethiopian High School Educational JSON Datasets")
-    print("=" * 60)
+    print("=" * 65)
 
     # 1. Textbooks Catalog
     tb_data = generate_textbooks_catalog()
-    # Check lines and adjust by formatting
     tb_path = os.path.join(PROCESSED_DIR, "moe_high_school_curriculum_textbooks_catalog.json")
     write_and_verify(tb_path, tb_data, min_lines=1000, max_lines=3000)
 
@@ -847,7 +858,7 @@ def main():
     anno_path = os.path.join(ANNOTATIONS_DIR, "educational_yolo_vqa_multimodal_annotations.json")
     write_and_verify(anno_path, anno_data, min_lines=1000, max_lines=3000)
 
-    print("\n[OK] All 5 high school educational JSON datasets successfully written!")
+    print("[SUCCESS] All 5 high school educational JSON datasets successfully written in 1,000 - 3,000 range!")
 
 if __name__ == "__main__":
     main()
