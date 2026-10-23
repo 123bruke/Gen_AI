@@ -1,32 +1,275 @@
 {
   "metadata": {
     "title": "VisionRAG System Progress & Auditing Visible Log Database",
-    "generated_at": "2026-10-23T22:29:07.820702",
-    "total_records_exported": 200,
+    "generated_at": "2026-10-23T22:47:31.561689",
+    "total_records_exported": 249,
     "stats": {
-      "total_logs": 234,
+      "total_logs": 249,
       "by_event_type": {
         "ACCOUNT_CREATED": 7,
+        "AUDIO_TRANSCRIPTION_REWRITE": 2,
         "CHAT_QUERY": 16,
+        "DATA_PIPELINE_COMPLETE": 1,
+        "EDUCATIONAL_IMAGE_ENCODING": 1,
         "FILE_UPLOAD": 5,
         "KNOWLEDGE_SEEDING": 36,
         "LINK_BOOK_INGESTION": 3,
         "SERVER_STARTUP": 90,
-        "SYSTEM_LOG": 69,
+        "SYSTEM_LOG": 77,
         "USER_LOGIN": 4,
-        "USER_LOGOUT": 4
+        "USER_LOGOUT": 4,
+        "VIDEO_FRAME_EXTRACTION_COMPLETE": 1,
+        "YOLO_HUMAN_DETECTION": 2
       },
       "by_level": {
-        "ERROR": 33,
-        "INFO": 194,
+        "ERROR": 34,
+        "INFO": 208,
         "WARNING": 7
       },
-      "latest_timestamp": "2026-10-23T21:19:09.952359",
+      "latest_timestamp": "2026-10-23T22:40:24.659012",
       "database_path": "C:\\Users\\FSC CORE i5\\Downloads\\VisionRAG\\VisionRAG\\backend\\storage\\visionrag_logs.db",
       "status": "healthy"
     }
   },
   "recent_progress_records": [
+    {
+      "id": 249,
+      "timestamp": "2026-10-23T22:40:24.659012",
+      "level": "INFO",
+      "logger_name": "visionrag.processor",
+      "event_type": "DATA_PIPELINE_COMPLETE",
+      "message": "[PROCESSOR] Event 'DATA_PIPELINE_COMPLETE' processed with status 'SUCCESS'.",
+      "user_id": "data_processor",
+      "details": {
+        "task_id": "proc_18cbdf0a18",
+        "total_files": 32,
+        "total_bytes": 2854819,
+        "files": [
+          "moe_curriculum_framework_and_general_education.md",
+          "moe_curriculum_syllabi_and_pedagogical_standards.md",
+          "moe_digital_education_strategy_and_ict.json",
+          "moe_educational_history_and_milestones_1908_2025.md",
+          "moe_education_statistics_annual_abstract.json",
+          "moe_esdp_vi_strategic_plan_2030.json",
+          "moe_general_education_rules_and_regulations_handbook.md",
+          "moe_higher_education_academic_rules_and_university_regulations.md",
+          "moe_higher_education_governance_and_autonomy.md",
+          "moe_inclusive_education_and_special_needs_regulations.md",
+          "moe_institutional_mandate_and_governance.md",
+          "moe_learning_rules_and_student_code_of_conduct.md",
+          "moe_national_examinations_and_assessment_policy.md",
+          "moe_national_examination_blueprints_and_exam_focus_areas.md",
+          "moe_regional_education_indicators.csv",
+          "moe_teacher_development_and_licensing_policy.md",
+          "moe_teacher_evaluation_licensing_and_disciplinary_regulations.md",
+          "moe_university_exit_exam_disciplines.csv",
+          "moe_university_exit_exam_specification_and_competency_framework.md",
+          "addis_ababa_university_main_campus.png",
+          "digital_schoolnet_smart_classroom.png",
+          "ethiopian_ministry_of_education_headquarters.png",
+          "national_examination_hall_candidates.png",
+          "primary_school_feeding_program_ethiopia.png",
+          "science_chemistry_laboratory_experiment.png",
+          "ethiopian_education_documentary_manifest.json",
+          "moe_youtube_podcasts_and_interviews_manifest.json",
+          "high_school_exam_prep_notes_multilingual.json",
+          "moe_high_school_curriculum_textbooks_catalog.json",
+          "moe_high_school_youtube_video_lessons.json",
+          "multilingual_learning_websites_and_portals.json",
+          "educational_yolo_vqa_multimodal_annotations.json"
+        ],
+        "stage": "PROCESSOR",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "id": 248,
+      "timestamp": "2026-10-23T22:40:24.100363",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:40:24,100 - visionrag - INFO - Loaded 1 cached visual embeddings from C:\\Users\\FSC CORE i5\\Downloads\\VisionRAG\\VisionRAG\\data\\raw\\images\\.educational_encoder_cache.pkl",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 247,
+      "timestamp": "2026-10-23T22:38:03.574234",
+      "level": "INFO",
+      "logger_name": "visionrag.frame_extractor",
+      "event_type": "VIDEO_FRAME_EXTRACTION_COMPLETE",
+      "message": "[FRAME_EXTRACTOR] Event 'VIDEO_FRAME_EXTRACTION_COMPLETE' processed with status 'SUCCESS'.",
+      "user_id": "student_ethiopia",
+      "details": {
+        "video_name": "moe_physics_lesson_sample.mp4",
+        "total_frames_extracted": 10,
+        "hf_model": "openai/clip-vit-base-patch32",
+        "output_dir": "C:\\Users\\FSC CORE i5\\Downloads\\VisionRAG\\VisionRAG\\backend\\storage\\uploads\\extracted_frames\\moe_physics_lesson_sample",
+        "summary": "Simulated extraction for 'moe_physics_lesson_sample.mp4'. Extracted 10 frames with Hugging Face processor.",
+        "stage": "FRAME_EXTRACTOR",
+        "status": "SUCCESS"
+      }
+    },
+    {
+      "id": 246,
+      "timestamp": "2026-10-23T22:38:03.129701",
+      "level": "INFO",
+      "logger_name": "visionrag.video_frames",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:38:03,129 - visionrag.video_frames - INFO - Video file 'moe_physics_lesson_sample.mp4' not found on disk; generating structured synthetic frame extraction.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 245,
+      "timestamp": "2026-10-23T22:38:02.961764",
+      "level": "INFO",
+      "logger_name": "visionrag.video_frames",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:38:02,961 - visionrag.video_frames - INFO - Loaded Hugging Face vision processor: openai/clip-vit-base-patch32",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 244,
+      "timestamp": "2026-10-23T22:35:36.595703",
+      "level": "INFO",
+      "logger_name": "visionrag.vision_yolo",
+      "event_type": "YOLO_HUMAN_DETECTION",
+      "message": "[VISION_YOLO] Event 'YOLO_HUMAN_DETECTION' processed with status 'INFO'.",
+      "user_id": "student_moe",
+      "details": {
+        "source": "in_memory_image",
+        "context": "national_exam_candidate_verification",
+        "human_count": 0,
+        "summary": "Verified 0 human entity(ies). Detected and filtered 0 hallucination(s)/non-human mismatch(es).",
+        "stage": "VISION_YOLO",
+        "status": "INFO"
+      }
+    },
+    {
+      "id": 243,
+      "timestamp": "2026-10-23T22:35:36.486372",
+      "level": "INFO",
+      "logger_name": "visionrag.yolo",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:35:36,486 - visionrag.yolo - INFO - YOLO ultralytics model not directly loaded (No module named 'ultralytics'); running with optimized OpenCV Haar Cascade and feature heuristics.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 242,
+      "timestamp": "2026-10-23T22:35:25.240968",
+      "level": "INFO",
+      "logger_name": "visionrag.vision_yolo",
+      "event_type": "YOLO_HUMAN_DETECTION",
+      "message": "[VISION_YOLO] Event 'YOLO_HUMAN_DETECTION' processed with status 'INFO'.",
+      "user_id": "student_moe",
+      "details": {
+        "source": "in_memory_image",
+        "context": "student_exam_proctoring",
+        "human_count": 0,
+        "summary": "Verified 0 human entity(ies). Detected and filtered 0 hallucination(s)/non-human mismatch(es).",
+        "stage": "VISION_YOLO",
+        "status": "INFO"
+      }
+    },
+    {
+      "id": 241,
+      "timestamp": "2026-10-23T22:35:25.117299",
+      "level": "INFO",
+      "logger_name": "visionrag.yolo",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:35:25,117 - visionrag.yolo - INFO - YOLO ultralytics model not directly loaded (No module named 'ultralytics'); running with optimized OpenCV Haar Cascade and feature heuristics.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 240,
+      "timestamp": "2026-10-23T22:34:38.774843",
+      "level": "ERROR",
+      "logger_name": "visionrag.yolo",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:34:38,774 - visionrag.yolo - ERROR - Failed to record YOLO detection to visible DB: 'SimpleLogDatabase' object has no attribute 'record_event'",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 239,
+      "timestamp": "2026-10-23T22:34:38.374215",
+      "level": "INFO",
+      "logger_name": "visionrag.yolo",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:34:38,374 - visionrag.yolo - INFO - YOLO ultralytics model not directly loaded (No module named 'ultralytics'); running with optimized OpenCV Haar Cascade and feature heuristics.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 238,
+      "timestamp": "2026-10-23T22:32:29.936512",
+      "level": "INFO",
+      "logger_name": "visionrag.encoder",
+      "event_type": "EDUCATIONAL_IMAGE_ENCODING",
+      "message": "Encoded educational image 'algebra_parabola_coordinate_graph.png' classified as AlgebraicEquationGraph (Mathematics).",
+      "user_id": "test_student_01",
+      "details": {
+        "filename": "algebra_parabola_coordinate_graph.png",
+        "style_category": "AlgebraicEquationGraph",
+        "subject": "Mathematics",
+        "confidence": 0.99,
+        "dimension": 512
+      }
+    },
+    {
+      "id": 237,
+      "timestamp": "2026-10-23T22:32:29.837647",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SYSTEM_LOG",
+      "message": "2026-10-24 01:32:29,837 - visionrag - INFO - HF CLIP model initialized for EducationalImageEncoder.",
+      "user_id": null,
+      "details": null
+    },
+    {
+      "id": 236,
+      "timestamp": "2026-10-23T22:30:24.684290",
+      "level": "INFO",
+      "logger_name": "visionrag.audio",
+      "event_type": "AUDIO_TRANSCRIPTION_REWRITE",
+      "message": "Transcribed and rewrote audio query for subject 'Mathematics' in English, Amharic, and Afaan Oromoo.",
+      "user_id": "test_student_01",
+      "details": {
+        "raw_text": "Explain how parabolic optimization in Grade 12 Calculus is used to maximize area",
+        "subject": "Mathematics",
+        "confidence": 0.96,
+        "source": "educational_acoustic_engine",
+        "rewritten_languages": [
+          "en",
+          "am",
+          "om"
+        ]
+      }
+    },
+    {
+      "id": 235,
+      "timestamp": "2026-10-23T22:30:12.772674",
+      "level": "INFO",
+      "logger_name": "visionrag.audio",
+      "event_type": "AUDIO_TRANSCRIPTION_REWRITE",
+      "message": "Transcribed and rewrote audio query for subject 'Mathematics' in English, Amharic, and Afaan Oromoo.",
+      "user_id": "test_student_01",
+      "details": {
+        "raw_text": "Explain how parabolic optimization in Grade 12 Calculus is used to maximize area",
+        "subject": "Mathematics",
+        "confidence": 0.96,
+        "source": "educational_acoustic_engine",
+        "rewritten_languages": [
+          "en",
+          "am",
+          "om"
+        ]
+      }
+    },
     {
       "id": 234,
       "timestamp": "2026-10-23T21:19:09.952359",
@@ -2805,6 +3048,584 @@
         "chat_id": "chat_9c95d084",
         "query_length": 62,
         "attachments_count": 1
+      }
+    },
+    {
+      "id": 34,
+      "timestamp": "2026-10-20T19:49:10.509874",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "FILE_UPLOAD",
+      "message": "2026-10-20 22:49:10,509 - visionrag - INFO - File uploaded & stored in PostgreSQL: 'satellite_multimodal_scan.dat' (16.0 KB) [Binary in DB: True]",
+      "user_id": "usr_e850c46a72b8",
+      "details": {
+        "file_id": "f_1973a467de38",
+        "filename": "satellite_multimodal_scan.dat",
+        "size": "16.0 KB",
+        "has_binary": true,
+        "md5": "094d1dc388eeb92639889dcebdf0fd60"
+      }
+    },
+    {
+      "id": 33,
+      "timestamp": "2026-10-20T19:49:06.259477",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGIN",
+      "message": "2026-10-20 22:49:06,259 - visionrag - INFO - User logged in: Dr. Sophia Carter (researcher_653163@visionrag.ai)",
+      "user_id": "usr_e850c46a72b8",
+      "details": {
+        "session_id": "sess_e71ea3cedbff",
+        "ip_address": "127.0.0.1",
+        "login_time": "2026-10-20T19:49:06.259477"
+      }
+    },
+    {
+      "id": 32,
+      "timestamp": "2026-10-20T19:49:03.809277",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "ACCOUNT_CREATED",
+      "message": "2026-10-20 22:49:03,809 - visionrag - INFO - Account created successfully for 'Dr. Sophia Carter' (researcher_653163@visionrag.ai) in PostgreSQL.",
+      "user_id": "usr_e850c46a72b8",
+      "details": {
+        "email": "researcher_653163@visionrag.ai",
+        "full_name": "Dr. Sophia Carter",
+        "ip_address": "127.0.0.1",
+        "created_at": "2026-10-20T19:49:03.794808"
+      }
+    },
+    {
+      "id": 31,
+      "timestamp": "2026-10-20T19:48:52.086173",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:48:52,086 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 3,
+        "session_count": 5,
+        "uploaded_files_count": 2,
+        "conversations_count": 4,
+        "messages_count": 6,
+        "task_progress_count": 3,
+        "healthy": true
+      }
+    },
+    {
+      "id": 30,
+      "timestamp": "2026-10-20T19:47:50.581347",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGOUT",
+      "message": "2026-10-20 22:47:50,581 - visionrag - INFO - User logged out: user_id=None",
+      "user_id": null,
+      "details": {
+        "logout_time": "2026-10-20T19:47:50.581347",
+        "duration_seconds": 0,
+        "session_id": null
+      }
+    },
+    {
+      "id": 29,
+      "timestamp": "2026-10-20T19:47:30.776868",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGOUT",
+      "message": "2026-10-20 22:47:30,776 - visionrag - INFO - User logged out: user_id=None",
+      "user_id": null,
+      "details": {
+        "logout_time": "2026-10-20T19:47:30.768672",
+        "duration_seconds": 0,
+        "session_id": null
+      }
+    },
+    {
+      "id": 28,
+      "timestamp": "2026-10-20T19:46:55.612840",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-20 22:46:55,612 - visionrag - INFO - Processing RAG chat query for chat 'chat_073c373f': 'Explain architectural schematic and multimodal token alignme...'",
+      "user_id": "usr_08cbfb67bc64",
+      "details": {
+        "chat_id": "chat_073c373f",
+        "query_length": 62,
+        "attachments_count": 1
+      }
+    },
+    {
+      "id": 27,
+      "timestamp": "2026-10-20T19:46:51.349171",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "FILE_UPLOAD",
+      "message": "2026-10-20 22:46:51,348 - visionrag - INFO - File uploaded & stored in PostgreSQL: 'satellite_multimodal_scan.dat' (16.0 KB) [Binary in DB: True]",
+      "user_id": "usr_08cbfb67bc64",
+      "details": {
+        "file_id": "f_15130f1ee077",
+        "filename": "satellite_multimodal_scan.dat",
+        "size": "16.0 KB",
+        "has_binary": true,
+        "md5": "094d1dc388eeb92639889dcebdf0fd60"
+      }
+    },
+    {
+      "id": 26,
+      "timestamp": "2026-10-20T19:46:47.120164",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGIN",
+      "message": "2026-10-20 22:46:47,120 - visionrag - INFO - User logged in: Dr. Sophia Carter (researcher_ca39c0@visionrag.ai)",
+      "user_id": "usr_08cbfb67bc64",
+      "details": {
+        "session_id": "sess_b407873f9b8c",
+        "ip_address": "127.0.0.1",
+        "login_time": "2026-10-20T19:46:47.103534"
+      }
+    },
+    {
+      "id": 25,
+      "timestamp": "2026-10-20T19:46:44.689145",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "ACCOUNT_CREATED",
+      "message": "2026-10-20 22:46:44,689 - visionrag - INFO - Account created successfully for 'Dr. Sophia Carter' (researcher_ca39c0@visionrag.ai) in PostgreSQL.",
+      "user_id": "usr_08cbfb67bc64",
+      "details": {
+        "email": "researcher_ca39c0@visionrag.ai",
+        "full_name": "Dr. Sophia Carter",
+        "ip_address": "127.0.0.1",
+        "created_at": "2026-10-20T19:46:44.672477"
+      }
+    },
+    {
+      "id": 24,
+      "timestamp": "2026-10-20T19:46:07.769240",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:46:07,769 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 2,
+        "session_count": 3,
+        "uploaded_files_count": 1,
+        "conversations_count": 3,
+        "messages_count": 4,
+        "task_progress_count": 2,
+        "healthy": true
+      }
+    },
+    {
+      "id": 23,
+      "timestamp": "2026-10-20T19:45:40.037337",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-20 22:45:40,037 - visionrag - INFO - Processing RAG chat query for chat 'chat_2567631369424': 'test query...'",
+      "user_id": null,
+      "details": {
+        "chat_id": "chat_2567631369424",
+        "query_length": 10,
+        "attachments_count": 1
+      }
+    },
+    {
+      "id": 22,
+      "timestamp": "2026-10-20T19:45:23.299247",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-20 22:45:23,299 - visionrag - INFO - Processing RAG chat query for chat 'chat_2567641838480': 'test query...'",
+      "user_id": null,
+      "details": {
+        "chat_id": "chat_2567641838480",
+        "query_length": 10,
+        "attachments_count": 0
+      }
+    },
+    {
+      "id": 21,
+      "timestamp": "2026-10-20T19:45:05.692429",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "CHAT_QUERY",
+      "message": "2026-10-20 22:45:05,692 - visionrag - INFO - Processing RAG chat query for chat 'chat_e21f365b': 'Explain architectural schematic and multimodal token alignme...'",
+      "user_id": "usr_1f0c79b39ed4",
+      "details": {
+        "chat_id": "chat_e21f365b",
+        "query_length": 62,
+        "attachments_count": 1
+      }
+    },
+    {
+      "id": 20,
+      "timestamp": "2026-10-20T19:45:01.428749",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "FILE_UPLOAD",
+      "message": "2026-10-20 22:45:01,428 - visionrag - INFO - File uploaded & stored in PostgreSQL: 'satellite_multimodal_scan.dat' (16.0 KB) [Binary in DB: True]",
+      "user_id": "usr_1f0c79b39ed4",
+      "details": {
+        "file_id": "f_ed945a0c5326",
+        "filename": "satellite_multimodal_scan.dat",
+        "size": "16.0 KB",
+        "has_binary": true,
+        "md5": "094d1dc388eeb92639889dcebdf0fd60"
+      }
+    },
+    {
+      "id": 19,
+      "timestamp": "2026-10-20T19:44:57.197910",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGIN",
+      "message": "2026-10-20 22:44:57,197 - visionrag - INFO - User logged in: Dr. Sophia Carter (researcher_923570@visionrag.ai)",
+      "user_id": "usr_1f0c79b39ed4",
+      "details": {
+        "session_id": "sess_e8685ab7bc0c",
+        "ip_address": "127.0.0.1",
+        "login_time": "2026-10-20T19:44:57.171876"
+      }
+    },
+    {
+      "id": 18,
+      "timestamp": "2026-10-20T19:44:54.807648",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "ACCOUNT_CREATED",
+      "message": "2026-10-20 22:44:54,807 - visionrag - INFO - Account created successfully for 'Dr. Sophia Carter' (researcher_923570@visionrag.ai) in PostgreSQL.",
+      "user_id": "usr_1f0c79b39ed4",
+      "details": {
+        "email": "researcher_923570@visionrag.ai",
+        "full_name": "Dr. Sophia Carter",
+        "ip_address": "127.0.0.1",
+        "created_at": "2026-10-20T19:44:54.789670"
+      }
+    },
+    {
+      "id": 17,
+      "timestamp": "2026-10-20T19:43:58.728462",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:43:58,728 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 1,
+        "session_count": 1,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 16,
+      "timestamp": "2026-10-20T19:35:23.943291",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "ACCOUNT_CREATED",
+      "message": "2026-10-20 22:35:23,943 - visionrag - INFO - Account created successfully for 'Test Researcher' (test@visionrag.ai) in PostgreSQL.",
+      "user_id": "usr_b008de030153",
+      "details": {
+        "email": "test@visionrag.ai",
+        "full_name": "Test Researcher",
+        "ip_address": "127.0.0.1",
+        "created_at": "2026-10-20T19:35:23.874679"
+      }
+    },
+    {
+      "id": 15,
+      "timestamp": "2026-10-20T19:34:51.307865",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:34:51,307 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 14,
+      "timestamp": "2026-10-20T19:34:03.975470",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:34:03,975 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 13,
+      "timestamp": "2026-10-20T19:33:55.161823",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:33:55,161 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 12,
+      "timestamp": "2026-10-20T19:33:32.835762",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:33:32,835 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 11,
+      "timestamp": "2026-10-20T19:33:18.035230",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:33:18,035 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 10,
+      "timestamp": "2026-10-20T19:33:03.831650",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:33:03,831 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 9,
+      "timestamp": "2026-10-20T19:32:15.938360",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:32:15,938 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 8,
+      "timestamp": "2026-10-20T19:31:54.366031",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:31:54,366 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "conversations_count": 0,
+        "messages_count": 0,
+        "task_progress_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 7,
+      "timestamp": "2026-10-20T19:31:34.530704",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:31:34,530 - visionrag - INFO - VisionRAG API Started. Primary Database: postgresql",
+      "user_id": null,
+      "details": {
+        "db_type": "postgresql",
+        "connected": true,
+        "is_postgres": true,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "healthy": true
+      }
+    },
+    {
+      "id": 6,
+      "timestamp": "2026-10-20T19:26:38.810209",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 22:26:38,810 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "user_count": 1,
+        "session_count": 2,
+        "uploaded_files_count": 1,
+        "healthy": true
+      }
+    },
+    {
+      "id": 5,
+      "timestamp": "2026-10-20T18:39:38.845297",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGOUT",
+      "message": "2026-10-20 21:39:38,845 - visionrag - INFO - User logged out: user_id=usr_0be68d8696d2",
+      "user_id": "usr_0be68d8696d2",
+      "details": {
+        "logout_time": "2026-10-20T18:39:38.730121",
+        "duration_seconds": 0,
+        "session_id": "sess_342d40448219"
+      }
+    },
+    {
+      "id": 4,
+      "timestamp": "2026-10-20T18:39:38.645785",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "FILE_UPLOAD",
+      "message": "2026-10-20 21:39:38,645 - visionrag - INFO - File uploaded & stored in DB: 'architecture_diagram.pdf' (1.00 MB)",
+      "user_id": "usr_0be68d8696d2",
+      "details": {
+        "file_id": "f_0b1fb51f6682",
+        "filename": "architecture_diagram.pdf",
+        "size": "1.00 MB",
+        "file_type": "application/pdf",
+        "md5": "e10adc3949ba59abbe56e057f20f883e"
+      }
+    },
+    {
+      "id": 3,
+      "timestamp": "2026-10-20T18:39:38.495130",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "USER_LOGIN",
+      "message": "2026-10-20 21:39:38,495 - visionrag - INFO - User logged in: Test Developer (dev_test@example.com)",
+      "user_id": "usr_0be68d8696d2",
+      "details": {
+        "session_id": "sess_342d40448219",
+        "ip_address": "127.0.0.1",
+        "login_time": "2026-10-20T18:39:38.295269"
+      }
+    },
+    {
+      "id": 2,
+      "timestamp": "2026-10-20T18:39:37.979387",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "ACCOUNT_CREATED",
+      "message": "2026-10-20 21:39:37,979 - visionrag - INFO - Account created successfully for 'Test Developer' (dev_test@example.com).",
+      "user_id": "usr_0be68d8696d2",
+      "details": {
+        "email": "dev_test@example.com",
+        "full_name": "Test Developer",
+        "ip_address": "127.0.0.1",
+        "created_at": "2026-10-20T18:39:37.865964"
+      }
+    },
+    {
+      "id": 1,
+      "timestamp": "2026-10-20T18:38:54.970746",
+      "level": "INFO",
+      "logger_name": "visionrag",
+      "event_type": "SERVER_STARTUP",
+      "message": "2026-10-20 21:38:54,969 - visionrag - INFO - VisionRAG API Started. Primary Database: sqlite_fallback",
+      "user_id": null,
+      "details": {
+        "db_type": "sqlite_fallback",
+        "connected": true,
+        "is_postgres": false,
+        "user_count": 0,
+        "session_count": 0,
+        "uploaded_files_count": 0,
+        "healthy": true
       }
     }
   ]

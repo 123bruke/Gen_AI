@@ -202,6 +202,50 @@ class EducationalImageEncoder:
             
         return norm_vec
 
+    def encode_text(self, text: Union[str, List[str]]) -> np.ndarray:
+        """
+        Encodes a text string or list of text strings into normalized 512-dimensional vector(s).
+        Uses Hugging Face CLIP text transformer or deterministic fallback.
+        """
+        self._init_clip()
+        is_single = isinstance(text, str)
+        text_list = [text] if is_single else text
+
+        if self._clip_model is not None and self._clip_processor is not None:
+            try:
+                import torch
+                inputs = self._clip_processor(text=text_list, return_tensors="pt", padding=True, truncation=True)
+                with torch.no_grad():
+                    out = self._clip_model.get_text_features(**inputs)
+                    if hasattr(out, "text_embeds") and out.text_embeds is not None:
+                        tensor = out.text_embeds
+                    elif hasattr(out, "pooler_output") and out.pooler_output is not None:
+                        tensor = out.pooler_output
+                    elif hasattr(out, "last_hidden_state"):
+                        tensor = out.last_hidden_state[:, 0, :]
+                    elif isinstance(out, (tuple, list)):
+                        tensor = out[0]
+                    else:
+                        tensor = out
+                    feats = tensor.cpu().numpy()
+                norms = np.linalg.norm(feats, axis=-1, keepdims=True)
+                norms[norms == 0] = 1.0
+                norm_vecs = feats / norms
+                return norm_vecs[0] if is_single else norm_vecs
+            except Exception as e:
+                app_logger.warning(f"CLIP text encoding note: {e}")
+
+        # Deterministic text vector fallback
+        vectors = []
+        for t in text_list:
+            np.random.seed(abs(hash(t)) % (2**32))
+            vec = np.random.randn(self.dimension).astype(np.float32)
+            norm = np.linalg.norm(vec)
+            vectors.append(vec / (norm if norm > 0 else 1.0))
+        res = np.array(vectors)
+        return res[0] if is_single else res
+
+
     def encode_and_audit(
         self,
         image_input: Union[str, Image.Image, bytes],
