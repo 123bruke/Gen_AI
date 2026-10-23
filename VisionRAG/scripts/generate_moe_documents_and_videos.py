@@ -1129,6 +1129,52 @@ def generate_video_manifest():
                 {"timestamp": "55:30", "title": "The Road to 2030: Cloud-Connected General Education"}
             ],
             "dialogue_transcript": []
+        },
+        {
+            "episode_id": "EP-07",
+            "youtube_id": "YOUTUBE_MOE_POD_007_INCLUSIVE_FEEDING",
+            "title": "Inclusive Education, Pastoralist Mobile Schools & National School Feeding",
+            "release_date": "2025-12-28",
+            "duration_seconds": 4050,
+            "duration_formatted": "01:07:30",
+            "host": "Mesfin Wolde (Social Policy Broadcaster)",
+            "guest": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+            "summary": "Exploring pastoralist mobile school innovations in Afar and Somali, expanding special needs resource centers, Braille textbook distribution, and feeding 4.2 million primary school children daily.",
+            "topics": ["Inclusive Education", "School Feeding", "Pastoralist Schools", "Special Needs", "Braille & Sign Language"],
+            "views": 275000,
+            "likes": 18900,
+            "chapters": [
+                {"timestamp": "00:00", "title": "Opening: The Constitutional Mandate for Total Inclusiveness"},
+                {"timestamp": "08:15", "title": "Mobile School Paradigms for Nomadic Communities in Afar & Somali"},
+                {"timestamp": "19:40", "title": "Special Needs Resource Centers (SNRC): Staffing and Equipment"},
+                {"timestamp": "32:00", "title": "Free Braille and Sign Language Materials for All Grades"},
+                {"timestamp": "44:30", "title": "The National School Feeding Program: Impact on Attendance and Health"},
+                {"timestamp": "56:50", "title": "Gender-Sensitive Interventions and Safe Schools for Girls"}
+            ],
+            "dialogue_transcript": []
+        },
+        {
+            "episode_id": "EP-08",
+            "youtube_id": "YOUTUBE_MOE_POD_008_RESEARCH_INNOVATION",
+            "title": "Higher Education Research, Patent Commercialization & University-Industry Linkage",
+            "release_date": "2026-01-15",
+            "duration_seconds": 4200,
+            "duration_formatted": "01:10:00",
+            "host": "Dr. Birhanu Mengistu (Academic Reviewer)",
+            "guest": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+            "summary": "How Ethiopia's research universities are aligning doctoral dissertations with industrial corridor demands, establishing technology transfer offices, safeguarding academic ethics, and funding startup incubators.",
+            "topics": ["University Research", "Technology Transfer", "Patents", "Industrial Linkage", "AAU Autonomous Research"],
+            "views": 330000,
+            "likes": 22400,
+            "chapters": [
+                {"timestamp": "00:00", "title": "Introduction: Transitioning from Teaching-Only to Research-Intensive Universities"},
+                {"timestamp": "09:20", "title": "The 8 Flagship Research Universities and Ph.D. Expansion"},
+                {"timestamp": "21:10", "title": "Institutional Linkage: Connecting University Labs to Industrial Parks"},
+                {"timestamp": "33:45", "title": "Research Ethics, Institutional Review Boards & National Biosafety"},
+                {"timestamp": "46:15", "title": "Patent Commercialization and Student Startup Incubators"},
+                {"timestamp": "58:00", "title": "International Academic Collaboration and Bilateral Grants"}
+            ],
+            "dialogue_transcript": []
         }
     ]
 
