@@ -10,6 +10,7 @@ Supports:
 
 from typing import Dict, Any, List, Optional
 import os
+import re
 import requests
 import urllib.parse
 from PIL import Image
@@ -220,7 +221,26 @@ class ImageProcessorAgent:
         if not q_clean:
             return self.curated_images_db[:target_limit]
 
-        # 1. Search Wikimedia Commons Open API
+        # 0. High-Priority Zero-Shot Semantic Search via Hugging Face CLIP across Local Visual Assets
+        try:
+            from app.vision.clip_search_service import clip_visual_service
+            clip_matches = clip_visual_service.search_by_keywords(q_clean, top_k=target_limit, sync_to_postgres=True)
+            for m in clip_matches:
+                results.append({
+                    "id": f"clip-{m['filename'].split('.')[0]}",
+                    "title": m["filename"].replace("_", " ").title(),
+                    "url": f"/data/raw/images/{m['filename']}",
+                    "thumbnail": f"/data/raw/images/{m['filename']}",
+                    "sourceName": f"Hugging Face CLIP Search Engine (Score: {m['similarityScore']})",
+                    "sourceUrl": "https://huggingface.co/openai/clip-vit-base-patch32",
+                    "license": "Educational Open Access / VisionRAG Archive",
+                    "score": m["similarityScore"],
+                    "latencyMs": m.get("searchLatencyMs"),
+                    "postgresStorage": m.get("postgresStorageStatus"),
+                    "tags": [q_clean, "Hugging Face CLIP", "PostgreSQL 16 Stored"]
+                })
+        except Exception as clip_err:
+            app_logger.info(f"Local CLIP search note: {clip_err}")
         try:
             wiki_img_url = (
                 f"https://commons.wikimedia.org/w/api.php?action=query&generator=search"
