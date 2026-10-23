@@ -45,7 +45,7 @@ class EducationalImagePipeline:
 
         # 1. Educational CLIP Encoding and Archetype Classification
         encoding_result = self.encoder.encode_and_audit(
-            image_source=image_source,
+            image_input=image_source,
             filename=source_name,
             user_id=user_id
         )

@@ -17,6 +17,10 @@ import numpy as np
 import cv2
 from PIL import Image
 
+# Ensure UTF-8 output on Windows
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 # Ensure backend is on sys.path
 backend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "backend"))
 if backend_path not in sys.path:
