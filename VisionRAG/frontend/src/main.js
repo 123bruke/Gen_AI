@@ -10,6 +10,7 @@ import { SourceModal } from './components/SourceModal.js';
 import { AuthModal } from './components/AuthModal.js';
 import { DatabaseModal } from './components/DatabaseModal.js';
 import { AgentHubModal } from './components/AgentHubModal.js';
+import { StudentPortal } from './components/StudentPortal.js';
 import { eyeTracker } from './utils/eyeTracker.js';
 import { store } from './store/state.js';
 import { api } from './services/api.js';
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalContainer = document.getElementById('modal-container');
   const sidebarContainer = document.getElementById('sidebar');
   const mainContentContainer = document.getElementById('main-content');
+  const studentPortalContainer = document.getElementById('student-portal-container');
 
   // Check active session & verify JWT with PostgreSQL on startup
   store.checkAuthSession(api);
@@ -28,6 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Splash Screen (Circle with 2 Eyes and '.' dot pupils)
   const splash = new IntroSplash();
   splash.init();
+
+  // Instantiate Student Portal (passcode '123456')
+  const studentPortal = new StudentPortal(studentPortalContainer, {
+    onBackToChat: () => {
+      studentPortal.close();
+    }
+  });
 
   // Instantiate Modals
   const voiceModal = new VoiceModal(modalContainer);
@@ -46,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     onReplayIntro: () => splash.replay(),
     onOpenAuth: (mode) => authModal.open(mode),
     onOpenDbStorage: (tab) => databaseModal.open(tab),
-    onOpenAgentHub: (tab) => agentHubModal.open(tab)
+    onOpenAgentHub: (tab) => agentHubModal.open(tab),
+    onOpenStudentPortal: () => studentPortal.open()
   });
   sidebar.render();
 
@@ -57,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
     onOpenSource: (source) => sourceModal.open(source),
     onOpenSettings: () => settingsModal.open(),
     onOpenDbStorage: (tab) => databaseModal.open(tab),
-    onOpenAgentHub: (tab) => agentHubModal.open(tab)
+    onOpenAgentHub: (tab) => agentHubModal.open(tab),
+    onOpenStudentPortal: () => studentPortal.open()
   });
   chatArea.render();
 

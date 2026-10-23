@@ -36,6 +36,38 @@ class MapSearcherAgent:
                 "osmUrl": "https://www.openstreetmap.org/relation/192795",
                 "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=33.00,3.40,47.98,14.89&layer=mapnik&marker=9.1450,40.4897"
             },
+            "ministry of education": {
+                "name": "FDRE Ministry of Education Headquarters (ትምህርት ሚኒስቴር)",
+                "lat": 9.0345,
+                "lng": 38.7525,
+                "elevation_m": 2400,
+                "region": "Arada Sub-city, Addis Ababa, Ethiopia",
+                "category": "Federal Educational Administration & National Policy Headquarters",
+                "historical_significance": "Federal ministry overseeing national general education, higher education, curriculum framework (KG–12), teacher development, and digital education under General Education Proclamation No. 1368/2025.",
+                "tags": ["Ministry of Education", "MOE", "Education", "Arada", "Addis Ababa", "Proclamation 1368/2025"],
+                "osmUrl": "https://www.openstreetmap.org/#map=16/9.0345/38.7525",
+                "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=38.7475,9.0295,38.7575,9.0395&layer=mapnik&marker=9.0345,38.7525"
+            },
+            "moe": {
+                "name": "FDRE Ministry of Education Headquarters (Arada)",
+                "lat": 9.0345,
+                "lng": 38.7525,
+                "elevation_m": 2400,
+                "region": "Arada Sub-city, Addis Ababa, Ethiopia",
+                "category": "Federal Government Ministry",
+                "historical_significance": "Executive office of the Federal Democratic Republic of Ethiopia Ministry of Education, Arada Sub-city, Addis Ababa.",
+                "tags": ["MOE", "Ministry of Education", "Arada"]
+            },
+            "menelik ii school": {
+                "name": "Menelik II School (First Modern Public School in Ethiopia)",
+                "lat": 9.0320,
+                "lng": 38.7560,
+                "elevation_m": 2380,
+                "region": "Arada Sub-city, Addis Ababa",
+                "category": "Historic Modern Educational Milestone",
+                "historical_significance": "Founded in 1908 by Emperor Menelik II, marking the establishment of modern secular state schooling in Ethiopia.",
+                "tags": ["Menelik II School", "1908", "Modern Education", "Arada", "Addis Ababa"]
+            },
             "addis ababa": {
                 "name": "Addis Ababa (Federal Capital & Academic Hub)",
                 "lat": 9.0222,
@@ -43,8 +75,8 @@ class MapSearcherAgent:
                 "elevation_m": 2355,
                 "region": "Chartered City Administration, Central Ethiopia",
                 "category": "Diplomatic, Political, and University Capital of Africa",
-                "historical_significance": "Founded in 1886 by Emperor Menelik II and Empress Taytu Betul. Headquarters of the African Union (AU) and United Nations Economic Commission for Africa (UNECA). Home to Addis Ababa University (est. 1950) and the National Museum of Ethiopia.",
-                "tags": ["Addis Ababa", "African Union", "Addis Ababa University", "National Museum", "Entoto"]
+                "historical_significance": "Founded in 1886. Headquarters of the African Union (AU) and UNECA. Home to the Ministry of Education, Addis Ababa University (est. 1950), and national research centers.",
+                "tags": ["Addis Ababa", "Ministry of Education", "Addis Ababa University", "National Museum", "AU"]
             },
             "lalibela": {
                 "name": "Rock-Hewn Churches of Lalibela (Lasta)",

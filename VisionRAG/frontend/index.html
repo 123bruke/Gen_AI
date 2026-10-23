@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Axu - Multimodal VisionRAG Platform" />
-    <title>Axu - Multimodal AI</title>
+    <meta name="description" content="VRAG - Multimodal Educational RAG Platform" />
+    <title>VRAG - Multimodal Educational AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +17,7 @@
     <!-- Opening Animation: "AXU" moving on left side, Circle with 2 Eyes and '.' Dot Pupils -->
     <div id="intro-splash" class="intro-splash" aria-label="Loading Animation">
       <div class="intro-splash-inner">
-        <div class="intro-axu-brand">AXU</div>
+        <div class="intro-axu-brand">VRAG</div>
         <div class="minimal-circle-frame">
           <div class="two-eyes-wrap">
             <!-- Left Eye with Dot '.' -->
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <!-- Main Clean ChatGPT-Style Application Shell -->
+    <!-- Main Clean Application Shell -->
     <div id="app" class="app-container app-hidden">
       <!-- Left Sidebar -->
       <aside id="sidebar" class="sidebar"></aside>
@@ -45,9 +45,13 @@
       <!-- Main Chat Area -->
       <main id="main-content" class="main-content"></main>
 
+      <!-- Dedicated Student Records & Progress Management Portal -->
+      <div id="student-portal-container" class="student-portal-container" style="display: none; position: fixed; inset: 0; z-index: 100; overflow-y: auto;"></div>
+
       <!-- Overlays and Modals -->
       <div id="modal-container"></div>
     </div>
+
 
     <script type="module" src="/src/main.js"></script>
   </body>

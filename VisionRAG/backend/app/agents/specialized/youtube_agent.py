@@ -128,14 +128,34 @@ class YouTubeSearcherAgent:
                 "keywords": ["lake tana", "blue nile falls", "tis abay", "monasteries", "bahir dar", "ethiopia"]
             },
             {
-                "id": "B5pK1xM9vQ3",
-                "title": "The Battle of Adwa (1896): How Ethiopia Defended Its Sovereignty",
-                "channel": "African History Archives",
-                "description": "Strategic and military history of Emperor Menelik II and Empress Taytu's decisive victory at Adwa, preserving Ethiopia's thousands of years of independence.",
-                "thumbnail": "https://img.youtube.com/vi/B5pK1xM9vQ3/hqdefault.jpg",
-                "url": "https://www.youtube.com/watch?v=B5pK1xM9vQ3",
-                "embedUrl": "https://www.youtube.com/embed/B5pK1xM9vQ3",
-                "keywords": ["adwa", "battle of adwa", "menelik", "taytu", "sovereignty", "history", "ethiopia"]
+                "id": "MOE_EDU_PROC1368",
+                "title": "Ethiopia Ministry of Education: General Education Proclamation No. 1368/2025 & Reform",
+                "channel": "Ethiopia MOE Education Media",
+                "description": "Comprehensive explanation of General Education Proclamation No. 1368/2025, decentralized school governance, equity, curriculum standards, and teacher accreditation.",
+                "thumbnail": "https://img.youtube.com/vi/d_27r8p1mEw/hqdefault.jpg",
+                "url": "https://www.youtube.com/watch?v=d_27r8p1mEw",
+                "embedUrl": "https://www.youtube.com/embed/d_27r8p1mEw",
+                "keywords": ["moe", "ministry of education", "education", "proclamation 1368/2025", "curriculum", "ethiopia"]
+            },
+            {
+                "id": "MOE_CURRICULUM_STEAM",
+                "title": "Curriculum Framework for Ethiopian Education (KG–Grade 12) & STEAM Desks",
+                "channel": "National Curriculum Center",
+                "description": "Overview of the competency-based curriculum framework for KG to Grade 12, STEAM education desks, teacher development, and digital learning programs.",
+                "thumbnail": "https://img.youtube.com/vi/a_98qX2kL1o/hqdefault.jpg",
+                "url": "https://www.youtube.com/watch?v=a_98qX2kL1o",
+                "embedUrl": "https://www.youtube.com/embed/a_98qX2kL1o",
+                "keywords": ["curriculum", "kg 12", "steam", "teacher development", "education statistics", "moe"]
+            },
+            {
+                "id": "MOE_HIST_1908_2025",
+                "title": "History of Ethiopian Modern Education Administration (1908–2025)",
+                "channel": "Educational Heritage Network",
+                "description": "Historical trajectory of modern schooling from Menelik II School in 1908 through the 1942 Ministry of Education, 1994 Policy, ESDP series, and current reforms.",
+                "thumbnail": "https://img.youtube.com/vi/b_12mP3kQ9z/hqdefault.jpg",
+                "url": "https://www.youtube.com/watch?v=b_12mP3kQ9z",
+                "embedUrl": "https://www.youtube.com/embed/b_12mP3kQ9z",
+                "keywords": ["history of education", "menelik ii school", "1908", "esdp", "education milestones", "ethiopia"]
             },
             # Science, Engineering & Computer Science
             {

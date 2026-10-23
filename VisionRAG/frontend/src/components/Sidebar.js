@@ -4,13 +4,14 @@ import { store } from '../store/state.js';
 import { api } from '../services/api.js';
 
 export class Sidebar {
-  constructor(containerEl, { onOpenSettings, onReplayIntro, onOpenAuth, onOpenDbStorage, onOpenAgentHub }) {
+  constructor(containerEl, { onOpenSettings, onReplayIntro, onOpenAuth, onOpenDbStorage, onOpenAgentHub, onOpenStudentPortal }) {
     this.container = containerEl;
     this.onOpenSettings = onOpenSettings;
     this.onReplayIntro = onReplayIntro;
     this.onOpenAuth = onOpenAuth;
     this.onOpenDbStorage = onOpenDbStorage;
     this.onOpenAgentHub = onOpenAgentHub;
+    this.onOpenStudentPortal = onOpenStudentPortal;
     this.searchQuery = '';
     this.collapsedFolders = new Set();
 
@@ -79,6 +80,16 @@ export class Sidebar {
               <line x1="12" y1="11" x2="12" y2="17"></line>
               <line x1="9" y1="14" x2="15" y2="14"></line>
             </svg>
+          </button>
+        </div>
+
+        <div style="padding: 0 12px 6px 12px;">
+          <button class="btn-sidebar-student-portal" id="btn-sidebar-student-portal" title="Open Student Records Portal (Passcode: 123456)" style="width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 7px 10px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-md); font-size: 12.5px; font-weight: 600; color: #166534; cursor: pointer; transition: all 0.15s ease;">
+            <div style="display: flex; align-items: center; gap: 7px;">
+              <span style="font-size: 14px;">🎓</span>
+              <span>Student Portal</span>
+            </div>
+            <span style="font-size: 9.5px; background: #dcfce7; padding: 1px 5px; border-radius: 4px; font-weight: 700; color: #15803d;">Admin</span>
           </button>
         </div>
       </div>
@@ -237,6 +248,11 @@ export class Sidebar {
         const name = prompt('Folder name:');
         if (name && name.trim()) store.createFolder(name.trim());
       });
+    }
+
+    const studentPortalBtn = this.container.querySelector('#btn-sidebar-student-portal');
+    if (studentPortalBtn && this.onOpenStudentPortal) {
+      studentPortalBtn.addEventListener('click', () => this.onOpenStudentPortal());
     }
 
     const settingsBtn = this.container.querySelector('#sidebar-settings-btn');

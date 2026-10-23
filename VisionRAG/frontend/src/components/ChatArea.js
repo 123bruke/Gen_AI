@@ -5,12 +5,13 @@ import { api } from '../services/api.js';
 import { eyeTracker } from '../utils/eyeTracker.js';
 
 export class ChatArea {
-  constructor(containerEl, { onOpenVoice, onOpenVideo, onOpenSource, onOpenSettings }) {
+  constructor(containerEl, { onOpenVoice, onOpenVideo, onOpenSource, onOpenSettings, onOpenStudentPortal }) {
     this.container = containerEl;
     this.onOpenVoice = onOpenVoice;
     this.onOpenVideo = onOpenVideo;
     this.onOpenSource = onOpenSource;
     this.onOpenSettings = onOpenSettings;
+    this.onOpenStudentPortal = onOpenStudentPortal;
 
     this.abortController = null;
     this.showPlusMenu = false;
@@ -47,14 +48,23 @@ export class ChatArea {
             </svg>
           </button>
           
-          <button class="model-pill-btn" id="btn-select-model" style="display: flex; align-items: center; gap: 6px; padding: 5px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 13px; font-weight: 500;">
-            <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #10a37f;"></span>
-            <span>VitionAI Omni</span>
-            <span style="font-size: 10px; background: #e6f7f2; color: #10a37f; padding: 1px 5px; border-radius: 4px; font-weight: 600;">Multi-Agent</span>
+          <button class="model-pill-btn" id="btn-select-model" style="display: flex; align-items: center; gap: 7px; padding: 5px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 13px; font-weight: 600; background: var(--bg-primary);">
+            <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #2563eb; box-shadow: 0 0 6px rgba(37,99,235,0.4);"></span>
+            <span style="font-weight: 700; color: #0f172a; letter-spacing: 0.4px;">VRAG</span>
+            <span style="font-size: 10px; background: #eff6ff; color: #2563eb; padding: 1px 6px; border-radius: 4px; font-weight: 600; border: 1px solid #dbeafe;">Education RAG</span>
           </button>
         </div>
 
         <div class="header-right">
+          <button class="header-action-btn" id="btn-header-student-portal" title="Open Student Records Portal (Passcode: 123456)" style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; border-radius: var(--radius-pill); font-size: 12.5px; font-weight: 600; cursor: pointer; transition: all 0.2s ease;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+            <span>Student Portal</span>
+            <span style="font-size: 10px; background: #dcfce7; padding: 1px 5px; border-radius: 4px; font-weight: 700;">Admin</span>
+          </button>
+
           <button class="header-action-btn" id="btn-header-voice" title="Voice Mode" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--border-medium); border-radius: var(--radius-pill); font-size: 12.5px;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
@@ -247,49 +257,51 @@ export class ChatArea {
         </div>
 
         <h1 style="font-size: 26px; font-weight: 600; color: var(--text-primary); margin: 0; letter-spacing: -0.02em;">
-          What would you like to explore today?
+          VRAG Educational Knowledge Engine
         </h1>
-        <p style="font-size: 14px; color: var(--text-secondary); max-width: 520px; margin: 0; line-height: 1.5;">
-          Ask any question or upload an image. VitionAI autonomously searches educational books, videos, images, maps, and live sources, presenting answers like a modern research engine.
+        <p style="font-size: 14px; color: var(--text-secondary); max-width: 540px; margin: 0; line-height: 1.5;">
+          Grounded RAG assistant for students, educators, and researchers. Ask educational questions, review MOE curriculum standards, search digital textbooks, or access the Student Records Portal.
         </p>
 
         <!-- Suggested Inquiry Prompts -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; width: 100%; margin-top: 10px;">
-          <button class="hero-prompt-chip" data-prompt="Explain Saint Yared musicology and Lalibela rock-hewn monolithic churches with online books and videos">
-            <span style="font-size: 15px;">🎼</span>
+          <button class="hero-prompt-chip" data-prompt="What are the official powers and educational frameworks of the Ministry of Education under General Education Proclamation No. 1368/2025?">
+            <span style="font-size: 15px;">📜</span>
             <div style="text-align: left;">
-              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Saint Yared & Lalibela</div>
-              <div style="font-size: 11px; color: var(--text-muted);">Zema notation & monolithic architecture</div>
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">MOE Proclamation 1368/2025</div>
+              <div style="font-size: 11px; color: var(--text-muted);">In-force statutory framework & quality</div>
             </div>
           </button>
 
-          <button class="hero-prompt-chip" data-prompt="Endemic wildlife of Simien & Bale Mountains: Walia Ibex, Ethiopian Wolf, and Gelada Baboon">
-            <span style="font-size: 15px;">🐐</span>
+          <button class="hero-prompt-chip" data-prompt="Explain the Curriculum Framework for Ethiopian Education (KG–Grade 12) and STEAM Desks">
+            <span style="font-size: 15px;">🏫</span>
             <div style="text-align: left;">
-              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Walia Ibex & Simien Fauna</div>
-              <div style="font-size: 11px; color: var(--text-muted);">Afro-alpine adaptations & biodiversity</div>
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">KG–12 Curriculum & STEAM</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Competency standards & digital education</div>
             </div>
           </button>
 
-          <button class="hero-prompt-chip" data-prompt="Search online educational textbooks for Python programming and Artificial Intelligence">
-            <span style="font-size: 15px;">📚</span>
+          <button class="hero-prompt-chip" data-prompt="What are the key historical milestones in Ethiopian modern education administration from 1908 to 2025?">
+            <span style="font-size: 15px;">⏳</span>
             <div style="text-align: left;">
-              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Python & AI Books</div>
-              <div style="font-size: 11px; color: var(--text-muted);">Open Library & Google Books catalogs</div>
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Education History Milestones</div>
+              <div style="font-size: 11px; color: var(--text-muted);">1908 Menelik II School to modern ESDP</div>
             </div>
           </button>
 
-          <button class="hero-prompt-chip" data-prompt="Where is the Grand Ethiopian Renaissance Dam (GERD) on the Blue Nile? Show map and video">
-            <span style="font-size: 15px;">🗺️</span>
+          <button class="hero-prompt-chip" data-prompt="Give me step-by-step student learning guidance and exam preparation tips for science and mathematics">
+            <span style="font-size: 15px;">💡</span>
             <div style="text-align: left;">
-              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">GERD & Blue Nile Basin</div>
-              <div style="font-size: 11px; color: var(--text-muted);">Geospatial coordinates & engineering</div>
+              <div style="font-weight: 600; font-size: 12.5px; color: var(--text-primary);">Student Study & Exam Guidance</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Pedagogical advice & concept mastery</div>
             </div>
           </button>
         </div>
       </div>
     `;
   }
+
+
 
   renderMessage(msg) {
     const isUser = msg.sender === 'user';
@@ -929,6 +941,12 @@ export class ChatArea {
     const sidebarToggleBtn = this.container.querySelector('#btn-toggle-sidebar');
     if (sidebarToggleBtn) {
       sidebarToggleBtn.addEventListener('click', () => store.toggleSidebar());
+    }
+
+    // Student Portal Navigation Button
+    const studentPortalBtn = this.container.querySelector('#btn-header-student-portal');
+    if (studentPortalBtn && this.onOpenStudentPortal) {
+      studentPortalBtn.addEventListener('click', () => this.onOpenStudentPortal());
     }
 
     // Voice & Video Mode Top Buttons

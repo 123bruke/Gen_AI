@@ -172,7 +172,64 @@ class GoogleSearchEngineAgent:
         results: List[Dict[str, Any]] = []
         seen_urls = set()
 
-        # 1. Google Custom Search API if configured
+        curated_websites = [
+            {
+                "title": "Federal Democratic Republic of Ethiopia Ministry of Education (MOE)",
+                "url": "https://moe.gov.et/",
+                "snippet": "Official government portal of the FDRE Ministry of Education. National education policies, curriculum frameworks, ESDP roadmap, teacher development, and digital education.",
+                "source": "moe.gov.et"
+            },
+            {
+                "title": "Ministry of Justice Ethiopia: General Education Proclamation No. 1368/2025",
+                "url": "https://justice.gov.et/en/law/general-education-proclamation-no-1368-2025/",
+                "snippet": "In-force national proclamation governing general education access, quality standards, student rights, and decentralized education management across Ethiopia.",
+                "source": "justice.gov.et"
+            },
+            {
+                "title": "FDRE Ministry of Justice: Education and Training Legal Sector Catalog",
+                "url": "https://justice.gov.et/en/sector/education-training/",
+                "snippet": "Official repository of Ethiopian education proclamations, Council of Ministers regulations (including Regulation No. 561/2025), and qualification frameworks.",
+                "source": "justice.gov.et"
+            },
+            {
+                "title": "FDRE MOE: Education Statistics Annual Abstract (ESAA)",
+                "url": "https://www.moe.gov.et/storage/Books/ESAA%202022-23%20Final.pdf",
+                "snippet": "Official statistical publication presenting comprehensive education-sector indicators, enrollment, teacher ratios, and regional participation across Ethiopia.",
+                "source": "www.moe.gov.et"
+            },
+            {
+                "title": "Addis Ababa University (AAU) Official Academic Portal",
+                "url": "https://www.aau.edu.et/",
+                "snippet": "Premier institution of higher education and research in Ethiopia, founded in 1950. Housing faculties in science, technology, medicine, humanities, and social studies.",
+                "source": "www.aau.edu.et"
+            },
+            {
+                "title": "Ethiopia - History, Culture, Geography & Society | Britannica",
+                "url": "https://www.britannica.com/place/Ethiopia",
+                "snippet": "Comprehensive encyclopedic profile of Ethiopia, documenting geography, education, governance, and contemporary society.",
+                "source": "www.britannica.com"
+            },
+            {
+                "title": "Ministry of Innovation and Technology of Ethiopia (MInT)",
+                "url": "https://mint.gov.et/",
+                "snippet": "Government agency spearheading Ethiopia's digital transformation, high-performance computing, artificial intelligence strategies, and national scientific infrastructure.",
+                "source": "mint.gov.et"
+            }
+        ]
+
+        # 1. Authoritative Educational Portals First for Educational Inquiries
+        q_lower = query.lower()
+        is_edu_query = any(w in q_lower for w in ["education", "moe", "ministry", "proclamation", "curriculum", "esdp", "school", "student", "teacher", "qualification", "framework"])
+
+        if is_edu_query:
+            for site in curated_websites:
+                if site["url"] not in seen_urls:
+                    seen_urls.add(site["url"])
+                    results.append(site)
+                    if len(results) >= target_results:
+                        return results[:target_results]
+
+        # 2. Google Custom Search API if configured
         if self.api_key and self.cx:
             try:
                 url = f"https://www.googleapis.com/customsearch/v1?q={urllib.parse.quote(query)}&key={self.api_key}&cx={self.cx}&num={target_results}"
@@ -253,57 +310,7 @@ class GoogleSearchEngineAgent:
             except Exception:
                 pass
 
-        # 4. Authoritative Ethiopian & Global Educational Web Portals Fallback
-        curated_websites = [
-            {
-                "title": "Addis Ababa University (AAU) Official Academic Portal",
-                "url": "https://www.aau.edu.et/",
-                "snippet": "Premier institution of higher education and research in Ethiopia, founded in 1950. Housing faculties in science, technology, medicine, humanities, and social studies.",
-                "source": "www.aau.edu.et"
-            },
-            {
-                "title": "Ethiopia - History, Culture, Geography & Society | Britannica",
-                "url": "https://www.britannica.com/place/Ethiopia",
-                "snippet": "Comprehensive encyclopedic profile of Ethiopia, documenting the East African Rift, ancient civilizations, Aksumite empire, Battle of Adwa, and contemporary governance.",
-                "source": "www.britannica.com"
-            },
-            {
-                "title": "UNESCO World Heritage Centre: Cultural & Natural Sites in Ethiopia",
-                "url": "https://whc.unesco.org/en/statesparties/et",
-                "snippet": "Official United Nations inventory of Ethiopia's world heritage sites, including Lalibela rock-cut churches, Fasil Ghebbi, Simien Mountains, Tiya, and Harar Jugol.",
-                "source": "whc.unesco.org"
-            },
-            {
-                "title": "Ministry of Innovation and Technology of Ethiopia (MInT)",
-                "url": "https://mint.gov.et/",
-                "snippet": "Government agency spearheading Ethiopia's digital transformation, high-performance computing, artificial intelligence strategies, and national scientific infrastructure.",
-                "source": "mint.gov.et"
-            },
-            {
-                "title": "National Museum of Ethiopia & Palaeoanthropology Archives",
-                "url": "https://en.wikipedia.org/wiki/National_Museum_of_Ethiopia",
-                "snippet": "Repository of Ethiopia's premier cultural treasures and prehistoric fossil collections, famously housing the 3.2-million-year-old Australopithecus afarensis skeleton 'Lucy' (Dinkinesh).",
-                "source": "en.wikipedia.org"
-            },
-            {
-                "title": "African Union (AU) Headquarters & Pan-African Diplomacy",
-                "url": "https://au.int/",
-                "snippet": "Continental organization consisting of 55 member states, headquartered in Addis Ababa, driving Agenda 2063 economic integration, peace, and sustainable regional development.",
-                "source": "au.int"
-            },
-            {
-                "title": "Ethiopian Wildlife Conservation Authority: Protected Areas & Biodiversity",
-                "url": "https://en.wikipedia.org/wiki/Ethiopian_Wildlife_Conservation_Authority",
-                "snippet": "Official national agency overseeing protected national parks, safeguarding endemic species such as the Walia Ibex, Ethiopian Wolf, Mountain Nyala, and Gelada Baboon.",
-                "source": "en.wikipedia.org"
-            },
-            {
-                "title": "Grand Ethiopian Renaissance Dam: Clean Energy & Nile Hydrology",
-                "url": "https://en.wikipedia.org/wiki/Grand_Ethiopian_Renaissance_Dam",
-                "snippet": "In-depth overview of Africa's largest hydroelectric project on the Blue Nile in Benishangul-Gumuz, generating clean electricity and symbolizing sovereign development.",
-                "source": "en.wikipedia.org"
-            }
-        ]
+        # 4. Fill remaining slots from Curated Portals if needed
 
         if len(results) < target_results:
             for site in curated_websites:
