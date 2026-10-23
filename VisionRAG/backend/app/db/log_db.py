@@ -72,6 +72,36 @@ class SimpleLogDatabase:
             print(f"[Logging DB Error]: {e}")
             return -1
 
+    def record_event(
+        self,
+        event_type: str,
+        stage: str = "SYSTEM",
+        status: str = "INFO",
+        message: Optional[str] = None,
+        user_id: Optional[str] = None,
+        payload: Optional[Dict[str, Any]] = None,
+        **kwargs
+    ) -> int:
+        """Ergonomic wrapper to record structured events to visible log DB."""
+        level = "ERROR" if status.upper() in ["ERROR", "FAILED"] else (
+            "WARNING" if status.upper() in ["WARNING", "WARN"] else "INFO"
+        )
+        msg = message or f"[{stage}] Event '{event_type}' processed with status '{status}'."
+        details = payload or {}
+        if kwargs:
+            details.update(kwargs)
+        details["stage"] = stage
+        details["status"] = status
+        return self.insert_log(
+            level=level,
+            logger_name=f"visionrag.{stage.lower()}",
+            event_type=event_type,
+            message=msg,
+            user_id=user_id,
+            details=details
+        )
+
+
     def get_logs(
         self,
         limit: int = 100,
