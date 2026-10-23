@@ -189,7 +189,7 @@ export class ChatArea {
               id="chat-textarea"
               class="chat-textarea"
               rows="1"
-              placeholder="${this.isRecordingAudio ? '🎙️ Recording voice... Speak clearly (click red mic when done)' : 'Ask anything... VitionAI will search books, videos, images, maps & news'}"
+              placeholder="${this.isRecordingAudio ? '🎙️ Recording voice... Speak clearly (click red mic when done)' : 'Ask any educational inquiry... VRAG will search textbooks, curriculum standards, videos & maps'}"
             ></textarea>
 
             <div style="display: flex; align-items: center; gap: 6px; margin-left: 6px;">
@@ -222,7 +222,7 @@ export class ChatArea {
           </div>
 
           <div style="text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 4px;">
-            VitionAI • Autonomous Multi-Agent Synthesis (Books, Videos, Maps, Images & Live Web)
+            VRAG • Autonomous Educational Knowledge Engine (Books, Videos, Maps, Images & Verified Sources)
           </div>
         </div>
       </div>
