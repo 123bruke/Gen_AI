@@ -1953,6 +1953,606 @@
               "utterance": "Thank you for those illuminating insights on 'The Road to 2030: Cloud-Connected General Education'. Let us transition to our next critical theme."
             }
           ]
+        },
+        {
+          "episode_id": "EP-07",
+          "youtube_id": "YOUTUBE_MOE_POD_007_INCLUSIVE_FEEDING",
+          "title": "Inclusive Education, Pastoralist Mobile Schools & National School Feeding",
+          "release_date": "2025-12-28",
+          "duration_seconds": 4050,
+          "duration_formatted": "01:07:30",
+          "host": "Mesfin Wolde (Social Policy Broadcaster)",
+          "guest": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+          "summary": "Exploring pastoralist mobile school innovations in Afar and Somali, expanding special needs resource centers, Braille textbook distribution, and feeding 4.2 million primary school children daily.",
+          "topics": [
+            "Inclusive Education",
+            "School Feeding",
+            "Pastoralist Schools",
+            "Special Needs",
+            "Braille & Sign Language"
+          ],
+          "views": 275000,
+          "likes": 18900,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Opening: The Constitutional Mandate for Total Inclusiveness"
+            },
+            {
+              "timestamp": "08:15",
+              "title": "Mobile School Paradigms for Nomadic Communities in Afar & Somali"
+            },
+            {
+              "timestamp": "19:40",
+              "title": "Special Needs Resource Centers (SNRC): Staffing and Equipment"
+            },
+            {
+              "timestamp": "32:00",
+              "title": "Free Braille and Sign Language Materials for All Grades"
+            },
+            {
+              "timestamp": "44:30",
+              "title": "The National School Feeding Program: Impact on Attendance and Health"
+            },
+            {
+              "timestamp": "56:50",
+              "title": "Gender-Sensitive Interventions and Safe Schools for Girls"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Opening: The Constitutional Mandate for Total Inclusiveness'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Mesfin. When the Ministry approached the question of opening: the constitutional mandate for total inclusiveness, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Opening: The Constitutional Mandate for Total Inclusiveness'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "08:15",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Mobile School Paradigms for Nomadic Communities in Afar & Somali'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "08:15 +00:35",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Mesfin. When the Ministry approached the question of mobile school paradigms for nomadic communities in afar & somali, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "08:15 +01:25",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "08:15 +02:15",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "08:15 +03:10",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "08:15 +04:05",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "08:15 +05:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Mobile School Paradigms for Nomadic Communities in Afar & Somali'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "19:40",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Special Needs Resource Centers (SNRC): Staffing and Equipment'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "19:40 +00:35",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Mesfin. When the Ministry approached the question of special needs resource centers (snrc): staffing and equipment, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "19:40 +01:25",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "19:40 +02:15",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "19:40 +03:10",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "19:40 +04:05",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "19:40 +05:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Special Needs Resource Centers (SNRC): Staffing and Equipment'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "32:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Free Braille and Sign Language Materials for All Grades'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "32:00 +00:35",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Mesfin. When the Ministry approached the question of free braille and sign language materials for all grades, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "32:00 +01:25",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "32:00 +02:15",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "32:00 +03:10",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "32:00 +04:05",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "32:00 +05:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Free Braille and Sign Language Materials for All Grades'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "44:30",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'The National School Feeding Program: Impact on Attendance and Health'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "44:30 +00:35",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Mesfin. When the Ministry approached the question of the national school feeding program: impact on attendance and health, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "44:30 +01:25",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "44:30 +02:15",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "44:30 +03:10",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "44:30 +04:05",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "44:30 +05:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'The National School Feeding Program: Impact on Attendance and Health'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "56:50",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Gender-Sensitive Interventions and Safe Schools for Girls'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "56:50 +00:35",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Mesfin. When the Ministry approached the question of gender-sensitive interventions and safe schools for girls, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "56:50 +01:25",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "56:50 +02:15",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "56:50 +03:10",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "56:50 +04:05",
+              "speaker": "Director of Special Needs & Pastoralist Education, MOE & National School Feeding Coordinator",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "56:50 +05:00",
+              "speaker": "Mesfin Wolde (Social Policy Broadcaster)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Gender-Sensitive Interventions and Safe Schools for Girls'. Let us transition to our next critical theme."
+            }
+          ]
+        },
+        {
+          "episode_id": "EP-08",
+          "youtube_id": "YOUTUBE_MOE_POD_008_RESEARCH_INNOVATION",
+          "title": "Higher Education Research, Patent Commercialization & University-Industry Linkage",
+          "release_date": "2026-01-15",
+          "duration_seconds": 4200,
+          "duration_formatted": "01:10:00",
+          "host": "Dr. Birhanu Mengistu (Academic Reviewer)",
+          "guest": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+          "summary": "How Ethiopia's research universities are aligning doctoral dissertations with industrial corridor demands, establishing technology transfer offices, safeguarding academic ethics, and funding startup incubators.",
+          "topics": [
+            "University Research",
+            "Technology Transfer",
+            "Patents",
+            "Industrial Linkage",
+            "AAU Autonomous Research"
+          ],
+          "views": 330000,
+          "likes": 22400,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Introduction: Transitioning from Teaching-Only to Research-Intensive Universities"
+            },
+            {
+              "timestamp": "09:20",
+              "title": "The 8 Flagship Research Universities and Ph.D. Expansion"
+            },
+            {
+              "timestamp": "21:10",
+              "title": "Institutional Linkage: Connecting University Labs to Industrial Parks"
+            },
+            {
+              "timestamp": "33:45",
+              "title": "Research Ethics, Institutional Review Boards & National Biosafety"
+            },
+            {
+              "timestamp": "46:15",
+              "title": "Patent Commercialization and Student Startup Incubators"
+            },
+            {
+              "timestamp": "58:00",
+              "title": "International Academic Collaboration and Bilateral Grants"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Introduction: Transitioning from Teaching-Only to Research-Intensive Universities'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dr.. When the Ministry approached the question of introduction: transitioning from teaching-only to research-intensive universities, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Introduction: Transitioning from Teaching-Only to Research-Intensive Universities'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "09:20",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'The 8 Flagship Research Universities and Ph.D. Expansion'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "09:20 +00:35",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dr.. When the Ministry approached the question of the 8 flagship research universities and ph.d. expansion, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "09:20 +01:25",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "09:20 +02:15",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "09:20 +03:10",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "09:20 +04:05",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "09:20 +05:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'The 8 Flagship Research Universities and Ph.D. Expansion'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "21:10",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Institutional Linkage: Connecting University Labs to Industrial Parks'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "21:10 +00:35",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dr.. When the Ministry approached the question of institutional linkage: connecting university labs to industrial parks, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "21:10 +01:25",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "21:10 +02:15",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "21:10 +03:10",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "21:10 +04:05",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "21:10 +05:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Institutional Linkage: Connecting University Labs to Industrial Parks'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "33:45",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Research Ethics, Institutional Review Boards & National Biosafety'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "33:45 +00:35",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dr.. When the Ministry approached the question of research ethics, institutional review boards & national biosafety, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "33:45 +01:25",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "33:45 +02:15",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "33:45 +03:10",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "33:45 +04:05",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "33:45 +05:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Research Ethics, Institutional Review Boards & National Biosafety'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "46:15",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Patent Commercialization and Student Startup Incubators'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "46:15 +00:35",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dr.. When the Ministry approached the question of patent commercialization and student startup incubators, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "46:15 +01:25",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "46:15 +02:15",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "46:15 +03:10",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "46:15 +04:05",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "46:15 +05:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Patent Commercialization and Student Startup Incubators'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "58:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'International Academic Collaboration and Bilateral Grants'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "58:00 +00:35",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dr.. When the Ministry approached the question of international academic collaboration and bilateral grants, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "58:00 +01:25",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "58:00 +02:15",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "58:00 +03:10",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "58:00 +04:05",
+              "speaker": "Director General of Research, Ethics & Innovation, MOE & VP of Research, Addis Ababa University",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "58:00 +05:00",
+              "speaker": "Dr. Birhanu Mengistu (Academic Reviewer)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'International Academic Collaboration and Bilateral Grants'. Let us transition to our next critical theme."
+            }
+          ]
         }
       ]
     }
