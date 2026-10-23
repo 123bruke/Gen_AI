@@ -29,10 +29,17 @@ from PIL import Image
 
 # Ensure backend root is accessible for database & config imports
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, "..", "..", ".."))
-BACKEND_DIR = os.path.join(PROJECT_ROOT, "VisionRAG", "backend")
-if BACKEND_DIR not in sys.path:
-    sys.path.insert(0, BACKEND_DIR)
+# Check candidate backend directories
+possible_backend_dirs = [
+    os.path.abspath(os.path.join(CURRENT_DIR, "..", "..", "..", "backend")),
+    os.path.abspath(os.path.join(CURRENT_DIR, "..", "..", "backend")),
+    os.path.abspath(os.path.join(CURRENT_DIR, "..", "backend"))
+]
+for b_dir in possible_backend_dirs:
+    if os.path.isdir(os.path.join(b_dir, "app")):
+        if b_dir not in sys.path:
+            sys.path.insert(0, b_dir)
+        break
 
 CACHE_FILE = os.path.join(CURRENT_DIR, ".clip_image_cache.pkl")
 

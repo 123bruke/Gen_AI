@@ -135,15 +135,22 @@ class DataProcessor:
                     prog.progress_percent = 45
                     prog.stage = f"Documents processed. Scanning visual descriptors and annotations."
 
-        # 2. Ingest Visual Descriptors (data/raw/images/)
-        img_files = glob.glob(os.path.join(RAW_IMGS_DIR, "*.json"))
-        print(f"[-] Processing {len(img_files)} image descriptors from {RAW_IMGS_DIR}...")
+        # 2. Ingest Visual Assets & Precompute CLIP Embeddings (data/raw/images/)
+        supported_img_exts = ("*.png", "*.jpg", "*.jpeg", "*.webp", "*.bmp")
+        img_files = []
+        for ext in supported_img_exts:
+            img_files.extend(glob.glob(os.path.join(RAW_IMGS_DIR, ext)))
+
+        print(f"[-] Processing {len(img_files)} visual assets from {RAW_IMGS_DIR}...")
         for img_path in img_files:
             fname = os.path.basename(img_path)
             with open(img_path, "rb") as f:
                 img_bytes = f.read()
             file_id = f"img_{fname.split('.')[0]}"
             total_bytes += len(img_bytes)
+
+            ext = os.path.splitext(fname)[1].lower()
+            mime_type = "image/png" if ext == ".png" else "image/jpeg" if ext in [".jpg", ".jpeg"] else "image/webp"
 
             if sync_to_postgres:
                 with self.postgres.session_scope() as session:
@@ -156,7 +163,7 @@ class DataProcessor:
                         original_filename=fname,
                         stored_filename=f"pg_raw_img_{fname}",
                         file_path=img_path,
-                        file_type="application/json; kind=visual_descriptor",
+                        file_type=f"{mime_type}; pipeline=data_raw_clip",
                         file_size_bytes=len(img_bytes),
                         file_size_display=f"{len(img_bytes)/1024:.1f} KB",
                         checksum_md5=uuid.uuid4().hex[:32],
@@ -166,7 +173,8 @@ class DataProcessor:
                         file_blob=img_bytes,
                         metadata_={
                             "section": "data/raw/images",
-                            "type": "visual_telemetry"
+                            "type": "visual_asset",
+                            "engine": "Hugging Face CLIP Search Ready"
                         }
                     )
                     session.add(uf)
