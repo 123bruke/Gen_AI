@@ -28,6 +28,8 @@ from app.api.routes.progress import router as progress_router
 from app.api.routes.agents import router as agents_router
 from app.api.routes.students import router as students_router
 from app.api.routes.logs import router as logs_router
+from app.api.routes.map import router as map_router
+from app.api.routes.websocket import router as websocket_router
 from app.data.knowledge_seeder import knowledge_seeder
 
 app = FastAPI(
@@ -53,6 +55,8 @@ app.include_router(progress_router)
 app.include_router(agents_router)
 app.include_router(students_router)
 app.include_router(logs_router)
+app.include_router(map_router)
+app.include_router(websocket_router)
 
 UPLOAD_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "storage", "uploads"))
 os.makedirs(UPLOAD_DIR, exist_ok=True)
