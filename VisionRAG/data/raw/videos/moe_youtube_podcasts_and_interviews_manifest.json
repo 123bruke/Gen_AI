@@ -1,0 +1,1960 @@
+{
+  "channel_metadata": {
+    "channel_name": "FDRE Ministry of Education - Official Media & Podcast Channel",
+    "channel_handle": "@MOEEthiopiaOfficial",
+    "official_url": "https://www.youtube.com/@MOEEthiopiaOfficial",
+    "subscribers": "1.42M",
+    "total_views": "48,500,000",
+    "category": "Education, National Policy, Academic Integrity & Public Podcasts",
+    "verified_badge": true,
+    "manifest_version": "3.0",
+    "last_updated": "2026-10-23"
+  },
+  "playlists": [
+    {
+      "playlist_id": "PL-MOE-PODCASTS-2025",
+      "playlist_title": "MOE Strategic Dialogue: National Education Reform Podcasts & Interviews",
+      "total_episodes": 6,
+      "episodes": [
+        {
+          "episode_id": "EP-01",
+          "youtube_id": "YOUTUBE_MOE_POD_001_MINISTER",
+          "title": "Ministerial Keynote: The Future of Ethiopian Education, 6-2-4 Curriculum & Autonomous Universities",
+          "release_date": "2025-09-15",
+          "duration_seconds": 3840,
+          "duration_formatted": "01:04:00",
+          "host": "Abebe Tadesse (Senior Educational Journalist)",
+          "guest": "Federal Minister of Education, FDRE Ministry of Education",
+          "summary": "In-depth ministerial discussion on the transformation from the legacy 8-4 system to the 6-2-4 general education model, the historic autonomous transition of Addis Ababa University, national examination security on university campuses, and addressing historical regional educational inequities.",
+          "topics": [
+            "6-2-4 Curriculum",
+            "AAU Autonomy",
+            "Grade 12 Integrity",
+            "ESDP VI Roadmap",
+            "Teacher Licensing"
+          ],
+          "views": 420000,
+          "likes": 28400,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Introduction and Opening Overview"
+            },
+            {
+              "timestamp": "04:30",
+              "title": "Why Ethiopia Transitioned to the 6-2-4 General Education Model"
+            },
+            {
+              "timestamp": "14:15",
+              "title": "Mother Tongue Instruction in Primary Schools (Grades 1-6)"
+            },
+            {
+              "timestamp": "24:00",
+              "title": "The Historic Autonomous Transition of Addis Ababa University (AAU)"
+            },
+            {
+              "timestamp": "36:20",
+              "title": "Relocating Grade 12 National Exams to University Campuses"
+            },
+            {
+              "timestamp": "48:50",
+              "title": "Digital Education Strategy, SchoolNet Tablets & ICT Expansion"
+            },
+            {
+              "timestamp": "58:10",
+              "title": "Closing Reflections on the 2030 Education Roadmap"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Introduction and Opening Overview'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Abebe. When the Ministry approached the question of introduction and opening overview, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Introduction and Opening Overview'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "04:30",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Why Ethiopia Transitioned to the 6-2-4 General Education Model'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "04:30 +00:35",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Abebe. When the Ministry approached the question of why ethiopia transitioned to the 6-2-4 general education model, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "04:30 +01:25",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "04:30 +02:15",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "04:30 +03:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "04:30 +04:05",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "04:30 +05:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Why Ethiopia Transitioned to the 6-2-4 General Education Model'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "14:15",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Mother Tongue Instruction in Primary Schools (Grades 1-6)'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "14:15 +00:35",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Abebe. When the Ministry approached the question of mother tongue instruction in primary schools (grades 1-6), our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "14:15 +01:25",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "14:15 +02:15",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "14:15 +03:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "14:15 +04:05",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "14:15 +05:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Mother Tongue Instruction in Primary Schools (Grades 1-6)'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "24:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'The Historic Autonomous Transition of Addis Ababa University (AAU)'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "24:00 +00:35",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Abebe. When the Ministry approached the question of the historic autonomous transition of addis ababa university (aau), our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "24:00 +01:25",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "24:00 +02:15",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "24:00 +03:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "24:00 +04:05",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "24:00 +05:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'The Historic Autonomous Transition of Addis Ababa University (AAU)'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "36:20",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Relocating Grade 12 National Exams to University Campuses'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "36:20 +00:35",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Abebe. When the Ministry approached the question of relocating grade 12 national exams to university campuses, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "36:20 +01:25",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "36:20 +02:15",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "36:20 +03:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "36:20 +04:05",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "36:20 +05:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Relocating Grade 12 National Exams to University Campuses'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "48:50",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Digital Education Strategy, SchoolNet Tablets & ICT Expansion'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "48:50 +00:35",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Abebe. When the Ministry approached the question of digital education strategy, schoolnet tablets & ict expansion, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "48:50 +01:25",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "48:50 +02:15",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "48:50 +03:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "48:50 +04:05",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "48:50 +05:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Digital Education Strategy, SchoolNet Tablets & ICT Expansion'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "58:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Closing Reflections on the 2030 Education Roadmap'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "58:10 +00:35",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Abebe. When the Ministry approached the question of closing reflections on the 2030 education roadmap, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "58:10 +01:25",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "58:10 +02:15",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "58:10 +03:10",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "58:10 +04:05",
+              "speaker": "Federal Minister of Education, FDRE Ministry of Education",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "58:10 +05:00",
+              "speaker": "Abebe Tadesse (Senior Educational Journalist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Closing Reflections on the 2030 Education Roadmap'. Let us transition to our next critical theme."
+            }
+          ]
+        },
+        {
+          "episode_id": "EP-02",
+          "youtube_id": "YOUTUBE_MOE_POD_002_EAES",
+          "title": "Inside the EAES: How Grade 12 National Examinations Are Secured, Scored, and Moderated",
+          "release_date": "2025-10-02",
+          "duration_seconds": 4120,
+          "duration_formatted": "01:08:40",
+          "host": "Sara Hailu (Education Reporter)",
+          "guest": "Director General, Educational Assessment and Examinations Service (EAES)",
+          "summary": "An exclusive behind-the-scenes look at how national high school leaving examinations are constructed using Item Response Theory (IRT), encrypted on localized campus servers, proctored under strict biometric controls, and psychometrically calibrated.",
+          "topics": [
+            "EAES Examination",
+            "Grade 12 Security",
+            "Computer-Based Testing",
+            "Psychometrics",
+            "Remedial Program"
+          ],
+          "views": 385000,
+          "likes": 24100,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Welcome and Purpose of EAES Integrity Drive"
+            },
+            {
+              "timestamp": "06:10",
+              "title": "Item Construction and Question Bank Cryptography"
+            },
+            {
+              "timestamp": "17:40",
+              "title": "Why Testing Was Moved to Public University Dormitories"
+            },
+            {
+              "timestamp": "29:15",
+              "title": "Rollout of Computer-Based Testing (CBT) Across Campuses"
+            },
+            {
+              "timestamp": "41:30",
+              "title": "The Remedial Program: Bridging Near-Cutoff Candidates"
+            },
+            {
+              "timestamp": "54:00",
+              "title": "Combatting Cheating Rings and Safeguarding Meritocracy"
+            },
+            {
+              "timestamp": "01:03:00",
+              "title": "Advice to Grade 12 Candidates and Parents"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Welcome and Purpose of EAES Integrity Drive'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Sara. When the Ministry approached the question of welcome and purpose of eaes integrity drive, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Welcome and Purpose of EAES Integrity Drive'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "06:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Item Construction and Question Bank Cryptography'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "06:10 +00:35",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Sara. When the Ministry approached the question of item construction and question bank cryptography, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "06:10 +01:25",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "06:10 +02:15",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "06:10 +03:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "06:10 +04:05",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "06:10 +05:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Item Construction and Question Bank Cryptography'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "17:40",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Why Testing Was Moved to Public University Dormitories'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "17:40 +00:35",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Sara. When the Ministry approached the question of why testing was moved to public university dormitories, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "17:40 +01:25",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "17:40 +02:15",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "17:40 +03:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "17:40 +04:05",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "17:40 +05:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Why Testing Was Moved to Public University Dormitories'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "29:15",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Rollout of Computer-Based Testing (CBT) Across Campuses'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "29:15 +00:35",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Sara. When the Ministry approached the question of rollout of computer-based testing (cbt) across campuses, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "29:15 +01:25",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "29:15 +02:15",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "29:15 +03:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "29:15 +04:05",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "29:15 +05:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Rollout of Computer-Based Testing (CBT) Across Campuses'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "41:30",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'The Remedial Program: Bridging Near-Cutoff Candidates'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "41:30 +00:35",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Sara. When the Ministry approached the question of the remedial program: bridging near-cutoff candidates, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "41:30 +01:25",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "41:30 +02:15",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "41:30 +03:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "41:30 +04:05",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "41:30 +05:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'The Remedial Program: Bridging Near-Cutoff Candidates'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "54:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Combatting Cheating Rings and Safeguarding Meritocracy'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "54:00 +00:35",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Sara. When the Ministry approached the question of combatting cheating rings and safeguarding meritocracy, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "54:00 +01:25",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "54:00 +02:15",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "54:00 +03:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "54:00 +04:05",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "54:00 +05:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Combatting Cheating Rings and Safeguarding Meritocracy'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "01:03:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Advice to Grade 12 Candidates and Parents'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "01:03:00 +00:35",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Sara. When the Ministry approached the question of advice to grade 12 candidates and parents, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "01:03:00 +01:25",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "01:03:00 +02:15",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "01:03:00 +03:10",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "01:03:00 +04:05",
+              "speaker": "Director General, Educational Assessment and Examinations Service (EAES)",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "01:03:00 +05:00",
+              "speaker": "Sara Hailu (Education Reporter)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Advice to Grade 12 Candidates and Parents'. Let us transition to our next critical theme."
+            }
+          ]
+        },
+        {
+          "episode_id": "EP-03",
+          "youtube_id": "YOUTUBE_MOE_POD_003_CURRICULUM",
+          "title": "Curriculum Reformers Panel: Decolonizing Pedagogy, Indigenous Knowledge & STEM Acceleration",
+          "release_date": "2025-10-20",
+          "duration_seconds": 4500,
+          "duration_formatted": "01:15:00",
+          "host": "Dawit Kebede (Education Policy Analyst)",
+          "guest": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+          "summary": "Educational philosophers, textbook authors, and scientists discuss how the new textbooks integrate indigenous Ethiopian knowledge (Konso terracing, Lalibela stonemasonry, Endod molluscicide) with global STEM competencies and hands-on laboratory practicals.",
+          "topics": [
+            "Curriculum",
+            "STEM",
+            "Indigenous Knowledge",
+            "Textbooks",
+            "Constructivist Learning"
+          ],
+          "views": 290000,
+          "likes": 19800,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Panelist Introductions and Pedagogical Vision"
+            },
+            {
+              "timestamp": "08:20",
+              "title": "Integrating Ethiopian Indigenous Knowledge into General Science"
+            },
+            {
+              "timestamp": "21:40",
+              "title": "Natural Science vs Social Science Streams in Grades 11-12"
+            },
+            {
+              "timestamp": "34:10",
+              "title": "Hands-on Practical Laboratories: Overcoming Rural Equipment Deficits"
+            },
+            {
+              "timestamp": "47:30",
+              "title": "Career and Technical Education (CTE) in Middle Schools"
+            },
+            {
+              "timestamp": "01:01:00",
+              "title": "Continuous Assessment: Moving Away from Pure Exam Anxiety"
+            },
+            {
+              "timestamp": "01:11:30",
+              "title": "Audience Q&A and Concluding Thoughts"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Panelist Introductions and Pedagogical Vision'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dawit. When the Ministry approached the question of panelist introductions and pedagogical vision, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Panelist Introductions and Pedagogical Vision'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "08:20",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Integrating Ethiopian Indigenous Knowledge into General Science'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "08:20 +00:35",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dawit. When the Ministry approached the question of integrating ethiopian indigenous knowledge into general science, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "08:20 +01:25",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "08:20 +02:15",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "08:20 +03:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "08:20 +04:05",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "08:20 +05:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Integrating Ethiopian Indigenous Knowledge into General Science'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "21:40",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Natural Science vs Social Science Streams in Grades 11-12'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "21:40 +00:35",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dawit. When the Ministry approached the question of natural science vs social science streams in grades 11-12, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "21:40 +01:25",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "21:40 +02:15",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "21:40 +03:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "21:40 +04:05",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "21:40 +05:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Natural Science vs Social Science Streams in Grades 11-12'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "34:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Hands-on Practical Laboratories: Overcoming Rural Equipment Deficits'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "34:10 +00:35",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dawit. When the Ministry approached the question of hands-on practical laboratories: overcoming rural equipment deficits, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "34:10 +01:25",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "34:10 +02:15",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "34:10 +03:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "34:10 +04:05",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "34:10 +05:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Hands-on Practical Laboratories: Overcoming Rural Equipment Deficits'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "47:30",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Career and Technical Education (CTE) in Middle Schools'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "47:30 +00:35",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dawit. When the Ministry approached the question of career and technical education (cte) in middle schools, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "47:30 +01:25",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "47:30 +02:15",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "47:30 +03:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "47:30 +04:05",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "47:30 +05:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Career and Technical Education (CTE) in Middle Schools'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "01:01:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Continuous Assessment: Moving Away from Pure Exam Anxiety'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "01:01:00 +00:35",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dawit. When the Ministry approached the question of continuous assessment: moving away from pure exam anxiety, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "01:01:00 +01:25",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "01:01:00 +02:15",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "01:01:00 +03:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "01:01:00 +04:05",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "01:01:00 +05:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Continuous Assessment: Moving Away from Pure Exam Anxiety'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "01:11:30",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Audience Q&A and Concluding Thoughts'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "01:11:30 +00:35",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Dawit. When the Ministry approached the question of audience q&a and concluding thoughts, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "01:11:30 +01:25",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "01:11:30 +02:15",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "01:11:30 +03:10",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "01:11:30 +04:05",
+              "speaker": "Panel of Senior Curriculum Directors, Textbook Writers & STEM Educators",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "01:11:30 +05:00",
+              "speaker": "Dawit Kebede (Education Policy Analyst)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Audience Q&A and Concluding Thoughts'. Let us transition to our next critical theme."
+            }
+          ]
+        },
+        {
+          "episode_id": "EP-04",
+          "youtube_id": "YOUTUBE_MOE_POD_004_TEACHER_LICENSING",
+          "title": "Teacher Licensing & Professional Standards: Transforming Teaching into a Prestigious Career",
+          "release_date": "2025-11-05",
+          "duration_seconds": 3600,
+          "duration_formatted": "01:00:00",
+          "host": "Marta Bekele (National Radio Education Host)",
+          "guest": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+          "summary": "Discussion of the National Teacher Competency Certification Exam, compulsory 5-year licensing renewals, Continuous Professional Development (CPD) credit audits, and new career ladders aimed at boosting teacher remuneration and prestige.",
+          "topics": [
+            "Teacher Licensing",
+            "CPD Credits",
+            "Career Ladder",
+            "Colleges of Teacher Education",
+            "Professional Ethics"
+          ],
+          "views": 310000,
+          "likes": 21500,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Introduction: Why Teaching Must Be a Licensed Profession"
+            },
+            {
+              "timestamp": "07:15",
+              "title": "The National Teacher Licensing Examination Framework"
+            },
+            {
+              "timestamp": "18:40",
+              "title": "Colleges of Teacher Education (CTEs): Upgrading to B.Ed. Degrees"
+            },
+            {
+              "timestamp": "30:20",
+              "title": "Continuous Professional Development (CPD): 60 Mandatory Hours"
+            },
+            {
+              "timestamp": "42:10",
+              "title": "Career Ladder Progression: From Beginner to Master Teacher"
+            },
+            {
+              "timestamp": "53:40",
+              "title": "Protecting Children: Ethics, Anti-Harassment & Accountability"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Introduction: Why Teaching Must Be a Licensed Profession'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Marta. When the Ministry approached the question of introduction: why teaching must be a licensed profession, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Introduction: Why Teaching Must Be a Licensed Profession'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "07:15",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'The National Teacher Licensing Examination Framework'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "07:15 +00:35",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Marta. When the Ministry approached the question of the national teacher licensing examination framework, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "07:15 +01:25",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "07:15 +02:15",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "07:15 +03:10",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "07:15 +04:05",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "07:15 +05:00",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'The National Teacher Licensing Examination Framework'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "18:40",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Colleges of Teacher Education (CTEs): Upgrading to B.Ed. Degrees'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "18:40 +00:35",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Marta. When the Ministry approached the question of colleges of teacher education (ctes): upgrading to b.ed. degrees, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "18:40 +01:25",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "18:40 +02:15",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "18:40 +03:10",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "18:40 +04:05",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "18:40 +05:00",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Colleges of Teacher Education (CTEs): Upgrading to B.Ed. Degrees'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "30:20",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Continuous Professional Development (CPD): 60 Mandatory Hours'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "30:20 +00:35",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Marta. When the Ministry approached the question of continuous professional development (cpd): 60 mandatory hours, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "30:20 +01:25",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "30:20 +02:15",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "30:20 +03:10",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "30:20 +04:05",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "30:20 +05:00",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Continuous Professional Development (CPD): 60 Mandatory Hours'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "42:10",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Career Ladder Progression: From Beginner to Master Teacher'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "42:10 +00:35",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Marta. When the Ministry approached the question of career ladder progression: from beginner to master teacher, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "42:10 +01:25",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "42:10 +02:15",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "42:10 +03:10",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "42:10 +04:05",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "42:10 +05:00",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Career Ladder Progression: From Beginner to Master Teacher'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "53:40",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Protecting Children: Ethics, Anti-Harassment & Accountability'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "53:40 +00:35",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Marta. When the Ministry approached the question of protecting children: ethics, anti-harassment & accountability, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "53:40 +01:25",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "53:40 +02:15",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "53:40 +03:10",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "53:40 +04:05",
+              "speaker": "Executive Director, Teachers & Educational Leaders Development Desk, MOE",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "53:40 +05:00",
+              "speaker": "Marta Bekele (National Radio Education Host)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Protecting Children: Ethics, Anti-Harassment & Accountability'. Let us transition to our next critical theme."
+            }
+          ]
+        },
+        {
+          "episode_id": "EP-05",
+          "youtube_id": "YOUTUBE_MOE_POD_005_UNIVERSITY_EXIT",
+          "title": "The National University Exit Exam: What Every Graduating Senior and Employer Must Know",
+          "release_date": "2025-11-25",
+          "duration_seconds": 3950,
+          "duration_formatted": "01:05:50",
+          "host": "Yonas Girma (Higher Education Columnist)",
+          "guest": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+          "summary": "Deep dive into the 68+ undergraduate degree disciplines tested on the National Exit Exam, electronic computerized proctoring in university labs, the 50% passing threshold, and how this reform has eliminated fraudulent commercial colleges.",
+          "topics": [
+            "University Exit Exam",
+            "Higher Education",
+            "ETA Quality Audit",
+            "Degree Integrity",
+            "Labor Market"
+          ],
+          "views": 445000,
+          "likes": 31200,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Opening: Why National University Exit Exams Were Instituted"
+            },
+            {
+              "timestamp": "09:30",
+              "title": "The 68 Harmonized Academic Disciplinary Blueprints"
+            },
+            {
+              "timestamp": "22:15",
+              "title": "Electronic Testing Logistics Across 47 Public University Labs"
+            },
+            {
+              "timestamp": "35:00",
+              "title": "Passing Benchmark: The 50% Cutoff and Re-Sit Rights"
+            },
+            {
+              "timestamp": "46:40",
+              "title": "Feedback from Employers: Restoring Trust in Ethiopian Degrees"
+            },
+            {
+              "timestamp": "58:20",
+              "title": "Message to Graduating Classes of 2026"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Opening: Why National University Exit Exams Were Instituted'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Yonas. When the Ministry approached the question of opening: why national university exit exams were instituted, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Opening: Why National University Exit Exams Were Instituted'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "09:30",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'The 68 Harmonized Academic Disciplinary Blueprints'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "09:30 +00:35",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Yonas. When the Ministry approached the question of the 68 harmonized academic disciplinary blueprints, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "09:30 +01:25",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "09:30 +02:15",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "09:30 +03:10",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "09:30 +04:05",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "09:30 +05:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'The 68 Harmonized Academic Disciplinary Blueprints'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "22:15",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Electronic Testing Logistics Across 47 Public University Labs'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "22:15 +00:35",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Yonas. When the Ministry approached the question of electronic testing logistics across 47 public university labs, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "22:15 +01:25",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "22:15 +02:15",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "22:15 +03:10",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "22:15 +04:05",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "22:15 +05:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Electronic Testing Logistics Across 47 Public University Labs'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "35:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Passing Benchmark: The 50% Cutoff and Re-Sit Rights'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "35:00 +00:35",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Yonas. When the Ministry approached the question of passing benchmark: the 50% cutoff and re-sit rights, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "35:00 +01:25",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "35:00 +02:15",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "35:00 +03:10",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "35:00 +04:05",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "35:00 +05:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Passing Benchmark: The 50% Cutoff and Re-Sit Rights'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "46:40",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Feedback from Employers: Restoring Trust in Ethiopian Degrees'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "46:40 +00:35",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Yonas. When the Ministry approached the question of feedback from employers: restoring trust in ethiopian degrees, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "46:40 +01:25",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "46:40 +02:15",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "46:40 +03:10",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "46:40 +04:05",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "46:40 +05:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Feedback from Employers: Restoring Trust in Ethiopian Degrees'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "58:20",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Message to Graduating Classes of 2026'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "58:20 +00:35",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Yonas. When the Ministry approached the question of message to graduating classes of 2026, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "58:20 +01:25",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "58:20 +02:15",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "58:20 +03:10",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "58:20 +04:05",
+              "speaker": "State Minister for Higher Education & ETA Quality Assurance Commissioner",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "58:20 +05:00",
+              "speaker": "Yonas Girma (Higher Education Columnist)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Message to Graduating Classes of 2026'. Let us transition to our next critical theme."
+            }
+          ]
+        },
+        {
+          "episode_id": "EP-06",
+          "youtube_id": "YOUTUBE_MOE_POD_006_DIGITAL_SCHOOLNET",
+          "title": "Digital SchoolNet & Smart Classrooms: Connecting Rural Ethiopia to Cloud Education",
+          "release_date": "2025-12-10",
+          "duration_seconds": 3720,
+          "duration_formatted": "01:02:00",
+          "host": "Helen Berhanu (Tech & Education Correspondent)",
+          "guest": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+          "summary": "Discussion of the rollout of solar-powered intranet servers in rural secondary schools, distribution of 320,000 e-learning tablets, high-speed fiber-optic connectivity to school clusters, and digitized textbooks in five national languages.",
+          "topics": [
+            "SchoolNet",
+            "Digital Education",
+            "Ethio Telecom",
+            "Smart Classrooms",
+            "E-Learning Tablets"
+          ],
+          "views": 360000,
+          "likes": 26800,
+          "chapters": [
+            {
+              "timestamp": "00:00",
+              "title": "Vision: Bridging the Digital Divide in Ethiopian Schools"
+            },
+            {
+              "timestamp": "08:00",
+              "title": "SchoolNet Infrastructure: Fiber, Microwave and Satellite Links"
+            },
+            {
+              "timestamp": "19:30",
+              "title": "Solar-Powered Offline Intranet Caching for Remote Woredas"
+            },
+            {
+              "timestamp": "31:45",
+              "title": "E-Learning Tablets: Pre-Loaded Interactive STEM Simulations"
+            },
+            {
+              "timestamp": "44:10",
+              "title": "Teacher Digital Literacy: The UNESCO-Aligned ICT Framework"
+            },
+            {
+              "timestamp": "55:30",
+              "title": "The Road to 2030: Cloud-Connected General Education"
+            }
+          ],
+          "dialogue_transcript": [
+            {
+              "timestamp": "00:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Vision: Bridging the Digital Divide in Ethiopian Schools'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "00:00 +00:35",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Helen. When the Ministry approached the question of vision: bridging the digital divide in ethiopian schools, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "00:00 +01:25",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "00:00 +02:15",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "00:00 +03:10",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "00:00 +04:05",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "00:00 +05:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Vision: Bridging the Digital Divide in Ethiopian Schools'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "08:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'SchoolNet Infrastructure: Fiber, Microwave and Satellite Links'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "08:00 +00:35",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Helen. When the Ministry approached the question of schoolnet infrastructure: fiber, microwave and satellite links, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "08:00 +01:25",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "08:00 +02:15",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "08:00 +03:10",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "08:00 +04:05",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "08:00 +05:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'SchoolNet Infrastructure: Fiber, Microwave and Satellite Links'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "19:30",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Solar-Powered Offline Intranet Caching for Remote Woredas'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "19:30 +00:35",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Helen. When the Ministry approached the question of solar-powered offline intranet caching for remote woredas, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "19:30 +01:25",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "19:30 +02:15",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "19:30 +03:10",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "19:30 +04:05",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "19:30 +05:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Solar-Powered Offline Intranet Caching for Remote Woredas'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "31:45",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'E-Learning Tablets: Pre-Loaded Interactive STEM Simulations'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "31:45 +00:35",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Helen. When the Ministry approached the question of e-learning tablets: pre-loaded interactive stem simulations, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "31:45 +01:25",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "31:45 +02:15",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "31:45 +03:10",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "31:45 +04:05",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "31:45 +05:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'E-Learning Tablets: Pre-Loaded Interactive STEM Simulations'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "44:10",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'Teacher Digital Literacy: The UNESCO-Aligned ICT Framework'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "44:10 +00:35",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Helen. When the Ministry approached the question of teacher digital literacy: the unesco-aligned ict framework, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "44:10 +01:25",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "44:10 +02:15",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "44:10 +03:10",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "44:10 +04:05",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "44:10 +05:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'Teacher Digital Literacy: The UNESCO-Aligned ICT Framework'. Let us transition to our next critical theme."
+            },
+            {
+              "timestamp": "55:30",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Welcome back. In this segment, we are focusing on 'The Road to 2030: Cloud-Connected General Education'. Could you unpack the strategic rationale, empirical data, and policy safeguards the Ministry has established regarding this dimension?"
+            },
+            {
+              "timestamp": "55:30 +00:35",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "Thank you, Helen. When the Ministry approached the question of the road to 2030: cloud-connected general education, our paramount mandate was safeguarding educational quality, equity, and national development. Under Proclamation No. 1368/2025 and our 2030 Roadmap, we identified that systemic reforms cannot rely on cosmetic adjustments. Every intervention is grounded in empirical metrics, wide stakeholder consultation across all 12 regional states, and international best practice adapted to Ethiopia's unique multi-linguistic and cultural context."
+            },
+            {
+              "timestamp": "55:30 +01:25",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What specific challenges have Regional Education Bureaus and school principals raised during implementation, and how are Woreda education offices supported with budget, materials, and training?"
+            },
+            {
+              "timestamp": "55:30 +02:15",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "That is a crucial consideration. Decentralization under our federal structure means that policy formulation occurs at the federal level, while implementation authority rests squarely with Regional Education Bureaus and Woredas. To bridge capacity gaps, we mobilized significant technical assistance and financing through programs like GEQIP-E and the World Bank. We are providing direct School Improvement Grants, distributing tens of millions of localized textbooks, and conducting intensive capacity-building sessions for instructional supervisors and parent associations."
+            },
+            {
+              "timestamp": "55:30 +03:10",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "What measurable impact has this had on student cognitive performance, classroom attendance, and public trust in the national examination and certification process?"
+            },
+            {
+              "timestamp": "55:30 +04:05",
+              "speaker": "Director of ICT and Digital Education Executive, MOE & Chief Technology Officer, Ethio Telecom",
+              "speaker_role": "Guest / Policy Authority",
+              "utterance": "The empirical evidence is profoundly encouraging. By upholding rigorous academic integrity, eliminating cheating rings, and rewarding genuine intellectual effort, we have restored dignity and credibility to Ethiopian certificates. Students recognize that hard work and conceptual mastery are the sole paths to university admission and professional licensing. Employers in industry, healthcare, and engineering now report renewed confidence in the competency of our university graduates."
+            },
+            {
+              "timestamp": "55:30 +05:00",
+              "speaker": "Helen Berhanu (Tech & Education Correspondent)",
+              "speaker_role": "Host",
+              "utterance": "Thank you for those illuminating insights on 'The Road to 2030: Cloud-Connected General Education'. Let us transition to our next critical theme."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
