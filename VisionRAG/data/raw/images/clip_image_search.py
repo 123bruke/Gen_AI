@@ -145,8 +145,14 @@ class CLIPImageSearchEngine:
                 import torch
                 inputs = processor(images=pil_img, return_tensors="pt")
                 with torch.no_grad():
-                    image_features = model.get_image_features(**inputs)
-                    vec = image_features[0].cpu().numpy()
+                    out = model.get_image_features(**inputs)
+                    if hasattr(out, "pooler_output") and out.pooler_output is not None:
+                        raw_vec = out.pooler_output[0].cpu().numpy()
+                    elif hasattr(out, "shape") and len(out.shape) == 2:
+                        raw_vec = out[0].cpu().numpy()
+                    else:
+                        raw_vec = out[0].cpu().numpy()
+                    vec = raw_vec.flatten().astype(np.float32)
             else:
                 # Deterministic high-dimensional visual feature projector
                 vec = self._project_image_features(pil_img, image_path, dim)
@@ -185,8 +191,14 @@ class CLIPImageSearchEngine:
                 import torch
                 inputs = processor(text=[clean_key], return_tensors="pt", padding=True, truncation=True)
                 with torch.no_grad():
-                    text_features = model.get_text_features(**inputs)
-                    vec = text_features[0].cpu().numpy()
+                    out = model.get_text_features(**inputs)
+                    if hasattr(out, "pooler_output") and out.pooler_output is not None:
+                        raw_vec = out.pooler_output[0].cpu().numpy()
+                    elif hasattr(out, "shape") and len(out.shape) == 2:
+                        raw_vec = out[0].cpu().numpy()
+                    else:
+                        raw_vec = out[0].cpu().numpy()
+                    vec = raw_vec.flatten().astype(np.float32)
             else:
                 # Deterministic semantic text projector aligned with visual space
                 vec = self._project_text_features(clean_key, dim)
