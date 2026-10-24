@@ -45,6 +45,7 @@ class KnowledgeSeeder:
 
         moe_ingested = 0
         education_ingested = 0
+        biology_ingested = 0
 
         # Ingest MOE Official Policy & Educational Dossiers
         for rec in moe_records:

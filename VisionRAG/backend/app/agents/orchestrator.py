@@ -279,7 +279,8 @@ class AgenticOrchestrator:
         prompt: str,
         attachments: Optional[List[Dict[str, Any]]] = None,
         voice_audio: Optional[bytes] = None,
-        settings: Optional[Dict[str, Any]] = None
+        settings: Optional[Dict[str, Any]] = None,
+        gemini_key: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Main agentic entrypoint: parses input, consults Semantic Cache,
@@ -288,10 +289,10 @@ class AgenticOrchestrator:
         query = prompt.strip()
         executed_tools = []
 
-        # Extract Gemini API Key from settings or environment
-        gemini_key = ""
-        if settings and isinstance(settings, dict):
-            gemini_key = settings.get("geminiApiKey") or settings.get("gemini_api_key") or ""
+        # Extract Gemini API Key from argument, settings or environment
+        if not gemini_key:
+            if settings and isinstance(settings, dict):
+                gemini_key = settings.get("geminiApiKey") or settings.get("gemini_api_key") or ""
         if not gemini_key:
             gemini_key = os.getenv("GEMINI_API_KEY", self.gemini_api_key)
 

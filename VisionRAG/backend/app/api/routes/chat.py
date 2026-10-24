@@ -4,6 +4,7 @@ Coordinates RAG pipeline execution, stores user prompts/messages in PostgreSQL,
 stores multimodal divided responses with metadata in PostgreSQL, and manages conversation history.
 """
 
+import os
 from typing import Dict, Any, List, Optional
 from fastapi import APIRouter, HTTPException, Depends, Header
 from pydantic import BaseModel
