@@ -58,6 +58,11 @@ app.include_router(logs_router)
 app.include_router(map_router)
 app.include_router(websocket_router)
 
+from fastapi.staticfiles import StaticFiles
+DATA_IMAGES_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "data", "raw", "images"))
+if os.path.isdir(DATA_IMAGES_DIR):
+    app.mount("/images", StaticFiles(directory=DATA_IMAGES_DIR), name="images")
+
 UPLOAD_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "storage", "uploads"))
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 

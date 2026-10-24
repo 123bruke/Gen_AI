@@ -18,8 +18,8 @@ from app.db.log_db import app_logger
 class GeminiClient:
     """Production Gemini API Client for VisionRAG multimodal agentic reasoning."""
 
-    # Models ordered by speed, capability, and multimodal efficiency
-    DEFAULT_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+    # Models ordered by speed, capability, reliability, and broad key support
+    DEFAULT_MODELS = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro", "gemini-2.5-flash"]
 
     def __init__(self, api_key: Optional[str] = None):
         self.api_key = api_key or os.getenv("GEMINI_API_KEY", "")

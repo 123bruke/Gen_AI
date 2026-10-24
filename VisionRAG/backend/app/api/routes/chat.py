@@ -96,11 +96,14 @@ async def chat_endpoint(
         }
     )
 
-    # 3. Plan & Execute Agentic RAG
+    # 3. Plan & Execute Agentic RAG with temporary Gemini API key support
+    gemini_key = (req.settings or {}).get("geminiApiKey") or (req.settings or {}).get("gemini_key") or os.getenv("GEMINI_API_KEY")
+
     result = agent_orchestrator.plan_and_execute(
         prompt=req.query,
         attachments=req.attachments,
-        settings=req.settings
+        settings=req.settings,
+        gemini_key=gemini_key
     )
 
     # 4. Store assistant response and multimodal metadata in PostgreSQL

@@ -61,230 +61,183 @@ class ImageProcessorAgent:
             {"name": "Startup Stock Photos", "url": "https://startupstockphotos.com/", "license": "Custom License", "desc": "Photography focused on startup culture and technology."}
         ]
 
-        # Curated High-Definition Images with verified URLs
+        # Curated High-Definition STEM & Educational Visual Assets
         self.curated_images_db = [
+            # Mathematics
             {
-                "id": "img-lalibela",
-                "title": "Bete Giyorgis (Church of Saint George), Lalibela",
-                "url": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "UNESCO World Heritage Photo Archives",
-                "sourceUrl": "https://whc.unesco.org/en/list/18/",
-                "license": "Public Domain / Educational CC",
-                "tags": ["Lalibela", "Bete Giyorgis", "Architecture", "Ethiopia", "Church"]
+                "id": "img-math-quadratic",
+                "title": "Quadratic Function & Parabola Graph: f(x) = ax^2 + bx + c",
+                "url": "http://localhost:8000/images/mathematics_algebra_quadratic_function_parabola.png",
+                "thumbnail": "http://localhost:8000/images/mathematics_algebra_quadratic_function_parabola.png",
+                "sourceName": "VisionRAG Secondary Math STEM Visuals",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["Quadratic", "Parabola", "Algebra", "Vertex", "Roots", "Math", "Mathematics", "Formula"]
             },
             {
-                "id": "img-axum",
-                "title": "Obelisk of Axum & Monumental Royal Stelae Field",
-                "url": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Flickr Commons Antiquities Collection",
-                "sourceUrl": "https://www.flickr.com/commons",
-                "license": "Public Domain",
-                "tags": ["Axum", "Obelisk", "Stelae", "Tigray", "Ancient Kingdom", "Ethiopia"]
+                "id": "img-math-pythagoras",
+                "title": "Pythagorean Theorem & Trigonometric Ratios: a^2 + b^2 = c^2",
+                "url": "http://localhost:8000/images/mathematics_geometry_pythagorean_theorem.png",
+                "thumbnail": "http://localhost:8000/images/mathematics_geometry_pythagorean_theorem.png",
+                "sourceName": "VisionRAG Geometry & Trigonometry Visuals",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["Pythagoras", "Triangle", "Geometry", "Trigonometry", "Hypotenuse", "Math", "Sine", "Cosine"]
+            },
+            # Physics
+            {
+                "id": "img-physics-newton",
+                "title": "Newton's Laws of Motion & Free-Body Force Vectors: F = m * a",
+                "url": "http://localhost:8000/images/physics_newton_laws_force_vectors.png",
+                "thumbnail": "http://localhost:8000/images/physics_newton_laws_force_vectors.png",
+                "sourceName": "VisionRAG Mechanics & Dynamics Visuals",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["Newton", "Force", "Gravity", "Mass", "Acceleration", "Dynamics", "Physics", "Vector"]
             },
             {
-                "id": "img-simien",
-                "title": "Endemic Walia Ibex (Capra walie) on Simien Escarpment",
-                "url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "African Wildlife Digital Archives",
-                "sourceUrl": "https://en.wikipedia.org/wiki/Walia_ibex",
-                "license": "CC BY-SA 4.0",
-                "tags": ["Walia Ibex", "Simien Mountains", "Wildlife", "Endemic", "Fauna", "Ethiopia"]
+                "id": "img-physics-projectile",
+                "title": "Projectile Motion & 2D Kinematics Trajectory: Flight Range & Height",
+                "url": "http://localhost:8000/images/physics_projectile_motion_trajectory.png",
+                "thumbnail": "http://localhost:8000/images/physics_projectile_motion_trajectory.png",
+                "sourceName": "VisionRAG Kinematics Visuals",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["Projectile", "Kinematics", "Trajectory", "Velocity", "Motion", "Physics", "Angle"]
+            },
+            # Chemistry
+            {
+                "id": "img-chem-bonding",
+                "title": "Chemical Bonding (Ionic vs Covalent) & Molecular Geometry",
+                "url": "http://localhost:8000/images/chemistry_periodic_table_and_bonding.png",
+                "thumbnail": "http://localhost:8000/images/chemistry_periodic_table_and_bonding.png",
+                "sourceName": "VisionRAG Molecular Chemistry Visuals",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["Chemical Bonding", "Ionic", "Covalent", "Electron", "Periodic Table", "Chemistry", "Molecules"]
             },
             {
-                "id": "img-bale-wolf",
-                "title": "Endangered Ethiopian Wolf (Canis simensis) on Sanetti Plateau",
-                "url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Ethiopian Wildlife Conservation Authority",
-                "sourceUrl": "https://en.wikipedia.org/wiki/Ethiopian_wolf",
-                "license": "CC BY-SA 4.0",
-                "tags": ["Ethiopian Wolf", "Bale Mountains", "Sanetti", "Endangered", "Fauna", "Ethiopia"]
-            },
-            {
-                "id": "img-coffee",
-                "title": "Wild Coffea Arabica Forest Canopy in Kaffa Biosphere",
-                "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Botanical Genomics & Agroforestry Archive",
-                "sourceUrl": "https://en.wikipedia.org/wiki/Coffea_arabica",
-                "license": "CC0",
-                "tags": ["Coffea Arabica", "Coffee", "Kaffa", "Forest", "Botany", "Ethiopia"]
-            },
-            {
-                "id": "img-fasil",
-                "title": "Royal Castle of Emperor Fasilides, Gondar",
-                "url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Historical Monuments Archive",
-                "sourceUrl": "https://whc.unesco.org/en/list/19/",
-                "license": "CC BY-SA 3.0",
-                "tags": ["Gondar", "Fasil Ghebbi", "Castle", "Emperor Fasilides", "Ethiopia"]
-            },
-            {
-                "id": "img-harar",
-                "title": "Ancient Jugol City Wall and Historic Gates of Harar",
-                "url": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Islamic Cultural Heritage Portal",
-                "sourceUrl": "https://whc.unesco.org/en/list/1189/",
-                "license": "CC BY-SA 3.0",
-                "tags": ["Harar", "Jugol", "Gates", "Walled City", "History", "Ethiopia"]
-            },
-            {
-                "id": "img-danakil",
-                "title": "Dallol Hydrothermal Sulfur Formations & Danakil Salt Flats",
-                "url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Geological Wonders of Africa",
-                "sourceUrl": "https://en.wikipedia.org/wiki/Danakil_Depression",
-                "license": "CC0",
-                "tags": ["Danakil", "Dallol", "Erta Ale", "Salt", "Geology", "Ethiopia"]
-            },
-            {
-                "id": "img-tana",
-                "title": "Lake Tana Papyrus Tankwa Boats & Island Monastery Waters",
-                "url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "East African Waterways Digital Archive",
-                "sourceUrl": "https://en.wikipedia.org/wiki/Lake_Tana",
-                "license": "CC BY-SA 4.0",
-                "tags": ["Lake Tana", "Blue Nile", "Bahir Dar", "Monasteries", "Ethiopia"]
-            },
-            {
-                "id": "img-gerd",
-                "title": "Grand Ethiopian Renaissance Dam (GERD) on the Blue Nile",
-                "url": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "African Infrastructure & Hydropower Media",
-                "sourceUrl": "https://en.wikipedia.org/wiki/Grand_Ethiopian_Renaissance_Dam",
-                "license": "CC BY 3.0",
-                "tags": ["GERD", "Blue Nile", "Hydropower", "Engineering", "Ethiopia"]
-            },
-            {
-                "id": "img-addis",
-                "title": "Addis Ababa Skyline & Entoto Mountain Backdrop",
-                "url": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Urban Geography Collection",
-                "sourceUrl": "https://travelcoffeebook.com/",
-                "license": "CC0",
-                "tags": ["Addis Ababa", "Urban", "Capital", "Skyline", "Ethiopia"]
-            },
-            {
-                "id": "img-lucy",
-                "title": "Dinkinesh (Lucy) - 3.2 Million Year Old Hominid Fossil at National Museum",
-                "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "National Museum of Ethiopia Anthropology Archive",
-                "sourceUrl": "https://en.wikipedia.org/wiki/Lucy_(Australopithecus)",
+                "id": "img-chem-lab",
+                "title": "Secondary School Chemistry Practical Laboratory Experiments",
+                "url": "http://localhost:8000/images/science_chemistry_laboratory_experiment.png",
+                "thumbnail": "http://localhost:8000/images/science_chemistry_laboratory_experiment.png",
+                "sourceName": "Ethiopia MOE Science Laboratory Archive",
+                "sourceUrl": "https://moe.gov.et",
                 "license": "Educational CC",
-                "tags": ["Lucy", "Dinkinesh", "Palaeoanthropology", "Fossil", "Hominid", "Ethiopia"]
+                "tags": ["Chemistry", "Laboratory", "Experiment", "Reagents", "Titration", "STEM", "Science"]
+            },
+            # Biology
+            {
+                "id": "img-bio-photosynthesis",
+                "title": "Plant Cell Structure, Photosynthesis (Thylakoids & Calvin Cycle)",
+                "url": "http://localhost:8000/images/biology_cell_organelles_and_photosynthesis.png",
+                "thumbnail": "http://localhost:8000/images/biology_cell_organelles_and_photosynthesis.png",
+                "sourceName": "VisionRAG Cellular Biology Visuals",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["Photosynthesis", "Chloroplast", "Plant Cell", "Organelles", "Calvin Cycle", "Biology", "ATP"]
+            },
+            # Computer Science & IT
+            {
+                "id": "img-cs-algorithms",
+                "title": "Computer Science: Data Structures, BST & Algorithm Complexity",
+                "url": "http://localhost:8000/images/computer_science_data_structures_network.png",
+                "thumbnail": "http://localhost:8000/images/computer_science_data_structures_network.png",
+                "sourceName": "VisionRAG Computer Science & IT Visuals",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["Computer Science", "Algorithms", "Binary Tree", "Data Structures", "Network", "Python", "Code"]
+            },
+            # FDRE Ministry of Education & National Examination System
+            {
+                "id": "img-moe-hq",
+                "title": "FDRE Ministry of Education Headquarters, Addis Ababa",
+                "url": "http://localhost:8000/images/ethiopian_ministry_of_education_headquarters.png",
+                "thumbnail": "http://localhost:8000/images/ethiopian_ministry_of_education_headquarters.png",
+                "sourceName": "FDRE MOE Official Media",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Public Domain",
+                "tags": ["MOE", "Ministry of Education", "Headquarters", "Addis Ababa", "Education Policy", "Proclamation 1368"]
             },
             {
-                "id": "img-ai-code",
-                "title": "Neural Network Architecture & Scientific Computing",
-                "url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Startup Stock Photos / Tech Commons",
-                "sourceUrl": "https://startupstockphotos.com/",
-                "license": "CC0",
-                "tags": ["AI", "Code", "Computer Science", "Neural Network", "Technology"]
+                "id": "img-schoolnet-lab",
+                "title": "Ethiopian SchoolNet Digital Tablet & Smart Classroom Lab",
+                "url": "http://localhost:8000/images/digital_schoolnet_smart_classroom.png",
+                "thumbnail": "http://localhost:8000/images/digital_schoolnet_smart_classroom.png",
+                "sourceName": "National E-Learning & ICT Initiative",
+                "sourceUrl": "https://moe.gov.et",
+                "license": "Educational Open Access",
+                "tags": ["SchoolNet", "Digital Classroom", "Smart Lab", "Tablets", "ICT", "Education", "Ethiopia"]
             },
             {
-                "id": "img-engineering",
-                "title": "Mechanical Engineering CAD Design & Fluid Mechanics",
-                "url": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&auto=format&fit=crop&q=85",
-                "thumbnail": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&auto=format&fit=crop&q=80",
-                "sourceName": "Unsplash Creative Commons",
-                "sourceUrl": "https://unsplash.com",
-                "license": "Unsplash License",
-                "tags": ["Engineering", "Mechanical", "Thermodynamics", "Design", "Physics"]
+                "id": "img-exam-hall",
+                "title": "National Examination Hall: Grade 12 ESSLCE University Testing",
+                "url": "http://localhost:8000/images/national_examination_hall_candidates.png",
+                "thumbnail": "http://localhost:8000/images/national_examination_hall_candidates.png",
+                "sourceName": "Educational Assessment and Examinations Service (EAES)",
+                "sourceUrl": "https://eaes.et",
+                "license": "Educational Open Access",
+                "tags": ["ESSLCE", "Exam", "National Exam", "Grade 12", "Testing Hall", "EAES", "University Entrance"]
+            },
+            {
+                "id": "img-aau-campus",
+                "title": "Addis Ababa University (AAU) Sidist Kilo Main Campus",
+                "url": "http://localhost:8000/images/addis_ababa_university_main_campus.png",
+                "thumbnail": "http://localhost:8000/images/addis_ababa_university_main_campus.png",
+                "sourceName": "Addis Ababa University Media Office",
+                "sourceUrl": "http://www.aau.edu.et",
+                "license": "Public Domain",
+                "tags": ["Addis Ababa University", "AAU", "Campus", "Higher Education", "University"]
             }
         ]
 
-    def search_images(self, query: str, limit: int = 4) -> List[Dict[str, Any]]:
+    def search_images(
+        self,
+        query: str,
+        answer_context: str = "",
+        limit: int = 4
+    ) -> List[Dict[str, Any]]:
         """
-        Searches images via Wikimedia Commons API, Openverse/Unsplash, and curated directory.
-        Result count dynamically adapts to situation and request conditions.
+        Searches images strictly aligned with query intent and synthesized output context.
+        Prioritizes local educational STEM diagrams via CLIP and curated MOE assets.
         """
         if limit <= 0:
             return []
 
         target_limit = limit
         results: List[Dict[str, Any]] = []
-        q_clean = query.strip()
+        combined_text = f"{query} {answer_context[:1000]}".strip()
         seen_urls = set()
-
-        if not q_clean:
-            return self.curated_images_db[:target_limit]
 
         # 0. High-Priority Zero-Shot Semantic Search via Hugging Face CLIP across Local Visual Assets
         try:
             from app.vision.clip_search_service import clip_visual_service
-            clip_matches = clip_visual_service.search_by_keywords(q_clean, top_k=target_limit, sync_to_postgres=True)
+            clip_matches = clip_visual_service.search_by_keywords(combined_text, top_k=target_limit, sync_to_postgres=True)
             for m in clip_matches:
-                results.append({
-                    "id": f"clip-{m['filename'].split('.')[0]}",
-                    "title": m["filename"].replace("_", " ").title(),
-                    "url": f"/data/raw/images/{m['filename']}",
-                    "thumbnail": f"/data/raw/images/{m['filename']}",
-                    "sourceName": f"Hugging Face CLIP Search Engine (Score: {m['similarityScore']})",
-                    "sourceUrl": "https://huggingface.co/openai/clip-vit-base-patch32",
-                    "license": "Educational Open Access / VisionRAG Archive",
-                    "score": m["similarityScore"],
-                    "latencyMs": m.get("searchLatencyMs"),
-                    "postgresStorage": m.get("postgresStorageStatus"),
-                    "tags": [q_clean, "Hugging Face CLIP", "PostgreSQL 16 Stored"]
-                })
+                fn = m["filename"]
+                img_url = f"http://localhost:8000/images/{fn}"
+                if img_url not in seen_urls:
+                    seen_urls.add(img_url)
+                    results.append({
+                        "id": f"clip-{fn.split('.')[0]}",
+                        "title": fn.replace("_", " ").title(),
+                        "url": img_url,
+                        "thumbnail": img_url,
+                        "sourceName": f"Hugging Face CLIP Search Engine (Score: {m['similarityScore']})",
+                        "sourceUrl": "https://huggingface.co/openai/clip-vit-base-patch32",
+                        "license": "Educational Open Access / VisionRAG Archive",
+                        "score": m["similarityScore"],
+                        "latencyMs": m.get("searchLatencyMs"),
+                        "postgresStorage": m.get("postgresStorageStatus"),
+                        "tags": [query.title(), "Hugging Face CLIP", "PostgreSQL Stored"]
+                    })
+                if len(results) >= target_limit:
+                    break
         except Exception as clip_err:
             app_logger.info(f"Local CLIP search note: {clip_err}")
-        try:
-            wiki_img_url = (
-                f"https://commons.wikimedia.org/w/api.php?action=query&generator=search"
-                f"&gsrsearch={urllib.parse.quote(q_clean)}&gsrnamespace=6&gsrlimit={target_limit}"
-                f"&prop=imageinfo&iiprop=url|size|mime|extmetadata&format=json"
-            )
-            resp = requests.get(wiki_img_url, headers=HEADERS, timeout=4.0)
-            if resp.status_code == 200:
-                data = resp.json()
-                pages = data.get("query", {}).get("pages", {})
-                for page_id, p_info in pages.items():
-                    img_info = p_info.get("imageinfo", [{}])[0]
-                    file_url = img_info.get("url")
-                    mime = img_info.get("mime", "")
-                    if file_url and ("image/jpeg" in mime or "image/png" in mime or "image/webp" in mime):
-                        if file_url not in seen_urls:
-                            seen_urls.add(file_url)
-                            title = p_info.get("title", "").replace("File:", "").replace("_", " ")
-                            title = re.sub(r'\.[a-zA-Z0-9]+$', '', title)
-                            ext_meta = img_info.get("extmetadata", {})
-                            license_name = ext_meta.get("LicenseShortName", {}).get("value", "Wikimedia Commons CC")
-                            author = ext_meta.get("Artist", {}).get("value", "Wikimedia Contributor")
-                            author_clean = re.sub(r'<[^>]+>', '', author).strip()
 
-                            thumb_url = img_info.get("thumburl") or file_url
-                            results.append({
-                                "id": f"wiki-{page_id}",
-                                "title": title,
-                                "url": file_url,
-                                "thumbnail": thumb_url,
-                                "sourceName": f"Wikimedia Commons ({author_clean or 'Open Archive'})",
-                                "sourceUrl": img_info.get("descriptionurl", "https://commons.wikimedia.org"),
-                                "license": license_name,
-                                "width": img_info.get("width", 800),
-                                "height": img_info.get("height", 600),
-                                "tags": [query.title(), "Wikimedia", "Open Access"]
-                            })
-                    if len(results) >= target_limit:
-                        break
-        except Exception as e:
-            app_logger.info(f"Wikimedia image search note: {e}")
-
-        # 2. Match against Curated Image Database
-        q_words = [w.lower() for w in re.findall(r'\w+', q_clean) if len(w) > 2]
+        # 1. Match against Curated STEM & Educational Diagram Database
+        q_words = [w.lower() for w in re.findall(r'\b[a-zA-Z]{3,}\b', combined_text.lower()) if len(w) > 2]
         scored_curated = []
         for img in self.curated_images_db:
             if img["url"] in seen_urls:
@@ -294,9 +247,9 @@ class ImageProcessorAgent:
             tags_lower = [t.lower() for t in img.get("tags", [])]
             for w in q_words:
                 if w in title_lower:
-                    score += 5
+                    score += 8
                 if any(w in t for t in tags_lower):
-                    score += 4
+                    score += 6
             if score > 0:
                 scored_curated.append((score, img))
 
@@ -307,6 +260,15 @@ class ImageProcessorAgent:
                 results.append(img)
             if len(results) >= target_limit:
                 break
+
+        # 2. If still under target, fill from remaining curated images
+        if len(results) < target_limit:
+            for img in self.curated_images_db:
+                if img["url"] not in seen_urls:
+                    seen_urls.add(img["url"])
+                    results.append(img)
+                if len(results) >= target_limit:
+                    break
 
         return results[:target_limit]
 

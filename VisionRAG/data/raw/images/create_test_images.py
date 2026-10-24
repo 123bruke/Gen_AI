@@ -132,5 +132,110 @@ def generate_all():
         accent_color=(190, 110, 20)
     )
 
+    create_image(
+        filename="mathematics_algebra_quadratic_function_parabola.png",
+        bg_color=(245, 250, 255),
+        title="MATHEMATICS: QUADRATIC FUNCTION & PARABOLA GRAPH",
+        subtitle="Algebra & Analytical Geometry | f(x) = ax^2 + bx + c",
+        details=[
+            "• Standard Form: f(x) = ax^2 + bx + c  |  Vertex Form: a(x - h)^2 + k",
+            "• Axis of Symmetry: x = -b / (2a)  |  Vertex Coordinates: (h, k)",
+            "• Discriminant Analysis: Delta = b^2 - 4ac (Delta > 0: 2 real roots, Delta = 0: 1 root, Delta < 0: complex)",
+            "• Roots (Quadratic Formula): x = (-b +/- sqrt(b^2 - 4ac)) / (2a)",
+            "• Curriculum Alignment: Ethiopian High School Grade 10 & 11 Mathematics Unit 2"
+        ],
+        accent_color=(20, 80, 180)
+    )
+
+    create_image(
+        filename="mathematics_geometry_pythagorean_theorem.png",
+        bg_color=(250, 252, 245),
+        title="MATHEMATICS: PYTHAGOREAN THEOREM & TRIGONOMETRY",
+        subtitle="Euclidean Geometry & Right-Angled Triangles | a^2 + b^2 = c^2",
+        details=[
+            "• Theorem: In any right-angled triangle, a^2 + b^2 = c^2 (Hypotenuse c)",
+            "• Trigonometric Ratios: sin(theta) = opp/hyp, cos(theta) = adj/hyp, tan(theta) = opp/adj",
+            "• Pythagorean Triples: (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25)",
+            "• Vector Magnitude: |v| = sqrt(v_x^2 + v_y^2)",
+            "• Curriculum Alignment: Grades 9 & 10 Secondary Mathematics"
+        ],
+        accent_color=(40, 130, 60)
+    )
+
+    create_image(
+        filename="physics_newton_laws_force_vectors.png",
+        bg_color=(255, 248, 248),
+        title="PHYSICS: NEWTON'S LAWS & FREE-BODY FORCE VECTORS",
+        subtitle="Classical Mechanics & Dynamics | Sum of Forces = m * a",
+        details=[
+            "• First Law (Inertia): An object remains at rest or constant velocity unless acted upon by F_net.",
+            "• Second Law: F_net = m * a (Force in Newtons, Mass in kg, Acceleration in m/s^2).",
+            "• Third Law (Action-Reaction): For every action force F_AB, there is an equal & opposite F_BA.",
+            "• Force Components: Normal Force (F_N), Gravity (F_g = mg), Friction (f_k = mu * F_N), Tension (T).",
+            "• Curriculum Alignment: Grade 11 Physics Unit 3 (Dynamics & Equilibrium)"
+        ],
+        accent_color=(180, 40, 40)
+    )
+
+    create_image(
+        filename="physics_projectile_motion_trajectory.png",
+        bg_color=(255, 252, 245),
+        title="PHYSICS: PROJECTILE MOTION & 2D KINEMATICS",
+        subtitle="Two-Dimensional Kinematics & Parabolic Trajectory | Constant Gravity g",
+        details=[
+            "• Horizontal Velocity: v_x = v_0 * cos(theta) = constant (neglecting air resistance)",
+            "• Vertical Velocity: v_y = v_0 * sin(theta) - g * t",
+            "• Maximum Height: H = (v_0^2 * sin^2(theta)) / (2g)",
+            "• Horizontal Range: R = (v_0^2 * sin(2*theta)) / g",
+            "• Curriculum Alignment: Grade 11 Physics Unit 2 (Kinematics in Two Dimensions)"
+        ],
+        accent_color=(200, 90, 20)
+    )
+
+    create_image(
+        filename="chemistry_periodic_table_and_bonding.png",
+        bg_color=(252, 248, 255),
+        title="CHEMISTRY: CHEMICAL BONDING & MOLECULAR STRUCTURE",
+        subtitle="Ionic, Covalent & Metallic Bonds | Valence Shell Electron Pair Repulsion",
+        details=[
+            "• Ionic Bonding: Complete electron transfer between metals and non-metals (e.g. NaCl).",
+            "• Covalent Bonding: Electron pair sharing between non-metal atoms (Single, Double, Triple bonds).",
+            "• Electronegativity Difference: Delta EN > 1.7 (Ionic), 0.4 < Delta EN <= 1.7 (Polar Covalent), <= 0.4 (Non-polar).",
+            "• VSEPR Geometries: Linear (180 deg), Trigonal Planar (120 deg), Tetrahedral (109.5 deg).",
+            "• Curriculum Alignment: Grade 10 & 11 Chemistry Unit 2 (Chemical Bonding)"
+        ],
+        accent_color=(120, 40, 160)
+    )
+
+    create_image(
+        filename="biology_cell_organelles_and_photosynthesis.png",
+        bg_color=(245, 255, 248),
+        title="BIOLOGY: PLANT CELL STRUCTURE & PHOTOSYNTHESIS",
+        subtitle="Cellular Organelles, Chloroplast Thylakoids & Calvin Cycle",
+        details=[
+            "• Overall Photosynthesis Equation: 6 CO_2 + 6 H_2O + Light Energy -> C_6H_12O_6 + 6 O_2",
+            "• Light Reactions (Thylakoids): Photolysis of water, ATP and NADPH production, O_2 release.",
+            "• Calvin Cycle (Stroma): Carbon fixation via RuBisCO enzyme, glucose carbohydrate synthesis.",
+            "• Key Organelles: Chloroplasts, Mitochondria (ATP cellular respiration), Cell Wall, Nucleus.",
+            "• Curriculum Alignment: Grade 10 & 11 Biology Unit 3 (Cell Biology & Energetics)"
+        ],
+        accent_color=(20, 130, 80)
+    )
+
+    create_image(
+        filename="computer_science_data_structures_network.png",
+        bg_color=(245, 250, 255),
+        title="COMPUTER SCIENCE: DATA STRUCTURES & ALGORITHMS",
+        subtitle="Computational Complexity, Trees, Graphs & Network Topologies",
+        details=[
+            "• Big-O Complexity: O(1) Constant, O(log n) Binary Search, O(n) Linear, O(n log n) MergeSort.",
+            "• Tree Structures: Binary Search Trees (BST), AVL balanced trees, Root, Node, Edge definitions.",
+            "• Graph Algorithms: Breadth-First Search (BFS), Depth-First Search (DFS), Dijkstra Shortest Path.",
+            "• Networking Basics: OSI 7-Layer Model (Physical, Data Link, Network, Transport, Application).",
+            "• Curriculum Alignment: Secondary School Information Technology (IT) Grades 11-12"
+        ],
+        accent_color=(10, 80, 140)
+    )
+
 if __name__ == "__main__":
     generate_all()
