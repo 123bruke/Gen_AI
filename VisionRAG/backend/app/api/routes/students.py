@@ -19,7 +19,7 @@ from app.db.log_db import app_logger
 
 router = APIRouter(prefix="/api/students", tags=["Student Management Portal"])
 
-PORTAL_PASSWORD = "123456"
+PORTAL_PASSWORDS = ["1234567", "123456"]
 
 # Pydantic schemas
 class VerifyPasswordRequest(BaseModel):
@@ -233,15 +233,15 @@ def ensure_initial_students():
 def verify_portal_access(req: VerifyPasswordRequest):
     """
     Verifies administrator / teacher access code for the Student Management Portal.
-    Protected by password '123456'.
+    Protected by password '1234567'.
     """
-    if req.password.strip() == PORTAL_PASSWORD:
+    if req.password.strip() in PORTAL_PASSWORDS:
         return {
             "success": True,
             "message": "Authorized access to Student Management Portal.",
             "authorized": True
         }
-    raise HTTPException(status_code=401, detail="Invalid password for Student Management Portal. Access denied.")
+    raise HTTPException(status_code=401, detail="Invalid password for Student Management Portal. Please enter 1234567.")
 
 
 @router.get("")

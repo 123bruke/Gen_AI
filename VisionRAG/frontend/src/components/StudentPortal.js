@@ -85,7 +85,7 @@ export class StudentPortal {
               <input
                 type="password"
                 id="portal-passcode-input"
-                placeholder="Enter password (e.g. 123456)"
+                placeholder="Enter password (e.g. 1234567)"
                 autofocus
                 style="width: 100%; padding: 11px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 15px; outline: none; letter-spacing: 2px; transition: border-color 0.15s;"
               />
@@ -140,7 +140,7 @@ export class StudentPortal {
         sessionStorage.setItem('vrag_student_portal_unlocked', 'true');
         this.fetchAndRender();
       } catch (err) {
-        errorEl.textContent = err.message || 'Invalid passcode. Please enter 123456.';
+        errorEl.textContent = err.message || 'Invalid passcode. Please enter 1234567.';
         errorEl.style.display = 'block';
         input.value = '';
         input.focus();
