@@ -608,14 +608,14 @@ class AgenticOrchestrator:
                 f"- **Vector & Scalar Clarification**: Differentiate magnitudes from directional vectors.\n\n"
                 f"#### 2. Mathematical Equations & SI Units\n"
                 f"- **Kinematic & Dynamic Relations**: Grounded in standard equations ($F_{{net}} = m \\cdot a$, conservation of energy and momentum).\n"
-                f"- **Dimensional Consistency**: Verify that intermediate terms conform to SI unit standards (Newtons, Joules, $\\text{m/s}^2$).\n\n"
+                f"- **Dimensional Consistency**: Verify that intermediate terms conform to SI unit standards (Newtons, Joules, $m/s^2$).\n\n"
                 f"#### 3. Step-by-Step Analytical Execution\n"
                 f"1. Construct a free-body force diagram or trajectory orientation.\n"
                 f"2. Resolve vectors into orthogonal components ($x$ horizontal, $y$ vertical).\n"
                 f"3. Equate net forces to accelerations and solve the resulting algebraic system.\n\n"
                 f"#### 4. ESSLCE National Exam Tips\n"
                 f"- Never omit vector signs or confuse mass ($kg$) with weight ($N = mg$).\n"
-                f"- Assume acceleration due to gravity $g = 9.8\\,\\text{m/s}^2$ unless specified as $10\\,\\text{m/s}^2$."
+                f"- Assume acceleration due to gravity $g = 9.8 m/s^2$ unless specified as $10 m/s^2$."
             )
             reasoning = "VitionAI Pedagogical Physics Synthesis: Formulated physical principles, vector breakdown, and quantitative problem-solving steps."
 
