@@ -10,6 +10,7 @@ import datetime
 from typing import Dict, Any
 
 from app.data.ethiopian_education_history import ETHIOPIAN_EDUCATION_RECORDS
+from app.data.ethiopian_biology_data import ETHIOPIAN_BIOLOGY_RECORDS
 from app.data.ethiopia_moe_knowledge import get_all_moe_records
 from app.db.postgres_db import postgres_manager
 from app.models.postgres_models import UploadedFile, Conversation, ChatMessage, TaskProgress
