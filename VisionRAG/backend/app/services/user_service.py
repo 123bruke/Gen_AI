@@ -450,12 +450,32 @@ class UserService:
         now = datetime.datetime.utcnow()
 
         with postgres_manager.session_scope() as session:
+            # If user_id is not provided, ensure fallback guest user exists to satisfy DB constraints
+            effective_uid = user_id
+            if not effective_uid:
+                guest = session.query(User).filter(User.id == "usr_guest").first()
+                if not guest:
+                    guest = User(
+                        id="usr_guest",
+                        email="guest@visionrag.local",
+                        username="guest",
+                        full_name="Guest Student",
+                        hashed_password="guest_session_hash",
+                        role="student",
+                        is_active=True,
+                        created_at=now,
+                        last_login=now
+                    )
+                    session.add(guest)
+                    session.flush()
+                effective_uid = "usr_guest"
+
             # Ensure conversation exists
             conv = session.query(Conversation).filter(Conversation.id == chat_id).first()
             if not conv:
                 conv = Conversation(
                     id=chat_id,
-                    user_id=user_id,
+                    user_id=effective_uid,
                     title=text[:40] if text else "New Conversation",
                     created_at=now,
                     updated_at=now
@@ -466,7 +486,7 @@ class UserService:
             msg = ChatMessage(
                 id=msg_id,
                 chat_id=chat_id,
-                user_id=user_id,
+                user_id=effective_uid,
                 sender=sender,
                 text=text,
                 attachments=attachments or [],
