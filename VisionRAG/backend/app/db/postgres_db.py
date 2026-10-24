@@ -66,6 +66,18 @@ class PostgresDatabaseManager:
         self.SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
         try:
             Base.metadata.create_all(bind=self.engine)
+            # Auto-migrate SQLite missing columns if applicable
+            if "sqlite" in str(self.engine.url):
+                with self.engine.connect() as conn:
+                    try:
+                        res = conn.execute(text("PRAGMA table_info(user_sessions)"))
+                        cols = [row[1] for row in res.fetchall()]
+                        if cols and "metadata" not in cols:
+                            conn.execute(text("ALTER TABLE user_sessions ADD COLUMN metadata JSON DEFAULT '{}'"))
+                            conn.commit()
+                            logger.info("Migrated user_sessions: added missing metadata column")
+                    except Exception as migration_err:
+                        logger.warning("SQLite auto-migration note: %s", migration_err)
         except Exception as e:
             logger.error("Failed to initialize database tables: %s", e)
 
