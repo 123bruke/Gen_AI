@@ -142,7 +142,7 @@ class Conversation(Base):
     __tablename__ = "conversations"
 
     id = Column(String(64), primary_key=True)
-    user_id = Column(String(64), ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+    user_id = Column(String(64), ForeignKey("users.id", ondelete="CASCADE"), nullable=True, index=True)
     title = Column(String(255), nullable=False)
     folder_id = Column(String(64), nullable=True)
     pinned = Column(Boolean, default=False)
