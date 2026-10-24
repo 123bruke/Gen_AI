@@ -19,8 +19,8 @@ def test_endpoints():
 
     print("\n--- 3. Testing POST /api/chat (Math Quadratic Equation) ---")
     chat_payload = {
-        "message": "Solve the quadratic equation 2x^2 + 5x - 3 = 0 using the quadratic formula",
-        "chat_history": []
+        "query": "Solve the quadratic equation 2x^2 + 5x - 3 = 0 using the quadratic formula",
+        "settings": {"geminiApiKey": ""}
     }
     chat_req = urllib.request.Request(
         "http://localhost:8000/api/chat",
