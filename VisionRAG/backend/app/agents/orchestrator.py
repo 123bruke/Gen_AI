@@ -203,21 +203,22 @@ class AgenticOrchestrator:
         """
         q = query.lower()
         budget = {
-            "images": 0,
-            "videos": 0,
-            "books": 0,
+            "images": 3,
+            "videos": 3,
+            "books": 3,
             "maps": 0,
             "news": 0,
             "websites": 3
         }
 
         # 1. Condition for Images
-        has_image_keyword = any(w in q for w in ["image", "picture", "photo", "look like", "diagram", "visual", "art", "illustration", "show me"])
+        has_image_keyword = any(w in q for w in ["image", "picture", "photo", "look like", "diagram", "visual", "art", "illustration", "show me", "figure", "plot", "graph"])
         is_visual_subject = any(w in q for w in [
+            "parabola", "algebra", "geometry", "force", "vector", "photosynthesis", "cell", "bonding",
             "lalibela", "church", "walia", "ibex", "simien", "wolf", "animal", "fauna", "bird",
             "coffee", "plant", "flower", "axum", "stelae", "obelisk", "gondar", "castle", "harar",
             "volcano", "danakil", "blue nile", "lake tana", "gerd", "architecture", "monument",
-            "galaxy", "solar system", "cell", "anatomy", "microscope"
+            "galaxy", "solar system", "anatomy", "microscope", "newton", "physics", "math", "chemistry", "biology"
         ])
         if has_visual_input:
             budget["images"] = 5
@@ -226,29 +227,23 @@ class AgenticOrchestrator:
         elif has_image_keyword:
             budget["images"] = 4
         elif is_visual_subject:
-            budget["images"] = 3
-        elif any(w in q for w in ["history", "science", "biology", "geography"]):
-            budget["images"] = 2
+            budget["images"] = 4
         else:
-            budget["images"] = 0
+            budget["images"] = 3
 
         # 2. Condition for Videos
-        has_video_keyword = any(w in q for w in ["video", "watch", "youtube", "tutorial", "how to", "documentary", "music", "song", "chant", "lecture", "talk"])
+        has_video_keyword = any(w in q for w in ["video", "watch", "youtube", "tutorial", "how to", "documentary", "music", "song", "chant", "lecture", "talk", "lesson", "explain"])
         if has_video_keyword:
             budget["videos"] = 4
-        elif is_visual_subject or any(w in q for w in ["music", "zema", "yared", "algorithm", "python", "engineering"]):
-            budget["videos"] = 2
         else:
-            budget["videos"] = 0
+            budget["videos"] = 3
 
         # 3. Condition for Educational Books
         has_book_keyword = any(w in q for w in ["book", "read", "textbook", "author", "literature", "novel", "gutenberg", "open library", "study", "library"])
         if has_book_keyword:
             budget["books"] = 4
-        elif any(w in q for w in ["education", "history", "philosophy", "curriculum", "university", "science", "engineering"]):
-            budget["books"] = 2
         else:
-            budget["books"] = 0
+            budget["books"] = 3
 
         # 4. Condition for Geospatial Maps
         has_map_keyword = any(w in q for w in ["where is", "map", "location", "locate", "coordinates", "place", "city", "capital", "route"])
@@ -266,11 +261,13 @@ class AgenticOrchestrator:
         has_news_keyword = any(w in q for w in ["news", "latest", "recent", "today", "current", "update", "developments"])
         if has_news_keyword:
             budget["news"] = 4
+        elif any(w in q for w in ["moe", "ministry", "curriculum", "policy", "exam", "grade 12", "esslce", "university"]):
+            budget["news"] = 2
         else:
             budget["news"] = 0
 
         # 6. Websites / Citations
-        budget["websites"] = 3 if not (budget["images"] == 0 and budget["videos"] == 0 and budget["books"] == 0 and budget["maps"] == 0) else 2
+        budget["websites"] = 3
 
         return budget
 

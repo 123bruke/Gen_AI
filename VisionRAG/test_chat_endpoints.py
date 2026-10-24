@@ -30,20 +30,21 @@ def test_endpoints():
     chat_res = urllib.request.urlopen(chat_req, timeout=30)
     data = json.loads(chat_res.read().decode("utf-8"))
     
-    answer = data.get("response", "")
+    answer = data.get("text", "")
     print(f"\nResponse excerpt:\n{answer[:400]}...")
     
     has_unprompted_history = any(term in answer.lower() for term in ["d'mt", "st. yared", "saint yared", "lucy / dinkinesh", "3.2 million years"])
     print(f"\nUnprompted Ancient History present? {has_unprompted_history}")
 
-    images = data.get("images", [])
+    mm = data.get("multimodal", {})
+    images = mm.get("images", [])
     print(f"\nImages returned ({len(images)}):")
-    for img in images[:3]:
+    for img in images[:4]:
         print(f"  - Title: {img.get('title')}, URL: {img.get('url')}")
 
-    videos = data.get("youtube_videos", [])
+    videos = mm.get("videos", [])
     print(f"\nYouTube Videos returned ({len(videos)}):")
-    for vid in videos[:3]:
+    for vid in videos[:4]:
         print(f"  - Title: {vid.get('title')}, URL: {vid.get('url')}, Embed: {vid.get('embedUrl')}")
 
 if __name__ == "__main__":
