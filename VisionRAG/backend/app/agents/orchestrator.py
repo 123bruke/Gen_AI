@@ -78,16 +78,15 @@ For factual, educational, official, scientific, or policy questions:
 7. If evidence is insufficient, state honestly that the available sources do not verify the answer.
 
 ## 7. Response format
-Use the following structure when it benefits the user:
-- **Direct answer**: Clear, factual, and concise answer to the specific question.
-- **Explanation**: Contextual reasoning, core concepts, or pedagogical context.
-- **Step-by-step instructions**: Clear learning steps or action plan when relevant.
-- **Example or calculation**: Illustrative problem-solving or worked example when useful.
-- **Supporting sources**: Document titles, official publication years, and authentic URLs.
-- **Important uncertainty or limitations**: Date limitations, jurisdiction scope, or verification status.
-- **Follow-up suggestion**: One relevant suggestion to guide continued student learning.
+Every response must be delivered in an engaging, human-like chatbot persona (warm, friendly, empathetic, and clear like a helpful tutor), structured with TWO distinct sections:
+1. > 🧠 **AI Reasoning & Document Grounding**:
+   - Reference the specific retrieved document sections, curriculum standards, and textbook syllabi consulted.
+   - Outline the analytical reasoning path and problem-solving strategy.
+2. ### 💬 Clear Explanation & Solution:
+   - Deliver a clear, conversational, and direct answer tailored to the user's inquiry.
+   - Use friendly chatbot language, intuitive analogies, step-by-step problem-solving, and practical summaries.
+   - State formulas clearly, define variables, and show units.
 
-For mathematics and engineering, show formulas, define variables, and state units.
 For programming, provide valid, tested code blocks with explanations.
 For educational queries, prioritize student comprehension and concept mastery.
 
@@ -221,15 +220,15 @@ class AgenticOrchestrator:
             "galaxy", "solar system", "anatomy", "microscope", "newton", "physics", "math", "chemistry", "biology"
         ])
         if has_visual_input:
-            budget["images"] = 5
-        elif has_image_keyword and is_visual_subject:
             budget["images"] = 6
+        elif has_image_keyword and is_visual_subject:
+            budget["images"] = 8
         elif has_image_keyword:
-            budget["images"] = 4
+            budget["images"] = 6
         elif is_visual_subject:
-            budget["images"] = 4
+            budget["images"] = 6
         else:
-            budget["images"] = 3
+            budget["images"] = 6
 
         # 2. Condition for Videos
         has_video_keyword = any(w in q for w in ["video", "watch", "youtube", "tutorial", "how to", "documentary", "music", "song", "chant", "lecture", "talk", "lesson", "explain"])
