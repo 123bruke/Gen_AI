@@ -220,7 +220,7 @@ class ImageProcessorAgent:
                     seen_urls.add(img_url)
                     results.append({
                         "id": f"clip-{fn.split('.')[0]}",
-                        "title": fn.replace("_", " ").title(),
+                        "title": os.path.splitext(fn)[0].replace("_", " ").title(),
                         "url": img_url,
                         "thumbnail": img_url,
                         "sourceName": f"Hugging Face CLIP Search Engine (Score: {m['similarityScore']})",

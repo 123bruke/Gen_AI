@@ -16,7 +16,8 @@ from app.db.log_db import app_logger
 router = APIRouter(prefix="/api/chat", tags=["Agentic Chat & PostgreSQL Conversations"])
 
 class ChatMessageRequest(BaseModel):
-    query: str
+    query: Optional[str] = ""
+    message: Optional[str] = None
     chat_id: Optional[str] = None
     user_id: Optional[str] = None
     attachments: Optional[List[Any]] = []
@@ -49,7 +50,8 @@ async def chat_endpoint(
     3. Stores divided multimodal answer & metadata in PostgreSQL.
     4. Records execution progress in PostgreSQL.
     """
-    if not req.query.strip() and not req.attachments:
+    prompt = (req.query or req.message or "").strip()
+    if not prompt and not req.attachments:
         raise HTTPException(status_code=400, detail="Query or attachments required")
 
     # Determine user_id
@@ -65,7 +67,7 @@ async def chat_endpoint(
     user_service.record_chat_message(
         chat_id=chat_id,
         sender="user",
-        text=req.query,
+        text=prompt,
         user_id=effective_user_id,
         attachments=req.attachments,
         metadata={"client_settings": req.settings}
@@ -85,13 +87,13 @@ async def chat_endpoint(
         )
 
     app_logger.info(
-        f"Processing RAG chat query for chat '{chat_id}': '{req.query[:60]}...'",
+        f"Processing RAG chat query for chat '{chat_id}': '{prompt[:60]}...'",
         extra={
             "user_id": effective_user_id,
             "event_type": "CHAT_QUERY",
             "details": {
                 "chat_id": chat_id,
-                "query_length": len(req.query),
+                "query_length": len(prompt),
                 "attachments_count": len(req.attachments or [])
             }
         }
@@ -101,7 +103,7 @@ async def chat_endpoint(
     gemini_key = (req.settings or {}).get("geminiApiKey") or (req.settings or {}).get("gemini_key") or os.getenv("GEMINI_API_KEY")
 
     result = agent_orchestrator.plan_and_execute(
-        prompt=req.query,
+        prompt=prompt,
         attachments=req.attachments,
         settings=req.settings,
         gemini_key=gemini_key

@@ -26,6 +26,14 @@ class KnowledgeSeeder:
         now = datetime.datetime.now(datetime.timezone.utc)
         moe_records = get_all_moe_records()
 
+        # Fast check: skip redundant CPU re-embedding if already seeded
+        if not force:
+            with postgres_manager.session_scope() as session:
+                existing_count = session.query(UploadedFile).filter(UploadedFile.status == "verified_in_postgres").count()
+                if existing_count >= 10:
+                    app_logger.info("Knowledge already seeded (%d dossiers found in DB). Skipping re-embedding.", existing_count)
+                    return {"status": "already_seeded", "count": existing_count}
+
         # 1. Initialize Task Progress in PostgreSQL
         with postgres_manager.session_scope() as session:
             prog = TaskProgress(

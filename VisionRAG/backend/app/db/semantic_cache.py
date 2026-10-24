@@ -136,6 +136,8 @@ class SemanticCache:
         # 1. Exact Match (O(1) in-memory)
         if norm_query in self._memory_cache:
             item = self._memory_cache[norm_query]
+            if not item.get("text") or len(item.get("text", "").strip()) < 50:
+                return None
             item["hit_count"] = item.get("hit_count", 0) + 1
             self._update_sqlite_hit(norm_query)
             app_logger.info(f"SemanticCache HIT (Exact) for: '{query[:40]}'")
@@ -161,6 +163,8 @@ class SemanticCache:
 
         if best_score >= threshold and best_match_key:
             item = self._memory_cache[best_match_key]
+            if not item.get("text") or len(item.get("text", "").strip()) < 50:
+                return None
             item["hit_count"] = item.get("hit_count", 0) + 1
             self._update_sqlite_hit(best_match_key)
             app_logger.info(f"SemanticCache HIT (Semantic score {best_score:.2f}) for: '{query[:40]}' matching '{item['raw_query'][:40]}'")
