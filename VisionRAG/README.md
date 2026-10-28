@@ -34,7 +34,7 @@ https://github.com/user-attachments/assets/8535e908-c836-4800-bf03-08896b49b57e
 
 ### 4. Multimodal Uploads & Visual Grounding
 - **Multimodal Support:** Native drag-and-drop ingestion for PDFs, images (PNG, JPG, TIFF), videos (MP4, WebM), audio recordings, and text files.
-- **Upload Tray:** Real-time upload progress bars, file type detection chips, and preview badges.
+- **Upload Tray:** Real-time upload progress bars, file type detection chips, and preview badges.    v
 - **Grounding Inspector:** Interactive citation pills (e.g., `[power_schematic_v2.pdf (p. 3) - 96% Match]`) that open an inspector displaying the exact text chunk, confidence score, and visual bounding box coordinate mapping.
 
 ### 5. Interactive Voice Mode & Live Camera
